@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Piece : MonoBehaviour
+public class Piece : MonoBehaviour, GetsClicked
 {
     [SerializeField] Transform[] posCases;
     [SerializeField] Transform[] posCotes;
@@ -79,4 +79,8 @@ public class Piece : MonoBehaviour
         return false;
     }
 
+    void GetsClicked.WhenClicked()
+    {
+        
+    }
 }
