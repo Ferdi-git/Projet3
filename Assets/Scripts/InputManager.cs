@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     private InputSystem_Actions playerInput;
-    public SOEventInputs soEventInputs;
 
     private void Awake()
     {
@@ -14,14 +13,14 @@ public class InputManager : MonoBehaviour
 
     private void OnEnable()
     {
-        playerInput.Player.Click.performed += soEventInputs.InvokeClick;
+        //playerInput.Player.Click.started += soEventInputs.InvokeClick;
         playerInput.Player.Click.Enable();
     }
 
     private void OnDisable()
     {
-        playerInput.Player.Click.performed -= soEventInputs.InvokeClick;
-        playerInput.Player.Click.Enable();
+        //playerInput.Player.Click.started -= soEventInputs.InvokeClick;
+        playerInput.Player.Click.Disable(); 
     }
 
 }
