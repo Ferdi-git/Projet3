@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class Piece : MonoBehaviour, IMouseDraggable, IMouseHoverable
+public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable
 {
     [SerializeField] private Transform[] posCases;
     [SerializeField] private LayerMask gridLayer;
@@ -110,5 +110,7 @@ public class Piece : MonoBehaviour, IMouseDraggable, IMouseHoverable
                 GridSlot slot = hit.GetComponent<GridSlot>();
                 if (slot != null && !slot.isFilled) { slot.isFilled = true; break; }
             }
+
+
     }
 }

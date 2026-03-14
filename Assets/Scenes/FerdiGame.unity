@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 156672653}
   - component: {fileID: 156672652}
   m_Layer: 7
-  m_Name: Case (8)
+  m_Name: GridSlot 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287,7 +287,7 @@ Transform:
   m_GameObject: {fileID: 156672649}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 166566222}
   - component: {fileID: 166566221}
   m_Layer: 7
-  m_Name: Case (13)
+  m_Name: GridSlot 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 273276018}
   - component: {fileID: 273276017}
   m_Layer: 7
-  m_Name: Case (4)
+  m_Name: GridSlot 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -591,7 +591,7 @@ Transform:
   m_GameObject: {fileID: 273276014}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 1, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 333129931}
   - component: {fileID: 333129930}
   m_Layer: 7
-  m_Name: Case (10)
+  m_Name: GridSlot 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 347600674}
   - component: {fileID: 347600673}
   m_Layer: 7
-  m_Name: Case (6)
+  m_Name: GridSlot 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1032,7 +1032,7 @@ Transform:
   m_GameObject: {fileID: 347600670}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 1, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1296,7 +1296,7 @@ GameObject:
   - component: {fileID: 532224793}
   - component: {fileID: 532224792}
   m_Layer: 7
-  m_Name: Case (11)
+  m_Name: GridSlot 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1448,7 +1448,7 @@ GameObject:
   - component: {fileID: 750215583}
   - component: {fileID: 750215582}
   m_Layer: 7
-  m_Name: Case (5)
+  m_Name: GridSlot 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1463,7 +1463,7 @@ Transform:
   m_GameObject: {fileID: 750215579}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 1, z: 0}
+  m_LocalPosition: {x: -2, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1693,7 +1693,7 @@ GameObject:
   - component: {fileID: 788555916}
   - component: {fileID: 788555915}
   m_Layer: 7
-  m_Name: Case
+  m_Name: GridSlot 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1708,7 +1708,7 @@ Transform:
   m_GameObject: {fileID: 788555912}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -2, y: 1, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2012,6 +2012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1281634351}
+  - component: {fileID: 1281634352}
   m_Layer: 7
   m_Name: Grid
   m_TagString: Untagged
@@ -2050,6 +2051,34 @@ Transform:
   - {fileID: 1692210796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1281634352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281634350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb7f320744df09342a8a184de84ee6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  gridSlots:
+  - {fileID: 788555915}
+  - {fileID: 1911844983}
+  - {fileID: 1717071520}
+  - {fileID: 1308389182}
+  - {fileID: 273276017}
+  - {fileID: 750215582}
+  - {fileID: 347600673}
+  - {fileID: 1583378696}
+  - {fileID: 156672652}
+  - {fileID: 1981404226}
+  - {fileID: 333129930}
+  - {fileID: 532224792}
+  - {fileID: 1915854912}
+  - {fileID: 166566221}
+  - {fileID: 1692210798}
 --- !u!1 &1308389179
 GameObject:
   m_ObjectHideFlags: 0
@@ -2063,7 +2092,7 @@ GameObject:
   - component: {fileID: 1308389183}
   - component: {fileID: 1308389182}
   m_Layer: 7
-  m_Name: Case (3)
+  m_Name: GridSlot 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2078,7 +2107,7 @@ Transform:
   m_GameObject: {fileID: 1308389179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 1, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2294,7 +2323,7 @@ GameObject:
   - component: {fileID: 1583378697}
   - component: {fileID: 1583378696}
   m_Layer: 7
-  m_Name: Case (7)
+  m_Name: GridSlot 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2309,7 +2338,7 @@ Transform:
   m_GameObject: {fileID: 1583378693}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2446,7 +2475,7 @@ GameObject:
   - component: {fileID: 1692210799}
   - component: {fileID: 1692210798}
   m_Layer: 7
-  m_Name: Case (14)
+  m_Name: GridSlot 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2598,7 +2627,7 @@ GameObject:
   - component: {fileID: 1717071521}
   - component: {fileID: 1717071520}
   m_Layer: 7
-  m_Name: Case (2)
+  m_Name: GridSlot 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2613,7 +2642,7 @@ Transform:
   m_GameObject: {fileID: 1717071517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2840,7 +2869,7 @@ GameObject:
   - component: {fileID: 1911844984}
   - component: {fileID: 1911844983}
   m_Layer: 7
-  m_Name: Case (1)
+  m_Name: GridSlot 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2855,7 +2884,7 @@ Transform:
   m_GameObject: {fileID: 1911844980}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 1, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2992,7 +3021,7 @@ GameObject:
   - component: {fileID: 1915854913}
   - component: {fileID: 1915854912}
   m_Layer: 7
-  m_Name: Case (12)
+  m_Name: GridSlot 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3144,7 +3173,7 @@ GameObject:
   - component: {fileID: 1981404227}
   - component: {fileID: 1981404226}
   m_Layer: 7
-  m_Name: Case (9)
+  m_Name: GridSlot 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3159,7 +3188,7 @@ Transform:
   m_GameObject: {fileID: 1981404223}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 1, z: 0}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []

@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83f8fb230498e5442a5db1729337914a, type: 3}
-  m_Name: InputsEvent
-  m_EditorClassIdentifier: Assembly-CSharp::SOEventInputs
+  m_Script: {fileID: 11500000, guid: 486aa5c7e6d2dff4bbf86a06915c747a, type: 3}
+  m_Name: SOEventGridManager
+  m_EditorClassIdentifier: Assembly-CSharp::SOEventGridManager
