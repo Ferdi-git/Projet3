@@ -67,6 +67,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable
     {
         foreach (var c in posCases)
             if (!CheckIfSingleCaseCanBePlaced(c)) return false;
+
         return true;
     }
 
@@ -77,6 +78,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable
             GridSlot slot = hit.GetComponent<GridSlot>();
             if (slot != null && !slot.isFilled) return true;
         }
+
         return false;
     }
 
