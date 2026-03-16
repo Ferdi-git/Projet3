@@ -12,15 +12,12 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private SoBoard theBoard;
 
+    [SerializeField] private PiecePersonality[] piecesExist;
 
-    [Button]
-    public SoBoard GetTheBoard()
+    private void Start()
     {
-        ActualiseBoard();
-        print(theBoard.boardPiecesDico);
-        return theBoard;
+        gridManager.ActualiseBoard += ActualiseBoard;
     }
-
 
     [Button]
     private void ActualiseBoard()
@@ -39,7 +36,7 @@ public class GridManager : MonoBehaviour
          
             //theBoard.voisins[i].AddRange(GetVoisins(pieceOnSlot));
             //theBoard.boardPieces.Append(newBoardPiece);
-            theBoard.boardPiecesDico[pieceOnSlot.boardPiece] = GetVoisins(pieceOnSlot);
+            //theBoard.boardPiecesDico[pieceOnSlot.boardPiece] = GetVoisins(pieceOnSlot);
         }
 
 

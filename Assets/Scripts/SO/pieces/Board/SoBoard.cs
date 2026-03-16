@@ -6,9 +6,4 @@ public class SoBoard : ScriptableObject
 {
     public List<BoardPiece> boardPieces = new List<BoardPiece>();
 
-    public List<List<BoardPiece>> voisins = new List<List<BoardPiece>>();
-
-    public Dictionary<BoardPiece, List<BoardPiece>> boardPiecesDico = new Dictionary<BoardPiece, List<BoardPiece>>();
-    //lesvoisinsen value
-
 }
