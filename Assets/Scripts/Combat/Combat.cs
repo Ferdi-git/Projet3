@@ -4,7 +4,7 @@ using UnityEngine;
 public class Combat : MonoBehaviour
 {
     [SerializeField] private SoBoard soBoard;
-
+    [SerializeField] private bool skipFight;
     public void StartTurn ( )
     {
         StartCoroutine(Tour());
@@ -17,7 +17,10 @@ public class Combat : MonoBehaviour
         for ( int i = 0; i < soBoard.boardPieces.Count; i++ )
         {
             print("tour 1, piece numero :" + i);
-            yield return new WaitForSeconds(0.15f);
+            float timeToWait = 0.3f - 0.01f*i ;
+            timeToWait = Mathf.Clamp(timeToWait, 0.05f, 0.7f);
+            timeToWait = skipFight ? 0 : timeToWait;
+            yield return new WaitForSeconds(timeToWait);
             soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
             ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
 
