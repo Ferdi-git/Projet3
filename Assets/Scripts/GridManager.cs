@@ -10,12 +10,21 @@ public class GridManager : MonoBehaviour
     [SerializeField] private GridSlot[] gridSlots;
     [SerializeField] private SOEventGridManager gridManager;
 
+    [SerializeField] private SoBoard theBoard;
+
 
     [Button]
-    private string ParcourGrid()
+    public SoBoard GetTheBoard()
     {
-        string listOfActions = "";
-        List<PiecePersonality> personalities = new List<PiecePersonality>();
+        ActualiseBoard();
+        return theBoard;
+    }
+
+
+    [Button]
+    private void ActualiseBoard()
+    {
+        List<PiecePersonality> piecePersonalities = new List<PiecePersonality>();
 
         for (int i = 0; i < gridSlots.Length; i++)
         {
@@ -24,40 +33,13 @@ public class GridManager : MonoBehaviour
             if (!gridSlots[i].isFilled || pieceOnSlot.wasUsed)
                 continue;
 
-            PieceContext context = pieceOnSlot.GetContext();
-            listOfActions += context.actions;
-            personalities.AddRange(context.personality);
+            piecePersonalities.Append(pieceOnSlot);
             
-
         }
-        print(listOfActions);
-        print(personalities);
-        StartCoroutine(ANIMATIONTIMECOROUTINE(listOfActions,personalities));
-        gridManager.InvokeResetGrid();
-        return listOfActions;
+        print(piecePersonalities);
     }
-
-
-    private IEnumerator ANIMATIONTIMECOROUTINE(string actions, List<PiecePersonality> piecePersonalities)
-    {
-        for (int i = 0;i < piecePersonalities.Count; i++)
-        {
-
-            //DO THEIR FUCKING  ACTIONS
-            piecePersonalities[i].PlayAnimations(i);
-            yield return new WaitForSeconds(0.15f);
-
-        }
-
-    }
-
-
+    
 
 }
 
-public class ActionEffet
-{
-
-
-}
 

@@ -120,7 +120,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9ae8f315c480c244a599f98c354d164, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -211,7 +211,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9ae8f315c480c244a599f98c354d164, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -373,9 +373,12 @@ MonoBehaviour:
   surroundingPieces: []
   wasUsed: 0
   TEMPORARYSTRING: 
-  glowIntensity: 2
+  glowIntensity: 1
   glowDuration: 0.3
-  spriteRenderers: []
+  spriteRenderers:
+  - {fileID: 6817588394426073001}
+  - {fileID: 2440254612161997803}
+  - {fileID: 6289289625945670124}
 --- !u!82 &7688367237008495115
 AudioSource:
   m_ObjectHideFlags: 0
@@ -600,7 +603,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9ae8f315c480c244a599f98c354d164, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
