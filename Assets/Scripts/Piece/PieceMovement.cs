@@ -40,8 +40,19 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable
         }
     }
 
-    public void OnHoverEnter() => transform.DOScale(1.05f, 0.1f);
-    public void OnHoverExit() => transform.DOScale(1f, 0.1f);
+    public void OnHoverEnter()
+    {
+        transform.DOScale(1.05f, 0.1f);
+        transform.position = new Vector3(transform.position.x, transform.position.y, -0.1f);
+
+    }
+
+    public void OnHoverExit() 
+    { 
+        transform.DOScale(1f, 0.1f);
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+
+    }
 
     private void Unfill()
     {
