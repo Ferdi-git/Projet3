@@ -35,59 +35,64 @@ public class Combat : MonoBehaviour
         if (piece.pieceEffet.condition.Condition(soBoard.boardPieces[i].context, piece.ConditionValue))
         {
             PieceAction newAction = piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context, piece.EfectValue);
-            ResoudreAction(newAction);
+            ResoudreAction(newAction, piece.EfectValue);
         }
         //condition pas completé 
         //passer à piece suivante 
     }
 
-    private void ResoudreAction (PieceAction action)
+    private void ResoudreAction (PieceAction action, int value)
     {
         if (action.DamageToEnnemi != 0)
         {
-            //damage ... 
+            DoDamage(value);
         }
         if (action.DamageToMe != 0)
         {
-            //damage to me ...
+            TakeDamage(value);
         }
         if (action.AmountShieldGained != 0)
         {
-            //gain shield 
+            GainShield(value);
         }
         if (action.AmountShieldLost != 0)
         {
-            //loose shield
+            LooseShield(value);
         }
         if (action.AmountHeal != 0)
         {
-            //heal 
+            Heal(value);
         }
         //autre action possible 
     }
 
-    public void DoDamage ()
+    public void DoDamage (int amount)
     {
+        print ("Damage :"+ amount);
         //ui
         //change value pv ennemi 
     }
-    public void TakeDamage ()
+    public void TakeDamage (int amount)
     {
+        print("Damage to me :" + amount);
         //ui
         //change value pv player 
     }
-    public void GainShield ()
+    public void GainShield (int amount)
     {
+        print("Shield : +" + amount);
         //ui 
         //change shield value 
     }
-    public void LooseShield ()
+    public void LooseShield (int amount)
     {
+        print("Shield : -" + amount);
         //ui 
         //change Shield Value 
     }
-    public void Heal ()
+    public void Heal (int amount)
     {
+        print("Heal :" + amount);
         //ui 
         //change pv player 
     }

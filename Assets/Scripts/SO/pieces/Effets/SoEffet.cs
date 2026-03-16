@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+[Serializable]
+[CreateAssetMenu(fileName = "NewEffetTest", menuName = "Effet/Beta")]
 public class SoEffet : ScriptableObject
 {
     public virtual PieceAction Effet (Context context, int exemple) // faudra retourner une action 
@@ -22,7 +24,7 @@ public class PieceAction
 
 }
 
-
+[Serializable]
 [CreateAssetMenu(fileName = "NewEffetTest", menuName = "Effet/Test")]
 public class SoEffetTestDegat : SoEffet
 {

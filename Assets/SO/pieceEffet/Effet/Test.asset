@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: NewEffetTest
-  m_EditorClassIdentifier: Assembly-CSharp::SoEffetTest
+  m_Name: Test
+  m_EditorClassIdentifier: Assembly-CSharp::SoEffetTestDegat
