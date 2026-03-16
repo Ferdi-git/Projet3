@@ -11,7 +11,6 @@ public class PiecePersonality : MonoBehaviour
 
     [SerializeField] private Transform[] surroundingPoints;
     public bool wasUsed = false;
-    public string TEMPORARYSTRING;
 
     AudioSource audioSource;
 
@@ -56,8 +55,10 @@ public class PiecePersonality : MonoBehaviour
 
         transform.DOScale(1.05f + 0.005f * number, 0.1f).OnComplete(() =>
         {
-            audioSource.pitch = 0.2f + 0.05f * number;
+            float randStartPitch = Random.Range(0.15f, 0.25f);
+            audioSource.pitch = randStartPitch + 0.05f * number;
             audioSource.Play();
+
             transform.DOScale(1f, 0.1f);
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
