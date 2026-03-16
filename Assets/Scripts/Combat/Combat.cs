@@ -4,6 +4,7 @@ using UnityEngine;
 public class Combat : MonoBehaviour
 {
     [SerializeField] private SoBoard soBoard;
+    [SerializeField] private SOEventGridManager eventGridManager;
 
     public void StartTurn ( )
     {
@@ -17,7 +18,8 @@ public class Combat : MonoBehaviour
         for ( int i = 0; i < soBoard.boardPieces.Count; i++ )
         {
             print("tour 1, piece numero :" + i);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.15f);
+            eventGridManager?.InvokeActualiseBoard();
             soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
             ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
 

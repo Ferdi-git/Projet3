@@ -15,10 +15,20 @@ public class GridManager : MonoBehaviour
     [SerializeField] private PiecePersonality[] piecesExist;
     [SerializeField] private List<BoardPiece> listBoardPiecesExist;
 
-    private void Start()
+    private void OnEnable()
     {
         gridManager.ActualiseBoard += ActualiseBoard;
 
+    }
+
+    private void OnDisable()
+    {
+        gridManager.ActualiseBoard -= ActualiseBoard;
+
+    }
+
+    private void Start()
+    {
         for(int i = 0; i < piecesExist.Length; i++)
         {
             BoardPiece newBoardPiece = new();
@@ -45,7 +55,7 @@ public class GridManager : MonoBehaviour
             BoardPiece currentBoardPiece = GetBoardPiece(pieceOnSlot);
 
             //theBoard.voisins[i].AddRange(GetVoisins(pieceOnSlot));
-            theBoard.boardPieces.Append(currentBoardPiece);
+            theBoard.boardPieces.Add(currentBoardPiece);
         }
 
 
