@@ -1,7 +1,6 @@
-using JetBrains.Annotations;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
-using Unity.VisualScripting.FullSerializer;
+using System;
 
+[Serializable]
 public class Context 
 {
     public int Tour;
