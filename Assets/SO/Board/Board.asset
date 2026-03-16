@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Board
   m_EditorClassIdentifier: Assembly-CSharp::Board
   boardPieces:
-  - soPieces: {fileID: 0}
+  - soPieces: {fileID: 11400000, guid: 16aec410ef0d80742bdf5cec8712e830, type: 2}
     piecePersonality: {fileID: 0}
+    voisins: []
     context:
       Tour: 0
       NbrCaseDeLaPiece: 0
