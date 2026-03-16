@@ -16,6 +16,7 @@ public class Combat : MonoBehaviour
     {
         for ( int i = 0; i < soBoard.boardPieces.Count; i++ )
         {
+            print("tour 1, piece numero :" + i);
             yield return new WaitForSeconds(1f);
             soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
             ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
