@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PiecePersonality : MonoBehaviour
 {
-
+    public BoardPiece boardPiece;
     public SoPieces soPieces;
     [SerializeField] private Transform[] posCases;
     [SerializeField] SOEventGridManager sOEventGridManager;
 
-    public GameObject[] surroundingPoints;
+    [SerializeField] private Transform[] surroundingPoints;
     public bool wasUsed = false;
     public string TEMPORARYSTRING;
 
@@ -20,6 +20,12 @@ public class PiecePersonality : MonoBehaviour
     [SerializeField] private float glowDuration = 0.3f;
     public SpriteRenderer[] spriteRenderers;
 
+    private void Awake()
+    {
+        boardPiece = new BoardPiece();
+        boardPiece.piecePersonality = this;
+        boardPiece.soPieces = soPieces;
+    }
 
     private void Start()
     {
@@ -43,7 +49,7 @@ public class PiecePersonality : MonoBehaviour
         wasUsed = false;
     }
 
-    public GameObject[] GetSurroundingPoint()
+    public Transform[] GetSurroundingPoints()
     {
         return surroundingPoints;
     }
