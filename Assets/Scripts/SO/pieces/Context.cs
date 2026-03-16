@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 [Serializable]
 public class Context 
@@ -15,6 +16,8 @@ public class Context
 
     // script de stats joueur 
     // script de stats ennemi 
+
+    public List<BoardPiece> voisins;
 
 
 

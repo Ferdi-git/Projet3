@@ -55,7 +55,7 @@ public class GridManager : MonoBehaviour
             pieceOnSlot.wasUsed = true;
             BoardPiece currentBoardPiece = GetBoardPiece(pieceOnSlot);
 
-            //theBoard.voisins[i].AddRange(GetVoisins(pieceOnSlot));
+            //currentBoardPiece.context.voisins = GetVoisins(pieceOnSlot);
             theBoard.boardPieces.Add(currentBoardPiece);
         }
 
@@ -67,12 +67,13 @@ public class GridManager : MonoBehaviour
         var listToReturn = new List<BoardPiece>();
         for (int i = 0; i < piecePerso.GetSurroundingPoints().Length; i++)
         {
-            foreach (var hit in Physics2D.OverlapPointAll(transform.position))
+            foreach (var hit in Physics2D.OverlapPointAll(piecePerso.GetSurroundingPoints()[i].transform.position))
             {
                 var voisinPiecePerso = hit.gameObject.GetComponent<PiecePersonality>();
 
-                if (voisinPiecePerso != null)
-                    listToReturn.Append(GetBoardPiece(voisinPiecePerso));
+                if (voisinPiecePerso != null && !listToReturn.Contains(GetBoardPiece(voisinPiecePerso)))
+                    listToReturn.Add(GetBoardPiece(voisinPiecePerso));
+
 
             }
         }
