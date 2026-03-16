@@ -52,6 +52,7 @@ public class GridManager : MonoBehaviour
             if (!gridSlots[i].isFilled || pieceOnSlot.wasUsed)
                 continue;
 
+            pieceOnSlot.wasUsed = true;
             BoardPiece currentBoardPiece = GetBoardPiece(pieceOnSlot);
 
             //theBoard.voisins[i].AddRange(GetVoisins(pieceOnSlot));
