@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SoBoard : ScriptableObject
 {
-    public List<BoardPiece> boardPieces;
+    public List<BoardPiece> boardPieces = new List<BoardPiece>();
 
-    public List<List<BoardPiece>> Voisins;
+    public List<List<BoardPiece>> voisins = new List<List<BoardPiece>>();
 }

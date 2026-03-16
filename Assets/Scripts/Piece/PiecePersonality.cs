@@ -6,7 +6,7 @@ using UnityEngine;
 public class PiecePersonality : MonoBehaviour
 {
 
-    [SerializeField] private SoPieces soPieces;
+    public SoPieces soPieces;
     [SerializeField] private Transform[] posCases;
     [SerializeField] SOEventGridManager sOEventGridManager;
 

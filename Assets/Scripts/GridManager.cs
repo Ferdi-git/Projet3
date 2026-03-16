@@ -26,6 +26,8 @@ public class GridManager : MonoBehaviour
     {
         List<PiecePersonality> piecePersonalities = new List<PiecePersonality>();
 
+        theBoard.boardPieces.Clear();
+
         for (int i = 0; i < gridSlots.Length; i++)
         {
             PiecePersonality pieceOnSlot = gridSlots[i].GetPieceOnIt();
@@ -33,12 +35,19 @@ public class GridManager : MonoBehaviour
             if (!gridSlots[i].isFilled || pieceOnSlot.wasUsed)
                 continue;
 
+            BoardPiece newBoardPiece = new BoardPiece();
+            newBoardPiece.piecePersonality = pieceOnSlot;
+            newBoardPiece.soPieces = pieceOnSlot.soPieces;
+
+
+            theBoard.boardPieces.Append(newBoardPiece);
             piecePersonalities.Append(pieceOnSlot);
             
         }
         print(piecePersonalities);
     }
     
+
 
 }
 
