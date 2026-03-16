@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     {
         // effet à l'appuie 
         gridManager?.InvokeActualiseBoard();
+        gridManager?.InvokeResetGrid();
         combat.StartTurn(); 
     }
 }
