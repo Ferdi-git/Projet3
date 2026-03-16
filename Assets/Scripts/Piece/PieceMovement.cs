@@ -46,21 +46,25 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable
     private void Unfill()
     {
         foreach (var c in posCases)
+        {
             foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
                 if (slot != null) { slot.isFilled = false; break; }
             }
+        }
     }
 
     private void Refill()
     {
         foreach (var c in posCases)
+        {
             foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
                 if (slot != null) { slot.isFilled = true; break; }
             }
+        }
     }
 
     private bool CheckIfCanBePlaced()
@@ -107,11 +111,13 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable
         transform.position = targetSlotPos;
 
         foreach (var c in posCases)
+        {
             foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
                 if (slot != null && !slot.isFilled) { slot.isFilled = true; break; }
             }
+        }
 
 
     }
