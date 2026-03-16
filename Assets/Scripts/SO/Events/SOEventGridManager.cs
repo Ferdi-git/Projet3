@@ -8,7 +8,7 @@ public class SOEventGridManager : ScriptableObject
     public Action ActualiseBoard;
 
     public void InvokeResetGrid() {  ResetGrid.Invoke(); }
-    public void InvokeActualiseBoard() {  ResetGrid.Invoke(); }
+    public void InvokeActualiseBoard() { ActualiseBoard.Invoke(); }
 
 
 }
