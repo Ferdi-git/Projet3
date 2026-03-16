@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class Board : ScriptableObject
+public class SoBoard : ScriptableObject
 {
     public List<BoardPiece> boardPieces;
 }
