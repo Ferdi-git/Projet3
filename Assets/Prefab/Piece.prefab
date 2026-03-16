@@ -370,7 +370,14 @@ MonoBehaviour:
   soPieces: {fileID: 11400000, guid: 16aec410ef0d80742bdf5cec8712e830, type: 2}
   posCases: []
   sOEventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
-  surroundingPieces: []
+  surroundingPoints:
+  - {fileID: 2840823185506993328}
+  - {fileID: 5950342957190951042}
+  - {fileID: 7323963391922164976}
+  - {fileID: 1396570626276950237}
+  - {fileID: 2581105552711121948}
+  - {fileID: 1980173485376708772}
+  - {fileID: 6484838937401351868}
   wasUsed: 0
   TEMPORARYSTRING: 
   glowIntensity: 1

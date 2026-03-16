@@ -55,7 +55,7 @@ public class GridManager : MonoBehaviour
             pieceOnSlot.wasUsed = true;
             BoardPiece currentBoardPiece = GetBoardPiece(pieceOnSlot);
 
-            //currentBoardPiece.context.voisins = GetVoisins(pieceOnSlot);
+            currentBoardPiece.context.voisins = GetVoisins(pieceOnSlot);
             theBoard.boardPieces.Add(currentBoardPiece);
         }
 

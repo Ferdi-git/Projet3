@@ -6,7 +6,7 @@ public class BoardPiece
 {
     public SoPieces soPieces;
     public PiecePersonality piecePersonality;
-    public Context context;
+    public Context context = new();
     
     
 }

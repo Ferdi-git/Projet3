@@ -55,6 +55,26 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 1278556572598618211, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: surroundingPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278556572598618211, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: 'spriteRenderers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278556572598618211, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: 'surroundingPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 941041471302111377}
+    - target: {fileID: 1278556572598618211, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: 'surroundingPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1287942340579485139}
+    - target: {fileID: 1278556572598618211, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: 'surroundingPoints.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1287942340579485139}
     - target: {fileID: 3205895501931867985, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: posCases.Array.size
       value: 2
@@ -138,6 +158,11 @@ PrefabInstance:
       addedObject: {fileID: 1287942340579485139}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+--- !u!4 &941041471302111377 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5211190010395085341, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+  m_PrefabInstance: {fileID: 4998605874562226828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5899825486592284095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1494906498916503347, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
