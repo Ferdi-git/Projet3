@@ -1,7 +1,6 @@
 
 using DG.Tweening;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class PiecePersonality : MonoBehaviour
@@ -11,7 +10,7 @@ public class PiecePersonality : MonoBehaviour
     [SerializeField] private Transform[] posCases;
     [SerializeField] SOEventGridManager sOEventGridManager;
 
-    public PiecePersonality[] surroundingPieces;
+    public GameObject[] surroundingPoints;
     public bool wasUsed = false;
     public string TEMPORARYSTRING;
 
@@ -19,10 +18,8 @@ public class PiecePersonality : MonoBehaviour
 
     [SerializeField] private float glowIntensity = 2f;   // above 1 = triggers bloom
     [SerializeField] private float glowDuration = 0.3f;
-
     public SpriteRenderer[] spriteRenderers;
 
-    private Color baseColor;
 
     private void Start()
     {
@@ -41,22 +38,17 @@ public class PiecePersonality : MonoBehaviour
     }
 
 
-    public PieceContext GetContext()
-    {
-        wasUsed = true;
-        PieceContext context  = new PieceContext();
-        context.personality.Add(this);
-        context.actions += TEMPORARYSTRING;
-        return context;
-    }
-
     private void ResetPiece()
     {
         wasUsed = false;
     }
 
+    public GameObject[] GetSurroundingPoint()
+    {
+        return surroundingPoints;
+    }
 
-    public void PlayAnimations(int number)
+    public void PlayAnimations(int number)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
         transform.DOScale(1.05f + 0.005f * number, 0.1f).OnComplete(() =>
         {
@@ -65,28 +57,21 @@ public class PiecePersonality : MonoBehaviour
             transform.DOScale(1f, 0.1f);
         });
 
-
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
-            spriteRenderers[i].DOColor(new Color(baseColor.r * glowIntensity,
-                                         baseColor.g * glowIntensity,
-                                         baseColor.b * glowIntensity), glowDuration * 0.3f)
-            .OnComplete(() =>
-            {
-                spriteRenderers[i].DOColor(baseColor, glowDuration);
-            });
+            SpriteRenderer sr = spriteRenderers[i];
+            Color captured = sr.color;              
+
+            sr.DOColor(new Color(captured.r + glowIntensity,
+                                 captured.g + glowIntensity,
+                                 captured.b + glowIntensity), glowDuration * 0.3f)
+              .OnComplete(() =>
+              {
+                  sr.DOColor(captured, glowDuration);
+              });
         }
     }
 
 
-
-}
-
-
-public class PieceContext
-{
-    public List<PiecePersonality> personality = new List<PiecePersonality>();
-    public string actions = "";
-    public ActionEffet effets;
 
 }
