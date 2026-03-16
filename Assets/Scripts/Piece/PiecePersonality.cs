@@ -55,7 +55,8 @@ public class PiecePersonality : MonoBehaviour
 
         transform.DOScale(1.05f + 0.005f * number, 0.1f).OnComplete(() =>
         {
-            float randStartPitch = Random.Range(0.15f, 0.25f);
+            float randStartPitch = Random.Range(0.18f, 0.22f);
+            //float randStartPitch = 0.2f;
             audioSource.pitch = randStartPitch + 0.05f * number;
             audioSource.Play();
 
