@@ -13,17 +13,27 @@ public class GridManager : MonoBehaviour
     [SerializeField] private SoBoard theBoard;
 
     [SerializeField] private PiecePersonality[] piecesExist;
+    [SerializeField] private List<BoardPiece> listBoardPiecesExist;
 
     private void Start()
     {
         gridManager.ActualiseBoard += ActualiseBoard;
+
+        for(int i = 0; i < piecesExist.Length; i++)
+        {
+            BoardPiece newBoardPiece = new();
+            newBoardPiece.piecePersonality = piecesExist[i];
+            newBoardPiece.soPieces = piecesExist[i].soPieces;
+            listBoardPiecesExist.Add(newBoardPiece); 
+        }
+
     }
+
 
     [Button]
     private void ActualiseBoard()
     {
-        //theBoard.boardPieces.Clear();
-        //theBoard.boardPieces.Clear();
+        theBoard.boardPieces.Clear();
 
         for (int i = 0; i < gridSlots.Length; i++)
         {
@@ -32,11 +42,10 @@ public class GridManager : MonoBehaviour
             if (!gridSlots[i].isFilled || pieceOnSlot.wasUsed)
                 continue;
 
-            //BoardPiece newBoardPiece = pieceOnSlot.boardPiece;
-         
+            BoardPiece currentBoardPiece = GetBoardPiece(pieceOnSlot);
+
             //theBoard.voisins[i].AddRange(GetVoisins(pieceOnSlot));
-            //theBoard.boardPieces.Append(newBoardPiece);
-            //theBoard.boardPiecesDico[pieceOnSlot.boardPiece] = GetVoisins(pieceOnSlot);
+            theBoard.boardPieces.Append(currentBoardPiece);
         }
 
 
@@ -52,13 +61,26 @@ public class GridManager : MonoBehaviour
                 var voisinPiecePerso = hit.gameObject.GetComponent<PiecePersonality>();
 
                 if (voisinPiecePerso != null)
-                    listToReturn.Append(voisinPiecePerso.boardPiece);
+                    listToReturn.Append(GetBoardPiece(voisinPiecePerso));
 
             }
         }
         return listToReturn;
     }
 
+
+    private BoardPiece GetBoardPiece(PiecePersonality piecePersonality)
+    {
+        for (int nbr = 0; nbr < listBoardPiecesExist.Count; nbr++)
+        {
+            if (listBoardPiecesExist[nbr].piecePersonality == piecePersonality)
+            {
+                return listBoardPiecesExist[nbr];
+            }
+        }
+        Debug.LogError("Weird");
+        return null;
+    }
 }
 
 
