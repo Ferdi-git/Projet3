@@ -18,9 +18,16 @@ public class Combat : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
+            ResoudreEffet(soBoard.boardPieces[i].soPieces);
+
         }
         
 
+
+    }
+
+    private void ResoudreEffet ( SoPieces piece)
+    {
 
     }
 

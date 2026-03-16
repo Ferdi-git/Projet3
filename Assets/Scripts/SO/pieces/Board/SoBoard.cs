@@ -5,4 +5,6 @@ using UnityEngine;
 public class SoBoard : ScriptableObject
 {
     public List<BoardPiece> boardPieces;
+
+    public List<List<BoardPiece>> Voisins;
 }
