@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public void ButtonPressed ()
     {
         // effet à l'appuie 
-        //grid manager event 
+        gridManager?.InvokeActualiseBoard();
         combat.StartTurn(); 
     }
 }
