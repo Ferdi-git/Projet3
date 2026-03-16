@@ -19,8 +19,12 @@ public class PiecePersonality : MonoBehaviour
     [SerializeField] private float glowDuration = 0.3f;
     public SpriteRenderer[] spriteRenderers;
 
+    Color baseColor;
+
+
     private void Start()
     {
+        baseColor = spriteRenderers[0].color;
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -58,14 +62,13 @@ public class PiecePersonality : MonoBehaviour
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
             SpriteRenderer sr = spriteRenderers[i];
-            Color captured = sr.color;              
 
-            sr.DOColor(new Color(captured.r + glowIntensity,
-                                 captured.g + glowIntensity,
-                                 captured.b + glowIntensity), glowDuration * 0.3f)
+            sr.DOColor(new Color(baseColor.r + glowIntensity,
+                                 baseColor.g + glowIntensity,
+                                 baseColor.b + glowIntensity), glowDuration * 0.3f)
               .OnComplete(() =>
               {
-                  sr.DOColor(captured, glowDuration);
+                  sr.DOColor(baseColor, glowDuration);
               });
         }
     }
