@@ -11,6 +11,11 @@ public class SoEffet : ScriptableObject
         return action;
     }
 
+    public virtual void ApplyEffect(Context context, int effect, OutputPort port) 
+    {
+        //port.AplyEnemyDamage(15);
+    }
+
 }
 [Serializable]
 public class PieceAction
@@ -34,4 +39,6 @@ public class SoEffetTestDegat : SoEffet
         action.DamageToEnnemi = Damage;
         return action;
     }
+
+
 }
