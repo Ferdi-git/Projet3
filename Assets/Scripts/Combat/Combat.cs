@@ -44,7 +44,49 @@ public class Combat : MonoBehaviour
         {
             //damage ... 
         }
+        if (action.DamageToMe != 0)
+        {
+            //damage to me ...
+        }
+        if (action.AmountShieldGained != 0)
+        {
+            //gain shield 
+        }
+        if (action.AmountShieldLost != 0)
+        {
+            //loose shield
+        }
+        if (action.AmountHeal != 0)
+        {
+            //heal 
+        }
+        //autre action possible 
     }
 
-
+    public void DoDamage ()
+    {
+        //ui
+        //change value pv ennemi 
+    }
+    public void TakeDamage ()
+    {
+        //ui
+        //change value pv player 
+    }
+    public void GainShield ()
+    {
+        //ui 
+        //change shield value 
+    }
+    public void LooseShield ()
+    {
+        //ui 
+        //change Shield Value 
+    }
+    public void Heal ()
+    {
+        //ui 
+        //change pv player 
+    }
 }
+
