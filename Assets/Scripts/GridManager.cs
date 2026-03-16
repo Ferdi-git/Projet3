@@ -17,6 +17,7 @@ public class GridManager : MonoBehaviour
     public SoBoard GetTheBoard()
     {
         ActualiseBoard();
+        print(theBoard.boardPiecesDico);
         return theBoard;
     }
 
@@ -24,9 +25,8 @@ public class GridManager : MonoBehaviour
     [Button]
     private void ActualiseBoard()
     {
-        List<PiecePersonality> piecePersonalities = new List<PiecePersonality>();
-
-        theBoard.boardPieces.Clear();
+        //theBoard.boardPieces.Clear();
+        //theBoard.boardPieces.Clear();
 
         for (int i = 0; i < gridSlots.Length; i++)
         {
@@ -35,19 +35,32 @@ public class GridManager : MonoBehaviour
             if (!gridSlots[i].isFilled || pieceOnSlot.wasUsed)
                 continue;
 
-            BoardPiece newBoardPiece = new BoardPiece();
-            newBoardPiece.piecePersonality = pieceOnSlot;
-            newBoardPiece.soPieces = pieceOnSlot.soPieces;
-
-
-            theBoard.boardPieces.Append(newBoardPiece);
-            piecePersonalities.Append(pieceOnSlot);
-            
+            //BoardPiece newBoardPiece = pieceOnSlot.boardPiece;
+         
+            //theBoard.voisins[i].AddRange(GetVoisins(pieceOnSlot));
+            //theBoard.boardPieces.Append(newBoardPiece);
+            theBoard.boardPiecesDico[pieceOnSlot.boardPiece] = GetVoisins(pieceOnSlot);
         }
-        print(piecePersonalities);
+
+
     }
     
+    private List<BoardPiece> GetVoisins(PiecePersonality piecePerso)
+    {
+        var listToReturn = new List<BoardPiece>();
+        for (int i = 0; i < piecePerso.GetSurroundingPoints().Length; i++)
+        {
+            foreach (var hit in Physics2D.OverlapPointAll(transform.position))
+            {
+                var voisinPiecePerso = hit.gameObject.GetComponent<PiecePersonality>();
 
+                if (voisinPiecePerso != null)
+                    listToReturn.Append(voisinPiecePerso.boardPiece);
+
+            }
+        }
+        return listToReturn;
+    }
 
 }
 

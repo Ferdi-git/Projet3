@@ -2486,7 +2486,7 @@ MonoBehaviour:
   - {fileID: 401591369}
   - {fileID: 854579041}
   gridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
-  theBoard: {fileID: 0}
+  theBoard: {fileID: 11400000, guid: ef4a20505366c5e48ac6e60e3a1740e0, type: 2}
 --- !u!4 &884910095
 Transform:
   m_ObjectHideFlags: 0
