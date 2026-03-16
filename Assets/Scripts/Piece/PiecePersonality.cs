@@ -52,11 +52,15 @@ public class PiecePersonality : MonoBehaviour
 
     public void PlayAnimations(int number)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
+        transform.position = new Vector3(transform.position.x, transform.position.y, -0.1f);
+
         transform.DOScale(1.05f + 0.005f * number, 0.1f).OnComplete(() =>
         {
             audioSource.pitch = 0.2f + 0.05f * number;
             audioSource.Play();
             transform.DOScale(1f, 0.1f);
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+
         });
 
         for (int i = 0; i < spriteRenderers.Length; i++)
@@ -69,6 +73,7 @@ public class PiecePersonality : MonoBehaviour
               .OnComplete(() =>
               {
                   sr.DOColor(baseColor, glowDuration);
+
               });
         }
     }
