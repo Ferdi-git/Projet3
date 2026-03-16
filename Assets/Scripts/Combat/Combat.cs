@@ -18,7 +18,7 @@ public class Combat : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
-            ResoudreEffet(soBoard.boardPieces[i].soPieces);
+            ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
 
         }
         
@@ -26,9 +26,23 @@ public class Combat : MonoBehaviour
 
     }
 
-    private void ResoudreEffet ( SoPieces piece)
+    private void ResoudreEffet ( SoPieces piece , int i)
     {
+        if (piece.pieceEffet.condition.Condition(soBoard.boardPieces[i].context, piece.ConditionValue))
+        {
+            PieceAction newAction = piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context, piece.EfectValue);
+            ResoudreAction(newAction);
+        }
+        //condition pas completé 
+        //passer à piece suivante 
+    }
 
+    private void ResoudreAction (PieceAction action)
+    {
+        if (action.DamageToEnnemi != 0)
+        {
+            //damage ... 
+        }
     }
 
 

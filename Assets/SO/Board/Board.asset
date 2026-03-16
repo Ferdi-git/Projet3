@@ -15,17 +15,6 @@ MonoBehaviour:
   boardPieces:
   - soPieces: {fileID: 0}
     piecePersonality: {fileID: 0}
-    voisins:
-    - soPieces: {fileID: 0}
-      piecePersonality: {fileID: 0}
-      voisins: []
-      context:
-        Tour: 0
-        NbrCaseDeLaPiece: 0
-        NbrPiecesAutour: 0
-        NbrCaseLibre: 0
-        "NbrCaseOccup\xE9": 0
-        NbrDeRepetition: 0
     context:
       Tour: 0
       NbrCaseDeLaPiece: 0

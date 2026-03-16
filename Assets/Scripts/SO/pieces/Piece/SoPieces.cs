@@ -4,6 +4,8 @@ using UnityEngine;
 public class SoPieces : ScriptableObject
 {
     public PieceEffect pieceEffet;
+    public int ConditionValue;
+    public int EfectValue;
 
 
 }
