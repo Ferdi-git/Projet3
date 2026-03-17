@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: NewPiece
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
   pieceEffet:
-    condition: {fileID: 11400000, guid: 97b85701b169bf242888171e044b7687, type: 2}
+    condition: {fileID: 11400000, guid: 5435a42f03465ad428cbf139c8e4c535, type: 2}
     effet: {fileID: 11400000, guid: bad39325cad343d4fa504d9e94ba95be, type: 2}
+  ConditionValues: 
+  EfectValues: 02000000

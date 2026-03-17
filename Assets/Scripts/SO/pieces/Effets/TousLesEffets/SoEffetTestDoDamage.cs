@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewEffetTest", menuName = "Effet/effetBeatTest")]
-public class SoEffetTest : SoEffet
+public class SoEffetTestDoDamage : SoEffet
 {
     public override void Effet(Context context,OutputPort port, List<int> test)
     {
 
-        port.TakeDamage(test[0]);
+        port.DoDamage(test[0]);
     }
 }
