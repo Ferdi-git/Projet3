@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RepeatAround
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
   pieceEffet:
-    condition: {fileID: 0}
-    effet: {fileID: 0}
+    condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
+    effet: {fileID: 11400000, guid: 1cc1c1bb7f4c9004eb54c5bc1ed9bdd5, type: 2}
   ConditionValues: 
   EfectValues: 
