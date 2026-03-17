@@ -1,6 +1,7 @@
 
 public class OutputPort 
 {
+    public Combat combat;
     public StatsPlayer statsPlayer;
     public StatsEnnemi statsEnnemi;
 
@@ -59,5 +60,12 @@ public class OutputPort
     public void EnnemiLooseShield(int amount)
     {
         statsEnnemi.InvokeEnnemiLooseShield(amount);
+    }
+
+
+
+    public void EndEffet ()
+    {
+        combat.NextPiece();
     }
 }

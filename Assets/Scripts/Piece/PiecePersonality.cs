@@ -1,5 +1,6 @@
 
 using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -80,6 +81,37 @@ public class PiecePersonality : MonoBehaviour
         }
     }
 
+
+    public void PlayRepeatAnimations(int number, float delai)//c'est la combientieme a etre activé (pour son de + en + aigu )
+    {
+        transform.position = new Vector3(transform.position.x, transform.position.y, -0.1f);
+
+        transform.DOScale(1.05f + 0.005f * number, 0.1f).SetDelay(delai).OnComplete(() =>
+        {
+            float randStartPitch = Random.Range(0.15f, 0.19f);
+            //float randStartPitch = 0.2f;
+            audioSource.pitch = randStartPitch + 0.05f * number;
+            audioSource.Play();
+
+            transform.DOScale(1f, 0.1f).SetDelay(delai);
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+
+        });
+
+        for (int i = 0; i < spriteRenderers.Length; i++)
+        {
+            SpriteRenderer sr = spriteRenderers[i];
+
+            sr.DOColor(new Color(baseColor.r + glowIntensity,
+                                 baseColor.g + glowIntensity,
+                                 baseColor.b + glowIntensity), glowDuration * 0.3f).SetDelay(delai)
+              .OnComplete(() =>
+              {
+                  sr.DOColor(baseColor, glowDuration).SetDelay(delai);
+
+              });
+        }
+    }
 
 
 }

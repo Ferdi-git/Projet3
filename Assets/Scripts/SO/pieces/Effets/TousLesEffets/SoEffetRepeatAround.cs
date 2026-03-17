@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,13 @@ public class SoEffetRepeatAround : SoEffet
         for (int i = 0; i < context.voisins.Count; i++)
         {
             BoardPiece voisin = context.voisins[i];
+            
+            voisin.piecePersonality.PlayRepeatAnimations(i, (i * 0.2f)+0.2f);
             voisin.soPieces.pieceEffet.effet.Effet(voisin.context, port, voisin.soPieces.EfectValues);
         }
+        port.EndEffet();
+
+        
     }
+    
 }

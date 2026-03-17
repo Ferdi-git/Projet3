@@ -9,5 +9,6 @@ public class SoEffetTestDoDamage : SoEffet
     {
 
         port.DoDamage(test[0]);
+        port.EndEffet();
     }
 }
