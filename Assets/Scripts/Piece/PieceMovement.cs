@@ -18,7 +18,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
 
     private void Start()
     {
-
+        SnapToGrid();
     }
 
     public void OnDragStart(Vector2 worldPos)
