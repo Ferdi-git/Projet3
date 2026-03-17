@@ -17,3 +17,4 @@ MonoBehaviour:
     effet: {fileID: 11400000, guid: bad39325cad343d4fa504d9e94ba95be, type: 2}
   ConditionValues: 
   EfectValues: 02000000
+  colors: 00000000

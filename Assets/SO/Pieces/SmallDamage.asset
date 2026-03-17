@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: RepeatAround
+  m_Name: SmallDamage
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
   pieceEffet:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
-    effet: {fileID: 11400000, guid: 1cc1c1bb7f4c9004eb54c5bc1ed9bdd5, type: 2}
+    effet: {fileID: 11400000, guid: e004bb3741ec5874b8e2de6c2a6f968d, type: 2}
   ConditionValues: 
-  EfectValues: 
-  colors: 0000000002000000
+  EfectValues: 03000000
+  colors: 00000000
