@@ -10,6 +10,7 @@ public interface IMouseHoverable
 public interface IMouseClickable
 {
     void OnClick();
+    void OnRightClick();
 }
 
 public interface IMouseDraggable

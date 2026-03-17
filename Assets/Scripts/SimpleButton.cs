@@ -20,4 +20,9 @@ public class SimpleButton : MonoBehaviour, IMouseClickable, IMouseHoverable
     {
         //
     }
+
+    public void OnRightClick()
+    {
+        //
+    }
 }

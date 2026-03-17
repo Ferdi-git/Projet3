@@ -20,6 +20,9 @@ public class MouseManager : MonoBehaviour
         input.Player.Click.started += OnClickStarted;
         input.Player.Click.canceled += OnClickCanceled;
         input.Player.Click.Enable();
+        input.Player.RightClick.started += OnRightClickStarted;
+        input.Player.RightClick.canceled += OnRightClickCanceled;
+        input.Player.RightClick.Enable();
     }
 
     private void OnDisable()
@@ -27,6 +30,9 @@ public class MouseManager : MonoBehaviour
         input.Player.Click.started -= OnClickStarted;
         input.Player.Click.canceled -= OnClickCanceled;
         input.Player.Click.Disable();
+        input.Player.RightClick.started -= OnRightClickStarted;
+        input.Player.RightClick.canceled -= OnRightClickCanceled;
+        input.Player.RightClick.Disable();
     }
 
     private void Update()
@@ -78,6 +84,43 @@ public class MouseManager : MonoBehaviour
         }
     }
 
+    private void OnRightClickStarted(InputAction.CallbackContext ctx)
+    {
+        //Vector2 mousePos = GetMouseWorldPos();
+
+        //Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
+        //foreach (var hit in hits)
+        //{
+        //    currentDragged = hit.GetComponent<IMouseDraggable>();
+        //    if (currentDragged != null)
+        //    {
+        //        isDragging = true;
+        //        currentDragged.OnDragStart(mousePos);
+
+        //        currentHovered?.OnHoverExit();
+        //        currentHovered = null;
+
+        //        break;
+        //    }
+        //}
+    }
+
+    private void OnRightClickCanceled(InputAction.CallbackContext ctx)
+    {
+        Vector2 mousePos = GetMouseWorldPos();
+
+        if (isDragging && currentDragged != null)
+        {
+            // Click (only reached if nothing was dragged)
+            Collider2D[] hits = Physics2D.OverlapPointAll(mousePos);
+            foreach (var hit in hits)
+            {
+                IMouseClickable clicked = hit.GetComponent<IMouseClickable>();
+                if (clicked != null) { clicked.OnRightClick(); break; }
+            }
+
+        }
+    }
     private void OnClickCanceled(InputAction.CallbackContext ctx)
     {
         Vector2 mousePos = GetMouseWorldPos();

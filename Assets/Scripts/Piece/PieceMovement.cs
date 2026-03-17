@@ -1,25 +1,34 @@
 using DG.Tweening;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable
+public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , IMouseClickable
 {
     [SerializeField] private Transform[] posCases;
     [SerializeField] private LayerMask gridLayer;
 
     private Vector3 originalPos;
-    private Vector2 grabOffset;
+    private Vector3 rotateTo;
+
+    public bool isRotating = false;
+    public bool isRotatingInputBuffer = false;
+
+    private void Start()
+    {
+        rotateGoal = (int)transform.rotation.z / 90 * 90;
+
+    }
 
     public void OnDragStart(Vector2 worldPos)
     {
         originalPos = transform.position;
-        grabOffset = (Vector2)transform.position - worldPos;
         transform.DOScale(1.1f, 0.1f);
         Unfill();
     }
 
     public void OnDragMove(Vector2 worldPos)
     {
-        Vector2 targetPos = worldPos + grabOffset;
+        Vector2 targetPos = worldPos;
         transform.position = new Vector3(targetPos.x, targetPos.y +0.1f, -0.1f);
     }
 
@@ -129,6 +138,39 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable
                 if (slot != null && !slot.isFilled) { slot.isFilled = true; break; }
             }
         }
+
+
+    }
+
+    public void OnClick()
+    {
+        //nothing
+    }
+
+    public void OnRightClick()
+    {
+        print("Rotate");
+        if (isRotating)
+        {
+            isRotatingInputBuffer = true;
+            return;
+        }
+
+        isRotating = true;
+        //rotateGoal -= 90;
+        transform.DORotate(new Vector3(0,0, (int)transform.rotation.z / 90 * 90 -90), 0.2f, RotateMode.LocalAxisAdd).OnComplete(()=>
+        { 
+            isRotating = false;
+            if (isRotatingInputBuffer)
+            {
+                isRotatingInputBuffer = false;
+                OnClick();
+            }
+           
+        });
+
+        //transform.DORotate(transform.right * 90, 0.5f, RotateMode.WorldAxisAdd).SetEase(Ease.InOutSine);
+        //transform.rotation *= Quaternion.Euler(0, 0, -90); ;
 
 
     }
