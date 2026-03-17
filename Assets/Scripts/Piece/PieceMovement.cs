@@ -10,6 +10,8 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
     private Vector3 originalPos;
     private Quaternion originalRota;
 
+    public bool isDraging = false;
+
     public bool isRotating = false;
     public bool isRotatingInputBuffer = false;
 
@@ -21,6 +23,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
 
     public void OnDragStart(Vector2 worldPos)
     {
+        isDraging = true;
         originalPos = transform.position;
         originalRota = transform.rotation;
         transform.DOScale(1.1f, 0.1f);
@@ -35,7 +38,10 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
 
     public void OnDragEnd(Vector2 worldPos)
     {
+        isDraging = false;
         transform.DOScale(1f, 0.1f);
+
+        transform.position = new Vector3(transform.position.x, transform.position.y , 0);
 
         if (CheckIfCanBePlaced())
         {
@@ -153,7 +159,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
     public void OnRightClick()
     {
         print("Rotate");
-        if (isRotating)
+        if (isRotating || !isDraging)
         {
             isRotatingInputBuffer = true;
             return;
