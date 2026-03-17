@@ -8,10 +8,11 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
     [SerializeField] private LayerMask gridLayer;
 
     private Vector3 originalPos;
-    private Vector3 rotateTo;
+    private Quaternion originalRota;
 
     public bool isRotating = false;
     public bool isRotatingInputBuffer = false;
+
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
     public void OnDragStart(Vector2 worldPos)
     {
         originalPos = transform.position;
+        originalRota = transform.rotation;
         transform.DOScale(1.1f, 0.1f);
         Unfill();
     }
@@ -45,6 +47,8 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
             {
                 Refill();
             });
+
+            transform.DORotateQuaternion(originalRota, 0.2f).SetEase(Ease.OutBack);
         }
     }
 
@@ -163,7 +167,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
             if (isRotatingInputBuffer)
             {
                 isRotatingInputBuffer = false;
-                OnClick();
+                OnRightClick();
             }
            
         });
