@@ -2427,8 +2427,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Combat
   soBoard: {fileID: 11400000, guid: ef4a20505366c5e48ac6e60e3a1740e0, type: 2}
   skipFight: 0
-  statsPlayer: {fileID: 0}
-  statsEnnemi: {fileID: 0}
+  statsPlayer: {fileID: 11400000, guid: c3c8f1e3ded73a44496a15c33dcabb2f, type: 2}
+  statsEnnemi: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
 --- !u!4 &513582203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7084960957256241923, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}

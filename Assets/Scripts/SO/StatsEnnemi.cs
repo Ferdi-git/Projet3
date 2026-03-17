@@ -21,8 +21,18 @@ public class StatsEnnemi : ScriptableObject
     }
     public void InvokeEnnemiLoosePV(int amount)
     {
-        pv -= amount;
-        EnnemiLoosePV?.Invoke(amount);
+        if (pv > amount)
+        {
+            pv -= amount;
+            EnnemiLoosePV?.Invoke(amount);
+        }
+        else
+        {
+            pv = 0;
+            EnnemiLoosePV?.Invoke(pv);
+        }
+
+        
     }
 
     public void InvokeEnnemiGainShield(int amount) { shield += amount; EnnemiGainShield?.Invoke(amount); }
