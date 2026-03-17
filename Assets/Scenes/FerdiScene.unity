@@ -1114,6 +1114,7 @@ Transform:
   - {fileID: 1437505957}
   - {fileID: 1114210751}
   - {fileID: 497809729}
+  - {fileID: 221861007}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &143320168 stripped
@@ -1509,6 +1510,51 @@ Transform:
   - {fileID: 1102920383}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.98}
+--- !u!1 &221861006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 221861007}
+  - component: {fileID: 221861008}
+  m_Layer: 0
+  m_Name: CombatUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &221861007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221861006}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 135637551}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &221861008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221861006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3453ca9960939864a8de2aa9d79c6470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CombatStatsUI
+  statsPlayer: {fileID: 11400000, guid: c3c8f1e3ded73a44496a15c33dcabb2f, type: 2}
 --- !u!1 &229137684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,6 +2427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Combat
   soBoard: {fileID: 11400000, guid: ef4a20505366c5e48ac6e60e3a1740e0, type: 2}
   skipFight: 0
+  statsPlayer: {fileID: 0}
 --- !u!4 &513582203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7084960957256241923, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}

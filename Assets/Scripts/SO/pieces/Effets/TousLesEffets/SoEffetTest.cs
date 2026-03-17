@@ -4,10 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewEffetTest", menuName = "Effet/effetBeatTest")]
 public class SoEffetTest : SoEffet
 {
-    public override PieceAction Effet(Context context, int test) //  ajouter context 
+    public override void Effet(Context context,OutputPort port, int test)
     {
-        PieceAction action = new PieceAction();
-        action.DamageToEnnemi = test;
-        return action;
+        port.Heal(test);
     }
 }

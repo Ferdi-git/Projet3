@@ -5,6 +5,7 @@ public class Combat : MonoBehaviour
 {
     [SerializeField] private SoBoard soBoard;
     [SerializeField] private bool skipFight;
+    [SerializeField] private StatsPlayer statsPlayer;
     public void StartTurn ( )
     {
         StartCoroutine(Tour());
@@ -34,67 +35,13 @@ public class Combat : MonoBehaviour
     {
         if (piece.pieceEffet.condition.Condition(soBoard.boardPieces[i].context, piece.ConditionValue))
         {
-            PieceAction newAction = piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context, piece.EfectValue);
-            ResoudreAction(newAction, piece.EfectValue);
+            OutputPort port = new OutputPort();
+            port.statsPlayer = statsPlayer;
+            piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValue);
+            //ResoudreAction(newAction, piece.EfectValue);
         }
         //condition pas completé 
         //passer à piece suivante 
-    }
-
-    private void ResoudreAction (PieceAction action, int value)
-    {
-        if (action.DamageToEnnemi != 0)
-        {
-            DoDamage(value);
-        }
-        if (action.DamageToMe != 0)
-        {
-            TakeDamage(value);
-        }
-        if (action.AmountShieldGained != 0)
-        {
-            GainShield(value);
-        }
-        if (action.AmountShieldLost != 0)
-        {
-            LooseShield(value);
-        }
-        if (action.AmountHeal != 0)
-        {
-            Heal(value);
-        }
-        //autre action possible 
-    }
-
-    public void DoDamage (int amount)
-    {
-        print ("Damage :"+ amount);
-        //ui
-        //change value pv ennemi 
-    }
-    public void TakeDamage (int amount)
-    {
-        print("Damage to me :" + amount);
-        //ui
-        //change value pv player 
-    }
-    public void GainShield (int amount)
-    {
-        print("Shield : +" + amount);
-        //ui 
-        //change shield value 
-    }
-    public void LooseShield (int amount)
-    {
-        print("Shield : -" + amount);
-        //ui 
-        //change Shield Value 
-    }
-    public void Heal (int amount)
-    {
-        print("Heal :" + amount);
-        //ui 
-        //change pv player 
     }
 }
 
