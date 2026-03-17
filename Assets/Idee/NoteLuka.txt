@@ -2,3 +2,5 @@ stats player ennemi
 Inventaire
 systeme de choix de piece 
 Sound systeme 
+
+si une ligne compléter avec la meme couleur : BONUS 

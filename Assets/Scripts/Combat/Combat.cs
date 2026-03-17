@@ -6,6 +6,7 @@ public class Combat : MonoBehaviour
     [SerializeField] private SoBoard soBoard;
     [SerializeField] private bool skipFight;
     [SerializeField] private StatsPlayer statsPlayer;
+    [SerializeField] private StatsEnnemi statsEnnemi;
     public void StartTurn ( )
     {
         StartCoroutine(Tour());
@@ -33,11 +34,12 @@ public class Combat : MonoBehaviour
 
     private void ResoudreEffet ( SoPieces piece , int i)
     {
-        if (piece.pieceEffet.condition.Condition(soBoard.boardPieces[i].context, piece.ConditionValue))
+        if (piece.pieceEffet.condition.Condition(soBoard.boardPieces[i].context, piece.ConditionValues))
         {
             OutputPort port = new OutputPort();
             port.statsPlayer = statsPlayer;
-            piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValue);
+            port.statsEnnemi = statsEnnemi;
+            piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValues);
             //ResoudreAction(newAction, piece.EfectValue);
         }
         //condition pas completé 
