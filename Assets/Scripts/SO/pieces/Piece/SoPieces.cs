@@ -7,6 +7,13 @@ public class SoPieces : ScriptableObject
     public PieceEffect pieceEffet;
     public List<int> ConditionValues;
     public List<int> EfectValues;
-
+    public List<PieceColor> colors = new List<PieceColor> { PieceColor.Neutral};
+    public enum PieceColor
+    {
+        Neutral,
+        Red,
+        Yellow,
+        Blue,
+    }
 
 }
