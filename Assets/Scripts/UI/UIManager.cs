@@ -1,33 +1,75 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] GameObject GOOptionsMenu;
-    [SerializeField] GameObject GOMainMenu;
+    [SerializeField] private StatsPlayer statsPlayer;
+    [SerializeField] private StatsEnnemi statsEnnemi;
 
-    private void Start()
+    private void OnEnable()
     {
-        GOOptionsMenu.SetActive(false);
-        GOMainMenu.SetActive(true);
+        statsPlayer.GainPV += GainPV;
+        statsPlayer.LoosePV += LoosePV;
+
+        statsPlayer.GainShield += GainShield;
+        statsPlayer.LooseShield += LooseShield;
+
+
+        statsEnnemi.EnnemiGainPV += EnnemiGainPV;
+        statsEnnemi.EnnemiLoosePV += EnnemiLoosePV;
+
+        statsEnnemi.EnnemiGainShield += EnnemiGainShield;
+        statsEnnemi.EnnemiLooseShield += EnnemiLostShield;
+    }
+    private void OnDisable()
+    {
+        statsPlayer.GainPV -= GainPV;
+        statsPlayer.LoosePV -= LoosePV;
+
+        statsPlayer.GainShield -= GainShield;
+        statsPlayer.LooseShield -= LooseShield;
+
+
+        statsEnnemi.EnnemiGainPV -= EnnemiGainPV;
+        statsEnnemi.EnnemiLoosePV -= EnnemiLoosePV;
+
+        statsEnnemi.EnnemiGainShield -= EnnemiGainShield;
+        statsEnnemi.EnnemiLooseShield -= EnnemiLostShield;
     }
 
-    public void LoadFirstScene()
+
+    private void GainPV (int amount)
     {
-        SceneManager.LoadScene(1);
+        print("pv gained ");
+    }
+    private void LoosePV (int amount)
+    {
+        print("pv lost ");
     }
 
-    public void OpenOptions() 
+    private void GainShield (int amount)
     {
-        GOMainMenu.SetActive(false);
-        GOOptionsMenu.SetActive(true);
+        print("gain Shield ");
+    }
+    private void LooseShield(int amount)
+    {
+        print("lost Shield ");
     }
 
 
-    public void OpenMainMenu()
+    private void EnnemiGainPV (int amount )
     {
-        GOMainMenu.SetActive(true);
-        GOOptionsMenu.SetActive(false);
+        print("Ennemi gained health");
     }
-
+    private void EnnemiLoosePV (int amount )
+    {
+        print("ennemi lost health");
+    }
+    private void EnnemiGainShield (int amount )
+    {
+        print("ennemi gained shield");
+    }
+    private void EnnemiLostShield (int amount )
+    {
+        print("ennemi lost shield");
+    }
 }
