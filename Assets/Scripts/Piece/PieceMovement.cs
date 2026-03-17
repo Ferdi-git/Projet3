@@ -15,7 +15,6 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
 
     private void Start()
     {
-        rotateGoal = (int)transform.rotation.z / 90 * 90;
 
     }
 
