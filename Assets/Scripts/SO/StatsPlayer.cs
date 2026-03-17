@@ -27,7 +27,22 @@ public class StatsPlayer : ScriptableObject
     }
 
     public void InvokeGainShield(int amount) { shield += amount;  GainShield?.Invoke(amount); }
-    public void InvokeLooseShield(int amount) { shield -= amount; LooseShield?.Invoke(amount); }
+    public void InvokeLooseShield(int amount) 
+    { 
+        if (amount <= shield)
+        {
+            shield -= amount;
+            LooseShield?.Invoke(amount);
+        }
+        else
+        {
+            LooseShield?.Invoke(shield);
+            shield = 0;
+            InvokeLoosePV(amount - shield);
+        }
+        
+
+    }
 
 
 

@@ -2,8 +2,23 @@
 public class OutputPort 
 {
     public StatsPlayer statsPlayer;
+    public StatsEnnemi statsEnnemi;
 
+    //player
     public void TakeDamage (int amount)
+    {
+        if (statsPlayer.GetShield() <= 0 )
+        {
+            statsPlayer.InvokeLoosePV(amount);
+        }
+        else
+        {
+            statsPlayer.InvokeLooseShield(amount);
+        }
+
+        
+    }
+    public void LoosePV (int amount)
     {
         statsPlayer.InvokeLoosePV(amount);
     }
@@ -18,5 +33,31 @@ public class OutputPort
     public void LooseShield (int amount)
     {
         statsPlayer.InvokeLooseShield (amount);
+    }
+
+    //ennemi 
+
+    public void DoDamage (int amount )
+    {
+        if (statsEnnemi.GetShield() <= 0)
+        {
+            statsEnnemi.InvokeEnnemiLoosePV(amount);
+        }
+        else
+        {
+            statsEnnemi.InvokeEnnemiLooseShield(amount);
+        }
+    }
+    public void EnnemiHeal (int amount)
+    {
+        statsEnnemi.InvokeEnnemiGainPV(amount);
+    }
+    public void EnnemiGainShield (int amount )
+    {
+        statsEnnemi.InvokeEnnemiGainShield(amount);
+    }
+    public void EnnemiLooseShield(int amount)
+    {
+        statsEnnemi.InvokeEnnemiLooseShield(amount);
     }
 }
