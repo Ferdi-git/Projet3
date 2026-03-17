@@ -1521,7 +1521,7 @@ GameObject:
   - component: {fileID: 221861007}
   - component: {fileID: 221861008}
   m_Layer: 0
-  m_Name: CombatUIManager
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
