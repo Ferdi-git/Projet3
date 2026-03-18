@@ -7,7 +7,7 @@ using UnityEngine;
 public class PiecePersonality : MonoBehaviour
 {
     public SoPieces soPieces;
-    [SerializeField] private Transform[] posCases;
+    //[SerializeField] private Transform[] posCases;
     [SerializeField] SOEventGridManager sOEventGridManager;
 
     [SerializeField] private Transform[] surroundingPoints;

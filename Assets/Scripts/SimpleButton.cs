@@ -8,6 +8,7 @@ public class SimpleButton : MonoBehaviour, IMouseClickable, IMouseHoverable
 
     public void OnClick()
     {
+        print("ButtonClicked");
         onClick.Invoke();
     }
 
