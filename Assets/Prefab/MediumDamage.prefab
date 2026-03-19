@@ -338,6 +338,14 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 1.0000001
       objectReference: {fileID: 0}
+    - target: {fileID: 9175662055221659112, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
+      propertyPath: posCases.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175662055221659112, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
+      propertyPath: 'posCases.Array.data[3]'
+      value: 
+      objectReference: {fileID: 3104245667471297973}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

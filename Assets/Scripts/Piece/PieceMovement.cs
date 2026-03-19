@@ -1,8 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , IMouseClickable
+public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, IMouseClickable
 {
     [SerializeField] private Transform[] posCases;
     [SerializeField] private LayerMask gridLayer;
@@ -11,10 +10,8 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
     private Quaternion originalRota;
 
     public bool isDraging = false;
-
     public bool isRotating = false;
     public bool isRotatingInputBuffer = false;
-
 
     private void Start()
     {
@@ -33,18 +30,23 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
     public void OnDragMove(Vector2 worldPos)
     {
         Vector2 targetPos = worldPos;
-        transform.position = new Vector3(targetPos.x, targetPos.y +0.1f, -0.1f);
+        transform.position = new Vector3(targetPos.x, targetPos.y + 0.1f, -0.1f);
     }
 
     public void OnDragEnd(Vector2 worldPos)
     {
         isDraging = false;
-        transform.DOScale(1f, 0.1f);
+        isRotatingInputBuffer = false;
+        isRotating = false;
 
-        transform.position = new Vector3(transform.position.x, transform.position.y , 0);
+        transform.DOKill();
+        transform.DOScale(1f, 0.1f);
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         if (CheckIfCanBePlaced())
         {
+            float snappedZ = Mathf.Round(transform.eulerAngles.z / 90f) * 90f;
+            transform.rotation = Quaternion.Euler(0, 0, snappedZ);
             SnapToGrid();
         }
         else
@@ -53,7 +55,6 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
             {
                 Refill();
             });
-
             transform.DORotateQuaternion(originalRota, 0.2f).SetEase(Ease.OutBack);
         }
     }
@@ -62,14 +63,12 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
     {
         transform.DOScale(1.05f, 0.1f);
         transform.position = new Vector3(transform.position.x, transform.position.y, -0.1f);
-
     }
 
-    public void OnHoverExit() 
-    { 
+    public void OnHoverExit()
+    {
         transform.DOScale(1f, 0.1f);
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-
     }
 
     private void Unfill()
@@ -120,7 +119,6 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
         GridSlot targetSlot = null;
         Vector3 targetSlotPos = Vector3.zero;
 
-
         Vector2 samplePos = (Vector2)posCases[0].position;
 
         foreach (var hit in Physics2D.OverlapPointAll(samplePos, gridLayer))
@@ -136,7 +134,6 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
 
         if (targetSlot == null) return;
 
-
         transform.position = targetSlotPos;
 
         foreach (var c in posCases)
@@ -147,40 +144,36 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable , 
                 if (slot != null && !slot.isFilled) { slot.isFilled = true; break; }
             }
         }
-
-
     }
 
     public void OnClick()
     {
-        //nothing
+        // nothing
     }
 
     public void OnRightClick()
     {
-        print("Rotate");
-        if (isRotating || !isDraging)
+        if (!isDraging) return;
+
+        if (isRotating)
         {
             isRotatingInputBuffer = true;
             return;
         }
 
         isRotating = true;
-        //rotateGoal -= 90;
-        transform.DORotate(new Vector3(0,0, (int)transform.rotation.z / 90 * 90 -90), 0.2f, RotateMode.LocalAxisAdd).OnComplete(()=>
-        { 
+
+        float currentZ = transform.eulerAngles.z;
+        float targetZ = currentZ - 90f;
+
+        transform.DORotate(new Vector3(0, 0, targetZ), 0.2f, RotateMode.FastBeyond360).OnComplete(() =>
+        {
             isRotating = false;
             if (isRotatingInputBuffer)
             {
                 isRotatingInputBuffer = false;
                 OnRightClick();
             }
-           
         });
-
-        //transform.DORotate(transform.right * 90, 0.5f, RotateMode.WorldAxisAdd).SetEase(Ease.InOutSine);
-        //transform.rotation *= Quaternion.Euler(0, 0, -90); ;
-
-
     }
 }
