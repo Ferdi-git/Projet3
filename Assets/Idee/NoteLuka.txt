@@ -1,4 +1,4 @@
-stats player ennemi 
+
 Inventaire
 systeme de choix de piece 
 Sound systeme 
