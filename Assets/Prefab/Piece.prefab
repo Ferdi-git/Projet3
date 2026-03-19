@@ -302,6 +302,9 @@ MonoBehaviour:
   gridLayer:
     serializedVersion: 2
     m_Bits: 128
+  isDraging: 0
+  isRotating: 0
+  isRotatingInputBuffer: 0
 --- !u!60 &3463587272074752591
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -368,7 +371,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   soPieces: {fileID: 11400000, guid: 16aec410ef0d80742bdf5cec8712e830, type: 2}
-  posCases: []
   sOEventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   surroundingPoints:
   - {fileID: 2840823185506993328}
@@ -379,7 +381,6 @@ MonoBehaviour:
   - {fileID: 1980173485376708772}
   - {fileID: 6484838937401351868}
   wasUsed: 0
-  TEMPORARYSTRING: 
   glowIntensity: 1
   glowDuration: 0.3
   spriteRenderers:

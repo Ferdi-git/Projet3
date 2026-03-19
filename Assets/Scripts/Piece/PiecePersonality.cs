@@ -16,7 +16,7 @@ public class PiecePersonality : MonoBehaviour
     AudioSource audioSource;
 
     [SerializeField] private float glowIntensity = 2f;   // above 1 = triggers bloom
-    [SerializeField] private float glowDuration = 0.3f;
+    [SerializeField] private float glowDuration = 0.25f;
     public SpriteRenderer[] spriteRenderers;
 
     Color baseColor;
@@ -93,7 +93,7 @@ public class PiecePersonality : MonoBehaviour
             audioSource.pitch = randStartPitch + 0.05f * number;
             audioSource.Play();
 
-            transform.DOScale(1f, 0.1f).SetDelay(delai);
+            transform.DOScale(1f, 0.1f);
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         });
@@ -107,7 +107,7 @@ public class PiecePersonality : MonoBehaviour
                                  baseColor.b + glowIntensity), glowDuration * 0.3f).SetDelay(delai)
               .OnComplete(() =>
               {
-                  sr.DOColor(baseColor, glowDuration).SetDelay(delai);
+                  sr.DOColor(baseColor, glowDuration);
 
               });
         }
