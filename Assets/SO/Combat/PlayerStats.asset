@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b6f2a75f435724faba9269baaf24d8, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: Assembly-CSharp::StatsPlayer
-  pv: 200
-  shield: 12
+  pv: 50
+  shield: 16
+  pvMax: 50
