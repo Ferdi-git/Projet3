@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e4d3bfdd24f12449e13bc7bca23caf, type: 3}
   m_Name: EnnemiStats
   m_EditorClassIdentifier: Assembly-CSharp::StatsEnnemi
-  pv: 60
+  pv: 0
   shield: 0
   pvMax: 60
