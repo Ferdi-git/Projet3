@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private StatsPlayer statsPlayer;
     [SerializeField] private StatsEnnemi statsEnnemi;
+
+    [SerializeField] private Slider PlayerSlider;
+    [SerializeField] private Slider EnnemiSlider;
 
     private void OnEnable()
     {
@@ -37,39 +41,61 @@ public class UIManager : MonoBehaviour
     }
 
 
+
+    private void UpdateUI ()
+    {
+        int pvPlayer = statsPlayer.GetPV();
+        int pvMaxPlayer = statsPlayer.pvMax;
+        int shieldPlayer = statsPlayer.GetShield();
+
+        int pvEnnemi = statsEnnemi.GetPV();
+        int pvMaxEnnemi = statsEnnemi.pvMax;
+        int shieldEnnemi = statsEnnemi.GetShield();
+
+        PlayerSlider.value = (pvPlayer / pvMaxPlayer)*100;
+        EnnemiSlider.value = (pvEnnemi / pvMaxEnnemi)*100;
+    }
     private void GainPV (int amount)
     {
         print("pv gained ");
+        UpdateUI();
     }
     private void LoosePV (int amount)
     {
         print("pv lost ");
+        UpdateUI();
     }
 
     private void GainShield (int amount)
     {
         print("gain Shield ");
+        UpdateUI();
     }
     private void LooseShield(int amount)
     {
         print("lost Shield ");
+        UpdateUI();
     }
 
 
     private void EnnemiGainPV (int amount )
     {
         print("Ennemi gained health");
+        UpdateUI();
     }
     private void EnnemiLoosePV (int amount )
     {
         print("ennemi lost health");
+        UpdateUI();
     }
     private void EnnemiGainShield (int amount )
     {
         print("ennemi gained shield");
+        UpdateUI();
     }
     private void EnnemiLostShield (int amount )
     {
         print("ennemi lost shield");
+        UpdateUI();
     }
 }

@@ -6,6 +6,7 @@ public class StatsEnnemi : ScriptableObject
 {
     public int pv;
     public int shield;
+    public int pvMax;
 
     public Action<int> EnnemiGainPV;
     public Action<int> EnnemiLoosePV;

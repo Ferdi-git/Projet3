@@ -7,6 +7,8 @@ public class StatsPlayer : ScriptableObject
     public int pv;
     public int shield;
 
+    public int pvMax;
+
     public Action<int> GainPV ;
     public Action<int> LoosePV;
 
