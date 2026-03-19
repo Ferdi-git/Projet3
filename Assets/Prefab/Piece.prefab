@@ -381,6 +381,20 @@ MonoBehaviour:
   - {fileID: 1980173485376708772}
   - {fileID: 6484838937401351868}
   wasUsed: 0
+  audioClips:
+  - {fileID: 8300000, guid: 055dbc165b7f4024e8f2cc8e20672050, type: 3}
+  - {fileID: 8300000, guid: fe64e695179094b47a4b856439c75004, type: 3}
+  - {fileID: 8300000, guid: af825924a59c8b447b6815f0ebaa2472, type: 3}
+  - {fileID: 8300000, guid: 9852ed5c7341e614a96ed16043dcafdd, type: 3}
+  - {fileID: 8300000, guid: ac2800d0ff33733438f50e747438424e, type: 3}
+  - {fileID: 8300000, guid: e3e90540720eaeb4db3058a8ec4fc004, type: 3}
+  - {fileID: 8300000, guid: ea2832bd5a3c9df43bb3518c6af444c7, type: 3}
+  - {fileID: 8300000, guid: 681c449a2d701c34e8181f306330c8c6, type: 3}
+  - {fileID: 8300000, guid: 7a5e725df479a4c4b800a383ad5028f7, type: 3}
+  - {fileID: 8300000, guid: 1db4053871e1d394ca6e29882d928935, type: 3}
+  - {fileID: 8300000, guid: 5bdb99555ff018a45919cf2ce193959e, type: 3}
+  - {fileID: 8300000, guid: 60c53d3a41db9614eae66bd901c914e2, type: 3}
+  - {fileID: 8300000, guid: 889567639aa176c46a9d3f7b3329f91b, type: 3}
   glowIntensity: 1
   glowDuration: 0.3
   spriteRenderers:
