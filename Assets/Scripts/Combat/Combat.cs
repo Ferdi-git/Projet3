@@ -12,10 +12,10 @@ public class Combat : MonoBehaviour
     public void StartTurn ( )
     {
         index = 0;
-        StartCoroutine(Tour(0));
+        StartCoroutine(Tour(0, 0f));
     }
 
-    public void NextPiece ()
+    public void NextPiece (float delai)
     {
         print(index);
         index++;
@@ -23,21 +23,31 @@ public class Combat : MonoBehaviour
         {
             return;
         }
-        StartCoroutine(Tour(index));
+        StartCoroutine(Tour(index, delai));
     }
     
 
-    IEnumerator Tour (int i)
+    IEnumerator Tour (int i, float delai)
     {
         
 
         print("tour 1, piece numero :" + i);
-        float timeToWait = 0.3f - 0.01f * i;
-        timeToWait = Mathf.Clamp(timeToWait, 0.05f, 0.7f);
-        timeToWait = skipFight ? 0 : timeToWait;
-        yield return new WaitForSeconds(timeToWait);
-        soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
-        ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
+        if (delai == 0f)
+        {
+            float timeToWait = 0.3f - 0.01f * i;
+            timeToWait = Mathf.Clamp(timeToWait, 0.05f, 0.7f);
+            timeToWait = skipFight ? 0 : timeToWait;
+            yield return new WaitForSeconds(timeToWait);
+            soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
+            ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
+        }
+        else
+        {
+            yield return new WaitForSeconds(delai);
+            soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
+            ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
+        }
+        
 
 
 
@@ -56,7 +66,7 @@ public class Combat : MonoBehaviour
         }
         else
         {
-            NextPiece();
+            NextPiece(0f);
         }
         //condition pas completé 
         //passer à piece suivante 

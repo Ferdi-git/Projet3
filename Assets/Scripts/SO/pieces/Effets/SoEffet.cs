@@ -12,6 +12,12 @@ public class SoEffet : ScriptableObject
         //appeler une fonction dans le port 
         //ex : 
         //port.AplyEnemyDamage(15);
+        port.EndEffet();
+    }
+    public virtual void RepeatEffet(Context context, OutputPort port, List<int> exemple)
+    {
+        // lui n'aura pas de EndEffet ()
+        port.FinishedRepeatedEffect();
     }
 
 }

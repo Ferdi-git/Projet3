@@ -11,4 +11,10 @@ public class SoEffetTestDoDamage : SoEffet
         port.DoDamage(test[0]);
         port.EndEffet();
     }
+    public override void RepeatEffet(Context context, OutputPort port, List<int> amount)
+    {
+        port.DoDamage(amount[0]);
+        Debug.Log("Finished ");
+        port.FinishedRepeatedEffect();
+    }
 }

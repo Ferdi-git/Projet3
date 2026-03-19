@@ -5,8 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SimpleDamage", menuName = "Effet/SimpleDamage")]
 public class SoEffetSimpleDoDamage : SoEffet
 {
-    public override void Effet(Context context,OutputPort port, List<int> test)
+    public override void Effet(Context context,OutputPort port, List<int> amount)
     {
-        port.DoDamage(test[0]);
+        Debug.Log("effet simple attack");
+        port.DoDamage(amount[0]);
+        port.EndEffet();
+    }
+    public override void RepeatEffet(Context context, OutputPort port, List<int> amount)
+    {
+        Debug.Log("effet répété simple attack");
+        port.DoDamage(amount[0]);
+        Debug.Log("Finished ");
+        port.FinishedRepeatedEffect();
     }
 }

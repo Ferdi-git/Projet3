@@ -1,9 +1,13 @@
 
+using System.Diagnostics;
+
 public class OutputPort 
 {
     public Combat combat;
     public StatsPlayer statsPlayer;
     public StatsEnnemi statsEnnemi;
+    private int i;
+    private float delai;
 
     //player
     public void TakeDamage (int amount)
@@ -66,6 +70,19 @@ public class OutputPort
 
     public void EndEffet ()
     {
-        combat.NextPiece();
+        combat.NextPiece(0f);
+    }
+    public void EndRepeatEffetRequest (int  amount)
+    {
+        i = amount;
+        delai = 0.5f * i; // valeur approximative 
+    }
+    public void FinishedRepeatedEffect ()
+    {
+        i -= 1;
+        if (i <= 0)
+        {
+            combat.NextPiece(delai);
+        }
     }
 }
