@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PlayerStats
   m_EditorClassIdentifier: Assembly-CSharp::StatsPlayer
   pv: 50
-  shield: 16
+  shield: 0
   pvMax: 50

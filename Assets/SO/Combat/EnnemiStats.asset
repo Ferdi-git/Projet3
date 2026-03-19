@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EnnemiStats
   m_EditorClassIdentifier: Assembly-CSharp::StatsEnnemi
   pv: 60
-  shield: 10
+  shield: 0
   pvMax: 60

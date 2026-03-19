@@ -52,8 +52,10 @@ public class UIManager : MonoBehaviour
         int pvMaxEnnemi = statsEnnemi.pvMax;
         int shieldEnnemi = statsEnnemi.GetShield();
 
-        PlayerSlider.value = (pvPlayer / pvMaxPlayer)*100;
-        EnnemiSlider.value = (pvEnnemi / pvMaxEnnemi)*100;
+        PlayerSlider.maxValue = pvMaxPlayer;
+        EnnemiSlider.maxValue =  pvMaxEnnemi;
+        PlayerSlider.value = pvPlayer;
+        EnnemiSlider.value = pvEnnemi;
     }
     private void GainPV (int amount)
     {
