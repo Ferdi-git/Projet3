@@ -9,6 +9,20 @@ public class Combat : MonoBehaviour
     [SerializeField] private StatsEnnemi statsEnnemi;
 
     [SerializeField] private int index;
+    [SerializeField] private GameObject bouton;
+    [SerializeField] private EnnemiManager ennemiManager;
+
+
+    private void Start()
+    {
+        bouton.SetActive(false);
+    }
+    public void StartCombat ()
+    {
+        bouton.SetActive(true);
+        ennemiManager.GenerateEnnemi();
+    }
+
     public void StartTurn ( )
     {
         index = 0;
