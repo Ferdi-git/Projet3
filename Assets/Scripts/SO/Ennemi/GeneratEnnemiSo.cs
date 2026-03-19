@@ -7,7 +7,7 @@ public class GeneratEnnemiSo : ScriptableObject
 {
     public string Name;
     public List<EnnemiAttribut> Effets;
-    public Sprite sprite;
+    public Sprite sprite; // pour l'instant un seul sprite par ennemi mais possibilité de changement de sprite entre etat idle, pris un coup et mort peut etre 
     [Range(0, 200)]
     public int Résistance= 100;
 }
