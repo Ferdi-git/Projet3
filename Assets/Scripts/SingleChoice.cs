@@ -7,7 +7,8 @@ public class SingleChoice : MonoBehaviour
 
     [SerializeField] private Image image;
     [SerializeField] private TextMeshProUGUI text;
-    private SoPieces currentSO ;
+    [SerializeField] private SoPieces currentSO ;
+    public GameObject onePieceChoice ;
     
     public void Initialize(SoPieces piece)
     {
@@ -19,8 +20,8 @@ public class SingleChoice : MonoBehaviour
 
     public void CreateBlock()
     {
-        print("Cretate");
-        Instantiate(currentSO.prefab);
+        print("Create");
+        Instantiate(currentSO.prefab, onePieceChoice.transform.position, onePieceChoice.transform.rotation, onePieceChoice.transform);
 
     }
 

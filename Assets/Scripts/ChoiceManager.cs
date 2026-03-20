@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,11 @@ public class ChoiceManager : MonoBehaviour
 {
     [SerializeField] int nbrOfChoice;
 
-    [SerializeField] GameObject layout;
+    [SerializeField] GameObject choiceLayout;
+
+    [SerializeField] GameObject onePieceScreen;
+
+    [SerializeField] GameObject onePiecePiece;
 
     [SerializeField] SoPieces[] difPieces;
 
@@ -18,17 +23,44 @@ public class ChoiceManager : MonoBehaviour
     {
         for (int i = 0; i < nbrOfChoice ; i++)
         {
-            var prefab = Instantiate(prefabPieceChoice, layout.transform);
+            var prefab = Instantiate(prefabPieceChoice, choiceLayout.transform);
             int randInt = Random.Range(0, difPieces.Length);
-            prefab.GetComponent<SingleChoice>().Initialize(difPieces[randInt]); ;
-            prefab.GetComponent<Button>().onClick.AddListener(OnClick);
+            SingleChoice script =  prefab.GetComponent<SingleChoice>();
+            script.Initialize(difPieces[randInt]);
+            prefab.GetComponent<Button>().onClick.AddListener(OpenPieceScreen);
+            script.onePieceChoice = onePiecePiece;
         }
     }
 
-    public void OnClick()
+    public void OpenPieceScreen()
     {
-        layout.SetActive(false);
+        choiceLayout.SetActive(false);
+        onePieceScreen.SetActive(true);
     }
 
+    public void ReopenLayout()
+    {
+        choiceLayout.SetActive(true);
+        onePieceScreen.SetActive(false);
+
+        DestroyOnePieceChildren();
+    }
+
+    private void DestroyOnePieceChildren()
+    {
+
+        var children = new List<Transform>();
+        for (int i = 0; i < onePiecePiece.transform.childCount; i++)
+        {
+
+            children.Add(onePiecePiece.transform.GetChild(i));
+        }
+
+        for (int i = 0; i < children.Count; i++)
+        {
+
+            Destroy(children[i].gameObject);
+        }
+    }
 
 }
