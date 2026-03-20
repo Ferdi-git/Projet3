@@ -15,8 +15,9 @@ public class Combat : MonoBehaviour
 
     private void Start()
     {
-        bouton.SetActive(false);
+        StartCombat();
     }
+
     public void StartCombat ()
     {
         bouton.SetActive(true);
