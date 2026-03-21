@@ -21,12 +21,10 @@ public class PiecePersonality : MonoBehaviour
     [SerializeField] private float glowDuration = 0.25f;
     public SpriteRenderer[] spriteRenderers;
 
-    Color baseColor;
-
+    [SerializeField, ColorUsage(true, true)] private Color repeatGlowColor = Color.white;
 
     private void Start()
     {
-        baseColor = spriteRenderers[0].color;
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -74,16 +72,17 @@ public class PiecePersonality : MonoBehaviour
 
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
-            SpriteRenderer sr = spriteRenderers[i];
+            Material mat = spriteRenderers[i].material;
+            Color baseColor = mat.GetColor("_GlowColor");
 
-            sr.DOColor(new Color(baseColor.r + glowIntensity,
-                                 baseColor.g + glowIntensity,
-                                 baseColor.b + glowIntensity), glowDuration * 0.3f)
-              .OnComplete(() =>
-              {
-                  sr.DOColor(baseColor, glowDuration);
+            float intensityMultiplier = Mathf.Pow(2f, glowIntensity);
+            Color glowColor = baseColor * intensityMultiplier;
 
-              });
+            mat.DOColor(glowColor, "_GlowColor", glowDuration * 0.3f)
+               .OnComplete(() =>
+               {
+                   mat.DOColor(baseColor, "_GlowColor", glowDuration);
+               });
         }
     }
 
@@ -108,18 +107,20 @@ public class PiecePersonality : MonoBehaviour
 
         });
 
+
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
-            SpriteRenderer sr = spriteRenderers[i];
+            Material mat = spriteRenderers[i].material;
+            Color baseColor = mat.GetColor("_GlowColor");
 
-            sr.DOColor(new Color(baseColor.r + glowIntensity,
-                                 baseColor.g + glowIntensity,
-                                 baseColor.b + glowIntensity), glowDuration * 0.3f).SetDelay(delai)
-              .OnComplete(() =>
-              {
-                  sr.DOColor(baseColor, glowDuration);
+            float intensityMultiplier = Mathf.Pow(2f, glowIntensity);
+            Color glowColor = repeatGlowColor * intensityMultiplier; // different color
 
-              });
+            mat.DOColor(glowColor, "_GlowColor", glowDuration * 0.3f).SetDelay(delai)
+               .OnComplete(() =>
+               {
+                   mat.DOColor(baseColor, "_GlowColor", glowDuration); // still returns to original
+               });
         }
     }
 

@@ -395,12 +395,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5bdb99555ff018a45919cf2ce193959e, type: 3}
   - {fileID: 8300000, guid: 60c53d3a41db9614eae66bd901c914e2, type: 3}
   - {fileID: 8300000, guid: 889567639aa176c46a9d3f7b3329f91b, type: 3}
-  glowIntensity: 1
+  glowIntensity: 14
   glowDuration: 0.3
   spriteRenderers:
   - {fileID: 6817588394426073001}
   - {fileID: 2440254612161997803}
   - {fileID: 6289289625945670124}
+  repeatGlowColor: {r: 0.00008260785, g: 0.0009765625, b: 0, a: 1}
 --- !u!82 &7688367237008495115
 AudioSource:
   m_ObjectHideFlags: 0
