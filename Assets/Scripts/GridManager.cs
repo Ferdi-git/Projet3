@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static GridManager;
 
 public class GridManager : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private PiecePersonality[] piecesExist;
     [SerializeField] private List<BoardPiece> listBoardPiecesExist;
+
+    public SortMode baseSortMode;
+
+    public enum SortMode { ByRow, ByColumn }
+
 
     private void OnEnable()
     {
@@ -29,6 +35,7 @@ public class GridManager : MonoBehaviour
 
     private void Start()
     {
+        SortBoard(baseSortMode);
         for(int i = 0; i < piecesExist.Length; i++)
         {
             BoardPiece newBoardPiece = new();
@@ -77,6 +84,11 @@ public class GridManager : MonoBehaviour
 
             }
         }
+
+        listToReturn = baseSortMode == SortMode.ByRow
+      ? listToReturn.OrderBy(p => -p.piecePersonality.transform.position.y).ThenBy(p => p.piecePersonality.transform.position.x).ToList()
+      : listToReturn.OrderBy(p => p.piecePersonality.transform.position.x).ThenBy(p => -p.piecePersonality.transform.position.y).ToList();
+
         return listToReturn;
     }
 
@@ -93,6 +105,16 @@ public class GridManager : MonoBehaviour
         Debug.LogError("Weird");
         return null;
     }
+
+
+    private void SortBoard(SortMode sortMode)
+    {
+        gridSlots = sortMode == SortMode.ByRow
+            ? gridSlots.OrderBy(p => -p.transform.position.y).ThenBy(p => p.transform.position.x).ToArray()
+            : gridSlots.OrderBy(p => p.transform.position.x).ThenBy(p => -p.transform.position.y).ToArray();
+    }
+
+
 }
 
 
