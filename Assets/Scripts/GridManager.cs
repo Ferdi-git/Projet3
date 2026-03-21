@@ -13,8 +13,8 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private SoBoard theBoard;
 
+    [SerializeField] private SoSaveInventory soSaveInventory;
     [SerializeField] private PiecePersonality[] piecesExist;
-    [SerializeField] private List<BoardPiece> listBoardPiecesExist;
 
     public SortMode baseSortMode;
 
@@ -24,24 +24,27 @@ public class GridManager : MonoBehaviour
     private void OnEnable()
     {
         gridManager.ActualiseBoard += ActualiseBoard;
+        gridManager.ResetGridSlots += ResetGridSlots;
 
     }
 
     private void OnDisable()
     {
         gridManager.ActualiseBoard -= ActualiseBoard;
+        gridManager.ResetGridSlots -= ResetGridSlots;
 
     }
 
     private void Start()
     {
         SortBoard(baseSortMode);
-        for(int i = 0; i < piecesExist.Length; i++)
+        soSaveInventory.listBoardPiecesExist.Clear();
+        for (int i = 0; i < piecesExist.Length; i++)
         {
             BoardPiece newBoardPiece = new();
             newBoardPiece.piecePersonality = piecesExist[i];
             newBoardPiece.soPieces = piecesExist[i].soPieces;
-            listBoardPiecesExist.Add(newBoardPiece); 
+            soSaveInventory.listBoardPiecesExist.Add(newBoardPiece); 
         }
 
     }
@@ -95,17 +98,16 @@ public class GridManager : MonoBehaviour
 
     private BoardPiece GetBoardPiece(PiecePersonality piecePersonality)
     {
-        for (int nbr = 0; nbr < listBoardPiecesExist.Count; nbr++)
+        for (int nbr = 0; nbr < soSaveInventory.listBoardPiecesExist.Count; nbr++)
         {
-            if (listBoardPiecesExist[nbr].piecePersonality == piecePersonality)
+            if (soSaveInventory.listBoardPiecesExist[nbr].piecePersonality == piecePersonality)
             {
-                return listBoardPiecesExist[nbr];
+                return soSaveInventory.listBoardPiecesExist[nbr];
             }
         }
         Debug.LogError("Weird");
         return null;
     }
-
 
     private void SortBoard(SortMode sortMode)
     {
@@ -114,6 +116,14 @@ public class GridManager : MonoBehaviour
             : gridSlots.OrderBy(p => p.transform.position.x).ThenBy(p => -p.transform.position.y).ToArray();
     }
 
+
+    public void ResetGridSlots()
+    {
+        for(int nbr = 0; nbr < gridSlots.Length ; nbr++)
+        {
+            gridSlots[nbr].isFilled = false;
+        }
+    }
 
 }
 

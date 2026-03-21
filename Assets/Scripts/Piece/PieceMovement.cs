@@ -13,7 +13,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
     public bool isRotating = false;
     public bool isRotatingInputBuffer = false;
 
-    private void Start()
+    private void Awake()
     {
         SnapToGrid();
     }
@@ -114,7 +114,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         return false;
     }
 
-    private void SnapToGrid()
+    public void SnapToGrid()
     {
         GridSlot targetSlot = null;
         Vector3 targetSlotPos = Vector3.zero;
