@@ -9,7 +9,7 @@ public class SingleChoice : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private SoPieces currentSO ;
     public GameObject onePieceChoice ;
-    
+    public ChoiceManager choiceManager ;
     public void Initialize(SoPieces piece)
     {
         image.sprite = piece.image;
@@ -21,7 +21,7 @@ public class SingleChoice : MonoBehaviour
     public void CreateBlock()
     {
         print("Create");
-        Instantiate(currentSO.prefab, onePieceChoice.transform.position, onePieceChoice.transform.rotation, onePieceChoice.transform);
+        choiceManager.lastGeneratedPiece = Instantiate(currentSO.prefab, onePieceChoice.transform.position, onePieceChoice.transform.rotation, onePieceChoice.transform);
 
     }
 

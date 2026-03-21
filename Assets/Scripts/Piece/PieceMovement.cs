@@ -6,6 +6,8 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
     [SerializeField] private Transform[] posCases;
     [SerializeField] private LayerMask gridLayer;
 
+    [SerializeField] SOEventGridManager eventGrid;
+
     private Vector3 originalPos;
     private Quaternion originalRota;
 
@@ -144,6 +146,9 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
                 if (slot != null && !slot.isFilled) { slot.isFilled = true; break; }
             }
         }
+
+        eventGrid.InvokePiecePlaced(this.gameObject);
+
     }
 
     public void OnClick()

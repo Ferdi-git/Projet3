@@ -45,6 +45,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
     - target: {fileID: 4797873549879812826, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
+      propertyPath: spriteRenderers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797873549879812826, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: surroundingPoints.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -151,6 +155,10 @@ PrefabInstance:
     - target: {fileID: 7084960957256241923, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175662055221659112, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
+      propertyPath: posCases.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9175662055221659112, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: 'posCases.Array.data[2]'

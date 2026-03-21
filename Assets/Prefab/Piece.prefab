@@ -302,6 +302,7 @@ MonoBehaviour:
   gridLayer:
     serializedVersion: 2
     m_Bits: 128
+  eventGrid: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   isDraging: 0
   isRotating: 0
   isRotatingInputBuffer: 0

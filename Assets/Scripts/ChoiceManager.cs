@@ -6,17 +6,33 @@ using UnityEngine.UI;
 public class ChoiceManager : MonoBehaviour
 {
     [SerializeField] int nbrOfChoice;
-
     [SerializeField] GameObject choiceLayout;
-
     [SerializeField] GameObject onePieceScreen;
-
     [SerializeField] GameObject onePiecePiece;
-
-    [SerializeField] SoPieces[] difPieces;
-
     [SerializeField] GameObject prefabPieceChoice;
 
+    [SerializeField] SOEventGridManager eventGridManager;
+    [SerializeField] SoPieces[] difPieces;
+
+    public GameObject Grid;
+
+    public GameObject lastGeneratedPiece = null; 
+
+    private void OnEnable()
+    {
+        eventGridManager.PiecePlaced += CheckIfPiecePlaced;
+    }
+
+    private void OnDisable()
+    {
+        eventGridManager.PiecePlaced -= CheckIfPiecePlaced;
+    }
+
+
+    private void Start()
+    {
+        GeneratePiece();
+    }
 
     [Button]
     public void GeneratePiece()
@@ -27,6 +43,7 @@ public class ChoiceManager : MonoBehaviour
             int randInt = Random.Range(0, difPieces.Length);
             SingleChoice script =  prefab.GetComponent<SingleChoice>();
             script.Initialize(difPieces[randInt]);
+            script.choiceManager = this;
             prefab.GetComponent<Button>().onClick.AddListener(OpenPieceScreen);
             script.onePieceChoice = onePiecePiece;
         }
@@ -61,6 +78,23 @@ public class ChoiceManager : MonoBehaviour
 
             Destroy(children[i].gameObject);
         }
+    }
+
+    private void CheckIfPiecePlaced(GameObject go)
+    {
+        if(go == lastGeneratedPiece)
+        {
+            go.transform.SetParent(null);
+            eventGridManager.InvokeSaveInventory();
+            EndChoice();
+        }
+    }
+
+    private void EndChoice()
+    {
+        print("EndChoice");
+        Grid.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 
 }

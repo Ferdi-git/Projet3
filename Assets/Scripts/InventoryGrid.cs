@@ -8,6 +8,19 @@ public class InventoryGrid : MonoBehaviour
     [SerializeField] private SoSaveInventory soSaveInventory;
     [SerializeField] private SOEventGridManager gridManager;
 
+
+    private void OnEnable()
+    {
+        gridManager.SaveInventory += SaveGrid;
+        gridManager.ResetInventory += ResetInventory;
+    }
+
+    private void OnDisable()
+    {
+        gridManager.SaveInventory -= SaveGrid;
+        gridManager.ResetInventory -= ResetInventory;
+    }
+
     private void Start()
     {
         SaveGrid();
