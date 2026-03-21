@@ -53,6 +53,7 @@ public class GridManager : MonoBehaviour
     [Button]
     private void ActualiseBoard()
     {
+        SortBoard(baseSortMode);
         theBoard.boardPieces.Clear();
 
         for (int i = 0; i < gridSlots.Length; i++)
