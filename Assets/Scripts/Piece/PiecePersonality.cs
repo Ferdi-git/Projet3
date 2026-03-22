@@ -147,4 +147,8 @@ public class PiecePersonality : MonoBehaviour
         healthPoint  -= dmg;
     }
 
+    public void Heal(float healPoint)
+    {
+        healthPoint += healPoint;
+    }
 }
