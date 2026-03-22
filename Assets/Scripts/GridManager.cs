@@ -50,7 +50,6 @@ public class GridManager : MonoBehaviour
     }
 
 
-    [Button]
     private void ActualiseBoard()
     {
         SortBoard(baseSortMode);
@@ -124,6 +123,26 @@ public class GridManager : MonoBehaviour
         {
             gridSlots[nbr].isFilled = false;
         }
+    }
+
+    [Button]
+    public void SelectRandomSlot()
+    {
+        int randInt = Random.Range(0, gridSlots.Length);
+
+        if(randInt-1 >= 0)
+            gridSlots[randInt-1].GetSelected();
+
+        gridSlots[randInt].GetSelected();
+        
+        if (randInt+1< gridSlots.Length)
+            gridSlots[randInt+1].GetSelected();
+
+        if (randInt+4 < gridSlots.Length)
+            gridSlots[randInt + 4].GetSelected();
+
+        if (randInt-4 >= 0)
+            gridSlots[randInt - 4].GetSelected();
     }
 
 }
