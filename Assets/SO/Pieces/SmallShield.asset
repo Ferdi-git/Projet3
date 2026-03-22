@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
   m_Name: SmallShield
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
+  healthPoint: 10
   prefab: {fileID: 9169137471980413390, guid: 9ae0bec9ad9733c408837d73c3f76eab, type: 3}
   image: {fileID: 21300000, guid: e305d4ff6fcb66148a89b78f93cc03fa, type: 3}
   pieceEffet:

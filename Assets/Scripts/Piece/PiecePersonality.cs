@@ -7,7 +7,7 @@ using UnityEngine.Audio;
 
 public class PiecePersonality : MonoBehaviour
 {
-    public SoPieces soPieces;
+    public SoPieces soPiece;
     //[SerializeField] private Transform[] posCases;
     [SerializeField] SOEventGridManager sOEventGridManager;
 
@@ -23,8 +23,16 @@ public class PiecePersonality : MonoBehaviour
 
     [SerializeField, ColorUsage(true, true)] private Color repeatGlowColor = Color.white;
 
+
+
+    public float healthPoint;
+    public float shield;
+
+
+
     private void Start()
     {
+        healthPoint = soPiece.healthPoint;
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -124,5 +132,19 @@ public class PiecePersonality : MonoBehaviour
         }
     }
 
+
+
+    public void TakeDamage(float dmg)
+    {
+        if(shield > 0)
+        {
+            float shieldToLose = shield - dmg;
+
+            shieldToLose = Mathf.Clamp(shieldToLose,0 , shield);
+            dmg -= shieldToLose;
+            shield -= shieldToLose;
+        }
+        healthPoint  -= dmg;
+    }
 
 }

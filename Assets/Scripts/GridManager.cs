@@ -43,7 +43,7 @@ public class GridManager : MonoBehaviour
         {
             BoardPiece newBoardPiece = new();
             newBoardPiece.piecePersonality = piecesExist[i];
-            newBoardPiece.soPieces = piecesExist[i].soPieces;
+            newBoardPiece.soPieces = piecesExist[i].soPiece;
             soSaveInventory.listBoardPiecesExist.Add(newBoardPiece); 
         }
 
