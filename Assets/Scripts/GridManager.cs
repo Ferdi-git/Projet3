@@ -75,8 +75,6 @@ public class GridManager : MonoBehaviour
             currentBoardPiece.context.voisins = GetVoisins(pieceOnSlot);
             theBoard.boardPieces.Add(currentBoardPiece);
         }
-
-
     }
     
     private List<BoardPiece> GetVoisins(PiecePersonality piecePerso)

@@ -3057,6 +3057,9 @@ MonoBehaviour:
   - {fileID: 1399396127}
   soSaveInventory: {fileID: 11400000, guid: 767dd48b98fbd4f42942f9e086303307, type: 2}
   gridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
+  timeToGoBackToInventory: 0.2
+  delayInBetweenBackToInventory: 0.05
+  theBoard: {fileID: 11400000, guid: ef4a20505366c5e48ac6e60e3a1740e0, type: 2}
 --- !u!114 &427545451 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8047913450760407133, guid: 6af910bd501043a44ab2d50b872bb3c8, type: 3}

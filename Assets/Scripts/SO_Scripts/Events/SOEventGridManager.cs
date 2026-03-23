@@ -12,7 +12,7 @@ public class SOEventGridManager : ScriptableObject
     public Action SaveInventory;
     public Action ResetInventory;
 
-    public void InvokeResetGrid() {  ResetGrid?.Invoke(); }
+    //public void InvokeResetGrid() {  ResetGrid?.Invoke(); }
     public void InvokeResetGridSlots() { ResetGridSlots?.Invoke(); }
     public void InvokeActualiseBoard() { ActualiseBoard?.Invoke(); }
 

@@ -12,14 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbbdc23ae3bd4b4ba6abea76bf5a211, type: 3}
   m_Name: Board
   m_EditorClassIdentifier: Assembly-CSharp::Board
-  boardPieces:
-  - soPieces: {fileID: 11400000, guid: 16aec410ef0d80742bdf5cec8712e830, type: 2}
-    piecePersonality: {fileID: 0}
-    voisins: []
-    context:
-      Tour: 0
-      NbrCaseDeLaPiece: 0
-      NbrPiecesAutour: 0
-      NbrCaseLibre: 0
-      "NbrCaseOccup\xE9": 0
-      NbrDeRepetition: 0
+  boardPieces: []

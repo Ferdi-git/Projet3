@@ -151,6 +151,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
 
     }
 
+
     public void OnClick()
     {
         // nothing
