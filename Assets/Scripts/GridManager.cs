@@ -52,6 +52,7 @@ public class GridManager : MonoBehaviour
             newBoardPiece.soPieces = piecesExist[i].soPiece;
             soSaveInventory.listBoardPiecesExist.Add(newBoardPiece); 
         }
+        ActualiseBoard();
 
     }
 
