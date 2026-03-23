@@ -27,6 +27,8 @@ public class GridManager : MonoBehaviour
     {
         gridManager.ActualiseBoard += ActualiseBoard;
         gridManager.ResetGridSlots += ResetGridSlots;
+        gridManager.OnePieceIsPlaced += ActualiseBoard;
+        
 
     }
 
@@ -34,6 +36,8 @@ public class GridManager : MonoBehaviour
     {
         gridManager.ActualiseBoard -= ActualiseBoard;
         gridManager.ResetGridSlots -= ResetGridSlots;
+        gridManager.OnePieceIsPlaced -= ActualiseBoard;
+
 
     }
 
@@ -54,6 +58,7 @@ public class GridManager : MonoBehaviour
 
     private void ActualiseBoard()
     {
+        gridManager.ResetGrid();
         SortBoard(baseSortMode);
         theBoard.boardPieces.Clear();
 
@@ -70,8 +75,6 @@ public class GridManager : MonoBehaviour
             currentBoardPiece.context.voisins = GetVoisins(pieceOnSlot);
             theBoard.boardPieces.Add(currentBoardPiece);
         }
-
-
     }
     
     private List<BoardPiece> GetVoisins(PiecePersonality piecePerso)
