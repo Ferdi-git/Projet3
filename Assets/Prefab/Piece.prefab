@@ -303,7 +303,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   eventGrid: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
-  snapSound: {fileID: 8300000, guid: 96256186458e84a46ba66f0c25caee3b, type: 3}
+  snapSound: {fileID: 8300000, guid: d2f19717d078efe4d9061017f67e8e4b, type: 3}
   isDraging: 0
   isRotating: 0
   isRotatingInputBuffer: 0

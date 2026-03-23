@@ -150,7 +150,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
                 if (slot != null && !slot.isFilled) { slot.isFilled = true; break; }
             }
         }
-        float randStartPitch = Random.Range(0.18f, 0.22f);
+        float randStartPitch = Random.Range(1.0f, 1.2f);
         audioSource.pitch = randStartPitch;
         audioSource.clip = snapSound;
         audioSource.Play();
