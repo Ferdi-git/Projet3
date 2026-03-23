@@ -8,6 +8,9 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
 
     [SerializeField] SOEventGridManager eventGrid;
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip snapSound;
+
     private Vector3 originalPos;
     private Quaternion originalRota;
 
@@ -17,6 +20,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         SnapToGrid();
     }
 
@@ -146,7 +150,10 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
                 if (slot != null && !slot.isFilled) { slot.isFilled = true; break; }
             }
         }
-
+        float randStartPitch = Random.Range(1.0f, 1.2f);
+        audioSource.pitch = randStartPitch;
+        audioSource.clip = snapSound;
+        audioSource.Play();
         eventGrid.InvokePiecePlaced(this.gameObject);
 
     }
