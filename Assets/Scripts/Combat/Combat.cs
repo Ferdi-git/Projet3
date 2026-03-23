@@ -52,13 +52,13 @@ public class Combat : MonoBehaviour
             float timeToWait = 0.3f - 0.01f * i;
             timeToWait = Mathf.Clamp(timeToWait, 0.05f, 0.7f);
             timeToWait = skipFight ? 0 : timeToWait;
-            yield return new WaitForSeconds(timeToWait);
+            yield return new WaitForSeconds(timeToWait+3);
             soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
             ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
         }
         else
         {
-            yield return new WaitForSeconds(delai);
+            yield return new WaitForSeconds(delai+3);
             soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
             ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
         }

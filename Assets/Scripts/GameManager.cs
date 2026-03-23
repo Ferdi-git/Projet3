@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
     public void ButtonPressed ()
     {
         // effet à l'appuie 
-        gridManager?.InvokeActualiseBoard();
-        gridManager?.InvokeResetGrid();
+        //gridManager?.InvokeActualiseBoard();
+        //gridManager?.InvokeResetGrid();
         combat.StartTurn(); 
     }
 
