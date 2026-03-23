@@ -8,6 +8,7 @@ public class SOEventGridManager : ScriptableObject
     public Action ResetGridSlots;
     public Action ActualiseBoard;
     public Action<GameObject> PiecePlaced;
+    public Action OnePieceIsPlaced;
     public Action SaveInventory;
     public Action ResetInventory;
 
@@ -22,5 +23,6 @@ public class SOEventGridManager : ScriptableObject
     public void InvokePiecePlaced(GameObject piece)
     {
         PiecePlaced?.Invoke(piece);
+        OnePieceIsPlaced?.Invoke();
     }
 }

@@ -27,6 +27,8 @@ public class GridManager : MonoBehaviour
     {
         gridManager.ActualiseBoard += ActualiseBoard;
         gridManager.ResetGridSlots += ResetGridSlots;
+        gridManager.OnePieceIsPlaced += ActualiseBoard;
+        
 
     }
 
@@ -34,6 +36,8 @@ public class GridManager : MonoBehaviour
     {
         gridManager.ActualiseBoard -= ActualiseBoard;
         gridManager.ResetGridSlots -= ResetGridSlots;
+        gridManager.OnePieceIsPlaced -= ActualiseBoard;
+
 
     }
 
@@ -54,6 +58,7 @@ public class GridManager : MonoBehaviour
 
     private void ActualiseBoard()
     {
+        gridManager.ResetGrid();
         SortBoard(baseSortMode);
         theBoard.boardPieces.Clear();
 
@@ -61,10 +66,10 @@ public class GridManager : MonoBehaviour
         {
             PiecePersonality pieceOnSlot = gridSlots[i].GetPieceOnIt();
 
-            if (!gridSlots[i].isFilled || pieceOnSlot.wasUsed)
+            if (!gridSlots[i].isFilled || pieceOnSlot.wasGridChecked)
                 continue;
 
-            pieceOnSlot.wasUsed = true;
+            pieceOnSlot.wasGridChecked = true;
             BoardPiece currentBoardPiece = GetBoardPiece(pieceOnSlot);
 
             currentBoardPiece.context.voisins = GetVoisins(pieceOnSlot);

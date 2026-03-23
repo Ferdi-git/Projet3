@@ -1,5 +1,7 @@
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryGrid : MonoBehaviour
@@ -7,12 +9,17 @@ public class InventoryGrid : MonoBehaviour
     [SerializeField] private GridSlot[] gridSlots;
     [SerializeField] private SoSaveInventory soSaveInventory;
     [SerializeField] private SOEventGridManager gridManager;
+    [SerializeField] private float timeToGoBackToInventory = 0.2f;
+    [SerializeField] private float delayInBetweenBackToInventory = 0.05f;
+    [SerializeField] private SoBoard theBoard;
 
+    private bool isReseting = false;
 
     private void OnEnable()
     {
         gridManager.SaveInventory += SaveGrid;
         gridManager.ResetInventory += ResetInventory;
+        gridManager.OnePieceIsPlaced += CheckIfCanSave;
     }
 
     private void OnDisable()
@@ -24,6 +31,15 @@ public class InventoryGrid : MonoBehaviour
     private void Start()
     {
         SaveGrid();
+    }
+
+    public void CheckIfCanSave()
+    {
+
+        if(isReseting || theBoard.boardPieces.Count != 0) return;
+
+        SaveGrid();
+        
     }
 
 
@@ -52,14 +68,22 @@ public class InventoryGrid : MonoBehaviour
     [Button]
     public void ResetInventory()
     {
+        isReseting = true;
         ResetGridSlots();
+        float delay = 0;
+
         for (int i = 0; i < soSaveInventory.pieces.Count; i++)
         {
-            soSaveInventory.pieces[i].transform.position = soSaveInventory.piecesPos[i];
-            soSaveInventory.pieces[i].transform.rotation = soSaveInventory.piecesRot[i];
-            soSaveInventory.pieces[i].GetComponent<PieceMouvement>().SnapToGrid();
+            int index = i;
+            soSaveInventory.pieces[index].transform.DOMove(soSaveInventory.piecesPos[index], timeToGoBackToInventory)
+                .SetDelay(delay);
+            soSaveInventory.pieces[index].transform.DORotateQuaternion(soSaveInventory.piecesRot[index], timeToGoBackToInventory)
+                .SetDelay(delay)
+                .OnComplete(() => soSaveInventory.pieces[index].GetComponent<PieceMouvement>().SnapToGrid());
+            delay += delayInBetweenBackToInventory;
         }
         gridManager.InvokeResetGridSlots();
+        isReseting = false;
 
     }
 
