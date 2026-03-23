@@ -60,7 +60,7 @@ public class PiecePersonality : MonoBehaviour
 
     public IEnumerator PlayAnimations(int number)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
-        yield return new WaitForSeconds(number);
+        
         transform.position = new Vector3(transform.position.x, transform.position.y, -0.1f);
 
         transform.DOScale(1.05f + 0.005f * number, 0.1f).OnComplete(() =>
@@ -93,6 +93,7 @@ public class PiecePersonality : MonoBehaviour
                    mat.DOColor(baseColor, "_GlowColor", glowDuration);
                });
         }
+        yield return new WaitForSeconds(glowDuration + glowDuration * 0.3f);
     }
 
 

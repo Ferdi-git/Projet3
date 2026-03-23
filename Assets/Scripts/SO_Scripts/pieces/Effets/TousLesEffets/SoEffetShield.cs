@@ -6,12 +6,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Shield", menuName = "Effet/Shield")]
 public class SoEffetShield : SoEffet
 {
-    public override IEnumerator Effet(Context context,OutputPort port, List<int> amount)
+    public override IEnumerator Effet(Context context,OutputPort port, List<int> amount, int tour)
     {
         port.GainShield(amount[0]);
         yield return port.thisBoardPiece.piecePersonality.PlayAnimations(2);
     }
-    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount)
+    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour)
     {
         port.GainShield(amount[0]);
         yield return port.thisBoardPiece.piecePersonality.PlayAnimations(2);

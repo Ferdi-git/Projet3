@@ -8,7 +8,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewEffetTest", menuName = "Effet/Beta")]
 public class SoEffet : ScriptableObject
 {
-    public virtual IEnumerator Effet (Context context,OutputPort port , List<int> exemple) // faudra retourner une action 
+    public virtual IEnumerator Effet (Context context,OutputPort port , List<int> exemple , int tour) // faudra retourner une action 
     {
         //appeler une fonction dans le port 
         //ex : 
@@ -16,7 +16,7 @@ public class SoEffet : ScriptableObject
         yield return port.thisBoardPiece.piecePersonality.PlayAnimations(2);
         //port.EndEffet();
     }
-    public virtual IEnumerator RepeatEffet(Context context, OutputPort port, List<int> exemple)
+    public virtual IEnumerator RepeatEffet(Context context, OutputPort port, List<int> exemple , int tour)
     {
         // lui n'aura pas de EndEffet ()
         yield return port.thisBoardPiece.piecePersonality.PlayAnimations(2);

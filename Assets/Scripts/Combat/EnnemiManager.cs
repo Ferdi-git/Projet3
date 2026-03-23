@@ -24,6 +24,6 @@ public class EnnemiManager : MonoBehaviour
     public void Attack (OutputPort port , Context context)
     {
         int index2 = Random.Range(0, ennemiList.ennemiList[index].Effets.Count);
-        ennemiList.ennemiList[index].Effets[index2].effet.Effet(context, port, ennemiList.ennemiList[index].Effets[index2].values);
+        ennemiList.ennemiList[index].Effets[index2].effet.Effet(context, port, ennemiList.ennemiList[index].Effets[index2].values, 2);// il faudra mettre un tour au hasard je suppose
     }
 }

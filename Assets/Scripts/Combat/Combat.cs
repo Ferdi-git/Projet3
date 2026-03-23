@@ -48,11 +48,7 @@ public class Combat : MonoBehaviour
 
     IEnumerator Tour (int i)
     {
-        
         yield return ResoudreEffet(soBoard.boardPieces[i].soPieces, i );
-        yield return new WaitForSeconds(0.2f);
-
-
     }
 
     private IEnumerator ResoudreEffet ( SoPieces piece , int i)
@@ -63,7 +59,7 @@ public class Combat : MonoBehaviour
             port.statsPlayer = statsPlayer;
             port.statsEnnemi = statsEnnemi;
             port.thisBoardPiece = soBoard.boardPieces[i];
-            yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValues);
+            yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValues , i);
             NextPiece();
         }
         else

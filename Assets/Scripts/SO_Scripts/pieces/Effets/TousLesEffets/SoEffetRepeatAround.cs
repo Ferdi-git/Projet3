@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewEffetTest", menuName = "Effet/effetRepeatAround")]
 public class SoEffetRepeatAround : SoEffet
 {
-    public override IEnumerator Effet(Context context,OutputPort port, List<int> test)
+    public override IEnumerator Effet(Context context,OutputPort port, List<int> test, int tour)
     {
         //Debug.Log("Request ");
         //port.EndRepeatEffetRequest(context.voisins.Count);
@@ -18,7 +18,7 @@ public class SoEffetRepeatAround : SoEffet
             port.thisBoardPiece = voisin;
             
             //voisin.piecePersonality.PlayRepeatAnimations(i, (i * 0.2f)+0.2f);
-            yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EfectValues);
+            yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EfectValues, tour);
         }
         port.thisBoardPiece = piece;
 
@@ -26,7 +26,7 @@ public class SoEffetRepeatAround : SoEffet
 
 
     }
-    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount)
+    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour)
     {
         // faire que ça repete tout sauf les repeteur
         yield return null;

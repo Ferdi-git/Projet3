@@ -6,13 +6,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewEffetTest", menuName = "Effet/effetBeatTest")]
 public class SoEffetTestDoDamage : SoEffet
 {
-    public override IEnumerator Effet(Context context,OutputPort port, List<int> test)
+    public override IEnumerator Effet(Context context,OutputPort port, List<int> test, int tour)
     {
 
         port.DoDamage(test[0]);
         yield return port.thisBoardPiece.piecePersonality.PlayAnimations(2);
     }
-    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount)
+    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour)
     {
         port.DoDamage(amount[0]);
         yield return port.thisBoardPiece.piecePersonality.PlayAnimations(2);
