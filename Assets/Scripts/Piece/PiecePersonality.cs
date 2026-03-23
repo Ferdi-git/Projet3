@@ -12,7 +12,7 @@ public class PiecePersonality : MonoBehaviour
     [SerializeField] SOEventGridManager sOEventGridManager;
 
     [SerializeField] private Transform[] surroundingPoints;
-    public bool wasUsed = false;
+    public bool wasGridChecked = false;
 
     AudioSource audioSource;
     [SerializeField] AudioClip[] audioClips;
@@ -50,7 +50,7 @@ public class PiecePersonality : MonoBehaviour
 
     private void ResetPiece()
     {
-        wasUsed = false;
+        wasGridChecked = false;
     }
 
     public Transform[] GetSurroundingPoints()
@@ -58,8 +58,9 @@ public class PiecePersonality : MonoBehaviour
         return surroundingPoints;
     }
 
-    public void PlayAnimations(int number)//c'est la combientieme a etre activé (pour son de + en + aigu )
+    public IEnumerator PlayAnimations(int number)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
+        yield return new WaitForSeconds(number);
         transform.position = new Vector3(transform.position.x, transform.position.y, -0.1f);
 
         transform.DOScale(1.05f + 0.005f * number, 0.1f).OnComplete(() =>
