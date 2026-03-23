@@ -38,12 +38,12 @@ public class PiecePersonality : MonoBehaviour
 
     private void OnEnable()
     {
-        sOEventGridManager.ResetGrid += ResetPiece;
+        sOEventGridManager.ResetPieceGridChecked += ResetPiece;
     }
 
     private void OnDisable()
     {
-        sOEventGridManager.ResetGrid -= ResetPiece;
+        sOEventGridManager.ResetPieceGridChecked -= ResetPiece;
 
     }
 

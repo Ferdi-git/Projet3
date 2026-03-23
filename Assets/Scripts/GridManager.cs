@@ -59,7 +59,7 @@ public class GridManager : MonoBehaviour
 
     private void ActualiseBoard()
     {
-        gridManager.ResetGrid();
+        gridManager.InvokeResetPieceGridCheckedd();
         SortBoard(baseSortMode);
         theBoard.boardPieces.Clear();
 

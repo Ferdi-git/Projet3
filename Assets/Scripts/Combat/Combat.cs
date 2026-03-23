@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Combat : MonoBehaviour
 {
@@ -69,5 +70,43 @@ public class Combat : MonoBehaviour
         }
         
     }
+
+
+
+
+
+
+    /* CACA DE FERDINAND C'etait le debut des pv des pieces
+
+
+    public void TakeDamage(float dmg)
+    {
+        if (shield > 0)
+        {
+            float shieldToLose = shield - dmg;
+
+            shieldToLose = Mathf.Clamp(shieldToLose, 0, shield);
+            dmg -= shieldToLose;
+            shield -= shieldToLose;
+        }
+        healthPoint -= dmg;
+
+        if (healthPoint <= 0)
+        {
+            DestroyPiece();
+        }
+    }
+
+    public void Heal(float healPoint)
+    {
+        healthPoint += healPoint;
+    }
+
+    public void GetShields(float nbrShield)
+    {
+        shield += nbrShield;
+    }
+
+    */
 }
 
