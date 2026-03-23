@@ -140,7 +140,7 @@ public class PiecePersonality : MonoBehaviour
         {
             float shieldToLose = shield - dmg;
 
-            shieldToLose = Mathf.Clamp(shieldToLose,0 , shield);
+            shieldToLose = Mathf.Clamp(shieldToLose, 0, shield);
             dmg -= shieldToLose;
             shield -= shieldToLose;
         }

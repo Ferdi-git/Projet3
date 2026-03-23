@@ -948,10 +948,6 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3540055176829797917, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
-      propertyPath: soPiece
-      value: 
-      objectReference: {fileID: 11400000, guid: 16aec410ef0d80742bdf5cec8712e830, type: 2}
-    - target: {fileID: 3540055176829797917, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
       propertyPath: soPieces
       value: 
       objectReference: {fileID: 11400000, guid: 5c549e0563848cf44807d11f488c4631, type: 2}
@@ -9465,14 +9461,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 3540055176829797917, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
-      propertyPath: soPiece
-      value: 
-      objectReference: {fileID: 11400000, guid: 16aec410ef0d80742bdf5cec8712e830, type: 2}
-    - target: {fileID: 3540055176829797917, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
-      propertyPath: soPieces
-      value: 
-      objectReference: {fileID: 11400000, guid: 5c549e0563848cf44807d11f488c4631, type: 2}
     - target: {fileID: 3540055176829797917, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
       propertyPath: glowIntensity
       value: 14
