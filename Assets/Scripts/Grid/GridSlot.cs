@@ -5,6 +5,7 @@ public class GridSlot : MonoBehaviour
     public bool isFilled = false;
     public SpriteRenderer spriteR;
     public Color baseColor;
+    public bool isAttacked;
 
     private void Start()
     {
@@ -21,11 +22,11 @@ public class GridSlot : MonoBehaviour
 
     public void GetSelected()
     {
-        spriteR.color = Color.red;
+        isAttacked = true;
     }
 
     public void GetReseted()
     {
-        spriteR.color = baseColor;
+        isAttacked = false;
     }
 }

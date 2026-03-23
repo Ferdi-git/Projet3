@@ -16,6 +16,8 @@ public class GridManager : MonoBehaviour
     [SerializeField] private SoSaveInventory soSaveInventory;
     [SerializeField] private PiecePersonality[] piecesExist;
 
+    public GameObject basePrefabAtkTEMP ;
+
     public SortMode baseSortMode;
 
     public enum SortMode { ByRow, ByColumn }
@@ -126,23 +128,31 @@ public class GridManager : MonoBehaviour
     }
 
     [Button]
-    public void SelectRandomSlot()
+    public void SelectRandomSlot(GameObject basePrefabAtk)
     {
+        GameObject prefabAtk = Instantiate(basePrefabAtk);
+
+        EnemyAtk enemyAtk = prefabAtk.GetComponent<EnemyAtk>();
+
+
         int randInt = Random.Range(0, gridSlots.Length);
+        int randIntRota = Random.Range(0, 4);
 
-        if(randInt-1 >= 0)
-            gridSlots[randInt-1].GetSelected();
+        prefabAtk.transform.position = gridSlots[randInt].transform.position;
+        prefabAtk.transform.position = gridSlots[randInt].transform.position;
 
-        gridSlots[randInt].GetSelected();
-        
-        if (randInt+1< gridSlots.Length)
-            gridSlots[randInt+1].GetSelected();
 
-        if (randInt+4 < gridSlots.Length)
-            gridSlots[randInt + 4].GetSelected();
+        while (!enemyAtk.CheckIfCanBePlaced())
+        {
+            randInt = Random.Range(0, gridSlots.Length);
+            randIntRota = Random.Range(0, 4);
+            prefabAtk.transform.rotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0, 0, 90f * randIntRota));
+            prefabAtk.transform.position = gridSlots[randInt].transform.position;
+        }
 
-        if (randInt-4 >= 0)
-            gridSlots[randInt - 4].GetSelected();
+        enemyAtk.SetAtk();
+
+
     }
 
 }

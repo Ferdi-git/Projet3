@@ -380,7 +380,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &45629077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -535,7 +534,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &45898359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -781,7 +779,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &73203018
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2180,7 +2177,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &257943641
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2479,7 +2475,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &304348395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2634,7 +2629,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &337561465
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3376,7 +3370,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &504268154
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3669,7 +3662,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &538903382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3820,7 +3812,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &564063722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4086,7 +4077,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &628461752
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4298,7 +4288,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &637352276
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4913,7 +4902,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &726943665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5255,7 +5243,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &752406276
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5938,7 +5925,6 @@ MonoBehaviour:
   - {fileID: 1667613315}
   - {fileID: 246931238}
   - {fileID: 894918565}
-  basePrefabAtkTEMP: {fileID: 595633910440424199, guid: 6c69f0e495393e147b27f051cb380002, type: 3}
   baseSortMode: 1
 --- !u!4 &884910095
 Transform:
@@ -6105,7 +6091,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &890471605
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6292,7 +6277,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &919014672
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6482,7 +6466,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &949545149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6637,7 +6620,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &968541978
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6792,7 +6774,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &990800781
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7114,7 +7095,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1026573282
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7438,7 +7418,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1045724363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8058,7 +8037,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1156142474
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8270,7 +8248,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1156629172
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8460,7 +8437,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1175993766
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8615,7 +8591,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1205800218
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8786,7 +8761,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1235267552
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8956,7 +8930,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1247116770
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9535,7 +9508,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1292934334
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9783,7 +9755,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1297942350
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9953,7 +9924,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1310690509
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10346,7 +10316,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1399396128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10618,7 +10587,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1418666932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10871,7 +10839,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1446603346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11115,7 +11082,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1477927473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11270,7 +11236,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1479264559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11734,7 +11699,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1568767118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11964,7 +11928,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1570917430
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12926,7 +12889,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1666508101
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13189,7 +13151,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1688571114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13630,7 +13591,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1752377160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13882,7 +13842,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1787504433
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14202,7 +14161,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1844438434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14925,7 +14883,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &1973962798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15258,7 +15215,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &2015283149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15578,7 +15534,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &2050792628
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15948,7 +15903,6 @@ MonoBehaviour:
   isFilled: 0
   spriteR: {fileID: 1570917431}
   baseColor: {r: 0, g: 0, b: 0, a: 0}
-  isAttacked: 0
 --- !u!61 &2110684084
 BoxCollider2D:
   m_ObjectHideFlags: 0
