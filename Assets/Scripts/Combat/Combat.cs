@@ -27,10 +27,14 @@ public class Combat : MonoBehaviour
     public void StartTurn ( )
     {
         index = 0;
-        StartCoroutine(Tour(0, 0f));
+        if (index >= soBoard.boardPieces.Count)
+        {
+            return;
+        }
+        StartCoroutine(Tour(0));
     }
 
-    public void NextPiece (float delai)
+    public void NextPiece ()
     {
         print(index);
         index++;
@@ -38,35 +42,15 @@ public class Combat : MonoBehaviour
         {
             return;
         }
-        StartCoroutine(Tour(index, delai));
+        StartCoroutine(Tour(index));
     }
     
 
-    IEnumerator Tour (int i, float delai)
+    IEnumerator Tour (int i)
     {
         
-        yield return new WaitForSeconds(delai);
-
-
-
-        print("tour 1, piece numero :" + i);
-        if (delai == 0f)
-        {
-            float timeToWait = 0.3f - 0.01f * i;
-            timeToWait = Mathf.Clamp(timeToWait, 0.05f, 0.7f);
-            timeToWait = skipFight ? 0 : timeToWait;
-            yield return new WaitForSeconds(timeToWait + 3);
-            soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
-            ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
-        }
-        else
-        {
-            yield return new WaitForSeconds(delai + 3);
-            soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
-            ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
-        }
-
-
+        yield return ResoudreEffet(soBoard.boardPieces[i].soPieces, i );
+        yield return new WaitForSeconds(0.2f);
 
 
     }
@@ -78,17 +62,16 @@ public class Combat : MonoBehaviour
             OutputPort port = new OutputPort();
             port.statsPlayer = statsPlayer;
             port.statsEnnemi = statsEnnemi;
-            port.combat = this;
-            piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValues);
-            //ResoudreAction(newAction, piece.EfectValue);
+            port.thisBoardPiece = soBoard.boardPieces[i];
+            yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValues);
+            NextPiece();
         }
         else
         {
             yield return soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
-            NextPiece(0f);
+            NextPiece();
         }
-        //condition pas completé 
-        //passer à piece suivante 
+        
     }
 }
 

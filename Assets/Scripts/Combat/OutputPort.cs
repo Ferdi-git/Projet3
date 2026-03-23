@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 public class OutputPort 
 {
-    public Combat combat;
+    public BoardPiece thisBoardPiece;
     public StatsPlayer statsPlayer;
     public StatsEnnemi statsEnnemi;
     private int i;
@@ -70,7 +70,7 @@ public class OutputPort
 
     public void EndEffet ()
     {
-        combat.NextPiece(0f);
+        //combat.NextPiece(0f);
     }
     public void EndRepeatEffetRequest (int  amount)
     {
@@ -85,7 +85,7 @@ public class OutputPort
         i -= 1;
         if (i <= 0)
         {
-            combat.NextPiece(delai);
+            //combat.NextPiece(delai);
         }
     }
 }
