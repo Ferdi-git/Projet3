@@ -303,6 +303,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   eventGrid: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
+  snapSound: {fileID: 8300000, guid: 96256186458e84a46ba66f0c25caee3b, type: 3}
   isDraging: 0
   isRotating: 0
   isRotatingInputBuffer: 0
@@ -371,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f3758c1120bfc41a489cb8beabe209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  soPieces: {fileID: 11400000, guid: 16aec410ef0d80742bdf5cec8712e830, type: 2}
+  soPiece: {fileID: 0}
   sOEventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   surroundingPoints:
   - {fileID: 2840823185506993328}
@@ -381,7 +382,7 @@ MonoBehaviour:
   - {fileID: 2581105552711121948}
   - {fileID: 1980173485376708772}
   - {fileID: 6484838937401351868}
-  wasUsed: 0
+  wasGridChecked: 0
   audioClips:
   - {fileID: 8300000, guid: 055dbc165b7f4024e8f2cc8e20672050, type: 3}
   - {fileID: 8300000, guid: fe64e695179094b47a4b856439c75004, type: 3}
@@ -403,6 +404,8 @@ MonoBehaviour:
   - {fileID: 2440254612161997803}
   - {fileID: 6289289625945670124}
   repeatGlowColor: {r: 0.00008260785, g: 0.0009765625, b: 0, a: 1}
+  healthPoint: 0
+  shield: 0
 --- !u!82 &7688367237008495115
 AudioSource:
   m_ObjectHideFlags: 0
