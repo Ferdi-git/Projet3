@@ -13,7 +13,7 @@ public class Combat : MonoBehaviour
     [SerializeField] private EnnemiManager ennemiManager;
 
 
-    private void Start()
+    private void Start() // à enlever
     {
         StartCombat();
     }
@@ -45,6 +45,9 @@ public class Combat : MonoBehaviour
     IEnumerator Tour (int i, float delai)
     {
         
+        yield return new WaitForSeconds(delai);
+
+
 
         print("tour 1, piece numero :" + i);
         if (delai == 0f)
@@ -52,23 +55,23 @@ public class Combat : MonoBehaviour
             float timeToWait = 0.3f - 0.01f * i;
             timeToWait = Mathf.Clamp(timeToWait, 0.05f, 0.7f);
             timeToWait = skipFight ? 0 : timeToWait;
-            yield return new WaitForSeconds(timeToWait+3);
+            yield return new WaitForSeconds(timeToWait + 3);
             soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
             ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
         }
         else
         {
-            yield return new WaitForSeconds(delai+3);
+            yield return new WaitForSeconds(delai + 3);
             soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
             ResoudreEffet(soBoard.boardPieces[i].soPieces, i);
         }
-        
+
 
 
 
     }
 
-    private void ResoudreEffet ( SoPieces piece , int i)
+    private IEnumerator ResoudreEffet ( SoPieces piece , int i)
     {
         if (piece.pieceEffet.condition.Condition(soBoard.boardPieces[i].context, piece.ConditionValues))
         {
@@ -81,6 +84,7 @@ public class Combat : MonoBehaviour
         }
         else
         {
+            yield return soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
             NextPiece(0f);
         }
         //condition pas completé 
