@@ -134,36 +134,6 @@ public class PiecePersonality : MonoBehaviour
         }
     }
 
-
-
-    public void TakeDamage(float dmg)
-    {
-        if(shield > 0)
-        {
-            float shieldToLose = shield - dmg;
-
-            shieldToLose = Mathf.Clamp(shieldToLose, 0, shield);
-            dmg -= shieldToLose;
-            shield -= shieldToLose;
-        }
-        healthPoint  -= dmg;
-
-        if(healthPoint <= 0)
-        {
-            DestroyPiece();
-        }
-    }
-
-    public void Heal(float healPoint)
-    {
-        healthPoint += healPoint;
-    }
-
-    public void GetShields(float nbrShield)
-    {
-        shield += nbrShield;
-    }
-
     public void DestroyPiece()
     {
         Destroy(gameObject);
