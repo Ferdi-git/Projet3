@@ -18,6 +18,8 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
     public bool isRotating = false;
     public bool isRotatingInputBuffer = false;
 
+    public bool canBeMoved = true;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -26,6 +28,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
 
     public void OnDragStart(Vector2 worldPos)
     {
+        if (!canBeMoved) return;
         isDraging = true;
         originalPos = transform.position;
         originalRota = transform.rotation;
@@ -35,12 +38,14 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
 
     public void OnDragMove(Vector2 worldPos)
     {
+        if(!isDraging) return;
         Vector2 targetPos = worldPos;
         transform.position = new Vector3(targetPos.x, targetPos.y + 0.1f, -0.1f);
     }
 
     public void OnDragEnd(Vector2 worldPos)
     {
+        if (!isDraging) return;
         isDraging = false;
         isRotatingInputBuffer = false;
         isRotating = false;
@@ -188,5 +193,11 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
                 OnRightClick();
             }
         });
+    }
+
+
+    public void SetCanMove(bool can)
+    {
+        canBeMoved = can;
     }
 }

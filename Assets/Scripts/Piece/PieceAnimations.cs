@@ -84,8 +84,8 @@ public class PieceAnimations : MonoBehaviour
                 glowColor = glowColors[4] * intensityMultiplier;
                 break;
         }
-        
 
+        transform.DOKill();
 
         transform.position = new Vector3(transform.position.x, transform.position.y, -0.1f);
 
@@ -106,25 +106,25 @@ public class PieceAnimations : MonoBehaviour
 
         });
 
+        float glowIn = Mathf.Max(0.05f, glowDuration * 0.3f - 0.01f * number);
+        float glowOut = Mathf.Max(0.05f, glowDuration - 0.01f * number);
+
+
 
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
             Material mat = spriteRenderers[i].material;
+            float capturedIn = glowIn;
+            float capturedOut = glowOut;
 
-            float newGlowDuration = glowDuration;
 
-            if (glowDuration * 0.3f - 0.01f * number + glowDuration - 0.01f * number <0.21f)
-            {
-                newGlowDuration = 0.16f + 0.01f * number;
-            }
-
-            mat.DOColor(glowColor, "_GlowColor", newGlowDuration * 0.3f - 0.01f * number)
+            mat.DOColor(glowColor, "_GlowColor", capturedIn)
                .OnComplete(() =>
                {
-                   mat.DOColor(baseColor, "_GlowColor", newGlowDuration - 0.01f * number);
+                   mat.DOColor(baseColor, "_GlowColor", capturedOut);
                });
         }
-        yield return new WaitForSeconds(glowDuration - 0.01f * number + glowDuration * 0.3f - 0.01f * number);
+        yield return new WaitForSeconds(glowIn + glowOut);
     }
 
 

@@ -3,14 +3,9 @@ using UnityEngine;
 public class GridSlot : MonoBehaviour
 {
     public bool isFilled = false;
-    public SpriteRenderer spriteR;
-    public Color baseColor;
     public bool isAttacked;
 
-    private void Start()
-    {
-        baseColor  = spriteR.color;
-    }
+
 
     public PieceAnimations GetPieceOnIt()
     {
