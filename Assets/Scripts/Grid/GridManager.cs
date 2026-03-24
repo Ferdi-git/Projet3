@@ -15,7 +15,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private SoSaveInventory soSaveInventory;
     [SerializeField] private PieceAnimations[] piecesExist;
 
-    public GameObject basePrefabAtkTEMP ;
+    public List<GameObject> listBoardPrefabAtk ;
 
     public SortMode baseSortMode;
 
@@ -29,6 +29,7 @@ public class GridManager : MonoBehaviour
         gridManager.OnePieceIsPlaced += ActualiseBoard;
         gridManager.AddBoardPiece += AddBoardPiece;
         gridManager.SelectRandomSlot += SelectRandomSlot;
+        gridManager.RemoveAtk += RemoveAtk;
         
 
     }
@@ -39,7 +40,7 @@ public class GridManager : MonoBehaviour
         gridManager.ResetGridSlots -= ResetGridSlots;
         gridManager.OnePieceIsPlaced -= ActualiseBoard;
         gridManager.AddBoardPiece -= AddBoardPiece;
-        gridManager.SelectRandomSlot -= SelectRandomSlot;
+        gridManager.RemoveAtk -= RemoveAtk;
 
 
 
@@ -140,7 +141,7 @@ public class GridManager : MonoBehaviour
         for (int i = 0; i < gridSlots.Length; i++)
         {
             PieceAnimations piece = gridSlots[i].GetPieceOnIt();
-            if (piece != null)
+            if (piece != null && gridSlots[i].isAttacked)
             {
                 BoardPiece bp = GetBoardPiece(piece);
                 bp.context.NbrCaseAtk +=1;
@@ -168,6 +169,7 @@ public class GridManager : MonoBehaviour
     public void SelectRandomSlot(GameObject basePrefabAtk)
     {
         GameObject prefabAtk = Instantiate(basePrefabAtk);
+        listBoardPrefabAtk.Append(prefabAtk);
 
         EnemyZoneAtk enemyAtk = prefabAtk.GetComponent<EnemyZoneAtk>();
 
@@ -190,6 +192,16 @@ public class GridManager : MonoBehaviour
         enemyAtk.SetAtk();
 
 
+    }
+
+    public void RemoveAtk()
+    {
+        for (int i = 0; i < listBoardPrefabAtk.Count; i++)
+        {
+            listBoardPrefabAtk[i].GetComponent<EnemyZoneAtk>().RemoveAtk();
+            Destroy(listBoardPrefabAtk[i]);
+        }
+        listBoardPrefabAtk.Clear();
     }
         
 
