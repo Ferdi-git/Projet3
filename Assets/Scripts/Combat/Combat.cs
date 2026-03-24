@@ -13,6 +13,7 @@ public class Combat : MonoBehaviour
     [SerializeField] private EnnemiManager ennemiManager;
     [SerializeField] private SoNbrOfPiecePlayed piecePlayed;
     [SerializeField] private SOEventGridManager eventGridManager;
+    [SerializeField] private PieceHealthManager pieceHealthManager;
 
 
     private void Start() // à enlever
@@ -57,23 +58,22 @@ public class Combat : MonoBehaviour
     {
         yield return null;
         int zoneCount = ennemiManager.GetAtkZoneNbr();
-        print (zoneCount);
+        print ("Nombre de case que prend l'attque : "+zoneCount);
         for (int i = 0; i < soBoard.boardPieces.Count; i++)
         {
             if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
             {
                 //degats sur les pieces 
+
                 zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
             }
         }
         
         statsPlayer.InvokeTakeDamage(ennemiManager.GetDamageValue() * zoneCount); // degats que recoit le joueur 
-        print (zoneCount);
+        print ("Nombre de case qui vont touché le joueur : "+zoneCount);
         print("le joeur se prend " + ennemiManager.GetDamageValue() * zoneCount + " degats");
-        //enlever l'ancienne atk 
-        ennemiManager.ShowAtk();
-
-        eventGridManager.InvokeSetAllPieceCanMove(true);
+        
+        StartCoroutine(ResoudreTurn());
     }
 
     IEnumerator PlayerTurn (int i)
@@ -103,7 +103,16 @@ public class Combat : MonoBehaviour
     }
 
 
+    IEnumerator ResoudreTurn ()
+    {
+        yield return null;
+        //check si des pieces sont mortes 
+        //enlever bouclier aux pieces (mettre bouclier dans boardpiece
+        //enlever l'ancienne atk 
+        ennemiManager.ShowAtk();
 
+        eventGridManager.InvokeSetAllPieceCanMove(true);
+    }
 
 
 
