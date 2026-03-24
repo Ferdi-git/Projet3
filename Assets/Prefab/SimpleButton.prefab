@@ -107,4 +107,4 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   eventGrid: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
-  canBeClicked: 0
+  canBeClicked: 1
