@@ -26,7 +26,7 @@ public class EnnemiManager : MonoBehaviour
         stats.ennemiAttacks = ennemiList.ennemiList[index].attacks;
     }
 
-    public void ShowAtk (OutputPort port , Context context)
+    public void ShowAtk ()
     {
         atkIndex = Random.Range (0, stats.ennemiAttacks.Count);
         soEventGridManager.InvokeSelectRandomSlot(stats.ennemiAttacks[atkIndex].zone);
