@@ -119,9 +119,12 @@ public class PieceAnimations : MonoBehaviour
 
 
 
+
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
             Material mat = spriteRenderers[i].material;
+
+            mat.DOKill();
             float capturedIn = glowIn;
             float capturedOut = glowOut;
 
