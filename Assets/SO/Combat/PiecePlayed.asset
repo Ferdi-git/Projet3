@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3bd8ad955ef6443a44d300f79219da, type: 3}
   m_Name: PiecePlayed
   m_EditorClassIdentifier: Assembly-CSharp::SoNbrOfPiecePlayed
+  piecePlayed: 10
+  pieceRepeated: 0

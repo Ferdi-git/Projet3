@@ -16,6 +16,6 @@ public class SoEffetShield : SoEffet
     {
         port.piecePlayed.RepeatedPieceUp();
         port.GainShield(amount[0]);
-        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.classic);
+        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat);
     }
 }
