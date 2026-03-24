@@ -95,20 +95,21 @@ public class PieceAnimations : MonoBehaviour
             audioSource.pitch = 1f;
 
             audioSource.clip = audioClips[intClip];
-            //float randStartPitch = Random.Range(0.18f, 0.22f);
-            //float randStartPitch = 0.2f;
-            //audioSource.pitch = randStartPitch + 0.05f * number;
             audioSource.Play();
+
+            /*float randStartPitch = Random.Range(0.18f, 0.22f);
+            //float randStartPitch = 0.2f;
+            //audioSource.pitch = randStartPitch + 0.05f * number;*/
 
             transform.DOScale(1f, 0.1f);
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         });
 
+
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
             Material mat = spriteRenderers[i].material;
-
 
             mat.DOColor(glowColor, "_GlowColor", glowDuration * 0.3f - 0.01f * number)
                .OnComplete(() =>
@@ -131,6 +132,7 @@ public class PieceAnimations : MonoBehaviour
         repeat,
         atk,
         shield,
-        heal
+        heal,
+        failed,
     }
 }
