@@ -41,7 +41,7 @@ public class StatsEnnemi : ScriptableObject
     }
 
     public void InvokeEnnemiGainShield(int amount) { shield += amount; EnnemiGainShield?.Invoke(amount); }
-    public void InvokeEnnemiLooseShield(int amount) 
+    public void InvokeEnnemiTakeDamager(int amount) 
     { 
         
         if (amount <= shield)

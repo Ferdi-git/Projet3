@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -16,7 +17,7 @@ public class StatsPlayer : ScriptableObject
     public Action<int> GainShield;
     public Action<int> LooseShield;
 
-
+    
     public void InvokeGainPV(int amount ) 
     {
         pv += amount; 
@@ -29,7 +30,7 @@ public class StatsPlayer : ScriptableObject
     }
 
     public void InvokeGainShield(int amount) { shield += amount;  GainShield?.Invoke(amount); }
-    public void InvokeLooseShield(int amount) 
+    public void InvokeTakeDamage(int amount) 
     { 
         if (amount <= shield)
         {

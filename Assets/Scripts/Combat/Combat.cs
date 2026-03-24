@@ -47,7 +47,7 @@ public class Combat : MonoBehaviour
         if (index >= soBoard.boardPieces.Count)
         {
             StartCoroutine(EnnemiTurn());
-            
+
             return;
         }
         StartCoroutine(PlayerTurn(index));
@@ -56,6 +56,22 @@ public class Combat : MonoBehaviour
     IEnumerator EnnemiTurn ()
     {
         yield return null;
+        int zoneCount = ennemiManager.GetAtkZoneNbr();
+        print (zoneCount);
+        for (int i = 0; i < soBoard.boardPieces.Count; i++)
+        {
+            if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
+            {
+                //degats sur les pieces 
+                zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
+            }
+        }
+        
+        statsPlayer.InvokeTakeDamage(ennemiManager.GetDamageValue() * zoneCount); // degats que recoit le joueur 
+        print (zoneCount);
+        print("le joeur se prend " + ennemiManager.GetDamageValue() * zoneCount + " degats");
+        //enlever l'ancienne atk 
+        ennemiManager.ShowAtk();
 
         eventGridManager.InvokeSetAllPieceCanMove(true);
     }

@@ -1,4 +1,5 @@
 
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnnemiManager : MonoBehaviour
@@ -32,5 +33,14 @@ public class EnnemiManager : MonoBehaviour
         soEventGridManager.InvokeSelectRandomSlot(stats.ennemiAttacks[atkIndex].zone);
     }
     
+    public int GetDamageValue ()
+    {
+        return stats.ennemiAttacks[atkIndex].damage;
+    }
+
+    public int GetAtkZoneNbr ()
+    {
+        return stats.ennemiAttacks[atkIndex].zone.gameObject.GetComponent<EnemyZoneAtk>().listPoints.Count;
+    }
 
 }

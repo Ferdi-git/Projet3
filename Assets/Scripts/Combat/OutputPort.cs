@@ -5,8 +5,6 @@ public class OutputPort
     public StatsPlayer statsPlayer;
     public StatsEnnemi statsEnnemi;
     public SoNbrOfPiecePlayed piecePlayed;
-    private int i;
-    private float delai;
 
     //player
     public void TakeDamage (int amount)
@@ -17,7 +15,7 @@ public class OutputPort
         }
         else
         {
-            statsPlayer.InvokeLooseShield(amount);
+            statsPlayer.InvokeTakeDamage(amount);
         }
 
         
@@ -36,7 +34,7 @@ public class OutputPort
     }
     public void LooseShield (int amount)
     {
-        statsPlayer.InvokeLooseShield (amount);
+        statsPlayer.InvokeTakeDamage (amount);
     }
 
     //ennemi 
@@ -49,7 +47,7 @@ public class OutputPort
         }
         else
         {
-            statsEnnemi.InvokeEnnemiLooseShield(amount);
+            statsEnnemi.InvokeEnnemiTakeDamager(amount);
         }
     }
     public void EnnemiHeal (int amount)
@@ -62,7 +60,7 @@ public class OutputPort
     }
     public void EnnemiLooseShield(int amount)
     {
-        statsEnnemi.InvokeEnnemiLooseShield(amount);
+        statsEnnemi.InvokeEnnemiTakeDamager(amount);
     }
 
 
