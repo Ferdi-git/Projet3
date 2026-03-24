@@ -17,7 +17,7 @@ public class SoEffet : ScriptableObject
     public virtual IEnumerator RepeatEffet(Context context, OutputPort port, List<int> exemple , int tour)
     {
         port.piecePlayed.RepeatedPieceUp();
-        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.classic);
+        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat);
     }
 
 }

@@ -17,6 +17,6 @@ public class SoEffetHeal : SoEffet
     {
         port.piecePlayed.RepeatedPieceUp();
         port.Heal(amount[0]);
-        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.classic);
+        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat);
     }
 }

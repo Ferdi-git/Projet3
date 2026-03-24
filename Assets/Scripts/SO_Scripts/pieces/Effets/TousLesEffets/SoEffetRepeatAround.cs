@@ -25,10 +25,22 @@ public class SoEffetRepeatAround : SoEffet
     public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour)
     {
         port.piecePlayed.RepeatedPieceUp();
-        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.classic);
-        // faire que ça repete tout sauf les repeteur
-        yield return null;
-        Debug.Log("pour l'instant ne fait rien ");
+        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat);
+
+
+
+        BoardPiece piece = port.thisBoardPiece;
+        for (int i = 0; i < context.voisins.Count; i++)
+        {
+            BoardPiece voisin = context.voisins[i];
+            port.thisBoardPiece = voisin;
+            if (!voisin.soPieces.isRepetition)
+            {
+                yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EfectValues, tour);
+            }
+            
+        }
+        port.thisBoardPiece = piece;
     }
 
 }

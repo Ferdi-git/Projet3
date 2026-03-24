@@ -27,6 +27,7 @@ public class Combat : MonoBehaviour
 
     public void StartTurn ( )
     {
+        piecePlayed.ResetInt();
         index = 0;
         if (index >= soBoard.boardPieces.Count)
         {
@@ -49,7 +50,7 @@ public class Combat : MonoBehaviour
 
     IEnumerator Tour (int i)
     {
-        //piecePlayed.ResetInt();
+        
         yield return ResoudreEffet(soBoard.boardPieces[i].soPieces, i );
     }
 
@@ -67,7 +68,7 @@ public class Combat : MonoBehaviour
         }
         else
         {
-            yield return soBoard.boardPieces[i].piecePersonality.PlayAnimations(i, PieceAnimations.TypeAnim.classic);
+            yield return soBoard.boardPieces[i].piecePersonality.PlayAnimations(i, PieceAnimations.TypeAnim.failed);
             NextPiece();
         }
         
