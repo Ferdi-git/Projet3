@@ -99,7 +99,7 @@ public class PieceAnimations : MonoBehaviour
 
         transform.DOScale(1.05f + 0.005f * number, 0.1f).OnComplete(() =>
         {
-            int intClip = Mathf.Clamp(number, 0, audioClips.Length);
+            int intClip = Mathf.Clamp(number, 0, audioClips.Length-1);
             audioSource.pitch = 1f;
 
             audioSource.clip = audioClips[intClip];
@@ -114,8 +114,8 @@ public class PieceAnimations : MonoBehaviour
 
         });
 
-        float glowIn = Mathf.Max(0.05f, glowDuration * 0.3f - 0.01f * number);
-        float glowOut = Mathf.Max(0.05f, glowDuration - 0.01f * number);
+        float glowIn = Mathf.Max(0.07f, glowDuration * 0.3f - 0.01f * number);
+        float glowOut = Mathf.Max(0.13f, glowDuration - 0.01f * number);
 
 
 

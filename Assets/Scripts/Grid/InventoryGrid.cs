@@ -41,8 +41,8 @@ public class InventoryGrid : MonoBehaviour
         gridManager.InvokeActualiseBoard();
 
         if(isReseting || theBoard.boardPieces.Count != 0) return;
-        print(theBoard.boardPieces.Count);
-        print("HALLOO");
+        //print(theBoard.boardPieces.Count);
+        //print("HALLOO");
         SaveGrid();
         
     }
@@ -76,6 +76,8 @@ public class InventoryGrid : MonoBehaviour
         isReseting = true;
         float delay = 0;
 
+        //gridManager.InvokeResetGridSlots();
+        //EmptyInventoryGridSlots();
 
         int lastMovingIndex = -1;
         for (int i = 0; i < soSaveInventory.pieces.Count; i++)
@@ -115,6 +117,8 @@ public class InventoryGrid : MonoBehaviour
                 .SetDelay(delay)
                 .OnComplete(() =>
                 {
+                    soSaveInventory.pieces[i].GetComponent<PieceMouvement>().SnapToGrid();
+
                     if (isLast)
                     {
                         gridManager.InvokeResetGridSlots();
