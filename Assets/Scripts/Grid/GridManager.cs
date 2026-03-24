@@ -29,6 +29,7 @@ public class GridManager : MonoBehaviour
         gridManager.ResetGridSlots += ResetGridSlots;
         gridManager.OnePieceIsPlaced += ActualiseBoard;
         gridManager.AddBoardPiece += AddBoardPiece;
+        gridManager.SelectRandomSlot += SelectRandomSlot;
         
 
     }
@@ -39,6 +40,8 @@ public class GridManager : MonoBehaviour
         gridManager.ResetGridSlots -= ResetGridSlots;
         gridManager.OnePieceIsPlaced -= ActualiseBoard;
         gridManager.AddBoardPiece -= AddBoardPiece;
+        gridManager.SelectRandomSlot -= SelectRandomSlot;
+
 
 
 
@@ -134,7 +137,7 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    [Button]
+
     public void SelectRandomSlot(GameObject basePrefabAtk)
     {
         GameObject prefabAtk = Instantiate(basePrefabAtk);

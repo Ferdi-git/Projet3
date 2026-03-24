@@ -12,6 +12,8 @@ public class SOEventGridManager : ScriptableObject
     public event Action SaveInventory;
     public event Action ResetInventory;
     public event Action<GameObject> AddBoardPiece;
+    public event Action<GameObject> SelectRandomSlot
+;
 
     public void InvokeResetPieceGridCheckedd() { ResetPieceGridChecked?.Invoke(); }
     public void InvokeResetGridSlots() { ResetGridSlots?.Invoke(); }
@@ -28,4 +30,6 @@ public class SOEventGridManager : ScriptableObject
     }
 
     public void InvokeAddBoardPiece(GameObject go) { AddBoardPiece.Invoke(go); }
+    public void InvokeSelectRandomSlot(GameObject go) { SelectRandomSlot.Invoke(go); }
+
 }
