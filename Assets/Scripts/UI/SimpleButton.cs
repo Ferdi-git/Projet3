@@ -5,7 +5,7 @@ using UnityEngine.LightTransport;
 public class SimpleButton : MonoBehaviour, IMouseClickable, IMouseHoverable
 {
     [SerializeField] private UnityEvent onClick;
-    SOEventGridManager eventGrid;
+    public SOEventGridManager eventGrid;
 
     public bool canBeClicked;
 
