@@ -111,10 +111,17 @@ public class PieceAnimations : MonoBehaviour
         {
             Material mat = spriteRenderers[i].material;
 
-            mat.DOColor(glowColor, "_GlowColor", glowDuration * 0.3f - 0.01f * number)
+            float newGlowDuration = glowDuration;
+
+            if (glowDuration * 0.3f - 0.01f * number + glowDuration - 0.01f * number <0.21f)
+            {
+                newGlowDuration = 0.05f + 0.01f * number;
+            }
+
+            mat.DOColor(glowColor, "_GlowColor", newGlowDuration * 0.3f - 0.01f * number)
                .OnComplete(() =>
                {
-                   mat.DOColor(baseColor, "_GlowColor", glowDuration - 0.01f * number);
+                   mat.DOColor(baseColor, "_GlowColor", newGlowDuration - 0.01f * number);
                });
         }
         yield return new WaitForSeconds(glowDuration - 0.01f * number + glowDuration * 0.3f - 0.01f * number);
