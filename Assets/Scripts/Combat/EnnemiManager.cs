@@ -6,7 +6,9 @@ public class EnnemiManager : MonoBehaviour
     [SerializeField] private StatsEnnemi stats;
     [SerializeField] private GameObject ennemiUI;
     [SerializeField] private KeepEnnemiSo ennemiList;
+    [SerializeField] private SOEventGridManager soEventGridManager;
     private int index;
+    private int atkIndex;
 
     private void Start()
     {
@@ -15,15 +17,20 @@ public class EnnemiManager : MonoBehaviour
     public void GenerateEnnemi ()
     {
         ennemiUI.SetActive (true);
+        atkIndex = 0;
         index = Random.Range(0,ennemiList.ennemiList.Count);
-        stats.pvMax = ennemiList.ennemiList[index].Résistance * 30;
+        stats.pvMax = ennemiList.ennemiList[index].resistance * 30;
         stats.pv = stats.pvMax;
         stats.shield = 0;
+        stats.sprite = ennemiList.ennemiList[index].sprite;
+        stats.ennemiAttacks = ennemiList.ennemiList[index].attacks;
     }
 
-    public void Attack (OutputPort port , Context context)
+    public void ShowAtk (OutputPort port , Context context)
     {
-        int index2 = Random.Range(0, ennemiList.ennemiList[index].Effets.Count);
-        ennemiList.ennemiList[index].Effets[index2].effet.Effet(context, port, ennemiList.ennemiList[index].Effets[index2].values, 2);// il faudra mettre un tour au hasard je suppose
+        atkIndex = Random.Range (0, stats.ennemiAttacks.Count);
+        soEventGridManager.InvokeSelectRandomSlot(stats.ennemiAttacks[atkIndex].zone);
     }
+    
+
 }

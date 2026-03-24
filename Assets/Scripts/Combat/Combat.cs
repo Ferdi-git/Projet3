@@ -12,6 +12,7 @@ public class Combat : MonoBehaviour
     [SerializeField] private GameObject bouton;
     [SerializeField] private EnnemiManager ennemiManager;
     [SerializeField] private SoNbrOfPiecePlayed piecePlayed;
+    [SerializeField] private SOEventGridManager eventGridManager;
 
 
     private void Start() // à enlever
@@ -27,10 +28,12 @@ public class Combat : MonoBehaviour
 
     public void StartTurn ( )
     {
+        eventGridManager.InvokeSetAllPieceCanMove(false);
         piecePlayed.ResetInt();
         index = 0;
         if (index >= soBoard.boardPieces.Count)
         {
+            eventGridManager.InvokeSetAllPieceCanMove(true);
             return;
         }
         StartCoroutine(Tour(0));
@@ -42,6 +45,7 @@ public class Combat : MonoBehaviour
         index++;
         if (index >= soBoard.boardPieces.Count)
         {
+            eventGridManager.InvokeSetAllPieceCanMove(true);
             return;
         }
         StartCoroutine(Tour(index));
@@ -52,6 +56,7 @@ public class Combat : MonoBehaviour
     {
         
         yield return ResoudreEffet(soBoard.boardPieces[i].soPieces, i );
+        NextPiece();
     }
 
     private IEnumerator ResoudreEffet ( SoPieces piece , int i)
@@ -64,12 +69,11 @@ public class Combat : MonoBehaviour
             port.thisBoardPiece = soBoard.boardPieces[i];
             port.piecePlayed = piecePlayed;
             yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValues , i);
-            NextPiece();
+            
         }
         else
         {
             yield return soBoard.boardPieces[i].piecePersonality.PlayAnimations(i, PieceAnimations.TypeAnim.failed);
-            NextPiece();
         }
         
     }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
@@ -7,6 +8,8 @@ public class StatsEnnemi : ScriptableObject
     public int pv;
     public int shield;
     public int pvMax;
+    public Sprite sprite;
+    public List<EnnemiAttack> ennemiAttacks;
 
 
     public Action<int> EnnemiGainPV;

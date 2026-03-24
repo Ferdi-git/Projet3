@@ -6,15 +6,15 @@ using UnityEngine;
 public class GeneratEnnemiSo : ScriptableObject
 {
     public string Name;
-    public List<EnnemiAttribut> Effets;
+    public List<EnnemiAttack> attacks;
     public Sprite sprite; // pour l'instant un seul sprite par ennemi mais possibilité de changement de sprite entre etat idle, pris un coup et mort peut etre 
     [Range(0, 200)]
-    public int Résistance= 100;
+    public int resistance= 100;
 }
 
 [Serializable]
-public class EnnemiAttribut
+public class EnnemiAttack
 {
-    public SoEffet effet;
-    public List<int> values;
+    public GameObject zone;
+    public int damage;
 }
