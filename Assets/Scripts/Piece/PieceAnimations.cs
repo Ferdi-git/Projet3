@@ -115,7 +115,7 @@ public class PieceAnimations : MonoBehaviour
 
             if (glowDuration * 0.3f - 0.01f * number + glowDuration - 0.01f * number <0.21f)
             {
-                newGlowDuration = 0.05f + 0.01f * number;
+                newGlowDuration = 0.16f + 0.01f * number;
             }
 
             mat.DOColor(glowColor, "_GlowColor", newGlowDuration * 0.3f - 0.01f * number)
