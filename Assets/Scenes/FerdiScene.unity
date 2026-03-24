@@ -3334,6 +3334,7 @@ MonoBehaviour:
   bouton: {fileID: 143320168}
   ennemiManager: {fileID: 701649383}
   piecePlayed: {fileID: 11400000, guid: ec1af6f5847cedb40a00e1b899e5e8cc, type: 2}
+  eventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
 --- !u!1 &504268152
 GameObject:
   m_ObjectHideFlags: 0
@@ -4742,6 +4743,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
   ennemiUI: {fileID: 1114373235}
   ennemiList: {fileID: 11400000, guid: a3695f3c1ecb1fe4f86d7933c38743bd, type: 2}
+  soEventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
 --- !u!4 &701649384
 Transform:
   m_ObjectHideFlags: 0

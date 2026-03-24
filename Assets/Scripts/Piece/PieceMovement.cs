@@ -22,8 +22,20 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
 
     private void Awake()
     {
+        canBeMoved = true;
         audioSource = GetComponent<AudioSource>();
         SnapToGrid();
+    }
+
+    private void OnEnable()
+    {
+        eventGrid.SetAllPieceCanMove += SetCanMove;
+    }
+
+    private void OnDisable()
+    {
+        eventGrid.SetAllPieceCanMove -= SetCanMove;
+
     }
 
     public void OnDragStart(Vector2 worldPos)
