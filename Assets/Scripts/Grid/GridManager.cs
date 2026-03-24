@@ -77,9 +77,11 @@ public class GridManager : MonoBehaviour
                 continue;
 
             pieceOnSlot.wasGridChecked = true;
-            BoardPiece currentBoardPiece = GetBoardPiece(pieceOnSlot);
 
+            BoardPiece currentBoardPiece = GetBoardPiece(pieceOnSlot);
+            currentBoardPiece.context.NbrCaseAtk = GetNbrAtckCase(pieceOnSlot);
             currentBoardPiece.context.voisins = GetVoisins(pieceOnSlot);
+
             theBoard.boardPieces.Add(currentBoardPiece);
         }
     }
@@ -119,6 +121,12 @@ public class GridManager : MonoBehaviour
         }
         Debug.LogError("Weird board piece doesnt exist");
         return null;
+    }
+
+    private int GetNbrAtckCase(PieceAnimations pieceAnim)
+    {
+        var pointsToCheck = pieceAnim.GetSelfPoints();
+        return 1;
     }
 
     private void SortBoard(SortMode sortMode)

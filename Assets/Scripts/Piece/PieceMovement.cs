@@ -42,8 +42,6 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
     {
         if (!canBeMoved) return;
         isDraging = true;
-        originalPos = transform.position;
-        originalRota = transform.rotation;
         transform.DOScale(1.1f, 0.1f);
         Unfill();
     }
@@ -171,6 +169,8 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         audioSource.pitch = randStartPitch;
         audioSource.clip = snapSound;
         audioSource.Play();
+        originalPos = transform.position;
+        originalRota = transform.rotation;
         eventGrid.InvokePiecePlaced(this.gameObject);
 
     }

@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using static PieceAnimations;
 
 public class PieceAnimations : MonoBehaviour
 {
@@ -54,6 +53,15 @@ public class PieceAnimations : MonoBehaviour
     public Transform[] GetSurroundingPoints()
     {
         return surroundingPoints;
+    }
+    public Transform[] GetSelfPoints()
+    {
+        Transform[] transforms = new Transform[surroundingPoints.Length];
+        for (int i = 0; i< spriteRenderers.Length; i++)
+        {
+            transforms[i] = spriteRenderers[i].transform;
+        }
+        return transforms;
     }
 
     public IEnumerator PlayAnimations(int number, TypeAnim typeAnim)//c'est la combientieme a etre activé (pour son de + en + aigu )
