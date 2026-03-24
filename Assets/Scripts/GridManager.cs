@@ -28,6 +28,7 @@ public class GridManager : MonoBehaviour
         gridManager.ActualiseBoard += ActualiseBoard;
         gridManager.ResetGridSlots += ResetGridSlots;
         gridManager.OnePieceIsPlaced += ActualiseBoard;
+        gridManager.AddBoardPiece += AddBoardPiece;
         
 
     }
@@ -37,6 +38,8 @@ public class GridManager : MonoBehaviour
         gridManager.ActualiseBoard -= ActualiseBoard;
         gridManager.ResetGridSlots -= ResetGridSlots;
         gridManager.OnePieceIsPlaced -= ActualiseBoard;
+        gridManager.AddBoardPiece -= AddBoardPiece;
+
 
 
     }
@@ -111,7 +114,7 @@ public class GridManager : MonoBehaviour
                 return soSaveInventory.listBoardPiecesExist[nbr];
             }
         }
-        Debug.LogError("Weird");
+        Debug.LogError("Weird board piece doesnt exist");
         return null;
     }
 
@@ -158,7 +161,27 @@ public class GridManager : MonoBehaviour
 
 
     }
+        
 
+    public void AddBoardPiece(GameObject go)
+    {
+        BoardPiece newBoardPiece = new();
+        PiecePersonality piecePersonality = go.GetComponent<PiecePersonality>();
+        newBoardPiece.piecePersonality = piecePersonality;
+        newBoardPiece.soPieces = piecePersonality.soPiece;
+        soSaveInventory.listBoardPiecesExist.Add(newBoardPiece);
+    }
+    
+    public void RemoveBoardPiece(BoardPiece bp)
+    {
+        for (int i = 0; i <soSaveInventory.listBoardPiecesExist.Count; i++)
+        {
+            if (soSaveInventory.listBoardPiecesExist[i] == bp)
+            {
+                soSaveInventory.listBoardPiecesExist.RemoveAt(i);
+            }
+        }
+    }
 }
 
 
