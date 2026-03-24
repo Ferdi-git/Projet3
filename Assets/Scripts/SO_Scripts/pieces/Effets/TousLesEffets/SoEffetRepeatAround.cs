@@ -9,7 +9,7 @@ public class SoEffetRepeatAround : SoEffet
     public override IEnumerator Effet(Context context,OutputPort port, List<int> test, int tour)
     {
         port.piecePlayed.PiecePlayedUp();
-        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPiecePlayed());
+        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic);
         BoardPiece piece = port.thisBoardPiece;
         for (int i = 0; i < context.voisins.Count; i++)
         {
@@ -25,7 +25,7 @@ public class SoEffetRepeatAround : SoEffet
     public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour)
     {
         port.piecePlayed.RepeatedPieceUp();
-        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPieceRepeated());
+        yield return port.thisBoardPiece.piecePersonality.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.classic);
         // faire que ça repete tout sauf les repeteur
         yield return null;
         Debug.Log("pour l'instant ne fait rien ");

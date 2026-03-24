@@ -49,7 +49,7 @@ public class Combat : MonoBehaviour
 
     IEnumerator Tour (int i)
     {
-        piecePlayed.ResetInt();
+        //piecePlayed.ResetInt();
         yield return ResoudreEffet(soBoard.boardPieces[i].soPieces, i );
     }
 
@@ -67,7 +67,7 @@ public class Combat : MonoBehaviour
         }
         else
         {
-            yield return soBoard.boardPieces[i].piecePersonality.PlayAnimations(i);
+            yield return soBoard.boardPieces[i].piecePersonality.PlayAnimations(i, PieceAnimations.TypeAnim.classic);
             NextPiece();
         }
         
