@@ -14,6 +14,7 @@ public class SOEventGridManager : ScriptableObject
     public event Action<bool> SetAllPieceCanMove;
     public event Action<GameObject> AddBoardPiece;
     public event Action<GameObject> SelectRandomSlot
+    public event Action RemoveAtk;
 ;
 
     public void InvokeResetPieceGridCheckedd() { ResetPieceGridChecked?.Invoke(); }
@@ -33,5 +34,7 @@ public class SOEventGridManager : ScriptableObject
     public void InvokeAddBoardPiece(GameObject go) { AddBoardPiece.Invoke(go); }
     public void InvokeSelectRandomSlot(GameObject go) { SelectRandomSlot.Invoke(go); }
     public void InvokeSetAllPieceCanMove(bool can) { SetAllPieceCanMove.Invoke(can); }
+
+    public void InvokeRemoveAtk() {  RemoveAtk?.Invoke(); }
 
 }

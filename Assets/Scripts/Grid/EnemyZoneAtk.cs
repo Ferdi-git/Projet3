@@ -54,4 +54,12 @@ public class EnemyZoneAtk : MonoBehaviour
         }
     }
 
+    public void RemoveAtk()
+    {
+        for (int i = 0; i < listSlots.Count; i++)
+        {
+            listSlots[i].isAttacked = false;
+        }
+    }
+
 }
