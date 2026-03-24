@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using static PieceAnimations;
 
 public class PieceAnimations : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class PieceAnimations : MonoBehaviour
     [SerializeField] private float glowDuration = 0.25f;
     public SpriteRenderer[] spriteRenderers;
 
-    [SerializeField, ColorUsage(true, true)] private Color repeatGlowColor = Color.white;
+    [Tooltip("Normal,Repeat,Atk,Defend,Heal")] 
+    [SerializeField, ColorUsage(true, true)] private Color[] glowColors;
+
 
 
 
@@ -53,9 +56,37 @@ public class PieceAnimations : MonoBehaviour
         return surroundingPoints;
     }
 
-    public IEnumerator PlayAnimations(int number)//c'est la combientieme a etre activé (pour son de + en + aigu )
+    public IEnumerator PlayAnimations(int number, TypeAnim typeAnim)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
+        Color baseColor = glowColors[0];
+        Color glowColor = baseColor;
+        float intensityMultiplier = Mathf.Pow(2f, glowIntensity);
+
+        switch (typeAnim)
+        {
+            case TypeAnim.classic:
+                glowColor = baseColor * intensityMultiplier;
+                break;
+
+            case TypeAnim.repeat:
+                glowColor = glowColors[1] * intensityMultiplier;
+                break;
+
+            case TypeAnim.atk:
+                glowColor = glowColors[2] * intensityMultiplier;
+                break;
+
+            case TypeAnim.shield:
+                glowColor = glowColors[3] * intensityMultiplier;
+                break;
+
+            case TypeAnim.heal:
+                glowColor = glowColors[4] * intensityMultiplier;
+                break;
+        }
         
+
+
         transform.position = new Vector3(transform.position.x, transform.position.y, -0.1f);
 
         transform.DOScale(1.05f + 0.005f * number, 0.1f).OnComplete(() =>
@@ -77,60 +108,29 @@ public class PieceAnimations : MonoBehaviour
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
             Material mat = spriteRenderers[i].material;
-            Color baseColor = mat.GetColor("_GlowColor");
 
-            float intensityMultiplier = Mathf.Pow(2f, glowIntensity);
-            Color glowColor = baseColor * intensityMultiplier;
 
-            mat.DOColor(glowColor, "_GlowColor", glowDuration * 0.3f)
+            mat.DOColor(glowColor, "_GlowColor", glowDuration * 0.3f - 0.01f * number)
                .OnComplete(() =>
                {
-                   mat.DOColor(baseColor, "_GlowColor", glowDuration);
+                   mat.DOColor(baseColor, "_GlowColor", glowDuration - 0.01f * number);
                });
         }
-        yield return new WaitForSeconds(glowDuration + glowDuration * 0.3f);
+        yield return new WaitForSeconds(glowDuration - 0.01f * number + glowDuration * 0.3f - 0.01f * number);
     }
 
-
-    public void PlayRepeatAnimations(int number, float delai)//c'est la combientieme a etre activé (pour son de + en + aigu )
-    {
-        transform.position = new Vector3(transform.position.x, transform.position.y, -0.1f);
-
-        transform.DOScale(1.05f + 0.005f * number, 0.1f).SetDelay(delai).OnComplete(() =>
-        {
-            //float randStartPitch = Random.Range(0.15f, 0.19f);
-            //float randStartPitch = 0.2f;
-            //audioSource.pitch = randStartPitch + 0.05f * number;
-            audioSource.pitch =0.8f;
-
-            int intClip = Mathf.Clamp(number, 0, audioClips.Length);
-            audioSource.clip = audioClips[intClip];
-            audioSource.Play();
-
-            transform.DOScale(1f, 0.1f);
-            transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-
-        });
-
-
-        for (int i = 0; i < spriteRenderers.Length; i++)
-        {
-            Material mat = spriteRenderers[i].material;
-            Color baseColor = mat.GetColor("_GlowColor");
-
-            float intensityMultiplier = Mathf.Pow(2f, glowIntensity);
-            Color glowColor = repeatGlowColor * intensityMultiplier; // different color
-
-            mat.DOColor(glowColor, "_GlowColor", glowDuration * 0.3f).SetDelay(delai)
-               .OnComplete(() =>
-               {
-                   mat.DOColor(baseColor, "_GlowColor", glowDuration); // still returns to original
-               });
-        }
-    }
 
     public void DestroyPiece()
     {
         Destroy(gameObject);
+    }
+
+    public enum TypeAnim
+    {
+        classic,
+        repeat,
+        atk,
+        shield,
+        heal
     }
 }
