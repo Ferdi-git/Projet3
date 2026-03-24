@@ -67,7 +67,8 @@ public class GridManager : MonoBehaviour
         gridManager.InvokeResetPieceGridCheckedd();
         SortBoard(baseSortMode);
         theBoard.boardPieces.Clear();
-
+        ResetNbrAtckCase();
+        SetNbrAtckCase();
         for (int i = 0; i < gridSlots.Length; i++)
         {
             PieceAnimations pieceOnSlot = gridSlots[i].GetPieceOnIt();
@@ -78,7 +79,6 @@ public class GridManager : MonoBehaviour
             pieceOnSlot.wasGridChecked = true;
 
             BoardPiece currentBoardPiece = GetBoardPiece(pieceOnSlot);
-            currentBoardPiece.context.NbrCaseAtk = GetNbrAtckCase(pieceOnSlot);
             currentBoardPiece.context.voisins = GetVoisins(pieceOnSlot);
 
             theBoard.boardPieces.Add(currentBoardPiece);
@@ -122,10 +122,30 @@ public class GridManager : MonoBehaviour
         return null;
     }
 
-    private int GetNbrAtckCase(PieceAnimations pieceAnim)
+    private void ResetNbrAtckCase()
     {
-        var pointsToCheck = pieceAnim.GetSelfPoints();
-        return 1;
+        for(int i = 0; i < gridSlots.Length; i++)
+        {
+            PieceAnimations piece = gridSlots[i].GetPieceOnIt();
+            if(piece != null)
+            {
+                BoardPiece bp = GetBoardPiece(piece);
+                bp.context.NbrCaseAtk = 0;
+            }
+        }
+    }
+
+    private void SetNbrAtckCase()
+    {
+        for (int i = 0; i < gridSlots.Length; i++)
+        {
+            PieceAnimations piece = gridSlots[i].GetPieceOnIt();
+            if (piece != null)
+            {
+                BoardPiece bp = GetBoardPiece(piece);
+                bp.context.NbrCaseAtk +=1;
+            }
+        }
     }
 
     private void SortBoard(SortMode sortMode)
