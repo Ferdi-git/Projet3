@@ -22,3 +22,4 @@ MonoBehaviour:
   EfectValues: 
   colors: 0000000002000000
   description: + damge
+  isRepetition: 1
