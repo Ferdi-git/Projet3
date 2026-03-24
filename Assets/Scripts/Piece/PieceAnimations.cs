@@ -25,14 +25,9 @@ public class PieceAnimations : MonoBehaviour
 
 
 
-    public float healthPoint;
-    public float shield;
-
-
-
     private void Start()
     {
-        healthPoint = soPiece.healthPoint;
+
         audioSource = GetComponent<AudioSource>();
     }
 

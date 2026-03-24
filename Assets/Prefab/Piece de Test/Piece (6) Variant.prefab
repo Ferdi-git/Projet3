@@ -56,6 +56,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: d9ae8f315c480c244a599f98c354d164, type: 2}
     - target: {fileID: 1278556572598618211, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: soPiece
+      value: 
+      objectReference: {fileID: 11400000, guid: 381c9b692b9631c4291d9348615745d1, type: 2}
+    - target: {fileID: 1278556572598618211, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: spriteRenderers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278556572598618211, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: surroundingPoints.Array.size
       value: 4
       objectReference: {fileID: 0}
