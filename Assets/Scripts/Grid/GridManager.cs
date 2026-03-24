@@ -14,7 +14,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private SoBoard theBoard;
 
     [SerializeField] private SoSaveInventory soSaveInventory;
-    [SerializeField] private PiecePersonality[] piecesExist;
+    [SerializeField] private PieceAnimations[] piecesExist;
 
     public GameObject basePrefabAtkTEMP ;
 
@@ -68,7 +68,7 @@ public class GridManager : MonoBehaviour
 
         for (int i = 0; i < gridSlots.Length; i++)
         {
-            PiecePersonality pieceOnSlot = gridSlots[i].GetPieceOnIt();
+            PieceAnimations pieceOnSlot = gridSlots[i].GetPieceOnIt();
 
             if (!gridSlots[i].isFilled || pieceOnSlot.wasGridChecked)
                 continue;
@@ -81,14 +81,14 @@ public class GridManager : MonoBehaviour
         }
     }
     
-    private List<BoardPiece> GetVoisins(PiecePersonality piecePerso)
+    private List<BoardPiece> GetVoisins(PieceAnimations piecePerso)
     {
         var listToReturn = new List<BoardPiece>();
         for (int i = 0; i < piecePerso.GetSurroundingPoints().Length; i++)
         {
             foreach (var hit in Physics2D.OverlapPointAll(piecePerso.GetSurroundingPoints()[i].transform.position))
             {
-                var voisinPiecePerso = hit.gameObject.GetComponent<PiecePersonality>();
+                var voisinPiecePerso = hit.gameObject.GetComponent<PieceAnimations>();
 
                 if (voisinPiecePerso != null && !listToReturn.Contains(GetBoardPiece(voisinPiecePerso)))
                     listToReturn.Add(GetBoardPiece(voisinPiecePerso));
@@ -105,7 +105,7 @@ public class GridManager : MonoBehaviour
     }
 
 
-    private BoardPiece GetBoardPiece(PiecePersonality piecePersonality)
+    private BoardPiece GetBoardPiece(PieceAnimations piecePersonality)
     {
         for (int nbr = 0; nbr < soSaveInventory.listBoardPiecesExist.Count; nbr++)
         {
@@ -139,7 +139,7 @@ public class GridManager : MonoBehaviour
     {
         GameObject prefabAtk = Instantiate(basePrefabAtk);
 
-        EnemyAtk enemyAtk = prefabAtk.GetComponent<EnemyAtk>();
+        EnemyZoneAtk enemyAtk = prefabAtk.GetComponent<EnemyZoneAtk>();
 
 
         int randInt = Random.Range(0, gridSlots.Length);
@@ -166,7 +166,7 @@ public class GridManager : MonoBehaviour
     public void AddBoardPiece(GameObject go)
     {
         BoardPiece newBoardPiece = new();
-        PiecePersonality piecePersonality = go.GetComponent<PiecePersonality>();
+        PieceAnimations piecePersonality = go.GetComponent<PieceAnimations>();
         newBoardPiece.piecePersonality = piecePersonality;
         newBoardPiece.soPieces = piecePersonality.soPiece;
         soSaveInventory.listBoardPiecesExist.Add(newBoardPiece);

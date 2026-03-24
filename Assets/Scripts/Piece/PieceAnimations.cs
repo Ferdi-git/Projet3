@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class PiecePersonality : MonoBehaviour
+public class PieceAnimations : MonoBehaviour
 {
     public SoPieces soPiece;
     //[SerializeField] private Transform[] posCases;

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static Unity.VisualScripting.Metadata;
 
-public class EnemyAtk : MonoBehaviour
+public class EnemyZoneAtk : MonoBehaviour
 {
     public List<Transform> listPoints;
     private List<GridSlot> listSlots;

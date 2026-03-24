@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SingleUIVisuel : MonoBehaviour
+public class SingleNbrDamageVisuel : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI mainText;
     [SerializeField] TextMeshProUGUI outlineText;

@@ -12,11 +12,11 @@ public class GridSlot : MonoBehaviour
         baseColor  = spriteR.color;
     }
 
-    public PiecePersonality GetPieceOnIt()
+    public PieceAnimations GetPieceOnIt()
     {
         foreach (var hit in Physics2D.OverlapPointAll(transform.position))
-            if (hit.gameObject.GetComponent<PiecePersonality>() != null)
-                return hit.gameObject.GetComponent<PiecePersonality>();
+            if (hit.gameObject.GetComponent<PieceAnimations>() != null)
+                return hit.gameObject.GetComponent<PieceAnimations>();
         return null;
     }
 

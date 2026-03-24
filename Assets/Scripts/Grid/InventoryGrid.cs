@@ -58,7 +58,7 @@ public class InventoryGrid : MonoBehaviour
 
         for (int i = 0; i < gridSlots.Length; i++)
         {
-            PiecePersonality pieceOnSlot = gridSlots[i].GetPieceOnIt();
+            PieceAnimations pieceOnSlot = gridSlots[i].GetPieceOnIt();
 
             if (!gridSlots[i].isFilled || soSaveInventory.pieces.Contains(pieceOnSlot.gameObject))
                 continue;

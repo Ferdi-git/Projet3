@@ -8,7 +8,7 @@ public class BoardPiece
     public float shield;
 
     public SoPieces soPieces;
-    public PiecePersonality piecePersonality;
+    public PieceAnimations piecePersonality;
     public Context context = new();
 
 

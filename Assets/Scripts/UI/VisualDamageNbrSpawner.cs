@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class VisualSpawner : MonoBehaviour
+public class VisualDamageNbrSpawner : MonoBehaviour
 {
     [SerializeField] GameObject prefabVisuel;
     [SerializeField] Transform spawnPoint;
@@ -24,7 +24,7 @@ public class VisualSpawner : MonoBehaviour
         dataUIVisuel.nbr = Random.Range(10, 1000);
 
 
-        newSingle.GetComponent<SingleUIVisuel>().Initialise(dataUIVisuel);    
+        newSingle.GetComponent<SingleNbrDamageVisuel>().Initialise(dataUIVisuel);    
     }
 
 
