@@ -3345,6 +3345,7 @@ MonoBehaviour:
   index: 0
   bouton: {fileID: 143320168}
   ennemiManager: {fileID: 701649383}
+  piecePlayed: {fileID: 11400000, guid: ec1af6f5847cedb40a00e1b899e5e8cc, type: 2}
 --- !u!1 &504268152
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class Combat : MonoBehaviour
     [SerializeField] private int index;
     [SerializeField] private GameObject bouton;
     [SerializeField] private EnnemiManager ennemiManager;
+    [SerializeField] private SoNbrOfPiecePlayed piecePlayed;
 
 
     private void Start() // à enlever
@@ -48,6 +49,7 @@ public class Combat : MonoBehaviour
 
     IEnumerator Tour (int i)
     {
+        piecePlayed.ResetInt();
         yield return ResoudreEffet(soBoard.boardPieces[i].soPieces, i );
     }
 
@@ -59,6 +61,7 @@ public class Combat : MonoBehaviour
             port.statsPlayer = statsPlayer;
             port.statsEnnemi = statsEnnemi;
             port.thisBoardPiece = soBoard.boardPieces[i];
+            port.piecePlayed = piecePlayed;
             yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValues , i);
             NextPiece();
         }

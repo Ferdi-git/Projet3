@@ -6,6 +6,7 @@ public class OutputPort
     public BoardPiece thisBoardPiece;
     public StatsPlayer statsPlayer;
     public StatsEnnemi statsEnnemi;
+    public SoNbrOfPiecePlayed piecePlayed;
     private int i;
     private float delai;
 
@@ -68,24 +69,5 @@ public class OutputPort
 
 
 
-    public void EndEffet ()
-    {
-        //combat.NextPiece(0f);
-    }
-    public void EndRepeatEffetRequest (int  amount)
-    {
-        //float timeToWait = 0.3f - 0.01f * i;
-        //timeToWait = Mathf.Clamp(timeToWait, 0.05f, 0.7f);
-
-        i = amount;
-        delai = 0.3f * i + 0.3f; // valeur approximative 
-    }
-    public void FinishedRepeatedEffect ()
-    {
-        i -= 1;
-        if (i <= 0)
-        {
-            //combat.NextPiece(delai);
-        }
-    }
+    
 }
