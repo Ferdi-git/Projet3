@@ -24,6 +24,7 @@ public class Combat : MonoBehaviour
     {
         bouton.SetActive(true);
         ennemiManager.GenerateEnnemi();
+        ennemiManager.ShowAtk();
     }
 
     public void StartTurn ( )
@@ -33,10 +34,10 @@ public class Combat : MonoBehaviour
         index = 0;
         if (index >= soBoard.boardPieces.Count)
         {
-            eventGridManager.InvokeSetAllPieceCanMove(true);
+            StartCoroutine(EnnemiTurn());
             return;
         }
-        StartCoroutine(Tour(0));
+        StartCoroutine(PlayerTurn(0));
     }
 
     public void NextPiece ()
@@ -45,14 +46,21 @@ public class Combat : MonoBehaviour
         index++;
         if (index >= soBoard.boardPieces.Count)
         {
-            eventGridManager.InvokeSetAllPieceCanMove(true);
+            StartCoroutine(EnnemiTurn());
+            
             return;
         }
-        StartCoroutine(Tour(index));
+        StartCoroutine(PlayerTurn(index));
     }
     
+    IEnumerator EnnemiTurn ()
+    {
+        yield return null;
 
-    IEnumerator Tour (int i)
+        eventGridManager.InvokeSetAllPieceCanMove(true);
+    }
+
+    IEnumerator PlayerTurn (int i)
     {
         
         yield return ResoudreEffet(soBoard.boardPieces[i].soPieces, i );

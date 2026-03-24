@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TestEnnemi
   m_EditorClassIdentifier: Assembly-CSharp::GeneratEnnemiSo
   Name: 
-  Effets:
-  - effet: {fileID: 0}
-    values: 3600000004000000
+  attacks:
+  - zone: {fileID: 595633910440424199, guid: 79561309a9862e54aa446cdd0b126024, type: 3}
+    damage: 2
   sprite: {fileID: 0}
-  "R\xE9sistance": 100
+  resistance: 100

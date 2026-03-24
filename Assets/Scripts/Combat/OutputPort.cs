@@ -1,6 +1,4 @@
 
-using System.Diagnostics;
-
 public class OutputPort 
 {
     public BoardPiece thisBoardPiece;
