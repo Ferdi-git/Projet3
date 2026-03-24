@@ -307,6 +307,7 @@ MonoBehaviour:
   isDraging: 0
   isRotating: 0
   isRotatingInputBuffer: 0
+  canBeMoved: 1
 --- !u!60 &3463587272074752591
 PolygonCollider2D:
   m_ObjectHideFlags: 0

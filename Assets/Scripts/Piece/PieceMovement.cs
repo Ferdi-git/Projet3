@@ -22,7 +22,6 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
 
     private void Awake()
     {
-        canBeMoved = true;
         audioSource = GetComponent<AudioSource>();
         SnapToGrid();
     }
