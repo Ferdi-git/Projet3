@@ -30,7 +30,13 @@ public class InventoryGrid : MonoBehaviour
         gridManager.OnePieceIsPlaced -= CheckIfCanSave;
 
     }
-
+    private void Awake()
+    {
+        soSaveInventory.pieces.Clear();
+        soSaveInventory.piecesPos.Clear();
+        soSaveInventory.piecesRot.Clear();
+        soSaveInventory.listBoardPiecesExist.Clear();
+    }
     private void Start()
     {
         SaveGrid();
@@ -38,6 +44,8 @@ public class InventoryGrid : MonoBehaviour
 
     public void CheckIfCanSave()
     {
+        if (isReseting) return;
+
         gridManager.InvokeActualiseBoard();
 
         if(isReseting || theBoard.boardPieces.Count != 0) return;
@@ -51,6 +59,9 @@ public class InventoryGrid : MonoBehaviour
     [Button]
     public void SaveGrid()
     {
+        if (isReseting) return;
+
+        print("SAVE");
         soSaveInventory.pieces.Clear();
         soSaveInventory.piecesPos.Clear();
         soSaveInventory.piecesRot.Clear();
@@ -71,6 +82,13 @@ public class InventoryGrid : MonoBehaviour
     [Button]
     public void ResetInventory()
     {
+        Debug.Log("ResetInventory called");
+        Debug.Log("SaveGrid called from: " + System.Environment.StackTrace);
+        for (int i = 0; i < soSaveInventory.pieces.Count; i++)
+        {
+            Debug.Log($"Piece {i}: current={soSaveInventory.pieces[i].transform.position} saved={soSaveInventory.piecesPos[i]} match={soSaveInventory.pieces[i].transform.position == soSaveInventory.piecesPos[i]}");
+        }
+
         isReseting = true;
         float delay = 0;
 
@@ -83,7 +101,9 @@ public class InventoryGrid : MonoBehaviour
             if (soSaveInventory.pieces[i].transform.position != soSaveInventory.piecesPos[i] ||
                 soSaveInventory.pieces[i].transform.rotation != soSaveInventory.piecesRot[i])
                 lastMovingIndex = i;
+
         }
+        Debug.Log($"lastMovingIndex={lastMovingIndex}");
 
 
         if (lastMovingIndex == -1)
@@ -115,7 +135,7 @@ public class InventoryGrid : MonoBehaviour
                 .SetDelay(delay)
                 .OnComplete(() =>
                 {
-                    soSaveInventory.pieces[i].GetComponent<PieceMouvement>().SnapToGrid();
+                    soSaveInventory.pieces[index].GetComponent<PieceMouvement>().SnapToGrid();
 
                     if (isLast)
                     {
@@ -129,7 +149,18 @@ public class InventoryGrid : MonoBehaviour
             delay += delayInBetweenBackToInventory;
         }
 
-    
+        DOVirtual.DelayedCall(timeToGoBackToInventory + delay + 0.5f, () =>
+        {
+            if (isReseting)
+            {
+                Debug.LogWarning("ResetInventory fallback triggered");
+                gridManager.InvokeResetGridSlots();
+                EmptyInventoryGridSlots();
+                ReSnapEverything();
+                isReseting = false;
+            }
+        });
+
     }
 
 
@@ -149,7 +180,7 @@ public class InventoryGrid : MonoBehaviour
     {
         for (int nbr = 0; nbr < gridSlots.Length; nbr++)
         {
-            gridSlots[nbr].isFilled = false;
+            gridSlots[nbr].ClearSlot();
         }
     }
 }
