@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f7f60e0ed8ad84fb85bba3149217e6, type: 3}
   m_Name: TestEnnemi
   m_EditorClassIdentifier: Assembly-CSharp::GeneratEnnemiSo
-  Name: 
+  Name: Bob
   attacks:
   - zone: {fileID: 595633910440424199, guid: 79561309a9862e54aa446cdd0b126024, type: 3}
     damage: 2
+  - zone: {fileID: 595633910440424199, guid: 6c69f0e495393e147b27f051cb380002, type: 3}
+    damage: 3
   sprite: {fileID: 0}
   resistance: 100
