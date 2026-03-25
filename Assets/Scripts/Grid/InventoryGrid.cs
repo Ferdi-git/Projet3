@@ -51,23 +51,21 @@ public class InventoryGrid : MonoBehaviour
     [Button]
     public void SaveGrid()
     {
-        soSaveInventory.pieces.Clear(); 
-        soSaveInventory.piecesPos.Clear(); 
+        soSaveInventory.pieces.Clear();
+        soSaveInventory.piecesPos.Clear();
         soSaveInventory.piecesRot.Clear();
-
 
         for (int i = 0; i < gridSlots.Length; i++)
         {
             PieceAnimations pieceOnSlot = gridSlots[i].GetPieceOnIt();
 
-            if (!gridSlots[i].isFilled || soSaveInventory.pieces.Contains(pieceOnSlot.gameObject))
+            if (!gridSlots[i].isFilled || pieceOnSlot == null || soSaveInventory.pieces.Contains(pieceOnSlot.gameObject))
                 continue;
 
             soSaveInventory.pieces.Add(pieceOnSlot.gameObject);
             soSaveInventory.piecesPos.Add(pieceOnSlot.transform.position);
             soSaveInventory.piecesRot.Add(pieceOnSlot.transform.rotation);
         }
-
     }
 
     [Button]
@@ -133,10 +131,6 @@ public class InventoryGrid : MonoBehaviour
 
     
     }
-
-
-
-
 
 
 

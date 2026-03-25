@@ -98,7 +98,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
             foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
-                if (slot != null) { slot.isFilled = false; break; }
+                if (slot != null) { slot.ClearSlot(); break; }
             }
         }
     }
@@ -110,7 +110,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
             foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
-                if (slot != null) { slot.isFilled = true; break; }
+                if (slot != null) { slot.SetPiece(gameObject); break; }
             }
         }
     }
@@ -161,7 +161,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
             foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
-                if (slot != null && !slot.isFilled) { slot.isFilled = true; break; }
+                if (slot != null && !slot.isFilled) { slot.SetPiece(gameObject); break; }
             }
         }
         float randStartPitch = Random.Range(1.0f, 1.2f);

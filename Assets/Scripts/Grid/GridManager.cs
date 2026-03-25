@@ -168,7 +168,7 @@ public class GridManager : MonoBehaviour
     public void SelectRandomSlot(GameObject basePrefabAtk)
     {
         GameObject prefabAtk = Instantiate(basePrefabAtk);
-        listBoardPrefabAtk.Append(prefabAtk);
+        listBoardPrefabAtk.Add(prefabAtk);
 
         EnemyZoneAtk enemyAtk = prefabAtk.GetComponent<EnemyZoneAtk>();
 

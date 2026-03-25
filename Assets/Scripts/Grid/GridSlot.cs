@@ -5,23 +5,27 @@ public class GridSlot : MonoBehaviour
     public bool isFilled = false;
     public bool isAttacked;
 
+    private GameObject pieceOnIt = null;
 
+    public void SetPiece(GameObject piece)
+    {
+        pieceOnIt = piece;
+        isFilled = piece != null;
+    }
 
     public PieceAnimations GetPieceOnIt()
     {
-        foreach (var hit in Physics2D.OverlapPointAll(transform.position))
-            if (hit.gameObject.GetComponent<PieceAnimations>() != null)
-                return hit.gameObject.GetComponent<PieceAnimations>();
-        return null;
+        if (pieceOnIt == null) return null;
+        return pieceOnIt.GetComponent<PieceAnimations>();
     }
 
-    public void GetSelected()
+    public void ClearSlot()
     {
-        isAttacked = true;
+        pieceOnIt = null;
+        isFilled = false;
     }
 
-    public void GetDeselected()
-    {
-        isAttacked = false;
-    }
+    public void GetSelected() => isAttacked = true;
+    public void GetDeselected() => isAttacked = false;
+
 }

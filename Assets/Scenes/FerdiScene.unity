@@ -2813,20 +2813,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bd893cf7677ef43934543bf6c9869f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  nbrOfChoice: 3
-  choiceLayout: {fileID: 691837161}
-  onePieceScreen: {fileID: 1424541697}
-  onePiecePiece: {fileID: 152751873}
-  prefabPieceChoice: {fileID: 6678205868758961975, guid: ceafefff25e44384eb0904b2acdacf08, type: 3}
-  eventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
-  difPieces:
-  - {fileID: 11400000, guid: 1d2dbf1a73742734d89c8a64e304f5fa, type: 2}
-  - {fileID: 11400000, guid: 60244c0a718ddc54d816731d352d8921, type: 2}
-  - {fileID: 11400000, guid: 5c549e0563848cf44807d11f488c4631, type: 2}
-  - {fileID: 11400000, guid: 381c9b692b9631c4291d9348615745d1, type: 2}
-  - {fileID: 11400000, guid: c883cf25e4b187e4e99244efba1020bb, type: 2}
-  - {fileID: 11400000, guid: fcf4baab08234e74aac22b8a54183d16, type: 2}
-  Grid: {fileID: 884910093}
+  nbrOfChoice: 0
+  choiceLayout: {fileID: 0}
+  onePieceScreen: {fileID: 0}
+  onePiecePiece: {fileID: 0}
+  prefabPieceChoice: {fileID: 0}
+  eventGridManager: {fileID: 0}
+  difPieces: []
+  Grid: {fileID: 0}
   lastGeneratedPiece: {fileID: 0}
 --- !u!114 &393186206
 MonoBehaviour:
@@ -2997,52 +2991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea11e47d17977cd4182aa25ad41809dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  gridSlots:
-  - {fileID: 1570917429}
-  - {fileID: 337561464}
-  - {fileID: 1446603345}
-  - {fileID: 1156142473}
-  - {fileID: 1292934333}
-  - {fileID: 1156629171}
-  - {fileID: 1844438433}
-  - {fileID: 628461751}
-  - {fileID: 726943664}
-  - {fileID: 890471604}
-  - {fileID: 990800780}
-  - {fileID: 919014671}
-  - {fileID: 2050792627}
-  - {fileID: 2110684083}
-  - {fileID: 304348394}
-  - {fileID: 637352275}
-  - {fileID: 1175993765}
-  - {fileID: 968541977}
-  - {fileID: 1973962797}
-  - {fileID: 1477927472}
-  - {fileID: 949545148}
-  - {fileID: 1235267551}
-  - {fileID: 1418666931}
-  - {fileID: 45898358}
-  - {fileID: 1752377159}
-  - {fileID: 1045724362}
-  - {fileID: 1568767117}
-  - {fileID: 504268153}
-  - {fileID: 1787504432}
-  - {fileID: 564063721}
-  - {fileID: 1688571113}
-  - {fileID: 73203017}
-  - {fileID: 538903381}
-  - {fileID: 45629076}
-  - {fileID: 1247116769}
-  - {fileID: 1026573281}
-  - {fileID: 2015283148}
-  - {fileID: 1297942349}
-  - {fileID: 1666508100}
-  - {fileID: 1479264558}
-  - {fileID: 752406275}
-  - {fileID: 1205800217}
-  - {fileID: 1310690508}
-  - {fileID: 257943640}
-  - {fileID: 1399396127}
+  gridSlots: []
   soSaveInventory: {fileID: 11400000, guid: 767dd48b98fbd4f42942f9e086303307, type: 2}
   gridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   timeToGoBackToInventory: 0.2
@@ -3335,6 +3284,7 @@ MonoBehaviour:
   ennemiManager: {fileID: 701649383}
   piecePlayed: {fileID: 11400000, guid: ec1af6f5847cedb40a00e1b899e5e8cc, type: 2}
   eventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
+  pieceHealthManager: {fileID: 0}
 --- !u!1 &504268152
 GameObject:
   m_ObjectHideFlags: 0
@@ -5918,7 +5868,7 @@ MonoBehaviour:
   - {fileID: 1667613315}
   - {fileID: 246931238}
   - {fileID: 894918565}
-  basePrefabAtkTEMP: {fileID: 595633910440424199, guid: 6c69f0e495393e147b27f051cb380002, type: 3}
+  listBoardPrefabAtk: []
   baseSortMode: 1
 --- !u!4 &884910095
 Transform:
@@ -11526,8 +11476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdaeed3bb67d5a47a22f6a5bc831dfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  prefabVisuel: {fileID: 9097167271780792912, guid: 95bec9aff69961c4ba560f5c8aa31332, type: 3}
-  spawnPoint: {fileID: 1161175295}
+  prefabVisuel: {fileID: 0}
+  spawnPoint: {fileID: 0}
 --- !u!114 &1513690118 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8047913450760407133, guid: 6af910bd501043a44ab2d50b872bb3c8, type: 3}
