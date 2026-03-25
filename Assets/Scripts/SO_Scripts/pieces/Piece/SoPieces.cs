@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewPiece", menuName = "Pieces/Piece")]
 public class SoPieces : ScriptableObject
 {
-    public float healthPoint;
+    public int healthPoint;
     public GameObject prefab;
     public Sprite image;
     public PieceEffect pieceEffet;

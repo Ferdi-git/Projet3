@@ -3284,7 +3284,7 @@ MonoBehaviour:
   ennemiManager: {fileID: 701649383}
   piecePlayed: {fileID: 11400000, guid: ec1af6f5847cedb40a00e1b899e5e8cc, type: 2}
   eventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
-  pieceHealthManager: {fileID: 0}
+  pieceHealthManager: {fileID: 11400000, guid: 75852bd6b8ee08246bc687f0042d403d, type: 2}
 --- !u!1 &504268152
 GameObject:
   m_ObjectHideFlags: 0

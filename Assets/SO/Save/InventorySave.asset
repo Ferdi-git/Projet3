@@ -28,7 +28,7 @@ MonoBehaviour:
       "NbrCaseOccup\xE9": 0
       NbrDeRepetition: 0
       voisins: []
-      NbrCaseAtk: 0
+      NbrCaseAtk: 1
   - healthPoint: 0
     shield: 0
     soPieces: {fileID: 11400000, guid: 5c549e0563848cf44807d11f488c4631, type: 2}

@@ -63,7 +63,17 @@ public class Combat : MonoBehaviour
         {
             if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
             {
-                //degats sur les pieces 
+                pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield);
+                pieceHealthManager.TakeDamage(ennemiManager.GetDamageValue() * soBoard.boardPieces[i].context.NbrCaseAtk);
+
+                soBoard.boardPieces[i].healthPoint = pieceHealthManager.hp;
+                soBoard.boardPieces[i].shield = pieceHealthManager.shield;
+
+                if (pieceHealthManager.hp == 0)
+                {
+                    print("mort !!!!");
+                }
+
 
                 zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
             }
