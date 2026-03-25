@@ -107,8 +107,9 @@ public class Combat : MonoBehaviour
     {
         yield return null;
         //check si des pieces sont mortes 
-        //enlever bouclier aux pieces (mettre bouclier dans boardpiece
-        //enlever l'ancienne atk 
+        //enlever bouclier aux pieces (mettre bouclier dans boardpiece)
+        print("test");
+        ennemiManager.RemoveAtk();
         ennemiManager.ShowAtk();
 
         eventGridManager.InvokeSetAllPieceCanMove(true);

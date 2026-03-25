@@ -32,6 +32,10 @@ public class EnnemiManager : MonoBehaviour
         atkIndex = Random.Range (0, stats.ennemiAttacks.Count);
         soEventGridManager.InvokeSelectRandomSlot(stats.ennemiAttacks[atkIndex].zone);
     }
+    public void RemoveAtk ()
+    {
+        soEventGridManager.InvokeRemoveAtk();
+    }
     
     public int GetDamageValue ()
     {
