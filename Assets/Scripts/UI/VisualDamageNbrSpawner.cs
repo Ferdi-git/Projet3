@@ -20,7 +20,8 @@ public class VisualDamageNbrSpawner : MonoBehaviour
 
 
         DataUIVisuel dataUIVisuel = new DataUIVisuel();
-        dataUIVisuel.textColor = Random.ColorHSV();
+        //dataUIVisuel.textColor = Random.ColorHSV();
+        dataUIVisuel.textColor = Color.red;
         dataUIVisuel.nbr = Random.Range(10, 1000);
 
 

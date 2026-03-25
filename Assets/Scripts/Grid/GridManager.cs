@@ -44,7 +44,6 @@ public class GridManager : MonoBehaviour
 
 
 
-
     }
 
     private void Start()
@@ -199,7 +198,7 @@ public class GridManager : MonoBehaviour
         for (int i = 0; i < listBoardPrefabAtk.Count; i++)
         {
             listBoardPrefabAtk[i].GetComponent<EnemyZoneAtk>().RemoveAtk();
-            Destroy(listBoardPrefabAtk[i]);
+            Destroy(listBoardPrefabAtk[i].gameObject);
         }
         listBoardPrefabAtk.Clear();
     }

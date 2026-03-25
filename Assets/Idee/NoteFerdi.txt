@@ -1,0 +1,59 @@
+
+
+
+Grid Slot :
+	GetPieceOnIt
+	GetSelected
+	GetReseted
+
+
+Piece Movement :
+	OnDragStart
+	OnDragMove
+	OnDragEnd
+	OnHoverEnter
+	OnHoverExit
+	
+	Unfill
+	Refill
+	_CheckIfCanBePlaced
+	_CheckIfSingleCaseCanBePlaced
+
+
+	SnapToGrid
+		InvokePiecePlaced
+	OnRightClick()
+
+	SetCanMove
+
+GridManager :
+	GetVoisins
+	GetBoardPiece
+	ActualiseBoard
+		SortBoard
+		ResetNbrAtckCase
+		SetNbrAtckCase();
+
+	ResetNbrAtckCase
+	SetNbrAtckCase
+	SortBoard
+	ResetGridSlots
+	SelectRandomSlot
+	RemoveAtk
+	AddBoardPiece
+	RemoveBoardPiece
+
+
+Piece Animation
+	_ResetPiece
+	_GetSurroundingPoints
+	_GetSelfPoints
+	PlayAnimations
+	DestroyPiece
+
+PieceInfo :
+	ResetPiece
+	GetSurroundingPoints
+	GetSelfPoints
+	CheckIfCanBePlaced
+	CheckIfSingleCaseCanBePlaced

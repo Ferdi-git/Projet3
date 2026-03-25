@@ -20,7 +20,7 @@ public class GridSlot : MonoBehaviour
         isAttacked = true;
     }
 
-    public void GetReseted()
+    public void GetDeselected()
     {
         isAttacked = false;
     }
