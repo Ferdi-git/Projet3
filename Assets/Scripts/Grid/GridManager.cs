@@ -65,12 +65,13 @@ public class GridManager : MonoBehaviour
     }
 
 
-
+    [Button]
     private void ActualiseBoard()
     {
         gridManager.InvokeResetPieceGridCheckedd();
         SortBoard(baseSortMode);
         theBoard.boardPieces.Clear();
+        print("ClearBoad");
         ResetNbrAtckCase();
         SetNbrAtckCase();
         for (int i = 0; i < gridSlots.Length; i++)

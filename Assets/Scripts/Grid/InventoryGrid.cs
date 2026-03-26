@@ -2,6 +2,7 @@ using DG.Tweening;
 using Sirenix.OdinInspector;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -45,8 +46,6 @@ public class InventoryGrid : MonoBehaviour
     public void TryToSave()
     {
         print("TrySave");
-
-        print(isReseting + (theBoard.boardPieces.Count.ToString()));
         if (isReseting) return;
 
         //gridManager.InvokeActualiseBoard();
@@ -62,8 +61,6 @@ public class InventoryGrid : MonoBehaviour
     [Button]
     private void SaveGrid()
     {
-        print("TrySave");
-
         print("SAVE");
         soSaveInventory.pieces.Clear();
         soSaveInventory.piecesPos.Clear();
@@ -91,58 +88,46 @@ public class InventoryGrid : MonoBehaviour
         isReseting = true;
         float delay = 0;
 
-        //gridManager.InvokeResetGridSlots();
-        //EmptyInventoryGridSlots();
+        List<int> listPieceMoved = new List<int>();
 
-        int lastMovingIndex = -1;
+
         for (int i = 0; i < soSaveInventory.pieces.Count; i++)
         {
             if (soSaveInventory.pieces[i].transform.position != soSaveInventory.piecesPos[i] ||
                 soSaveInventory.pieces[i].transform.rotation != soSaveInventory.piecesRot[i])
-                lastMovingIndex = i;
-
+                listPieceMoved.Add(i);
         }
-        Debug.Log($"lastMovingIndex={lastMovingIndex}");
 
 
-        if (lastMovingIndex == -1)
+
+        if (listPieceMoved.Count == 0)
         {
-            gridManager.InvokeResetGridSlots();
-            EmptyInventoryGridSlots();
-            ReSnapEverything();
-            isReseting = false;
-            gridManager.InvokeTrySaveInventory();
+            FinishReset(listPieceMoved);
             return;
         }
 
+        int remaining = listPieceMoved.Count;
 
+        print(remaining);
 
-        for (int i = 0; i < soSaveInventory.pieces.Count; i++)
+        for (int i = 0; i < listPieceMoved.Count; i++)
         {
-            if (soSaveInventory.pieces[i].transform.position == soSaveInventory.piecesPos[i] &&
-                soSaveInventory.pieces[i].transform.rotation == soSaveInventory.piecesRot[i])
-                continue;
+            int savedIndex = listPieceMoved[i];
 
-            int index = i;
-            bool isLast = index == lastMovingIndex;
-
-            soSaveInventory.pieces[index].transform
-                .DOMove(soSaveInventory.piecesPos[index], timeToGoBackToInventory)
+            soSaveInventory.pieces[savedIndex].transform
+                .DOMove(soSaveInventory.piecesPos[savedIndex], timeToGoBackToInventory)
                 .SetDelay(delay);
 
-            soSaveInventory.pieces[index].transform
-                .DORotateQuaternion(soSaveInventory.piecesRot[index], timeToGoBackToInventory)
+            soSaveInventory.pieces[savedIndex].transform
+                .DORotateQuaternion(soSaveInventory.piecesRot[savedIndex], timeToGoBackToInventory)
                 .SetDelay(delay)
                 .OnComplete(() =>
                 {
-                    soSaveInventory.pieces[index].GetComponent<PieceMouvement>().SnapToGrid();
-
-                    if (isLast)
+                    soSaveInventory.pieces[savedIndex].GetComponent<PieceMouvement>().SnapToGrid();
+                    remaining--;
+                    if (remaining == 0)
                     {
-                        gridManager.InvokeResetGridSlots();
-                        EmptyInventoryGridSlots();
-                        ReSnapEverything();
-                        isReseting = false;
+                        FinishReset(listPieceMoved);
                     }
                 });
 
@@ -153,29 +138,22 @@ public class InventoryGrid : MonoBehaviour
         {
             if (isReseting)
             {
-                Debug.LogWarning("ResetInventory fallback triggered");
-                gridManager.InvokeResetGridSlots();
-                EmptyInventoryGridSlots();
-                ReSnapEverything();
-                isReseting = false;
-                gridManager.InvokeTrySaveInventory();
-
+                FinishReset(listPieceMoved);
             }
         });
 
     }
 
 
-
-
-    private void ReSnapEverything()
+    private void FinishReset(List<int> piecesMoved)
     {
-        for (int i = 0; i < soSaveInventory.pieces.Count; i++)
-        {
-            soSaveInventory.pieces[i].GetComponent<PieceMouvement>().SnapToGrid();
-        }
+        gridManager.InvokeResetGridSlots();
+        EmptyInventoryGridSlots();
+        isReseting = false;
         TryToSave();
     }
+
+
 
 
     public void EmptyInventoryGridSlots()
