@@ -85,7 +85,7 @@ public class ChoiceManager : MonoBehaviour
         if(go == lastGeneratedPiece)
         {
             go.transform.SetParent(null);
-            eventGridManager.InvokeSaveInventory();
+            eventGridManager.InvokeTrySaveInventory();
             EndChoice();
         }
     }

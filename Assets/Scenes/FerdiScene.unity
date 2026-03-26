@@ -2991,7 +2991,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea11e47d17977cd4182aa25ad41809dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  gridSlots: []
+  gridSlots:
+  - {fileID: 1570917429}
+  - {fileID: 337561464}
+  - {fileID: 1446603345}
+  - {fileID: 1156142473}
+  - {fileID: 1292934333}
+  - {fileID: 1156629171}
+  - {fileID: 1844438433}
+  - {fileID: 628461751}
+  - {fileID: 726943664}
+  - {fileID: 890471604}
+  - {fileID: 990800780}
+  - {fileID: 919014671}
+  - {fileID: 2050792627}
+  - {fileID: 2110684083}
+  - {fileID: 304348394}
+  - {fileID: 637352275}
+  - {fileID: 1175993765}
+  - {fileID: 968541977}
+  - {fileID: 1973962797}
+  - {fileID: 1477927472}
+  - {fileID: 949545148}
+  - {fileID: 1235267551}
+  - {fileID: 1418666931}
+  - {fileID: 45898358}
+  - {fileID: 1752377159}
+  - {fileID: 1045724362}
+  - {fileID: 1568767117}
+  - {fileID: 504268153}
+  - {fileID: 1787504432}
+  - {fileID: 564063721}
+  - {fileID: 1688571113}
+  - {fileID: 73203017}
+  - {fileID: 538903381}
+  - {fileID: 45629076}
+  - {fileID: 1247116769}
+  - {fileID: 1026573281}
+  - {fileID: 2015283148}
+  - {fileID: 1297942349}
+  - {fileID: 1666508100}
+  - {fileID: 1479264558}
+  - {fileID: 752406275}
+  - {fileID: 1205800217}
+  - {fileID: 1310690508}
+  - {fileID: 257943640}
+  - {fileID: 1399396127}
   soSaveInventory: {fileID: 11400000, guid: 767dd48b98fbd4f42942f9e086303307, type: 2}
   gridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   timeToGoBackToInventory: 0.2

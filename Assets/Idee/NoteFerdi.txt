@@ -1,6 +1,4 @@
 
-
-
 Grid Slot :
 	GetPieceOnIt
 	GetSelected
@@ -31,15 +29,13 @@ GridManager :
 	GetBoardPiece
 	ActualiseBoard
 		SortBoard
-		ResetNbrAtckCase
-		SetNbrAtckCase();
+		_ResetNbrAtckCase
+		_SetNbrAtckCase();
 
-	ResetNbrAtckCase
-	SetNbrAtckCase
+	
 	SortBoard
 	ResetGridSlots
-	SelectRandomSlot
-	RemoveAtk
+	
 	AddBoardPiece
 	RemoveBoardPiece
 
@@ -57,3 +53,9 @@ PieceInfo :
 	GetSelfPoints
 	CheckIfCanBePlaced
 	CheckIfSingleCaseCanBePlaced
+
+AtkManager :
+	ResetNbrAtckCase
+	SetNbrAtckCase
+	SelectRandomSlot
+	RemoveAtk

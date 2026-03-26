@@ -46,7 +46,9 @@ public class GridManager : MonoBehaviour
 
     }
 
-    private void Start()
+
+
+    private void Awake()
     {
         SortBoard(baseSortMode);
         soSaveInventory.listBoardPiecesExist.Clear();
@@ -55,11 +57,13 @@ public class GridManager : MonoBehaviour
             BoardPiece newBoardPiece = new();
             newBoardPiece.piecePersonality = piecesExist[i];
             newBoardPiece.soPieces = piecesExist[i].soPiece;
+            newBoardPiece.healthPoint = newBoardPiece.soPieces.healthPoint;
             soSaveInventory.listBoardPiecesExist.Add(newBoardPiece); 
         }
         ActualiseBoard();
 
     }
+
 
 
     private void ActualiseBoard()
@@ -73,7 +77,7 @@ public class GridManager : MonoBehaviour
         {
             PieceAnimations pieceOnSlot = gridSlots[i].GetPieceOnIt();
 
-            if (!gridSlots[i].isFilled || pieceOnSlot.wasGridChecked)
+            if (pieceOnSlot == null || pieceOnSlot.wasGridChecked)
                 continue;
 
             pieceOnSlot.wasGridChecked = true;
@@ -83,6 +87,7 @@ public class GridManager : MonoBehaviour
 
             theBoard.boardPieces.Add(currentBoardPiece);
         }
+        gridManager.InvokeTrySaveInventory();
     }
     
     private List<BoardPiece> GetVoisins(PieceAnimations piecePerso)

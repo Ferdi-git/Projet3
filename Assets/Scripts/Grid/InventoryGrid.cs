@@ -18,16 +18,16 @@ public class InventoryGrid : MonoBehaviour
 
     private void OnEnable()
     {
-        gridManager.SaveInventory += SaveGrid;
+        gridManager.TrySaveInventory += TryToSave;
         gridManager.ResetInventory += ResetInventory;
-        gridManager.OnePieceIsPlaced += CheckIfCanSave;
+        //gridManager.OnePieceIsPlaced += TryToSave;
     }
 
     private void OnDisable()
     {
-        gridManager.SaveInventory -= SaveGrid;
+        gridManager.TrySaveInventory -= TryToSave;
         gridManager.ResetInventory -= ResetInventory;
-        gridManager.OnePieceIsPlaced -= CheckIfCanSave;
+        //gridManager.OnePieceIsPlaced -= TryToSave;
 
     }
     private void Awake()
@@ -42,13 +42,15 @@ public class InventoryGrid : MonoBehaviour
         SaveGrid();
     }
 
-    public void CheckIfCanSave()
+    public void TryToSave()
     {
+        print("TrySave");
+
         if (isReseting) return;
 
-        gridManager.InvokeActualiseBoard();
+        //gridManager.InvokeActualiseBoard();
 
-        if(isReseting || theBoard.boardPieces.Count != 0) return;
+        if(theBoard.boardPieces.Count != 0) return;
         //print(theBoard.boardPieces.Count);
         //print("HALLOO");
         SaveGrid();
@@ -57,9 +59,9 @@ public class InventoryGrid : MonoBehaviour
 
 
     [Button]
-    public void SaveGrid()
+    private void SaveGrid()
     {
-        if (isReseting) return;
+        print("TrySave");
 
         print("SAVE");
         soSaveInventory.pieces.Clear();
@@ -70,7 +72,7 @@ public class InventoryGrid : MonoBehaviour
         {
             PieceAnimations pieceOnSlot = gridSlots[i].GetPieceOnIt();
 
-            if (!gridSlots[i].isFilled || pieceOnSlot == null || soSaveInventory.pieces.Contains(pieceOnSlot.gameObject))
+            if (pieceOnSlot == null || soSaveInventory.pieces.Contains(pieceOnSlot.gameObject))
                 continue;
 
             soSaveInventory.pieces.Add(pieceOnSlot.gameObject);
@@ -83,11 +85,7 @@ public class InventoryGrid : MonoBehaviour
     public void ResetInventory()
     {
         Debug.Log("ResetInventory called");
-        Debug.Log("SaveGrid called from: " + System.Environment.StackTrace);
-        for (int i = 0; i < soSaveInventory.pieces.Count; i++)
-        {
-            Debug.Log($"Piece {i}: current={soSaveInventory.pieces[i].transform.position} saved={soSaveInventory.piecesPos[i]} match={soSaveInventory.pieces[i].transform.position == soSaveInventory.piecesPos[i]}");
-        }
+
 
         isReseting = true;
         float delay = 0;
@@ -172,7 +170,7 @@ public class InventoryGrid : MonoBehaviour
         {
             soSaveInventory.pieces[i].GetComponent<PieceMouvement>().SnapToGrid();
         }
-        SaveGrid();
+        TryToSave();
     }
 
 

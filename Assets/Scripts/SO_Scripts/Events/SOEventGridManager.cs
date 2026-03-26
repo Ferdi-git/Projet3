@@ -9,7 +9,7 @@ public class SOEventGridManager : ScriptableObject
     public event Action ActualiseBoard;
     public event Action<GameObject> PiecePlaced;
     public event Action OnePieceIsPlaced;
-    public event Action SaveInventory;
+    public event Action TrySaveInventory;
     public event Action ResetInventory;
     public event Action<bool> SetAllPieceCanMove;
     public event Action<GameObject> AddBoardPiece;
@@ -21,7 +21,7 @@ public class SOEventGridManager : ScriptableObject
     public void InvokeResetGridSlots() { ResetGridSlots?.Invoke(); }
     public void InvokeActualiseBoard() { ActualiseBoard?.Invoke(); }
 
-    public void InvokeSaveInventory() {  SaveInventory?.Invoke(); }
+    public void InvokeTrySaveInventory() {  TrySaveInventory?.Invoke(); }
 
     public void InvokeResetInventory() {  ResetInventory?.Invoke(); }
 
