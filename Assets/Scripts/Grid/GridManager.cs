@@ -41,7 +41,10 @@ public class GridManager : MonoBehaviour
         gridManager.ResetGridSlots -= ResetGridSlots;
         gridManager.OnePieceIsPlaced -= ActualiseBoard;
         gridManager.AddBoardPiece -= AddBoardPiece;
+        gridManager.SelectRandomSlot -= SelectRandomSlot;
         gridManager.RemoveAtk -= RemoveAtk;
+        healthManager.PieceDie -= DestroyPiece;
+
 
 
 
@@ -233,9 +236,10 @@ public class GridManager : MonoBehaviour
 
     private void DestroyPiece(BoardPiece bp)
     {
-        RemoveBoardPiece(bp);
         bp.piecePersonality.DestroyPieceAnim();
-        ActualiseBoard();
+        RemoveBoardPiece(bp);
+        Debug.LogError("IICICICICIICIICIC C PTET ELE PRBLM");
+        //ActualiseBoard();
     }
 
 }

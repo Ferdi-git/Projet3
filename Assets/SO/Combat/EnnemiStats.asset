@@ -21,5 +21,5 @@ MonoBehaviour:
     damage: 2
   - zone: {fileID: 595633910440424199, guid: 6c69f0e495393e147b27f051cb380002, type: 3}
     damage: 3
-  ennemyEvent: {fileID: 0}
+  ennemyEvent: {fileID: 11400000, guid: c26ad741f286d8a46b923e14d9828be4, type: 2}
   AverageValue: 30
