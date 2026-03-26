@@ -10836,6 +10836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MouseFollower
   eventGrid: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   canInteract: 1
+  isOnCooldown: 0
   clickCooldown: 0.2
 --- !u!1 &1446603344
 GameObject:
@@ -11584,7 +11585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   prefabVisuel: {fileID: 9097167271780792912, guid: 95bec9aff69961c4ba560f5c8aa31332, type: 3}
   spawnPoint: {fileID: 1161175295}
-  statsEnnemi: {fileID: 0}
+  statsEnnemi: {fileID: 11400000, guid: c26ad741f286d8a46b923e14d9828be4, type: 2}
 --- !u!114 &1513690118 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8047913450760407133, guid: 6af910bd501043a44ab2d50b872bb3c8, type: 3}
