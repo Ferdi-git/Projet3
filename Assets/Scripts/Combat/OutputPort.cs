@@ -43,24 +43,24 @@ public class OutputPort
     {
         if (statsEnnemi.GetShield() <= 0)
         {
-            statsEnnemi.InvokeEnnemiLoosePV(amount);
+            statsEnnemi.EnnemiLoosePV(amount);
         }
         else
         {
-            statsEnnemi.InvokeEnnemiTakeDamager(amount);
+            statsEnnemi.EnnemiTakeDamager(amount);
         }
     }
     public void EnnemiHeal (int amount)
     {
-        statsEnnemi.InvokeEnnemiGainPV(amount);
+        statsEnnemi.EnnemiGainPV(amount);
     }
     public void EnnemiGainShield (int amount )
     {
-        statsEnnemi.InvokeEnnemiGainShield(amount);
+        statsEnnemi.EnnemiGainShield(amount);
     }
     public void EnnemiLooseShield(int amount)
     {
-        statsEnnemi.InvokeEnnemiTakeDamager(amount);
+        statsEnnemi.EnnemiTakeDamager(amount);
     }
 
 

@@ -2122,6 +2122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CombatStatsUI
   statsPlayer: {fileID: 11400000, guid: c3c8f1e3ded73a44496a15c33dcabb2f, type: 2}
   statsEnnemi: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
+  EventEnnemy: {fileID: 11400000, guid: c26ad741f286d8a46b923e14d9828be4, type: 2}
   PlayerSlider: {fileID: 118407232}
   EnnemiSlider: {fileID: 42564616}
 --- !u!114 &246931238 stripped
@@ -3330,6 +3331,7 @@ MonoBehaviour:
   piecePlayed: {fileID: 11400000, guid: ec1af6f5847cedb40a00e1b899e5e8cc, type: 2}
   eventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   pieceHealthManager: {fileID: 11400000, guid: 75852bd6b8ee08246bc687f0042d403d, type: 2}
+  eventState: {fileID: 11400000, guid: 5240bdb7ce1e7614088effd95523d55f, type: 2}
 --- !u!1 &504268152
 GameObject:
   m_ObjectHideFlags: 0
@@ -7943,6 +7945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   combat: {fileID: 497809730}
   gridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
+  gameState: {fileID: 11400000, guid: 5240bdb7ce1e7614088effd95523d55f, type: 2}
 --- !u!1 &1114373235
 GameObject:
   m_ObjectHideFlags: 0
@@ -11572,7 +11575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   prefabVisuel: {fileID: 9097167271780792912, guid: 95bec9aff69961c4ba560f5c8aa31332, type: 3}
   spawnPoint: {fileID: 1161175295}
-  statsEnnemi: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
+  statsEnnemi: {fileID: 0}
 --- !u!114 &1513690118 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8047913450760407133, guid: 6af910bd501043a44ab2d50b872bb3c8, type: 3}

@@ -15,11 +15,22 @@ public class Combat : MonoBehaviour
     [SerializeField] private SOEventGridManager eventGridManager;
     [SerializeField] private PieceHealthManager pieceHealthManager;
 
+    [SerializeField] private SOEventState eventState;
 
-    private void Start() // à enlever
+    private void OnEnable()
     {
-        StartCombat();
+        eventState.StartCombat += StartCombat;
     }
+    private void OnDisable()
+    {
+        eventState.StartCombat -= StartCombat;
+    }
+
+
+    //private void Start() // à enlever
+    //{
+    //    StartCombat();
+    //}
 
     public void StartCombat ()
     {
@@ -123,6 +134,17 @@ public class Combat : MonoBehaviour
         ennemiManager.RemoveAtk();
         ennemiManager.ShowAtk();
 
+        if (statsPlayer.GetPV() <= 0 )
+        {
+            print("perdu");
+        }
+        else
+        {
+            if (statsEnnemi.GetPV() <= 0 )
+            {
+                eventState.InvokeEndOfCombat();
+            }
+        }
         eventGridManager.InvokeSetAllPieceCanMove(true);
     }
 

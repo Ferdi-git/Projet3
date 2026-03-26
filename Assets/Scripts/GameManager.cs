@@ -4,8 +4,18 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Combat combat;
     [SerializeField] private SOEventGridManager gridManager;
+    [SerializeField] private SOEventState gameState;
 
-
+    private void OnEnable()
+    {
+        gameState.EndOfCombat += CombateEnded;
+        gameState.EndOfShoping += ShopingEnded;
+    }
+    private void OnDisable()
+    {
+        gameState.EndOfCombat -= CombateEnded;
+        gameState.EndOfShoping -= ShopingEnded;
+    }
     public void ButtonPressed ()
     {
         // effet à l'appuie 
@@ -14,11 +24,20 @@ public class GameManager : MonoBehaviour
         combat.StartTurn(); 
     }
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            combat.StartCombat();
-        }
+        gameState.InvokeStartCombat();
+    }
+
+
+    private void CombateEnded ()
+    {
+        print("combat ended");
+    }
+
+
+    private void ShopingEnded ()
+    {
+        print("shop ended");
     }
 }

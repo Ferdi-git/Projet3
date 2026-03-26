@@ -10,53 +10,49 @@ public class StatsEnnemi : ScriptableObject
     public int pvMax;
     public Sprite sprite;
     public List<EnnemiAttack> ennemiAttacks;
+    public SOEventEnnemy ennemyEvent;
 
 
     [Header("Average hp an ennemy has for the first ennemi ")]
     public int AverageValue;
 
-    public Action<int> EnnemiGainPV;
-    public Action<int> EnnemiLoosePV;
+    
 
-
-    public Action<int> EnnemiGainShield;
-    public Action<int> EnnemiLooseShield;
-
-    public void InvokeEnnemiGainPV(int amount)
+    public void EnnemiGainPV(int amount)
     {
         pv += amount;
-        EnnemiGainPV?.Invoke(amount);
+        ennemyEvent.EnnemiGainPV(amount);
     }
-    public void InvokeEnnemiLoosePV(int amount)
+    public void EnnemiLoosePV(int amount)
     {
         if (pv > amount)
         {
             pv -= amount;
-            EnnemiLoosePV?.Invoke(amount);
+            ennemyEvent.EnnemiLoosePV(amount);
         }
         else
         {
             pv = 0;
-            EnnemiLoosePV?.Invoke(pv);
+            ennemyEvent.EnnemiLoosePV(pv);
         }
 
         
     }
 
-    public void InvokeEnnemiGainShield(int amount) { shield += amount; EnnemiGainShield?.Invoke(amount); }
-    public void InvokeEnnemiTakeDamager(int amount) 
+    public void EnnemiGainShield(int amount) { shield += amount; ennemyEvent.EnnemiGainShield(amount); }
+    public void EnnemiTakeDamager(int amount) 
     { 
         
         if (amount <= shield)
         {
             shield -= amount;
-            EnnemiLooseShield?.Invoke(amount);
+            ennemyEvent.EnnemiLooseShield(amount);
         }
         else
         {
-            EnnemiLooseShield?.Invoke(shield);
+            ennemyEvent.EnnemiLooseShield(shield);
             shield = 0;
-            InvokeEnnemiLoosePV(amount - shield);
+            EnnemiLoosePV(amount - shield);
         }
     }
 

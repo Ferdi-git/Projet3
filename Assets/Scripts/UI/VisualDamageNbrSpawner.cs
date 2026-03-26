@@ -5,7 +5,7 @@ public class VisualDamageNbrSpawner : MonoBehaviour
 {
     [SerializeField] GameObject prefabVisuel;
     [SerializeField] Transform spawnPoint;
-    [SerializeField] StatsEnnemi statsEnnemi;
+    [SerializeField] SOEventEnnemy statsEnnemi;
 
 
     private void OnEnable()

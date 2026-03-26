@@ -5,6 +5,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private StatsPlayer statsPlayer;
     [SerializeField] private StatsEnnemi statsEnnemi;
+    [SerializeField] private SOEventEnnemy EventEnnemy;
 
     [SerializeField] private Slider PlayerSlider;
     [SerializeField] private Slider EnnemiSlider;
@@ -18,11 +19,11 @@ public class UIManager : MonoBehaviour
         statsPlayer.LooseShield += LooseShield;
 
 
-        statsEnnemi.EnnemiGainPV += EnnemiGainPV;
-        statsEnnemi.EnnemiLoosePV += EnnemiLoosePV;
+        EventEnnemy.EnnemiGainPV += EnnemiGainPV;
+        EventEnnemy.EnnemiLoosePV += EnnemiLoosePV;
 
-        statsEnnemi.EnnemiGainShield += EnnemiGainShield;
-        statsEnnemi.EnnemiLooseShield += EnnemiLostShield;
+        EventEnnemy.EnnemiGainShield += EnnemiGainShield;
+        EventEnnemy.EnnemiLooseShield += EnnemiLostShield;
     }
     private void OnDisable()
     {
@@ -33,11 +34,11 @@ public class UIManager : MonoBehaviour
         statsPlayer.LooseShield -= LooseShield;
 
 
-        statsEnnemi.EnnemiGainPV -= EnnemiGainPV;
-        statsEnnemi.EnnemiLoosePV -= EnnemiLoosePV;
+        EventEnnemy.EnnemiGainPV -= EnnemiGainPV;
+        EventEnnemy.EnnemiLoosePV -= EnnemiLoosePV;
 
-        statsEnnemi.EnnemiGainShield -= EnnemiGainShield;
-        statsEnnemi.EnnemiLooseShield -= EnnemiLostShield;
+        EventEnnemy.EnnemiGainShield -= EnnemiGainShield;
+        EventEnnemy.EnnemiLooseShield -= EnnemiLostShield;
     }
 
 
