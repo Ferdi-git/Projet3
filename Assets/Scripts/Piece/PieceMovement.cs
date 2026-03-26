@@ -18,7 +18,6 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
     public bool isRotating = false;
     public bool isRotatingInputBuffer = false;
 
-    public bool canBeMoved = true;
 
     private void Awake()
     {
@@ -26,20 +25,10 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         SnapToGrid();
     }
 
-    private void OnEnable()
-    {
-        eventGrid.SetAllPieceCanMove += SetCanMove;
-    }
 
-    private void OnDisable()
-    {
-        eventGrid.SetAllPieceCanMove -= SetCanMove;
-
-    }
 
     public void OnDragStart(Vector2 worldPos)
     {
-        if (!canBeMoved) return;
         isDraging = true;
         transform.DOScale(1.1f, 0.1f);
         Unfill();
@@ -207,8 +196,4 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
     }
 
 
-    public void SetCanMove(bool can)
-    {
-        canBeMoved = can;
-    }
 }
