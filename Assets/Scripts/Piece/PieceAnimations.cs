@@ -139,7 +139,7 @@ public class PieceAnimations : MonoBehaviour
     }
 
 
-    public void DestroyPiece()
+    public void DestroyPieceAnim()
     {
         Destroy(gameObject);
     }

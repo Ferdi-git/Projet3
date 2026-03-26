@@ -9,6 +9,7 @@ public class GridManager : MonoBehaviour
 {
     [SerializeField] private GridSlot[] gridSlots;
     [SerializeField] private SOEventGridManager gridManager;
+    [SerializeField] private PieceHealthManager healthManager;
 
     [SerializeField] private SoBoard theBoard;
 
@@ -30,7 +31,7 @@ public class GridManager : MonoBehaviour
         gridManager.AddBoardPiece += AddBoardPiece;
         gridManager.SelectRandomSlot += SelectRandomSlot;
         gridManager.RemoveAtk += RemoveAtk;
-        
+        healthManager.PieceDie += DestroyPiece;
 
     }
 
@@ -229,6 +230,13 @@ public class GridManager : MonoBehaviour
             }
         }
     }
+
+    private void DestroyPiece(BoardPiece bp)
+    {
+        RemoveBoardPiece(bp);
+        bp.piecePersonality.DestroyPieceAnim();
+    }
+
 }
 
 
