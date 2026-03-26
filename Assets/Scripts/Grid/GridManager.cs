@@ -235,6 +235,7 @@ public class GridManager : MonoBehaviour
     {
         RemoveBoardPiece(bp);
         bp.piecePersonality.DestroyPieceAnim();
+        ActualiseBoard();
     }
 
 }
