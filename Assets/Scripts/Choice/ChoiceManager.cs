@@ -14,9 +14,9 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField] SOEventGridManager eventGridManager;
     [SerializeField] SoPieces[] difPieces;
 
-    public GameObject Grid;
-
     public GameObject lastGeneratedPiece = null; 
+
+    public ShopManager shopManager;
 
     private void OnEnable()
     {
@@ -26,12 +26,6 @@ public class ChoiceManager : MonoBehaviour
     private void OnDisable()
     {
         eventGridManager.PiecePlaced -= CheckIfPiecePlaced;
-    }
-
-
-    private void Start()
-    {
-        GeneratePiece();
     }
 
     [Button]
@@ -92,9 +86,7 @@ public class ChoiceManager : MonoBehaviour
 
     private void EndChoice()
     {
-        print("EndChoice");
-        Grid.SetActive(true);
-        this.gameObject.SetActive(false);
+        shopManager.CloseShop();
     }
 
 }
