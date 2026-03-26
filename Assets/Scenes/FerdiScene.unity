@@ -2820,7 +2820,13 @@ MonoBehaviour:
   onePiecePiece: {fileID: 152751873}
   prefabPieceChoice: {fileID: 6678205868758961975, guid: ceafefff25e44384eb0904b2acdacf08, type: 3}
   eventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
-  difPieces: []
+  difPieces:
+  - {fileID: 11400000, guid: 1d2dbf1a73742734d89c8a64e304f5fa, type: 2}
+  - {fileID: 11400000, guid: 60244c0a718ddc54d816731d352d8921, type: 2}
+  - {fileID: 11400000, guid: 5c549e0563848cf44807d11f488c4631, type: 2}
+  - {fileID: 11400000, guid: 381c9b692b9631c4291d9348615745d1, type: 2}
+  - {fileID: 11400000, guid: c883cf25e4b187e4e99244efba1020bb, type: 2}
+  - {fileID: 11400000, guid: fcf4baab08234e74aac22b8a54183d16, type: 2}
   lastGeneratedPiece: {fileID: 0}
   shopManager: {fileID: 915716990}
 --- !u!114 &393186206
@@ -6265,7 +6271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   grid: {fileID: 393186203}
   shopM: {fileID: 393186205}
-  eventState: {fileID: 0}
+  eventState: {fileID: 11400000, guid: 5240bdb7ce1e7614088effd95523d55f, type: 2}
 --- !u!4 &915716991
 Transform:
   m_ObjectHideFlags: 0
@@ -10828,6 +10834,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014f2be12a932314391797be47c02b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MouseFollower
+  eventGrid: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
+  canInteract: 1
+  clickCooldown: 0.2
 --- !u!1 &1446603344
 GameObject:
   m_ObjectHideFlags: 0
