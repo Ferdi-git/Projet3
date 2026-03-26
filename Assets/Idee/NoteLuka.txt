@@ -3,4 +3,6 @@ Inventaire
 systeme de choix de piece 
 Sound systeme 
 
+sound pick up piece
+
 si une ligne compléter avec la meme couleur : BONUS 

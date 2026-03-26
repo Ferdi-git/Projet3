@@ -63,7 +63,7 @@ public class Combat : MonoBehaviour
         {
             if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
             {
-                pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield);
+                pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield , soBoard.boardPieces[i]);
                 pieceHealthManager.TakeDamage(ennemiManager.GetDamageValue() * soBoard.boardPieces[i].context.NbrCaseAtk);
 
                 soBoard.boardPieces[i].healthPoint = pieceHealthManager.hp;
@@ -71,6 +71,7 @@ public class Combat : MonoBehaviour
 
                 if (pieceHealthManager.hp == 0)
                 {
+
                     print("mort !!!!");
                 }
 

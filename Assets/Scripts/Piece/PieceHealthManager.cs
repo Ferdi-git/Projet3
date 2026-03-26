@@ -5,16 +5,17 @@ using static UnityEngine.Rendering.DebugUI;
 [CreateAssetMenu]
 public class PieceHealthManager : ScriptableObject
 {
-    public event Action PieceShieldBreak;
-    public event Action PieceTakeDamage;
-    public event Action PieceDie;
+    public event Action<BoardPiece> PieceShieldBreak;
+    public event Action<BoardPiece> PieceTakeDamage;
+    public event Action<BoardPiece> PieceDie;
 
     public int hp;
     public int shield;
+    public BoardPiece piece;
 
 
 
-    public void GiveStats (int _hp, int _shield) {hp = _hp; shield = _shield;}
+    public void GiveStats (int _hp, int _shield , BoardPiece boardPiece) {hp = _hp; shield = _shield;piece = boardPiece; }
     public void TakeDamage (int damage)
     {
         if (shield <= 0)
@@ -59,16 +60,16 @@ public class PieceHealthManager : ScriptableObject
 
     public void InvokeDamage ()
     {
-        PieceTakeDamage?.Invoke ();
+        PieceTakeDamage?.Invoke (piece);
     }
 
     public void InvokeShieldBreak ()
     {
-        PieceShieldBreak?.Invoke ();
+        PieceShieldBreak?.Invoke (piece);
     }
 
     public void InvokeDead ()
     {
-        PieceDie?.Invoke ();
+        PieceDie?.Invoke (piece);
     }
 }
