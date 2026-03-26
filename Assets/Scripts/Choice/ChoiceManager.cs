@@ -80,6 +80,7 @@ public class ChoiceManager : MonoBehaviour
         {
             go.transform.SetParent(null);
             eventGridManager.InvokeTrySaveInventory();
+            eventGridManager.InvokeAddBoardPiece(go);
             EndChoice();
         }
     }
