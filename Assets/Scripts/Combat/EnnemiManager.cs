@@ -20,7 +20,7 @@ public class EnnemiManager : MonoBehaviour
         ennemiUI.SetActive (true);
         atkIndex = 0;
         index = Random.Range(0,ennemiList.ennemiList.Count);
-        stats.pvMax = ennemiList.ennemiList[index].resistance * 30;
+        stats.pvMax = (ennemiList.ennemiList[index].resistance/100) * stats.AverageValue ;
         stats.pv = stats.pvMax;
         stats.shield = 0;
         stats.sprite = ennemiList.ennemiList[index].sprite;

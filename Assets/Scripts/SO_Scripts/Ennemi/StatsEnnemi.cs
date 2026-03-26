@@ -12,6 +12,9 @@ public class StatsEnnemi : ScriptableObject
     public List<EnnemiAttack> ennemiAttacks;
 
 
+    [Header("Average hp an ennemy has for the first ennemi ")]
+    public int AverageValue;
+
     public Action<int> EnnemiGainPV;
     public Action<int> EnnemiLoosePV;
 
