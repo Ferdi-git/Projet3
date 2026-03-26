@@ -46,6 +46,7 @@ public class InventoryGrid : MonoBehaviour
     {
         print("TrySave");
 
+        print(isReseting + (theBoard.boardPieces.Count.ToString()));
         if (isReseting) return;
 
         //gridManager.InvokeActualiseBoard();
@@ -110,6 +111,7 @@ public class InventoryGrid : MonoBehaviour
             EmptyInventoryGridSlots();
             ReSnapEverything();
             isReseting = false;
+            gridManager.InvokeTrySaveInventory();
             return;
         }
 
@@ -156,6 +158,8 @@ public class InventoryGrid : MonoBehaviour
                 EmptyInventoryGridSlots();
                 ReSnapEverything();
                 isReseting = false;
+                gridManager.InvokeTrySaveInventory();
+
             }
         });
 
