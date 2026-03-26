@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     private void CombateEnded ()
     {
         print("combat ended");
+        gameState.InvokeStartShoping();
     }
 
 

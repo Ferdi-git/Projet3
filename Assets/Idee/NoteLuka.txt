@@ -5,4 +5,8 @@ Sound systeme
 
 sound pick up piece
 
+a faire : 
+	- tout event dans event so séparé
+	- suite apres le shop (generer un new ennemi ...)
+
 si une ligne compléter avec la meme couleur : BONUS 
