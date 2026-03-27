@@ -222,6 +222,7 @@ public class GridManager : MonoBehaviour
         BoardPiece newBoardPiece = new();
         PieceInfo pieceInfo = go.GetComponent<PieceInfo>();
         newBoardPiece.pieceInfo = pieceInfo;
+        newBoardPiece.pieceAnimation = go.GetComponent<PieceAnimations>();
         newBoardPiece.soPieces = pieceInfo.soPiece;
         soSaveInventory.listBoardPiecesExist.Add(newBoardPiece);
     }
