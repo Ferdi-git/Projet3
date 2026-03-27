@@ -14,7 +14,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private SoBoard theBoard;
 
     [SerializeField] private SoSaveInventory soSaveInventory;
-    [SerializeField] private PieceAnimations[] piecesExist;
+    [SerializeField] private PieceInfo[] piecesExist;
 
     public List<GameObject> listBoardPrefabAtk ;
 
@@ -59,7 +59,8 @@ public class GridManager : MonoBehaviour
         for (int i = 0; i < piecesExist.Length; i++)
         {
             BoardPiece newBoardPiece = new();
-            newBoardPiece.piecePersonality = piecesExist[i];
+            newBoardPiece.pieceInfo = piecesExist[i];
+            newBoardPiece.pieceAnimation = piecesExist[i].GetComponent<PieceAnimations>();
             newBoardPiece.soPieces = piecesExist[i].soPiece;
             newBoardPiece.healthPoint = newBoardPiece.soPieces.healthPoint;
             soSaveInventory.listBoardPiecesExist.Add(newBoardPiece); 
@@ -114,8 +115,8 @@ public class GridManager : MonoBehaviour
         }
 
         listToReturn = baseSortMode == SortMode.ByRow
-      ? listToReturn.OrderBy(p => -p.piecePersonality.transform.position.y).ThenBy(p => p.piecePersonality.transform.position.x).ToList()
-      : listToReturn.OrderBy(p => p.piecePersonality.transform.position.x).ThenBy(p => -p.piecePersonality.transform.position.y).ToList();
+      ? listToReturn.OrderBy(p => -p.pieceInfo.transform.position.y).ThenBy(p => p.pieceInfo.transform.position.x).ToList()
+      : listToReturn.OrderBy(p => p.pieceInfo.transform.position.x).ThenBy(p => -p.pieceInfo.transform.position.y).ToList();
 
         return listToReturn;
     }
@@ -125,7 +126,7 @@ public class GridManager : MonoBehaviour
     {
         for (int nbr = 0; nbr < soSaveInventory.listBoardPiecesExist.Count; nbr++)
         {
-            if (soSaveInventory.listBoardPiecesExist[nbr].piecePersonality == pieceInfo)
+            if (soSaveInventory.listBoardPiecesExist[nbr].pieceInfo == pieceInfo)
             {
                 return soSaveInventory.listBoardPiecesExist[nbr];
             }
@@ -219,9 +220,9 @@ public class GridManager : MonoBehaviour
     public void AddBoardPiece(GameObject go)
     {
         BoardPiece newBoardPiece = new();
-        PieceAnimations piecePersonality = go.GetComponent<PieceAnimations>();
-        newBoardPiece.piecePersonality = piecePersonality;
-        newBoardPiece.soPieces = piecePersonality.soPiece;
+        PieceInfo pieceInfo = go.GetComponent<PieceInfo>();
+        newBoardPiece.pieceInfo = pieceInfo;
+        newBoardPiece.soPieces = pieceInfo.soPiece;
         soSaveInventory.listBoardPiecesExist.Add(newBoardPiece);
     }
     
@@ -238,7 +239,7 @@ public class GridManager : MonoBehaviour
 
     private void DestroyPiece(BoardPiece bp)
     {
-        bp.piecePersonality.DestroyPieceAnim();
+        bp.pieceAnimation.DestroyPieceAnim();
         RemoveBoardPiece(bp);
         Debug.Log("IICICICICIICIICIC C PTET ELE PRBLM");
         ActualiseBoard();

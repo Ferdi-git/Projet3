@@ -39,6 +39,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: posCases.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: surroundingPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: 'surroundingPoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 941041471302111377}
+    - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: 'surroundingPoints.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1287942340579485139}
     - target: {fileID: 988487863449949456, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: m_Color.b
       value: 0.55372715
@@ -97,11 +113,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3565151663476603322, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3565151663476603322, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.67
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3565151663476603322, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: m_LocalPosition.z

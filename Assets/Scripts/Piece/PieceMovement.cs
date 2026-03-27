@@ -4,7 +4,7 @@ using UnityEngine;
 public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, IMouseClickable
 {
 
-    [SerializeField] PieceInfo pieceInfo;
+    PieceInfo pieceInfo;
 
     public bool isDraging = false;
     public bool isRotating = false;

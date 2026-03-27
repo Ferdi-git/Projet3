@@ -39,6 +39,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: originalRota.w
+      value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: originalRota.z
+      value: 0.70710677
+      objectReference: {fileID: 0}
     - target: {fileID: 988487863449949456, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: m_Color.g
       value: 0.66279554
@@ -77,11 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3565151663476603322, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.96
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3565151663476603322, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.34
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3565151663476603322, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: m_LocalPosition.z

@@ -4,25 +4,30 @@ using UnityEngine.LightTransport;
 
 public class PieceInfo : MonoBehaviour
 {
+
+    public SoPieces soPiece;
+    [SerializeField] private Transform[] posCases;
+    [SerializeField] private Transform[] surroundingPoints;
+
+
     AudioSource audioSource;
     [SerializeField] AudioClip snapSound;
     [SerializeField] SOEventGridManager eventGrid;
     [SerializeField] SOEventGridManager sOEventGridManager;
 
-    [SerializeField] private Transform[] surroundingPoints;
     public bool wasGridChecked = false;
 
-    [SerializeField] private Transform[] posCases;
     [SerializeField] private LayerMask gridLayer;
 
 
     public Vector3 originalPos;
     public Quaternion originalRota;
 
-    private void Awake()
+    private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         SnapToGrid();
+        audioSource = GetComponent<AudioSource>();
+
 
     }
 
@@ -92,9 +97,12 @@ public class PieceInfo : MonoBehaviour
             }
         }
         float randStartPitch = Random.Range(1.0f, 1.2f);
-        audioSource.pitch = randStartPitch;
-        audioSource.clip = snapSound;
-        audioSource.Play();
+        if (audioSource != null)
+        {
+            audioSource.pitch = randStartPitch;
+            audioSource.clip = snapSound;
+            audioSource.Play();
+        }
         originalPos = transform.position;
         originalRota = transform.rotation;
         eventGrid.InvokePiecePlaced(this.gameObject);

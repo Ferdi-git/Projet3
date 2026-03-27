@@ -7,16 +7,12 @@ using UnityEngine.Audio;
 
 public class PieceAnimations : MonoBehaviour
 {
-    public SoPieces soPiece;
-    //[SerializeField] private Transform[] posCases;
-
-
     AudioSource audioSource;
     [SerializeField] AudioClip[] audioClips;
 
     [SerializeField] private float glowIntensity = 2f;   // above 1 = triggers bloom
     [SerializeField] private float glowDuration = 0.25f;
-    private List<SpriteRenderer> spriteRenderers;
+    private List<SpriteRenderer> spriteRenderers = new List<SpriteRenderer>();
 
     [Tooltip("Normal,Repeat,Atk,Defend,Heal")] 
     [SerializeField, ColorUsage(true, true)] private Color[] glowColors;
