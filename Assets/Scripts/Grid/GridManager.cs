@@ -80,7 +80,7 @@ public class GridManager : MonoBehaviour
         SetNbrAtckCase();
         for (int i = 0; i < gridSlots.Length; i++)
         {
-            PieceAnimations pieceOnSlot = gridSlots[i].GetPieceOnIt();
+            PieceInfo pieceOnSlot = gridSlots[i].GetPieceOnIt();
 
             if (pieceOnSlot == null || pieceOnSlot.wasGridChecked)
                 continue;
@@ -97,14 +97,14 @@ public class GridManager : MonoBehaviour
         gridManager.InvokeTrySaveInventory();
     }
     
-    private List<BoardPiece> GetVoisins(PieceAnimations piecePerso)
+    private List<BoardPiece> GetVoisins(PieceInfo piecePerso)
     {
         var listToReturn = new List<BoardPiece>();
         for (int i = 0; i < piecePerso.GetSurroundingPoints().Length; i++)
         {
             foreach (var hit in Physics2D.OverlapPointAll(piecePerso.GetSurroundingPoints()[i].transform.position))
             {
-                var voisinPiecePerso = hit.gameObject.GetComponent<PieceAnimations>();
+                var voisinPiecePerso = hit.gameObject.GetComponent<PieceInfo>();
 
                 if (voisinPiecePerso != null && !listToReturn.Contains(GetBoardPiece(voisinPiecePerso)))
                     listToReturn.Add(GetBoardPiece(voisinPiecePerso));
@@ -121,11 +121,11 @@ public class GridManager : MonoBehaviour
     }
 
 
-    private BoardPiece GetBoardPiece(PieceAnimations piecePersonality)
+    private BoardPiece GetBoardPiece(PieceInfo pieceInfo)
     {
         for (int nbr = 0; nbr < soSaveInventory.listBoardPiecesExist.Count; nbr++)
         {
-            if (soSaveInventory.listBoardPiecesExist[nbr].piecePersonality == piecePersonality)
+            if (soSaveInventory.listBoardPiecesExist[nbr].piecePersonality == pieceInfo)
             {
                 return soSaveInventory.listBoardPiecesExist[nbr];
             }
@@ -138,7 +138,7 @@ public class GridManager : MonoBehaviour
     {
         for(int i = 0; i < gridSlots.Length; i++)
         {
-            PieceAnimations piece = gridSlots[i].GetPieceOnIt();
+            PieceInfo piece = gridSlots[i].GetPieceOnIt();
             if(piece != null)
             {
                 BoardPiece bp = GetBoardPiece(piece);
@@ -151,7 +151,7 @@ public class GridManager : MonoBehaviour
     {
         for (int i = 0; i < gridSlots.Length; i++)
         {
-            PieceAnimations piece = gridSlots[i].GetPieceOnIt();
+            PieceInfo piece = gridSlots[i].GetPieceOnIt();
             if (piece != null && gridSlots[i].isAttacked)
             {
                 BoardPiece bp = GetBoardPiece(piece);

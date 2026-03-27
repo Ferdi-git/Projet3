@@ -13,10 +13,10 @@ public class GridSlot : MonoBehaviour
         isFilled = piece != null;
     }
 
-    public PieceAnimations GetPieceOnIt()
+    public PieceInfo GetPieceOnIt()
     {
         if (pieceOnIt == null) return null;
-        return pieceOnIt.GetComponent<PieceAnimations>();
+        return pieceOnIt.GetComponent<PieceInfo>();
     }
 
     public void ClearSlot()

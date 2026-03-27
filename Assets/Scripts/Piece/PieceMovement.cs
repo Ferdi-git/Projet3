@@ -3,16 +3,8 @@ using UnityEngine;
 
 public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, IMouseClickable
 {
-    [SerializeField] private Transform[] posCases;
-    [SerializeField] private LayerMask gridLayer;
 
-    [SerializeField] SOEventGridManager eventGrid;
-
-    AudioSource audioSource;
-    [SerializeField] AudioClip snapSound;
-
-    private Vector3 originalPos;
-    private Quaternion originalRota;
+    [SerializeField] PieceInfo pieceInfo;
 
     public bool isDraging = false;
     public bool isRotating = false;
@@ -21,17 +13,15 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        SnapToGrid();
+        pieceInfo = GetComponent<PieceInfo>();
     }
-
 
 
     public void OnDragStart(Vector2 worldPos)
     {
         isDraging = true;
         transform.DOScale(1.1f, 0.1f);
-        Unfill();
+        pieceInfo.Unfill();
     }
 
     public void OnDragMove(Vector2 worldPos)
@@ -52,19 +42,19 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         transform.DOScale(1f, 0.1f);
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
-        if (CheckIfCanBePlaced())
+        if (pieceInfo.CheckIfCanBePlaced())
         {
             float snappedZ = Mathf.Round(transform.eulerAngles.z / 90f) * 90f;
             transform.rotation = Quaternion.Euler(0, 0, snappedZ);
-            SnapToGrid();
+            pieceInfo.SnapToGrid();
         }
         else
         {
-            transform.DOMove(originalPos, 0.2f).SetEase(Ease.OutBack).OnComplete(() =>
+            transform.DOMove(pieceInfo.originalPos, 0.2f).SetEase(Ease.OutBack).OnComplete(() =>
             {
-                Refill();
+                pieceInfo.Refill();
             });
-            transform.DORotateQuaternion(originalRota, 0.2f).SetEase(Ease.OutBack);
+            transform.DORotateQuaternion(pieceInfo.originalRota, 0.2f).SetEase(Ease.OutBack);
         }
     }
 
@@ -79,90 +69,6 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         transform.DOScale(1f, 0.1f);
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
-
-    public void Unfill()
-    {
-        foreach (var c in posCases)
-        {
-            foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
-            {
-                GridSlot slot = hit.GetComponent<GridSlot>();
-                if (slot != null) { slot.ClearSlot(); break; }
-            }
-        }
-    }
-
-    private void Refill()
-    {
-        foreach (var c in posCases)
-        {
-            foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
-            {
-                GridSlot slot = hit.GetComponent<GridSlot>();
-                if (slot != null) { slot.SetPiece(gameObject); break; }
-            }
-        }
-    }
-
-    private bool CheckIfCanBePlaced()
-    {
-        foreach (var c in posCases)
-            if (!CheckIfSingleCaseCanBePlaced(c)) return false;
-
-        return true;
-    }
-
-    private bool CheckIfSingleCaseCanBePlaced(Transform pos)
-    {
-        foreach (var hit in Physics2D.OverlapPointAll(pos.position, gridLayer))
-        {
-            GridSlot slot = hit.GetComponent<GridSlot>();
-            if (slot != null && !slot.isFilled) return true;
-        }
-
-        return false;
-    }
-
-    public void SnapToGrid()
-    {
-        GridSlot targetSlot = null;
-        Vector3 targetSlotPos = Vector3.zero;
-
-        Vector2 samplePos = (Vector2)posCases[0].position;
-
-        foreach (var hit in Physics2D.OverlapPointAll(samplePos, gridLayer))
-        {
-            GridSlot slot = hit.GetComponent<GridSlot>();
-            if (slot != null && !slot.isFilled)
-            {
-                targetSlot = slot;
-                targetSlotPos = slot.transform.position;
-                break;
-            }
-        }
-
-        if (targetSlot == null) return;
-
-        transform.position = targetSlotPos;
-
-        foreach (var c in posCases)
-        {
-            foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
-            {
-                GridSlot slot = hit.GetComponent<GridSlot>();
-                if (slot != null && !slot.isFilled) { slot.SetPiece(gameObject); break; }
-            }
-        }
-        float randStartPitch = Random.Range(1.0f, 1.2f);
-        audioSource.pitch = randStartPitch;
-        audioSource.clip = snapSound;
-        audioSource.Play();
-        originalPos = transform.position;
-        originalRota = transform.rotation;
-        eventGrid.InvokePiecePlaced(this.gameObject);
-
-    }
-
 
     public void OnClick()
     {

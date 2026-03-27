@@ -12,14 +12,6 @@ Piece Movement :
 	OnHoverEnter
 	OnHoverExit
 	
-	Unfill
-	Refill
-	_CheckIfCanBePlaced
-	_CheckIfSingleCaseCanBePlaced
-
-
-	SnapToGrid
-		InvokePiecePlaced
 	OnRightClick()
 
 	SetCanMove
@@ -53,6 +45,9 @@ PieceInfo :
 	GetSelfPoints
 	CheckIfCanBePlaced
 	CheckIfSingleCaseCanBePlaced
+	SnapToGrid
+	Fill
+	Unfill
 
 AtkManager :
 	ResetNbrAtckCase

@@ -71,7 +71,7 @@ public class InventoryGrid : MonoBehaviour
 
         for (int i = 0; i < gridSlots.Length; i++)
         {
-            PieceAnimations pieceOnSlot = gridSlots[i].GetPieceOnIt();
+            PieceInfo pieceOnSlot = gridSlots[i].GetPieceOnIt();
 
             if (pieceOnSlot == null || soSaveInventory.pieces.Contains(pieceOnSlot.gameObject))
                 continue;
@@ -126,7 +126,7 @@ public class InventoryGrid : MonoBehaviour
                 .SetDelay(delay)
                 .OnComplete(() =>
                 {
-                    soSaveInventory.pieces[savedIndex].GetComponent<PieceMouvement>().SnapToGrid();
+                    soSaveInventory.pieces[savedIndex].GetComponent<PieceInfo>().SnapToGrid();
                     remaining--;
                     if (remaining == 0)
                     {

@@ -9,17 +9,14 @@ public class PieceAnimations : MonoBehaviour
 {
     public SoPieces soPiece;
     //[SerializeField] private Transform[] posCases;
-    [SerializeField] SOEventGridManager sOEventGridManager;
 
-    [SerializeField] private Transform[] surroundingPoints;
-    public bool wasGridChecked = false;
 
     AudioSource audioSource;
     [SerializeField] AudioClip[] audioClips;
 
     [SerializeField] private float glowIntensity = 2f;   // above 1 = triggers bloom
     [SerializeField] private float glowDuration = 0.25f;
-    public SpriteRenderer[] spriteRenderers;
+    private List<SpriteRenderer> spriteRenderers;
 
     [Tooltip("Normal,Repeat,Atk,Defend,Heal")] 
     [SerializeField, ColorUsage(true, true)] private Color[] glowColors;
@@ -29,40 +26,13 @@ public class PieceAnimations : MonoBehaviour
 
     private void Start()
     {
-
+        for (int i = 0; i < gameObject.GetComponent<PieceInfo>().GetSelfPoints().Length; i++)
+        {
+            spriteRenderers.Add(gameObject.GetComponent<PieceInfo>().GetSelfPoints()[i].GetComponent<SpriteRenderer>());
+        }
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnEnable()
-    {
-        sOEventGridManager.ResetPieceGridChecked += ResetPiece;
-    }
-
-    private void OnDisable()
-    {
-        sOEventGridManager.ResetPieceGridChecked -= ResetPiece;
-
-    }
-
-
-    private void ResetPiece()
-    {
-        wasGridChecked = false;
-    }
-
-    public Transform[] GetSurroundingPoints()
-    {
-        return surroundingPoints;
-    }
-    public Transform[] GetSelfPoints()
-    {
-        Transform[] transforms = new Transform[surroundingPoints.Length];
-        for (int i = 0; i< spriteRenderers.Length; i++)
-        {
-            transforms[i] = spriteRenderers[i].transform;
-        }
-        return transforms;
-    }
 
     public IEnumerator PlayAnimations(int number, TypeAnim typeAnim)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
@@ -120,7 +90,7 @@ public class PieceAnimations : MonoBehaviour
 
 
 
-        for (int i = 0; i < spriteRenderers.Length; i++)
+        for (int i = 0; i < spriteRenderers.Count; i++)
         {
             Material mat = spriteRenderers[i].material;
 
@@ -141,7 +111,7 @@ public class PieceAnimations : MonoBehaviour
 
     public void DestroyPieceAnim()
     {
-        gameObject.GetComponent<PieceMouvement>().Unfill();
+        gameObject.GetComponent<PieceInfo>().Unfill();
         Destroy(gameObject);
     }
 
