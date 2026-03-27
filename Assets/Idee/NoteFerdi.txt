@@ -64,5 +64,4 @@ AtkManager :
 A faire : 
 	- Bug piece qui meurt 
 	- bug shop 
-	- bug piece qui s'active dans l'inventaire apres un reset 
 	- Ranger scripts 

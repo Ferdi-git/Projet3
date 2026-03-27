@@ -14,11 +14,13 @@ public class InventoryGrid : MonoBehaviour
     [SerializeField] private float timeToGoBackToInventory = 0.2f;
     [SerializeField] private float delayInBetweenBackToInventory = 0.05f;
     [SerializeField] private SoBoard theBoard;
+    [SerializeField] SOEventState eventState;
 
     private bool isReseting = false;
 
     private void OnEnable()
     {
+        eventState.EndOfCombat += ResetInventory;
         gridManager.TrySaveInventory += TryToSave;
         gridManager.ResetInventory += ResetInventory;
         //gridManager.OnePieceIsPlaced += TryToSave;
@@ -26,6 +28,7 @@ public class InventoryGrid : MonoBehaviour
 
     private void OnDisable()
     {
+        eventState.EndOfCombat -= ResetInventory;
         gridManager.TrySaveInventory -= TryToSave;
         gridManager.ResetInventory -= ResetInventory;
         //gridManager.OnePieceIsPlaced -= TryToSave;
@@ -151,6 +154,7 @@ public class InventoryGrid : MonoBehaviour
         EmptyInventoryGridSlots();
         isReseting = false;
         TryToSave();
+        gridManager.InvokeActualiseBoard();
     }
 
 

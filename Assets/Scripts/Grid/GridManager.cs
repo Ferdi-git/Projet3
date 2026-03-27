@@ -85,6 +85,8 @@ public class GridManager : MonoBehaviour
             if (pieceOnSlot == null || pieceOnSlot.wasGridChecked)
                 continue;
 
+            print(pieceOnSlot.name);
+
             pieceOnSlot.wasGridChecked = true;
 
             BoardPiece currentBoardPiece = GetBoardPiece(pieceOnSlot);
@@ -170,7 +172,7 @@ public class GridManager : MonoBehaviour
     {
         for(int nbr = 0; nbr < gridSlots.Length ; nbr++)
         {
-            gridSlots[nbr].isFilled = false;
+            gridSlots[nbr].ClearSlot();
         }
     }
 
@@ -238,8 +240,8 @@ public class GridManager : MonoBehaviour
     {
         bp.piecePersonality.DestroyPieceAnim();
         RemoveBoardPiece(bp);
-        Debug.LogError("IICICICICIICIICIC C PTET ELE PRBLM");
-        //ActualiseBoard();
+        Debug.Log("IICICICICIICIICIC C PTET ELE PRBLM");
+        ActualiseBoard();
     }
 
 }

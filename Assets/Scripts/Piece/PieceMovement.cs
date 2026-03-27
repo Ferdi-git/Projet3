@@ -80,7 +80,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
     }
 
-    private void Unfill()
+    public void Unfill()
     {
         foreach (var c in posCases)
         {

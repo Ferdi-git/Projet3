@@ -141,6 +141,7 @@ public class PieceAnimations : MonoBehaviour
 
     public void DestroyPieceAnim()
     {
+        gameObject.GetComponent<PieceMouvement>().Unfill();
         Destroy(gameObject);
     }
 
