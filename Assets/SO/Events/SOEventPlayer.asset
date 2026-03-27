@@ -9,10 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07b6f2a75f435724faba9269baaf24d8, type: 3}
-  m_Name: PlayerStats
-  m_EditorClassIdentifier: Assembly-CSharp::StatsPlayer
-  pv: 26
-  shield: 0
-  pvMax: 50
-  player: {fileID: 11400000, guid: a7224eda7c7587c4ba95922c9f69c08e, type: 2}
+  m_Script: {fileID: 11500000, guid: 68595fb1d3a9f6a48b22628566d2b957, type: 3}
+  m_Name: SOEventPlayer
+  m_EditorClassIdentifier: Assembly-CSharp::SOEventPlayer

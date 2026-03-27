@@ -10,36 +10,31 @@ public class StatsPlayer : ScriptableObject
 
     public int pvMax;
 
-    public Action<int> GainPV ;
-    public Action<int> LoosePV;
-
-
-    public Action<int> GainShield;
-    public Action<int> LooseShield;
+    public SOEventPlayer player;
 
     
     public void InvokeGainPV(int amount ) 
     {
-        pv += amount; 
-        GainPV?.Invoke(amount);
+        pv += amount;
+        player.InvokePlayerGainPV( amount );
     }
     public void InvokeLoosePV(int amount) 
     { 
         pv -= amount;
-        LoosePV?.Invoke(amount);
+        player.InvokePlayerLoosePV( amount );
     }
 
-    public void InvokeGainShield(int amount) { shield += amount;  GainShield?.Invoke(amount); }
+    public void InvokeGainShield(int amount) { shield += amount; player.InvokePlayerGainShield(amount); }
     public void InvokeTakeDamage(int amount) 
     { 
         if (amount <= shield)
         {
             shield -= amount;
-            LooseShield?.Invoke(amount);
+            player.InvokePlayerLooseShield( amount );
         }
         else
         {
-            LooseShield?.Invoke(shield);
+            player.InvokePlayerLooseShield(amount);
             shield = 0;
             InvokeLoosePV(amount - shield);
         }

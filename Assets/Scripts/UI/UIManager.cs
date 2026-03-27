@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private StatsPlayer statsPlayer;
+    [SerializeField] private SOEventPlayer eventPlayer;
+    [SerializeField] private StatsEnnemi statsPlayer;
     [SerializeField] private StatsEnnemi statsEnnemi;
     [SerializeField] private SOEventEnnemy EventEnnemy;
 
@@ -12,11 +13,11 @@ public class UIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        statsPlayer.GainPV += GainPV;
-        statsPlayer.LoosePV += LoosePV;
+        eventPlayer.GainPV += GainPV;
+        eventPlayer.LoosePV += LoosePV;
 
-        statsPlayer.GainShield += GainShield;
-        statsPlayer.LooseShield += LooseShield;
+        eventPlayer.GainShield += GainShield;
+        eventPlayer.LooseShield += LooseShield;
 
 
         EventEnnemy.EnnemiGainPV += EnnemiGainPV;
@@ -27,11 +28,11 @@ public class UIManager : MonoBehaviour
     }
     private void OnDisable()
     {
-        statsPlayer.GainPV -= GainPV;
-        statsPlayer.LoosePV -= LoosePV;
+        eventPlayer.GainPV -= GainPV;
+        eventPlayer.LoosePV -= LoosePV;
 
-        statsPlayer.GainShield -= GainShield;
-        statsPlayer.LooseShield -= LooseShield;
+        eventPlayer.GainShield -= GainShield;
+        eventPlayer.LooseShield -= LooseShield;
 
 
         EventEnnemy.EnnemiGainPV -= EnnemiGainPV;

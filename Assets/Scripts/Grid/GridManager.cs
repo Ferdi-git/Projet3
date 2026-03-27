@@ -9,7 +9,7 @@ public class GridManager : MonoBehaviour
 {
     [SerializeField] private GridSlot[] gridSlots;
     [SerializeField] private SOEventGridManager gridManager;
-    [SerializeField] private PieceHealthManager healthManager;
+    [SerializeField] private SOEventPieceHealth healthManager;
 
     [SerializeField] private SoBoard theBoard;
 

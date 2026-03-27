@@ -2120,7 +2120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3453ca9960939864a8de2aa9d79c6470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CombatStatsUI
-  statsPlayer: {fileID: 11400000, guid: c3c8f1e3ded73a44496a15c33dcabb2f, type: 2}
+  eventPlayer: {fileID: 11400000, guid: a7224eda7c7587c4ba95922c9f69c08e, type: 2}
+  statsPlayer: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
   statsEnnemi: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
   EventEnnemy: {fileID: 11400000, guid: c26ad741f286d8a46b923e14d9828be4, type: 2}
   PlayerSlider: {fileID: 118407232}
@@ -5906,7 +5907,7 @@ MonoBehaviour:
   - {fileID: 1219300350}
   - {fileID: 623695479}
   gridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
-  healthManager: {fileID: 11400000, guid: 75852bd6b8ee08246bc687f0042d403d, type: 2}
+  healthManager: {fileID: 11400000, guid: 6f12cea053413f84cb2c3d414fe38247, type: 2}
   theBoard: {fileID: 11400000, guid: ef4a20505366c5e48ac6e60e3a1740e0, type: 2}
   soSaveInventory: {fileID: 11400000, guid: 767dd48b98fbd4f42942f9e086303307, type: 2}
   piecesExist:

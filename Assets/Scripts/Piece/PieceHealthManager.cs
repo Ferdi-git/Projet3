@@ -5,14 +5,13 @@ using static UnityEngine.Rendering.DebugUI;
 [CreateAssetMenu]
 public class PieceHealthManager : ScriptableObject
 {
-    public event Action<BoardPiece> PieceShieldBreak;
-    public event Action<BoardPiece> PieceTakeDamage;
-    public event Action<BoardPiece> PieceDie;
+    
 
     public int hp;
     public int shield;
     public BoardPiece piece;
 
+    public SOEventPieceHealth pieceHealthEvent;
 
 
     public void GiveStats (int _hp, int _shield , BoardPiece boardPiece) {hp = _hp; shield = _shield;piece = boardPiece; }
@@ -24,11 +23,11 @@ public class PieceHealthManager : ScriptableObject
             if (hp <= 0)
             {
                 hp = 0;
-                InvokeDead();
+                Dead();
             }
             else
             {
-                InvokeDamage();
+                TakeDamage();
             }
         }
         else
@@ -37,39 +36,39 @@ public class PieceHealthManager : ScriptableObject
             {
                 hp -= damage - shield;
                 shield = 0;
-                InvokeShieldBreak();
+                ShieldBreak();
                 if (hp <= 0)
                 {
                     hp = 0;
-                    InvokeDead();
+                    Dead();
                 }
                 else
                 {
-                    InvokeDamage();
+                    TakeDamage();
                 }
 
             }
             else
             {
                 shield -= damage;
-                InvokeDamage();
+                TakeDamage();
             }
            
         }
     }
 
-    public void InvokeDamage ()
+    public void TakeDamage ()
     {
-        PieceTakeDamage?.Invoke (piece);
+        pieceHealthEvent.InvokeDamage(piece);
     }
 
-    public void InvokeShieldBreak ()
+    public void ShieldBreak ()
     {
-        PieceShieldBreak?.Invoke (piece);
+        pieceHealthEvent.InvokeShieldBreak(piece);
     }
 
-    public void InvokeDead ()
+    public void Dead ()
     {
-        PieceDie?.Invoke (piece);
+        pieceHealthEvent.InvokeDead(piece);
     }
 }

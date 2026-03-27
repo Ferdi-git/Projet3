@@ -14,3 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PieceHealthManager
   hp: 0
   shield: 0
+  piece:
+    healthPoint: 0
+    shield: 0
+    soPieces: {fileID: 0}
+    piecePersonality: {fileID: 0}
+    context:
+      Tour: 0
+      NbrCaseDeLaPiece: 0
+      NbrPiecesAutour: 0
+      NbrCaseLibre: 0
+      "NbrCaseOccup\xE9": 0
+      NbrDeRepetition: 0
+      voisins: []
+      NbrCaseAtk: 0
+  pieceHealthEvent: {fileID: 11400000, guid: 6f12cea053413f84cb2c3d414fe38247, type: 2}
