@@ -32,6 +32,7 @@ public class PieceAnimations : MonoBehaviour
 
     public IEnumerator PlayAnimations(int number, TypeAnim typeAnim)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
+
         Color baseColor = glowColors[0];
         Color glowColor = baseColor;
         float intensityMultiplier = Mathf.Pow(2f, glowIntensity);
@@ -82,8 +83,6 @@ public class PieceAnimations : MonoBehaviour
 
         float glowIn = Mathf.Max(0.07f, glowDuration * 0.3f - 0.01f * number);
         float glowOut = Mathf.Max(0.13f, glowDuration - 0.01f * number);
-
-
 
 
         for (int i = 0; i < spriteRenderers.Count; i++)
