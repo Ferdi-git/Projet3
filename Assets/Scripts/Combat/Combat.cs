@@ -69,7 +69,7 @@ public class Combat : MonoBehaviour
     {
         yield return null;
         int zoneCount = ennemiManager.GetAtkZoneNbr();
-        print ("Nombre de case que prend l'attque : "+zoneCount);
+        //print ("Nombre de case que prend l'attque : "+zoneCount);
         for (int i = 0; i < soBoard.boardPieces.Count; i++)
         {
             if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
@@ -96,8 +96,8 @@ public class Combat : MonoBehaviour
         }
         
         statsPlayer.InvokeTakeDamage(ennemiManager.GetDamageValue() * zoneCount); // degats que recoit le joueur 
-        print ("Nombre de case qui vont touché le joueur : "+zoneCount);
-        print("le joeur se prend " + ennemiManager.GetDamageValue() * zoneCount + " degats");
+        //print ("Nombre de case qui vont touché le joueur : "+zoneCount);
+        //print("le joeur se prend " + ennemiManager.GetDamageValue() * zoneCount + " degats");
         
         StartCoroutine(ResoudreTurn());
     }
@@ -134,13 +134,13 @@ public class Combat : MonoBehaviour
         yield return null;
         //check si des pieces sont mortes 
         //enlever bouclier aux pieces (mettre bouclier dans boardpiece)
-        print("test");
+        //print("test");
         ennemiManager.RemoveAtk();
         ennemiManager.ShowAtk();
 
         if (statsPlayer.GetPV() <= 0 )
         {
-            print("perdu");
+            //print("perdu");
         }
         else
         {

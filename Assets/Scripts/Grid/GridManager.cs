@@ -76,7 +76,6 @@ public class GridManager : MonoBehaviour
         gridManager.InvokeResetPieceGridCheckedd();
         SortBoard(baseSortMode);
         theBoard.boardPieces.Clear();
-        print("ClearBoad");
         ResetNbrAtckCase();
         SetNbrAtckCase();
         for (int i = 0; i < gridSlots.Length; i++)
@@ -86,7 +85,6 @@ public class GridManager : MonoBehaviour
             if (pieceOnSlot == null || pieceOnSlot.wasGridChecked)
                 continue;
 
-            print(pieceOnSlot.name);
 
             pieceOnSlot.wasGridChecked = true;
 

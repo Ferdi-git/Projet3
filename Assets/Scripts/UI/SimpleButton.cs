@@ -24,7 +24,6 @@ public class SimpleButton : MonoBehaviour, IMouseClickable, IMouseHoverable
     public void OnClick()
     {
         if(!canBeClicked) {return; }
-        print("ButtonClicked");
         onClick.Invoke();
     }
 

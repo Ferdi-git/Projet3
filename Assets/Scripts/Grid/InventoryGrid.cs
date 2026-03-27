@@ -48,7 +48,6 @@ public class InventoryGrid : MonoBehaviour
 
     public void TryToSave()
     {
-        print("TrySave");
         if (isReseting) return;
 
         //gridManager.InvokeActualiseBoard();
@@ -64,7 +63,6 @@ public class InventoryGrid : MonoBehaviour
     [Button]
     private void SaveGrid()
     {
-        print("SAVE");
         soSaveInventory.pieces.Clear();
         soSaveInventory.piecesPos.Clear();
         soSaveInventory.piecesRot.Clear();
