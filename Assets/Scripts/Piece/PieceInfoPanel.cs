@@ -1,6 +1,7 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PieceInfoPanel : MonoBehaviour
 {
@@ -11,10 +12,11 @@ public class PieceInfoPanel : MonoBehaviour
     [SerializeField] GameObject panelInfo;
     [SerializeField] float timeBeforeApearing = 0.15f;
     float baseScaleY;
-
+    AudioSource audioSource;
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         canvas = GetComponent<Canvas>();
         canvas.worldCamera = Camera.main;
     }
@@ -37,7 +39,13 @@ public class PieceInfoPanel : MonoBehaviour
         text.gameObject.SetActive (false);
         panelInfo.transform.localScale = new Vector3(panelInfo.transform.localScale.x , 0, panelInfo.transform.localScale.z) ;
         panelInfo.SetActive(true);
-        panelInfo.transform.DOScaleY(baseScaleY,0.2f).SetDelay(timeBeforeApearing).OnComplete(() => text.gameObject.SetActive(true));
+        panelInfo.transform.DOScaleY(baseScaleY,0.2f).SetDelay(timeBeforeApearing).OnComplete(() => {
+            audioSource.pitch = Random.Range(1,1.1f);
+            audioSource.Play();
+            text.gameObject.SetActive(true);
+
+        }
+        );
 
     }
 
