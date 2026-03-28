@@ -10,6 +10,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private GridSlot[] gridSlots;
     [SerializeField] private SOEventGridManager gridManager;
     [SerializeField] private SOEventPieceHealth healthManager;
+    [SerializeField] private SOEventState soEventState;
 
     [SerializeField] private SoBoard theBoard;
 
@@ -32,7 +33,7 @@ public class GridManager : MonoBehaviour
         gridManager.SelectRandomSlot += SelectRandomSlot;
         gridManager.RemoveAtk += RemoveAtk;
         healthManager.PieceDie += DestroyPiece;
-
+        soEventState.StartShoping += RemoveAtk;
     }
 
     private void OnDisable()
@@ -44,6 +45,7 @@ public class GridManager : MonoBehaviour
         gridManager.SelectRandomSlot -= SelectRandomSlot;
         gridManager.RemoveAtk -= RemoveAtk;
         healthManager.PieceDie -= DestroyPiece;
+        soEventState.StartShoping -= RemoveAtk;
 
 
 

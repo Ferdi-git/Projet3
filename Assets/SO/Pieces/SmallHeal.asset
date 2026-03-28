@@ -21,4 +21,5 @@ MonoBehaviour:
   ConditionValues: 
   EfectValues: 02000000
   colors: 00000000
-  description: + damge
+  description: + 2 HP
+  isRepetition: 0

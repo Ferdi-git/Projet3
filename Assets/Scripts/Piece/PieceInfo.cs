@@ -27,8 +27,8 @@ public class PieceInfo : MonoBehaviour
     {
         SnapToGrid();
         audioSource = GetComponent<AudioSource>();
-
-
+        originalPos = transform.position;
+        originalRota = transform.rotation;  
     }
 
     private void OnEnable()

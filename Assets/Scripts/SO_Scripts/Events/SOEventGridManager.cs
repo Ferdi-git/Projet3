@@ -31,9 +31,9 @@ public class SOEventGridManager : ScriptableObject
         OnePieceIsPlaced?.Invoke();
     }
 
-    public void InvokeAddBoardPiece(GameObject go) { AddBoardPiece.Invoke(go); }
-    public void InvokeSelectRandomSlot(GameObject go) { SelectRandomSlot.Invoke(go); }
-    public void InvokeSetAllPieceCanMove(bool can) { SetAllPieceCanMove.Invoke(can); }
+    public void InvokeAddBoardPiece(GameObject go) { AddBoardPiece?.Invoke(go); }
+    public void InvokeSelectRandomSlot(GameObject go) { SelectRandomSlot?.Invoke(go); }
+    public void InvokeSetAllPieceCanMove(bool can) { SetAllPieceCanMove?.Invoke(can); }
 
     public void InvokeRemoveAtk() {  RemoveAtk?.Invoke(); }
 

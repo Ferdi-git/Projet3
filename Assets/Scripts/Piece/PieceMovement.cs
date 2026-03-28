@@ -5,6 +5,8 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
 {
 
     PieceInfo pieceInfo;
+    [SerializeField] PieceInfoPanel pieceInfoPanel;
+    [SerializeField] GameObject anchorPanel;
 
     public bool isDraging = false;
     public bool isRotating = false;
@@ -62,12 +64,18 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
     {
         transform.DOScale(1.05f, 0.1f);
         transform.position = new Vector3(transform.position.x, transform.position.y, -0.1f);
+        //if(!isDraging)
+        //{
+        //    pieceInfoPanel.ShowPanel();
+        //}
+        pieceInfoPanel.ShowPanel();
     }
 
     public void OnHoverExit()
     {
         transform.DOScale(1f, 0.1f);
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
+        pieceInfoPanel.HidePanel();
     }
 
     public void OnClick()
@@ -92,6 +100,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
 
         transform.DORotate(new Vector3(0, 0, targetZ), 0.2f, RotateMode.FastBeyond360).OnComplete(() =>
         {
+
             isRotating = false;
             if (isRotatingInputBuffer)
             {

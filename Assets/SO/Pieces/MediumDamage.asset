@@ -21,4 +21,5 @@ MonoBehaviour:
   ConditionValues: 
   EfectValues: 08000000
   colors: 00000000
-  description: + damge
+  description: 8 DMG
+  isRepetition: 0
