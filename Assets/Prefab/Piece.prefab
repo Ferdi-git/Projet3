@@ -347,6 +347,7 @@ MonoBehaviour:
   pieceInfo: {fileID: 6445726352670952644}
   text: {fileID: 5003386829041829931}
   panelInfo: {fileID: 915532565427914888}
+  timeBeforeApearing: 0.5
 --- !u!1 &2560729508823102391
 GameObject:
   m_ObjectHideFlags: 0
