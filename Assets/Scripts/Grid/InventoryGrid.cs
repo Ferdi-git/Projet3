@@ -30,7 +30,7 @@ public class InventoryGrid : MonoBehaviour
     private void OnDisable()
     {
         //eventState.EndOfCombat -= ResetInventory;
-        eventState.StartShoping += ResetInventory;
+        eventState.StartShoping -= ResetInventory;
         gridManager.TrySaveInventory -= TryToSave;
         gridManager.ResetInventory -= ResetInventory;
         //gridManager.OnePieceIsPlaced -= TryToSave;
@@ -113,9 +113,12 @@ public class InventoryGrid : MonoBehaviour
 
         print(remaining);
 
+
         for (int i = 0; i < listPieceMoved.Count; i++)
         {
             int savedIndex = listPieceMoved[i];
+
+            soSaveInventory.pieces[savedIndex].GetComponent<PieceInfo>().Unfill();
 
             soSaveInventory.pieces[savedIndex].transform
                 .DOMove(soSaveInventory.piecesPos[savedIndex], timeToGoBackToInventory)
@@ -151,7 +154,6 @@ public class InventoryGrid : MonoBehaviour
     private void FinishReset(List<int> piecesMoved)
     {
         gridManager.InvokeResetGridSlots();
-        EmptyInventoryGridSlots();
         isReseting = false;
         TryToSave();
         gridManager.InvokeActualiseBoard();
