@@ -61,6 +61,6 @@ Material:
     - _GlowIntensity: -10
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
-    - _GlowColor: {r: 0.00073146453, g: 0.00073146453, b: 0.00073146453, a: 1}
+    - _GlowColor: {r: 0.0000049748196, g: 0.0000049748196, b: 0.0000049748196, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 381c9b692b9631c4291d9348615745d1, type: 2}
     - target: {fileID: 4797873549879812826, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: glowIntensity
-      value: 1
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4797873549879812826, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: TEMPORARESTRING
