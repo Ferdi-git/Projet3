@@ -19,6 +19,8 @@ public class PieceInfo : MonoBehaviour
 
     [SerializeField] private LayerMask gridLayer;
 
+    public BoardPiece currentBoardPiece;
+
 
     [HideInInspector] public Vector3 originalPos;
     [HideInInspector] public Quaternion originalRota;

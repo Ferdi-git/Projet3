@@ -47,9 +47,6 @@ public class GridManager : MonoBehaviour
         healthManager.PieceDie -= DestroyPiece;
         soEventState.StartShoping -= RemoveAtk;
 
-
-
-
     }
 
 
@@ -60,12 +57,7 @@ public class GridManager : MonoBehaviour
         soSaveInventory.listBoardPiecesExist.Clear();
         for (int i = 0; i < piecesExist.Length; i++)
         {
-            BoardPiece newBoardPiece = new();
-            newBoardPiece.pieceInfo = piecesExist[i];
-            newBoardPiece.pieceAnimation = piecesExist[i].GetComponent<PieceAnimations>();
-            newBoardPiece.soPieces = piecesExist[i].soPiece;
-            newBoardPiece.healthPoint = newBoardPiece.soPieces.healthPoint;
-            soSaveInventory.listBoardPiecesExist.Add(newBoardPiece); 
+            AddBoardPiece(piecesExist[i].gameObject);
         }
         ActualiseBoard();
 
@@ -221,6 +213,7 @@ public class GridManager : MonoBehaviour
     {
         BoardPiece newBoardPiece = new();
         PieceInfo pieceInfo = go.GetComponent<PieceInfo>();
+        pieceInfo.currentBoardPiece = newBoardPiece;
         newBoardPiece.pieceInfo = pieceInfo;
         newBoardPiece.pieceAnimation = go.GetComponent<PieceAnimations>();
         newBoardPiece.soPieces = pieceInfo.soPiece;

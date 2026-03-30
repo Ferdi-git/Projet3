@@ -30,11 +30,13 @@ public class PieceInfoPanel : MonoBehaviour
     public void Initialyse()
     {
         text.gameObject.SetActive(false);
-        text.text = pieceInfo.soPiece.description;
+        RefreshPanel();
     }
 
     public void ShowPanel()
     {
+        transform.rotation = Camera.main.transform.rotation;
+        RefreshPanel();
         panelInfo.transform.DOKill();
         text.gameObject.SetActive (false);
         panelInfo.transform.localScale = new Vector3(panelInfo.transform.localScale.x , 0, panelInfo.transform.localScale.z) ;
@@ -57,9 +59,10 @@ public class PieceInfoPanel : MonoBehaviour
 
     }
 
-    void Update()
+
+    private void RefreshPanel()
     {
-        transform.rotation = Camera.main.transform.rotation;
+        text.text = $"HP : {pieceInfo.currentBoardPiece.healthPoint}\nShield : {pieceInfo.currentBoardPiece.healthPoint}\n{pieceInfo.soPiece.description}";
     }
 
 }
