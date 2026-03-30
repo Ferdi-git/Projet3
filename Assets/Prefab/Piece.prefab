@@ -348,7 +348,7 @@ MonoBehaviour:
   pieceInfo: {fileID: 6445726352670952644}
   text: {fileID: 5003386829041829931}
   panelInfo: {fileID: 915532565427914888}
-  timeBeforeApearing: 0.5
+  timeBeforeApearing: 0.3
 --- !u!82 &8348315404646085296
 AudioSource:
   m_ObjectHideFlags: 0

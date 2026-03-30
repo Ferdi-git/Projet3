@@ -39,7 +39,7 @@ public class PieceInfoPanel : MonoBehaviour
         text.gameObject.SetActive (false);
         panelInfo.transform.localScale = new Vector3(panelInfo.transform.localScale.x , 0, panelInfo.transform.localScale.z) ;
         panelInfo.SetActive(true);
-        panelInfo.transform.DOScaleY(baseScaleY,0.2f).SetDelay(timeBeforeApearing).OnComplete(() => {
+        panelInfo.transform.DOScaleY(baseScaleY,0.2f).SetEase(Ease.InOutSine).SetDelay(timeBeforeApearing).OnComplete(() => {
             audioSource.pitch = Random.Range(1,1.1f);
             audioSource.Play();
             text.gameObject.SetActive(true);

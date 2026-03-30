@@ -32,7 +32,7 @@ public class PieceAnimations : MonoBehaviour
 
     public IEnumerator PlayAnimations(int number, TypeAnim typeAnim)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
-
+        //ICICIICICIC
         Color baseColor = glowColors[0];
         Color glowColor = baseColor;
         float intensityMultiplier = Mathf.Pow(2f, glowIntensity);
@@ -40,7 +40,7 @@ public class PieceAnimations : MonoBehaviour
         switch (typeAnim)
         {
             case TypeAnim.classic:
-                glowColor = baseColor * intensityMultiplier;
+                glowColor = glowColors[0] * intensityMultiplier;
                 break;
 
             case TypeAnim.repeat:
