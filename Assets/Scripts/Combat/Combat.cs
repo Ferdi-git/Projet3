@@ -74,6 +74,7 @@ public class Combat : MonoBehaviour
         {
             if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
             {
+                zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
                 //Why not just give BoardPiece ?
                 pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield , soBoard.boardPieces[i]);
                 pieceHealthManager.TakeDamage(ennemiManager.GetDamageValue() * soBoard.boardPieces[i].context.NbrCaseAtk);
@@ -81,17 +82,12 @@ public class Combat : MonoBehaviour
 
 
                 //PROBLEME TU PEUX PAS CHECK LA BOARDPIECE SI ELLE EST MORTE CAR JE LA DETRUIT
-                soBoard.boardPieces[i].healthPoint = pieceHealthManager.hp;
-                soBoard.boardPieces[i].shield = pieceHealthManager.shield;
-
-                if (pieceHealthManager.hp == 0)
-                {
-
-                    print("mort !!!!");
-                }
+                //soBoard.boardPieces[i].healthPoint = pieceHealthManager.hp;
+                //soBoard.boardPieces[i].shield = pieceHealthManager.shield;
 
 
-                zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
+
+                
             }
         }
         

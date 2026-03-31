@@ -27,7 +27,7 @@ public class PieceHealthManager : ScriptableObject
             }
             else
             {
-                TakeDamage();
+                LooseHp();
             }
         }
         else
@@ -44,31 +44,40 @@ public class PieceHealthManager : ScriptableObject
                 }
                 else
                 {
-                    TakeDamage();
+                    LooseHp();
                 }
 
             }
             else
             {
                 shield -= damage;
-                TakeDamage();
+                LooseHp();
             }
            
         }
     }
 
-    public void TakeDamage ()
+    public void LooseHp ()
     {
+        ResetStatsPiece();
         pieceHealthEvent.InvokeDamage(piece);
     }
 
     public void ShieldBreak ()
     {
+        ResetStatsPiece();
         pieceHealthEvent.InvokeShieldBreak(piece);
     }
 
     public void Dead ()
     {
+        ResetStatsPiece();
         pieceHealthEvent.InvokeDead(piece);
+    }
+
+    private void ResetStatsPiece ()
+    {
+        piece.healthPoint = hp;
+        piece.shield = shield;
     }
 }
