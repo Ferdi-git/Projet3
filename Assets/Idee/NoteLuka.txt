@@ -1,12 +1,34 @@
 
 Inventaire
-systeme de choix de piece 
-Sound systeme 
+
+
 
 sound pick up piece
 
-a faire : 
-	- tout event dans event so séparé
-	- suite apres le shop (generer un new ennemi ...)
+- a faire fix les hp 
+- bug deuxieme ouverture du shop 
+
 
 si une ligne compléter avec la meme couleur : BONUS 
+
+
+
+list truc à faire long terme : 
+
+- TUTO
+- save system 
+- sound système 
+- menu 
+- musique (par thomas ) 
+- effet diff d'ennemi sur la grille 
+- autre evenement de shop 
+- reroll system
+- pouvoir perdre/gagner
+- pouvoir reset une partie 
+
+
+
+
+- en bonus : 
+
+	- encyclopedie 
