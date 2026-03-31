@@ -25,6 +25,7 @@ list truc à faire long terme :
 - reroll system
 - pouvoir perdre/gagner
 - pouvoir reset une partie 
+- road map 
 
 
 
