@@ -76,6 +76,7 @@ public class Combat : MonoBehaviour
             {
                 zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
                 //Why not just give BoardPiece ?
+                print(soBoard.boardPieces[i].shield);
                 pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield , soBoard.boardPieces[i]);
                 pieceHealthManager.TakeDamage(ennemiManager.GetDamageValue() * soBoard.boardPieces[i].context.NbrCaseAtk);
 

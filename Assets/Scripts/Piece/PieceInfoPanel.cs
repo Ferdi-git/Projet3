@@ -62,7 +62,7 @@ public class PieceInfoPanel : MonoBehaviour
 
     private void RefreshPanel()
     {
-        text.text = $"HP : {pieceInfo.currentBoardPiece.healthPoint}\nShield : {pieceInfo.currentBoardPiece.healthPoint}\n{pieceInfo.soPiece.description}";
+        text.text = $"HP : {pieceInfo.currentBoardPiece.healthPoint}\nShield : {pieceInfo.currentBoardPiece.shield}\n{pieceInfo.soPiece.description}";
     }
 
 }
