@@ -36,6 +36,19 @@ public class PieceInfoPanel : MonoBehaviour
     public void ShowPanel()
     {
         transform.rotation = Camera.main.transform.rotation;
+
+
+        float rotZ = GetComponent<RectTransform>().localRotation.eulerAngles.z;
+        print(rotZ);
+        float offsetX = 0.5f;
+        float offsetY = 0.5f;
+
+        if (Mathf.Approximately(rotZ, -90f)) offsetX = -0.5f;
+        if (Mathf.Approximately(rotZ, 180f)) { offsetY = -0.5f; offsetX = -0.5f; }
+        
+
+        GetComponent<RectTransform>().localPosition = new Vector3(offsetX, offsetY, transform.localPosition.z);
+
         RefreshPanel();
         panelInfo.transform.DOKill();
         text.gameObject.SetActive (false);
