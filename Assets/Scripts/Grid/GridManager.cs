@@ -229,8 +229,20 @@ public class GridManager : MonoBehaviour
             if (soSaveInventory.listBoardPiecesExist[i] == bp)
             {
                 soSaveInventory.listBoardPiecesExist.RemoveAt(i);
+
             }
         }
+
+        for (int i = 0; i < soSaveInventory.pieces.Count; i++)
+        {
+            if (soSaveInventory.pieces[i] == bp.pieceInfo.gameObject)
+            {
+                soSaveInventory.pieces.RemoveAt(i);
+                soSaveInventory.piecesPos.RemoveAt(i);
+                soSaveInventory.piecesRot.RemoveAt(i);
+            }
+        }
+
     }
 
     private void DestroyPiece(BoardPiece bp)

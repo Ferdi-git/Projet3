@@ -96,8 +96,7 @@ public class InventoryGrid : MonoBehaviour
 
         for (int i = 0; i < soSaveInventory.pieces.Count; i++)
         {
-            if (soSaveInventory.pieces[i].transform.position != soSaveInventory.piecesPos[i] ||
-                soSaveInventory.pieces[i].transform.rotation != soSaveInventory.piecesRot[i])
+            if (soSaveInventory.pieces[i].transform.position != soSaveInventory.piecesPos[i] || soSaveInventory.pieces[i].transform.rotation != soSaveInventory.piecesRot[i])
                 listPieceMoved.Add(i);
         }
 

@@ -14,6 +14,7 @@ public class ChoiceManager : MonoBehaviour
     [SerializeField] SOEventGridManager eventGridManager;
     [SerializeField] SoPieces[] difPieces;
 
+    List<GameObject> choices = new List<GameObject>();
     public GameObject lastGeneratedPiece = null; 
 
     public ShopManager shopManager;
@@ -31,6 +32,7 @@ public class ChoiceManager : MonoBehaviour
     [Button]
     public void GeneratePiece()
     {
+        ClearChoice();
         for (int i = 0; i < nbrOfChoice ; i++)
         {
             var prefab = Instantiate(prefabPieceChoice, choiceLayout.transform);
@@ -40,7 +42,14 @@ public class ChoiceManager : MonoBehaviour
             script.choiceManager = this;
             prefab.GetComponent<Button>().onClick.AddListener(OpenPieceScreen);
             script.onePieceChoice = onePiecePiece;
+            choices.Add(prefab);
         }
+    }
+
+    private void ClearChoice()
+    {
+        for (int i = 0; i < choices.Count; i++) { Destroy(choices[i]); }
+        choices.Clear();
     }
 
     public void OpenPieceScreen()
@@ -87,6 +96,9 @@ public class ChoiceManager : MonoBehaviour
 
     private void EndChoice()
     {
+        onePieceScreen.SetActive(false);
+
+        ClearChoice();
         shopManager.CloseShop();
     }
 
