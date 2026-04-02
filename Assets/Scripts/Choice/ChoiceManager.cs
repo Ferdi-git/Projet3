@@ -32,6 +32,8 @@ public class ChoiceManager : MonoBehaviour
     [Button]
     public void GeneratePiece()
     {
+        choiceLayout.SetActive(true);
+
         ClearChoice();
         for (int i = 0; i < nbrOfChoice ; i++)
         {
@@ -85,8 +87,10 @@ public class ChoiceManager : MonoBehaviour
 
     private void CheckIfPiecePlaced(GameObject go)
     {
+        if(lastGeneratedPiece == null) return;
         if(go == lastGeneratedPiece)
         {
+            lastGeneratedPiece = null;
             go.transform.SetParent(null);
             eventGridManager.InvokeAddBoardPiece(go);
             eventGridManager.InvokeTrySaveInventory();
@@ -97,7 +101,6 @@ public class ChoiceManager : MonoBehaviour
     private void EndChoice()
     {
         onePieceScreen.SetActive(false);
-
         ClearChoice();
         shopManager.CloseShop();
     }
