@@ -60,3 +60,5 @@ A faire :
 	- Bug piece qui meurt 
 	- bug shop 
 	- Ranger scripts 
+
+Bouton skip shop
