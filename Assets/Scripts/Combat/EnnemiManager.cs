@@ -8,6 +8,7 @@ public class EnnemiManager : MonoBehaviour
     [SerializeField] private GameObject ennemiUI;
     [SerializeField] private KeepEnnemiSo ennemiList;
     [SerializeField] private SOEventGridManager soEventGridManager;
+    [SerializeField] private UIManager uiManager;
     private int index;
     private int atkIndex;
 
@@ -25,6 +26,8 @@ public class EnnemiManager : MonoBehaviour
         stats.shield = 0;
         stats.sprite = ennemiList.ennemiList[index].sprite;
         stats.ennemiAttacks = ennemiList.ennemiList[index].attacks;
+
+        uiManager.UpdateUI();
     }
 
     public void ShowAtk ()

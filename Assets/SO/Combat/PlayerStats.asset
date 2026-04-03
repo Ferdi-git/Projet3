@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b6f2a75f435724faba9269baaf24d8, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: Assembly-CSharp::StatsPlayer
-  pv: 300
+  pv: 20
   shield: 0
-  pvMax: 300
+  pvMax: 60
   player: {fileID: 11400000, guid: a7224eda7c7587c4ba95922c9f69c08e, type: 2}

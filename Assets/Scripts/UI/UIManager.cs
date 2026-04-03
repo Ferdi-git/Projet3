@@ -4,13 +4,17 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private SOEventPlayer eventPlayer;
-    [SerializeField] private StatsEnnemi statsPlayer;
+    [SerializeField] private StatsPlayer statsPlayer;
     [SerializeField] private StatsEnnemi statsEnnemi;
     [SerializeField] private SOEventEnnemy EventEnnemy;
 
     [SerializeField] private Slider PlayerSlider;
     [SerializeField] private Slider EnnemiSlider;
 
+    private void Start()
+    {
+        UpdateUI();
+    }
     private void OnEnable()
     {
         eventPlayer.GainPV += GainPV;
@@ -44,13 +48,15 @@ public class UIManager : MonoBehaviour
 
 
 
-    private void UpdateUI ()
+    public void UpdateUI ()
     {
         int pvPlayer = statsPlayer.GetPV();
+        print("pv player " + pvPlayer);
         int pvMaxPlayer = statsPlayer.pvMax;
         int shieldPlayer = statsPlayer.GetShield();
 
         int pvEnnemi = statsEnnemi.GetPV();
+        print ("pv ennemi " + pvEnnemi);
         int pvMaxEnnemi = statsEnnemi.pvMax;
         int shieldEnnemi = statsEnnemi.GetShield();
 

@@ -2184,7 +2184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CombatStatsUI
   eventPlayer: {fileID: 11400000, guid: a7224eda7c7587c4ba95922c9f69c08e, type: 2}
-  statsPlayer: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
+  statsPlayer: {fileID: 11400000, guid: c3c8f1e3ded73a44496a15c33dcabb2f, type: 2}
   statsEnnemi: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
   EventEnnemy: {fileID: 11400000, guid: c26ad741f286d8a46b923e14d9828be4, type: 2}
   PlayerSlider: {fileID: 118407232}
@@ -4815,6 +4815,7 @@ MonoBehaviour:
   ennemiUI: {fileID: 1114373235}
   ennemiList: {fileID: 11400000, guid: a3695f3c1ecb1fe4f86d7933c38743bd, type: 2}
   soEventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
+  uiManager: {fileID: 221861008}
 --- !u!4 &701649384
 Transform:
   m_ObjectHideFlags: 0

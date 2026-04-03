@@ -15,4 +15,5 @@ public class SOEventEnnemy : ScriptableObject
     public void InvokeEnnemiLoosePV(int amount) { EnnemiLoosePV?.Invoke(amount); }
     public void InvokeEnnemiGainShield(int amount) { EnnemiGainShield?.Invoke(amount); }
     public void InvokeEnnemiLooseShield(int amount) { EnnemiLooseShield?.Invoke(amount); }
+
 }
