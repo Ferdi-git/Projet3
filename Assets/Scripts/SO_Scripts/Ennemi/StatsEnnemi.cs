@@ -8,6 +8,7 @@ public class StatsEnnemi : ScriptableObject
     public int pv;
     public int shield;
     public int pvMax;
+    public string ennemiName;
     public Sprite sprite;
     public List<EnnemiAttack> ennemiAttacks;
     public SOEventEnnemy ennemyEvent;

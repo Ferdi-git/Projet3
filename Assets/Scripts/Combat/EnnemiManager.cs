@@ -16,14 +16,15 @@ public class EnnemiManager : MonoBehaviour
     {
         ennemiUI.SetActive(false);
     }
-    public void GenerateEnnemi ()
+    public void GenerateEnnemi (int NbrOfCombat)
     {
         ennemiUI.SetActive (true);
         atkIndex = 0;
         index = Random.Range(0,ennemiList.ennemiList.Count);
-        stats.pvMax = (ennemiList.ennemiList[index].resistance/100) * stats.AverageValue ;
+        stats.pvMax = ((ennemiList.ennemiList[index].resistance/100) * stats.AverageValue) * (NbrOfCombat+1) ;
         stats.pv = stats.pvMax;
         stats.shield = 0;
+        stats.ennemiName = ennemiList.ennemiList [index].name;
         stats.sprite = ennemiList.ennemiList[index].sprite;
         stats.ennemiAttacks = ennemiList.ennemiList[index].attacks;
 

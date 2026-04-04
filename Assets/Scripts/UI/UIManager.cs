@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,10 +12,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider PlayerSlider;
     [SerializeField] private Slider EnnemiSlider;
 
-    private void Start()
-    {
-        UpdateUI();
-    }
+    [SerializeField] private Sprite ennemiSprite;
+    [SerializeField] private TextMeshProUGUI ennemiName;
+
+    
     private void OnEnable()
     {
         eventPlayer.GainPV += GainPV;
@@ -29,6 +30,8 @@ public class UIManager : MonoBehaviour
 
         EventEnnemy.EnnemiGainShield += EnnemiGainShield;
         EventEnnemy.EnnemiLooseShield += EnnemiLostShield;
+
+        EventEnnemy.NewEnnemi += UpdateUI;
     }
     private void OnDisable()
     {
@@ -44,6 +47,7 @@ public class UIManager : MonoBehaviour
 
         EventEnnemy.EnnemiGainShield -= EnnemiGainShield;
         EventEnnemy.EnnemiLooseShield -= EnnemiLostShield;
+        EventEnnemy.NewEnnemi -= UpdateUI;
     }
 
 

@@ -14,9 +14,12 @@ public class Combat : MonoBehaviour
     [SerializeField] private SoNbrOfPiecePlayed piecePlayed;
     [SerializeField] private SOEventGridManager eventGridManager;
     [SerializeField] private PieceHealthManager pieceHealthManager;
+    [SerializeField] private SOEventEnnemy eventEnnemi;
 
     [SerializeField] private SOEventState eventState;
 
+
+    public int NbrOfCombat;
     private void OnEnable()
     {
         eventState.StartCombat += StartCombat;
@@ -26,17 +29,18 @@ public class Combat : MonoBehaviour
         eventState.StartCombat -= StartCombat;
     }
 
-
-    //private void Start() // à enlever
-    //{
-    //    StartCombat();
-    //}
+    private void Start()
+    {
+        NbrOfCombat = 0;
+    }
 
     public void StartCombat ()
     {
+        
         bouton.SetActive(true);
-        ennemiManager.GenerateEnnemi();
+        ennemiManager.GenerateEnnemi(NbrOfCombat);
         ennemiManager.ShowAtk();
+        eventEnnemi.InvokeNewEnnemi();
     }
 
     public void StartTurn ( )
@@ -143,6 +147,7 @@ public class Combat : MonoBehaviour
         {
             if (statsEnnemi.GetPV() <= 0 )
             {
+                NbrOfCombat += 1;
                 eventState.InvokeEndOfCombat();
             }
         }
