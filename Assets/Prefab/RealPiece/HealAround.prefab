@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176287934314892151, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: m_Name
-      value: Piece (3) Variant
+      value: HealAround
       objectReference: {fileID: 0}
     - target: {fileID: 3463587272074752591, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
@@ -111,7 +111,7 @@ PrefabInstance:
     - target: {fileID: 6445726352670952644, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: soPiece
       value: 
-      objectReference: {fileID: 11400000, guid: 16aec410ef0d80742bdf5cec8712e830, type: 2}
+      objectReference: {fileID: 11400000, guid: 49dff495c5f257a43814fb73e5f4e874, type: 2}
     - target: {fileID: 6445726352670952644, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: posCases.Array.size
       value: 2

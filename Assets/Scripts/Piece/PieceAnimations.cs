@@ -18,7 +18,8 @@ public class PieceAnimations : MonoBehaviour
     [SerializeField, ColorUsage(true, true)] private Color[] glowColors;
 
 
-
+    [SerializeField] ParticleSystem HealParticleEffect;
+    [SerializeField] ParticleSystem ShieldParticleEffect;
 
     private void Start()
     {
@@ -52,10 +53,12 @@ public class PieceAnimations : MonoBehaviour
                 break;
 
             case TypeAnim.shield:
+                ShieldParticleEffect.Play();
                 glowColor = glowColors[3] * intensityMultiplier;
                 break;
 
             case TypeAnim.heal:
+                HealParticleEffect.Play();
                 glowColor = glowColors[4] * intensityMultiplier;
                 break;
         }
@@ -119,5 +122,24 @@ public class PieceAnimations : MonoBehaviour
         shield,
         heal,
         failed,
+    }
+
+
+    public void PlayHealAnim()
+    {
+
+    }
+    public void PlayShieldAnim()
+    {
+
+    }
+
+    public void PlayTakeDamageAnim()
+    {
+
+    }
+    public void PlayLoseShielddAnim()
+    {
+
     }
 }
