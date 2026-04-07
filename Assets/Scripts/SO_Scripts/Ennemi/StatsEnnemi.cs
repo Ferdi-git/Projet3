@@ -22,36 +22,36 @@ public class StatsEnnemi : ScriptableObject
     public void EnnemiGainPV(int amount)
     {
         pv += amount;
-        ennemyEvent.EnnemiGainPV(amount);
+        ennemyEvent.InvokeEnnemiGainPV(amount);
     }
     public void EnnemiLoosePV(int amount)
     {
         if (pv > amount)
         {
             pv -= amount;
-            ennemyEvent.EnnemiLoosePV(amount);
+            ennemyEvent.InvokeEnnemiLoosePV(amount);
         }
         else
         {
             pv = 0;
-            ennemyEvent.EnnemiLoosePV(pv);
+            ennemyEvent.InvokeEnnemiLoosePV(pv);
         }
 
         
     }
 
-    public void EnnemiGainShield(int amount) { shield += amount; ennemyEvent.EnnemiGainShield(amount); }
+    public void EnnemiGainShield(int amount) { shield += amount; ennemyEvent.InvokeEnnemiGainShield(amount); }
     public void EnnemiTakeDamager(int amount) 
     { 
         
         if (amount <= shield)
         {
             shield -= amount;
-            ennemyEvent.EnnemiLooseShield(amount);
+            ennemyEvent.InvokeEnnemiLooseShield(amount);
         }
         else
         {
-            ennemyEvent.EnnemiLooseShield(shield);
+            ennemyEvent.InvokeEnnemiLooseShield(shield);
             shield = 0;
             EnnemiLoosePV(amount - shield);
         }
