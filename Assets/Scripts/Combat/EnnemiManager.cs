@@ -27,13 +27,14 @@ public class EnnemiManager : MonoBehaviour
         stats.ennemiName = ennemiList.ennemiList [index].Name;
         stats.sprite = ennemiList.ennemiList[index].sprite;
         stats.ennemiAttacks = ennemiList.ennemiList[index].attacks;
-
+        uiManager.GiveEnnemiCurrentAtkIndex(0);
         uiManager.UpdateUI();
     }
 
     public void ShowAtk ()
     {
         atkIndex = Random.Range (0, stats.ennemiAttacks.Count);
+        uiManager.GiveEnnemiCurrentAtkIndex(atkIndex);
         soEventGridManager.InvokeSelectRandomSlot(stats.ennemiAttacks[atkIndex].zone);
     }
     public void RemoveAtk ()
