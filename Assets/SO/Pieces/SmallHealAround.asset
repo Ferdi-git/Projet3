@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: HealAround
+  m_Name: SmallHealAround
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
   healthPoint: 10
   prefab: {fileID: 9169137471980413390, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
   m_Name: ShieldAround
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 10
+  healthPoint: 7
   prefab: {fileID: 6250929826989661692, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
   image: {fileID: 885199028692730458, guid: e5493a205d5a1764ab602194d4acf601, type: 3}
   pieceEffet:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: 102512ac023e7d143b6f9fca2e6ad6f6, type: 2}
   ConditionValues: 
-  EfectValues: 05000000
+  EfectValues: 03000000
   colors: 00000000
   description: Shield Around
   isRepetition: 0
