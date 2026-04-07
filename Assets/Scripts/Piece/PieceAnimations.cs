@@ -2,6 +2,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -20,20 +21,24 @@ public class PieceAnimations : MonoBehaviour
 
     [SerializeField] TrailPiece trailPiece;
     private SinglePieceSquare[] squares;
-
+    [SerializeField] TextMeshPro textHealth;
+    private BoardPiece boardPiece;
     private void Start()
     {
+        boardPiece =  gameObject.GetComponent<PieceInfo>().currentBoardPiece;
         squares = gameObject.GetComponent<PieceInfo>().GetSelfPoints();
         for (int i = 0; i < squares.Length; i++)
         {
             spriteRenderers.Add(gameObject.GetComponent<PieceInfo>().GetSelfPoints()[i].spriteRenderer);
         }
         audioSource = GetComponent<AudioSource>();
+        RefreshHealth();
     }
 
 
     public IEnumerator PlayAnimations(int number, TypeAnim typeAnim , BoardPiece declencheur)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
+        RefreshHealth();
         Color glowColor = GetGlowColor(typeAnim);
 
         //ICICIICICIC
@@ -163,5 +168,10 @@ public class PieceAnimations : MonoBehaviour
     public void PlayLoseShielddAnim()
     {
 
+    }
+
+    public void RefreshHealth()
+    {
+        textHealth.text  = boardPiece.healthPoint.ToString();
     }
 }

@@ -62,3 +62,7 @@ A faire :
 	- Ranger scripts 
 
 Bouton skip shop
+
+
+
+PROBLEME ROTA + HP REFRESH
