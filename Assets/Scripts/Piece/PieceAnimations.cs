@@ -2,6 +2,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -17,50 +18,29 @@ public class PieceAnimations : MonoBehaviour
     [Tooltip("Normal,Repeat,Atk,Defend,Heal")] 
     [SerializeField, ColorUsage(true, true)] private Color[] glowColors;
 
-
-    [SerializeField] ParticleSystem HealParticleEffect;
-    [SerializeField] ParticleSystem ShieldParticleEffect;
+    [SerializeField] TrailPiece trailPiece;
+    private SinglePieceSquare[] squares;
 
     private void Start()
     {
-        for (int i = 0; i < gameObject.GetComponent<PieceInfo>().GetSelfPoints().Length; i++)
+        squares = gameObject.GetComponent<PieceInfo>().GetSelfPoints();
+        for (int i = 0; i < squares.Length; i++)
         {
-            spriteRenderers.Add(gameObject.GetComponent<PieceInfo>().GetSelfPoints()[i].GetComponent<SpriteRenderer>());
+            spriteRenderers.Add(gameObject.GetComponent<PieceInfo>().GetSelfPoints()[i].spriteRenderer);
         }
         audioSource = GetComponent<AudioSource>();
     }
 
 
-    public IEnumerator PlayAnimations(int number, TypeAnim typeAnim)//c'est la combientieme a etre activé (pour son de + en + aigu )
+    public IEnumerator PlayAnimations(int number, TypeAnim typeAnim , BoardPiece declencheur)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
+        Color glowColor = GetGlowColor(typeAnim);
+
         //ICICIICICIC
-        Color baseColor = glowColors[0];
-        Color glowColor = baseColor;
-        float intensityMultiplier = Mathf.Pow(2f, glowIntensity);
-
-        switch (typeAnim)
+        if (declencheur != null)
         {
-            case TypeAnim.classic:
-                glowColor = glowColors[0] * intensityMultiplier;
-                break;
-
-            case TypeAnim.repeat:
-                glowColor = glowColors[1] * intensityMultiplier;
-                break;
-
-            case TypeAnim.atk:
-                glowColor = glowColors[2] * intensityMultiplier;
-                break;
-
-            case TypeAnim.shield:
-                ShieldParticleEffect.Play();
-                glowColor = glowColors[3] * intensityMultiplier;
-                break;
-
-            case TypeAnim.heal:
-                HealParticleEffect.Play();
-                glowColor = glowColors[4] * intensityMultiplier;
-                break;
+            trailPiece.gameObject.SetActive(true);
+            yield return StartCoroutine(trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform , 1 , 0.15f - 0.005f * number, glowColor)); ;
         }
 
         transform.DOKill();
@@ -84,8 +64,18 @@ public class PieceAnimations : MonoBehaviour
 
         });
 
-        float glowIn = Mathf.Max(0.07f, glowDuration * 0.3f - 0.01f * number);
-        float glowOut = Mathf.Max(0.13f, glowDuration - 0.01f * number);
+        yield return StartCoroutine(Glow(glowColor, number));
+
+
+    }
+
+
+    private IEnumerator Glow(Color glowColor , int numberSpeed)
+    {
+        Color baseColor = glowColors[0];
+
+        float glowIn = Mathf.Max(0.07f, glowDuration * 0.3f - 0.01f * numberSpeed);
+        float glowOut = Mathf.Max(0.13f, glowDuration - 0.01f * numberSpeed);
 
         print(spriteRenderers.Count);
 
@@ -105,8 +95,40 @@ public class PieceAnimations : MonoBehaviour
                });
         }
         yield return new WaitForSeconds(glowIn + glowOut);
+
     }
 
+    private Color GetGlowColor(TypeAnim typeAnim)
+    {
+        Color glowColor = glowColors[0];
+        float intensityMultiplier = Mathf.Pow(2f, glowIntensity);
+
+        switch (typeAnim)
+        {
+            case TypeAnim.classic:
+                glowColor = glowColors[0] * intensityMultiplier;
+                break;
+
+            case TypeAnim.repeat:
+                glowColor = glowColors[1] * intensityMultiplier;
+                break;
+
+            case TypeAnim.atk:
+                glowColor = glowColors[2] * intensityMultiplier;
+                break;
+
+            case TypeAnim.shield:
+                foreach (SinglePieceSquare s in squares) s.shieldParticule.Play() ;
+                glowColor = glowColors[3] * intensityMultiplier;
+                break;
+
+            case TypeAnim.heal:
+                foreach (SinglePieceSquare s in squares) s.healParticule.Play();
+                glowColor = glowColors[4] * intensityMultiplier;
+                break;
+        }
+        return glowColor;
+    }
 
     public void DestroyPieceAnim()
     {

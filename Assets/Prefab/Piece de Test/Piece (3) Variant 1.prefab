@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: originalRota.z
       value: 0.70710677
       objectReference: {fileID: 0}
+    - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: singleSquares.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 988487863449949456, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: m_Color.g
       value: 0.66279554
@@ -127,6 +131,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 7732792994349511982, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 7732792994349511982, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8283991476250329426, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: m_Color.g
       value: 0.66279554
@@ -139,12 +151,21 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d9ae8f315c480c244a599f98c354d164, type: 2}
+    - target: {fileID: 8414107291950243242, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414107291950243242, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9169137471980413390, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: m_Name
       value: Piece (3) Variant 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 707508714032222644, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1494906498916503347, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       insertIndex: 3

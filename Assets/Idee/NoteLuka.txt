@@ -26,6 +26,7 @@ list truc à faire long terme :
 - pouvoir perdre/gagner
 - pouvoir reset une partie 
 - road map 
+- pouvoir augmenter la grille
 
 
 

@@ -12,12 +12,12 @@ public class SoEffet : ScriptableObject
     {
         port.piecePlayed.PiecePlayedUp();
 
-        yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic);
+        yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic,null);
     }
-    public virtual IEnumerator RepeatEffet(Context context, OutputPort port, List<int> exemple , int tour)
+    public virtual IEnumerator RepeatEffet(Context context, OutputPort port, List<int> exemple , int tour, BoardPiece declencheur)
     {
         port.piecePlayed.RepeatedPieceUp();
-        yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat);
+        yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat, declencheur);
     }
 
 }

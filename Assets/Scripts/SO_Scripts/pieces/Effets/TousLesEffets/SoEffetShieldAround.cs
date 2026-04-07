@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
 using static UnityEngine.Audio.ProcessorInstance;
 
@@ -19,24 +18,26 @@ public class SoEffetShieldAround : SoEffet
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
             voisin.shield += amount[0];
-            yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic);
-            yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield);
+            yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
+            yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
         }
         port.thisBoardPiece = piece;
 
     }
-    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour)
+    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour, BoardPiece declencheur)
     {
         port.piecePlayed.RepeatedPieceUp();
         BoardPiece piece = port.thisBoardPiece;
+
+        yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, declencheur);
 
         for (int i = 0; i < context.voisins.Count; i++)
         {
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
             voisin.shield += amount[0];
-            yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic);
-            yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield);
+            if(i != 0) yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
+            yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield , piece);
         }
         port.thisBoardPiece = piece;
 

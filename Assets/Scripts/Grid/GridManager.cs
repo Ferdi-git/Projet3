@@ -214,6 +214,7 @@ public class GridManager : MonoBehaviour
         BoardPiece newBoardPiece = new();
         PieceInfo pieceInfo = go.GetComponent<PieceInfo>();
         pieceInfo.currentBoardPiece = newBoardPiece;
+        newBoardPiece.maxHealthPoint  = pieceInfo.soPiece.healthPoint;
         newBoardPiece.healthPoint  = pieceInfo.soPiece.healthPoint;
         
         newBoardPiece.pieceInfo = pieceInfo;

@@ -48,6 +48,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: singleSquares.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+      propertyPath: 'singleSquares.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6547325662053046128}
+    - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: surroundingPoints.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -180,6 +188,8 @@ PrefabInstance:
     - {fileID: 7272698729844343923, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
     - {fileID: 4041571940950711108, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
     - {fileID: 2887869867847325501, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+    - {fileID: 707508714032222644, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+    - {fileID: 1604723132508240176, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1494906498916503347, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       insertIndex: 2
@@ -196,3 +206,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1494906498916503347, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
   m_PrefabInstance: {fileID: 4998605874562226828}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6547325662053046128 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2270477832927759868, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+  m_PrefabInstance: {fileID: 4998605874562226828}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37b4ff96814de341a897d2049f20db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
