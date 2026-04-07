@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider PlayerSlider;
     [SerializeField] private Slider EnnemiSlider;
 
-    [SerializeField] private Sprite ennemiSprite;
+    [SerializeField] private SpriteRenderer ennemiSprite;
     [SerializeField] private TextMeshProUGUI ennemiName;
 
     
@@ -68,6 +68,9 @@ public class UIManager : MonoBehaviour
         EnnemiSlider.maxValue =  pvMaxEnnemi;
         PlayerSlider.value = pvPlayer;
         EnnemiSlider.value = pvEnnemi;
+
+        ennemiName.text  = statsEnnemi.ennemiName;
+        ennemiSprite.sprite = statsEnnemi.sprite;
     }
     private void GainPV (int amount)
     {

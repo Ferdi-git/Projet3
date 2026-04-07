@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Combat combat;
     [SerializeField] private SOEventGridManager gridManager;
     [SerializeField] private SOEventState gameState;
+    [SerializeField] private FloorManager floorManager;
 
     private void OnEnable()
     {
@@ -18,28 +19,37 @@ public class GameManager : MonoBehaviour
     }
     public void ButtonPressed ()
     {
-        // effet à l'appuie 
-        //gridManager?.InvokeActualiseBoard();
-        //gridManager?.InvokeResetGrid();
         combat.StartTurn(); 
     }
 
     private void Start()
     {
+        floorManager.GenerateFloorList();
+        FirstFloor();
+        
+    }
+    private void FirstFloor ()
+    {
         gameState.InvokeStartCombat();
     }
-
+    private void NextFloor ()
+    {
+        //gameState.InvokeStartShoping();
+        //gameState.InvokeStartCombat();
+    }
 
     private void CombateEnded ()
     {
         print("combat ended");
-        gameState.InvokeStartShoping();
+        NextFloor();
+        //gameState.InvokeStartShoping();
     }
 
 
     private void ShopingEnded ()
     {
         print("shop ended");
-        gameState.InvokeStartCombat();
+        NextFloor();
+        //gameState.InvokeStartCombat();
     }
 }

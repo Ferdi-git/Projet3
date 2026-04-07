@@ -24,7 +24,7 @@ public class EnnemiManager : MonoBehaviour
         stats.pvMax = ((ennemiList.ennemiList[index].resistance/100) * stats.AverageValue) * (NbrOfCombat+1) ;
         stats.pv = stats.pvMax;
         stats.shield = 0;
-        stats.ennemiName = ennemiList.ennemiList [index].name;
+        stats.ennemiName = ennemiList.ennemiList [index].Name;
         stats.sprite = ennemiList.ennemiList[index].sprite;
         stats.ennemiAttacks = ennemiList.ennemiList[index].attacks;
 

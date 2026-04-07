@@ -10,6 +10,7 @@ public class SoEffetHeal : SoEffet
     {
         port.piecePlayed.PiecePlayedUp();
         port.Heal(amount[0]);
+        //port.thisBoardPiece;
         yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic);
     }
 
