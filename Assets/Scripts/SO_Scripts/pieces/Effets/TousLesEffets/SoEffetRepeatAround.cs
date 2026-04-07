@@ -15,15 +15,15 @@ public class SoEffetRepeatAround : SoEffet
         {
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
-            yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic);
-            yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EfectValues, tour);
+            yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic,null);
+            yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EfectValues, tour, piece);
         }
         port.thisBoardPiece = piece;
 
 
 
     }
-    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour)
+    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour, BoardPiece declencheur)
     {
         port.piecePlayed.RepeatedPieceUp();
         //
@@ -35,8 +35,8 @@ public class SoEffetRepeatAround : SoEffet
             port.thisBoardPiece = voisin;
             if (!voisin.soPieces.isRepetition)
             {
-                yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat);
-                yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EfectValues, tour);
+                yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat, declencheur);
+                yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EfectValues, tour, piece);
             }
             
         }

@@ -12,8 +12,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider PlayerSlider;
     [SerializeField] private Slider EnnemiSlider;
 
-    [SerializeField] private Sprite ennemiSprite;
+    [SerializeField] private SpriteRenderer ennemiSprite;
     [SerializeField] private TextMeshProUGUI ennemiName;
+
+    [SerializeField] private TextMeshProUGUI ennemiAtktext;
 
     
     private void OnEnable()
@@ -68,6 +70,10 @@ public class UIManager : MonoBehaviour
         EnnemiSlider.maxValue =  pvMaxEnnemi;
         PlayerSlider.value = pvPlayer;
         EnnemiSlider.value = pvEnnemi;
+
+        ennemiName.text  = statsEnnemi.ennemiName;
+        ennemiSprite.sprite = statsEnnemi.sprite;
+        
     }
     private void GainPV (int amount)
     {
@@ -111,5 +117,11 @@ public class UIManager : MonoBehaviour
     {
         print("ennemi lost shield");
         UpdateUI();
+    }
+
+
+    public void GiveEnnemiCurrentAtkIndex (int index)
+    {
+        ennemiAtktext.text = statsEnnemi.ennemiAttacks[index].damage.ToString();
     }
 }

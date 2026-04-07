@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.LightTransport;
 
 public class PieceInfo : MonoBehaviour
 {
 
     public SoPieces soPiece;
-    [SerializeField] private Transform[] posCases;
+    [SerializeField] private SinglePieceSquare[] singleSquares;
     [SerializeField] private Transform[] surroundingPoints;
 
 
@@ -46,9 +45,9 @@ public class PieceInfo : MonoBehaviour
 
     public void Unfill()
     {
-        foreach (var c in posCases)
+        foreach (var c in singleSquares)
         {
-            foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
+            foreach (var hit in Physics2D.OverlapPointAll(c.transform.position, gridLayer))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
                 if (slot != null) { slot.ClearSlot(); break; }
@@ -58,9 +57,9 @@ public class PieceInfo : MonoBehaviour
 
     public void Refill()
     {
-        foreach (var c in posCases)
+        foreach (var c in singleSquares)
         {
-            foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
+            foreach (var hit in Physics2D.OverlapPointAll(c.transform.position, gridLayer))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
                 if (slot != null) { slot.SetPiece(gameObject); break; }
@@ -73,7 +72,7 @@ public class PieceInfo : MonoBehaviour
         GridSlot targetSlot = null;
         Vector3 targetSlotPos = Vector3.zero;
 
-        Vector2 samplePos = (Vector2)posCases[0].position;
+        Vector2 samplePos = (Vector2)singleSquares[0].transform.position;
 
         foreach (var hit in Physics2D.OverlapPointAll(samplePos, gridLayer))
         {
@@ -90,9 +89,9 @@ public class PieceInfo : MonoBehaviour
 
         transform.position = targetSlotPos;
 
-        foreach (var c in posCases)
+        foreach (var c in singleSquares)
         {
-            foreach (var hit in Physics2D.OverlapPointAll(c.position, gridLayer))
+            foreach (var hit in Physics2D.OverlapPointAll(c.transform.position, gridLayer))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
                 if (slot != null && !slot.isFilled) { slot.SetPiece(gameObject); break; }
@@ -114,8 +113,8 @@ public class PieceInfo : MonoBehaviour
 
     public bool CheckIfCanBePlaced()
     {
-        foreach (var c in posCases)
-            if (!CheckIfSingleCaseCanBePlaced(c)) return false;
+        foreach (var c in singleSquares)
+            if (!CheckIfSingleCaseCanBePlaced(c.transform)) return false;
 
         return true;
     }
@@ -135,9 +134,9 @@ public class PieceInfo : MonoBehaviour
     {
         return surroundingPoints;
     }
-    public Transform[] GetSelfPoints()
+    public SinglePieceSquare[] GetSelfPoints()
     {
-        return posCases;
+        return singleSquares;
     }
 
     private void ResetPiece()

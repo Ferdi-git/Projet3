@@ -124,7 +124,7 @@ public class Combat : MonoBehaviour
         }
         else
         {
-            yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(i, PieceAnimations.TypeAnim.failed);
+            yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(i, PieceAnimations.TypeAnim.failed, null);
         }
         
     }
