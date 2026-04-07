@@ -10,12 +10,12 @@ public class SoEffetTestDoDamage : SoEffet
     {
         port.piecePlayed.PiecePlayedUp();
         port.DoDamage(test[0]);
-        yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic);
+        yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
     }
-    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour)
+    public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour, BoardPiece declencheur)
     {
         port.piecePlayed.RepeatedPieceUp();
         port.DoDamage(amount[0]);
-        yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat);
+        yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat, declencheur);
     }
 }

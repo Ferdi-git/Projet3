@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.LightTransport;
 
 public class SimpleButton : MonoBehaviour, IMouseClickable, IMouseHoverable
 {
