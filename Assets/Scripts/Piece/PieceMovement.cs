@@ -41,13 +41,15 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         isRotating = false;
 
         transform.DOKill();
+
+        float snappedZ = Mathf.Round(transform.eulerAngles.z / 90f) * 90f;
+        transform.rotation = Quaternion.Euler(0, 0, snappedZ);
+
         transform.DOScale(1f, 0.1f);
         transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 
         if (pieceInfo.CheckIfCanBePlaced())
         {
-            float snappedZ = Mathf.Round(transform.eulerAngles.z / 90f) * 90f;
-            transform.rotation = Quaternion.Euler(0, 0, snappedZ);
             pieceInfo.SnapToGrid();
         }
         else
