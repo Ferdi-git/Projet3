@@ -57,12 +57,10 @@ public class UIManager : MonoBehaviour
     public void UpdateUI ()
     {
         int pvPlayer = statsPlayer.GetPV();
-        print("pv player " + pvPlayer);
         int pvMaxPlayer = statsPlayer.pvMax;
         int shieldPlayer = statsPlayer.GetShield();
 
         int pvEnnemi = statsEnnemi.GetPV();
-        print ("pv ennemi " + pvEnnemi);
         int pvMaxEnnemi = statsEnnemi.pvMax;
         int shieldEnnemi = statsEnnemi.GetShield();
 
@@ -77,45 +75,37 @@ public class UIManager : MonoBehaviour
     }
     private void GainPV (int amount)
     {
-        print("pv gained ");
         UpdateUI();
     }
     private void LoosePV (int amount)
     {
-        print("pv lost ");
         UpdateUI();
     }
 
     private void GainShield (int amount)
     {
-        print("gain Shield ");
         UpdateUI();
     }
     private void LooseShield(int amount)
     {
-        print("lost Shield ");
         UpdateUI();
     }
 
 
     private void EnnemiGainPV (int amount )
     {
-        print("Ennemi gained health");
         UpdateUI();
     }
     private void EnnemiLoosePV (int amount )
     {
-        print("ennemi lost health");
         UpdateUI();
     }
     private void EnnemiGainShield (int amount )
     {
-        print("ennemi gained shield");
         UpdateUI();
     }
     private void EnnemiLostShield (int amount )
     {
-        print("ennemi lost shield");
         UpdateUI();
     }
 

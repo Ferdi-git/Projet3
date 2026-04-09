@@ -39,7 +39,6 @@ public class PieceInfoPanel : MonoBehaviour
 
 
         float rotZ = GetComponent<RectTransform>().localRotation.eulerAngles.z;
-        print(rotZ);
         float offsetX = 0.5f;
         float offsetY = 0.5f;
 

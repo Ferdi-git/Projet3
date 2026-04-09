@@ -252,7 +252,6 @@ public class GridManager : MonoBehaviour
     {
         bp.pieceAnimation.DestroyPieceAnim();
         RemoveBoardPiece(bp);
-        Debug.Log("IICICICICIICIICIC C PTET ELE PRBLM");
         ActualiseBoard();
     }
 

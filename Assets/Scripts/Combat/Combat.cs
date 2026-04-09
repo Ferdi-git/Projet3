@@ -46,6 +46,7 @@ public class Combat : MonoBehaviour
     public void StartTurn ( )
     {
         eventGridManager.InvokeSetAllPieceCanMove(false);
+        eventGridManager.InvokeActualiseBoard();
         piecePlayed.ResetInt();
         index = 0;
         if (index >= soBoard.boardPieces.Count)
@@ -58,7 +59,6 @@ public class Combat : MonoBehaviour
 
     public void NextPiece ()
     {
-        print(index);
         index++;
         if (index >= soBoard.boardPieces.Count)
         {
@@ -74,11 +74,12 @@ public class Combat : MonoBehaviour
         int indexPieceDamaged = 0;
         yield return null;
         int zoneCount = ennemiManager.GetAtkZoneNbr();
-        //print ("Nombre de case que prend l'attque : "+zoneCount);
+        print ("Nombre de case que prend l'attque : "+zoneCount);
         for (int i = 0; i < soBoard.boardPieces.Count; i++)
         {
             if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
             {
+                print("Nombre de case d'attaque sur la piece : " + soBoard.boardPieces[i].context.NbrCaseAtk);
                 yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(indexPieceDamaged, PieceAnimations.TypeAnim.takeDamage, null);
 
                 zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
