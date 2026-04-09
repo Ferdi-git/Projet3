@@ -397,6 +397,10 @@ PrefabInstance:
       value: 1.0000001
       objectReference: {fileID: 0}
     - target: {fileID: 9175662055221659112, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
+      propertyPath: childThatDontTurn
+      value: 
+      objectReference: {fileID: 318960804883670962}
+    - target: {fileID: 9175662055221659112, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: posCases.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -411,6 +415,11 @@ PrefabInstance:
       addedObject: {fileID: 6967158270203884781}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
+--- !u!1 &318960804883670962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8635820331139859317, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
+  m_PrefabInstance: {fileID: 8337770394885629127}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &670288056424121677 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8861081375788622218, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
