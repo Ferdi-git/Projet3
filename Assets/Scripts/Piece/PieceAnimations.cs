@@ -23,6 +23,7 @@ public class PieceAnimations : MonoBehaviour
     [SerializeField] TrailPiece trailPiece;
     private SinglePieceSquare[] squares;
     [SerializeField] TextMeshPro textHealth;
+    [SerializeField] TextMeshPro textShield;
     private BoardPiece boardPiece;
     [SerializeField] StatsEnnemi statEnnemy;
     [SerializeField] SOEventPieceHealth eventPieceHealth;
@@ -66,7 +67,6 @@ public class PieceAnimations : MonoBehaviour
 
             if (declencheur != null && typeAnim == TypeAnim.atk)
             {
-                print("REEEEEEEEEEEEEEAAAAAAAAAAAAAAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPEEEEEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTT");
                 trailPiece.gameObject.SetActive(true);
                 yield return StartCoroutine(trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, repeatColor));
             }
@@ -83,7 +83,7 @@ public class PieceAnimations : MonoBehaviour
                 yield return StartCoroutine(trailPiece.CreateParaBole(transform, statEnnemy.transform, 1, 0.15f - 0.005f * number, glowColor)); ;
             }
 
-            if (typeAnim == TypeAnim.heal) RefreshHealth(null);
+            if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield) RefreshHealth(null);
         }
 
 
@@ -218,5 +218,7 @@ public class PieceAnimations : MonoBehaviour
     public void RefreshHealth(BoardPiece piece)
     {
         textHealth.text  = boardPiece.healthPoint.ToString();
+        textShield.gameObject.SetActive(boardPiece.shield > 0);
+        textShield.text = boardPiece.shield.ToString();
     }
 }
