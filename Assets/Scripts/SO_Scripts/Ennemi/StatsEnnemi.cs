@@ -36,14 +36,14 @@ public class StatsEnnemi : ScriptableObject
         else
         {
             pv = 0;
-            ennemyEvent.InvokeEnnemiLoosePV(pv);
+            ennemyEvent.InvokeEnnemiLoosePV(amount);
         }
 
         
     }
 
     public void EnnemiGainShield(int amount) { shield += amount; ennemyEvent.InvokeEnnemiGainShield(amount); }
-    public void EnnemiTakeDamager(int amount) 
+    public void EnnemiTakeDamage(int amount) 
     { 
         
         if (amount <= shield)
