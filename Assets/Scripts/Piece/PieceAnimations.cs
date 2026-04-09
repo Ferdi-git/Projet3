@@ -23,6 +23,9 @@ public class PieceAnimations : MonoBehaviour
     private SinglePieceSquare[] squares;
     [SerializeField] TextMeshPro textHealth;
     private BoardPiece boardPiece;
+    [SerializeField] StatsEnnemi statEnnemy;
+
+
     private void Start()
     {
         boardPiece =  gameObject.GetComponent<PieceInfo>().currentBoardPiece;
@@ -36,17 +39,32 @@ public class PieceAnimations : MonoBehaviour
     }
 
 
-    public IEnumerator PlayAnimations(int number, TypeAnim typeAnim , BoardPiece declencheur)//c'est la combientieme a etre activé (pour son de + en + aigu )
+    public IEnumerator PlayAnimations(int number, TypeAnim typeAnim, BoardPiece declencheur)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
         RefreshHealth();
         Color glowColor = GetGlowColor(typeAnim);
 
-        //ICICIICICIC
-        if (declencheur != null)
+
+        if (typeAnim == TypeAnim.takeDamage)
         {
             trailPiece.gameObject.SetActive(true);
-            yield return StartCoroutine(trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform , 1 , 0.15f - 0.005f * number, glowColor)); ;
+            yield return StartCoroutine(trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.15f - 0.005f * number, glowColor)); ;
         }
+        else
+        {   
+            if (declencheur != null)
+            {
+                trailPiece.gameObject.SetActive(true);
+                yield return StartCoroutine(trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, glowColor));
+            }
+
+            if (typeAnim == TypeAnim.atk)
+            {
+                trailPiece.gameObject.SetActive(true);
+                yield return StartCoroutine(trailPiece.CreateParaBole(transform, statEnnemy.transform, 1, 0.15f - 0.005f * number, glowColor)); ;
+            }
+        }
+
 
         transform.DOKill();
 
@@ -73,6 +91,9 @@ public class PieceAnimations : MonoBehaviour
 
 
     }
+
+
+
 
 
     private IEnumerator Glow(Color glowColor , int numberSpeed)
@@ -131,6 +152,9 @@ public class PieceAnimations : MonoBehaviour
                 foreach (SinglePieceSquare s in squares) s.healParticule.Play();
                 glowColor = glowColors[4] * intensityMultiplier;
                 break;
+            case TypeAnim.takeDamage:
+                glowColor = glowColors[2] * intensityMultiplier;
+                break;
         }
         return glowColor;
     }
@@ -149,6 +173,7 @@ public class PieceAnimations : MonoBehaviour
         shield,
         heal,
         failed,
+        takeDamage,
     }
 
 
