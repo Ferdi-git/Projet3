@@ -13,6 +13,7 @@ public class BoardPiece
         {
             if (value > maxHealthPoint) _healthPoint = maxHealthPoint;
             else { _healthPoint = value; }
+            pieceAnimation.RefreshHealth();
         }
     }
     public int shield;
