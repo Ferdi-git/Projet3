@@ -36,7 +36,6 @@ public class PieceAnimations : MonoBehaviour
             spriteRenderers.Add(gameObject.GetComponent<PieceInfo>().GetSelfPoints()[i].spriteRenderer);
         }
         audioSource = GetComponent<AudioSource>();
-        RefreshHealth();
     }
 
 
@@ -49,7 +48,6 @@ public class PieceAnimations : MonoBehaviour
         {
             trailPiece.gameObject.SetActive(true);
             yield return StartCoroutine(trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.3f - 0.005f * number, glowColor)); ;
-            RefreshHealth();
         }
         else
         {
