@@ -15,6 +15,7 @@ MonoBehaviour:
   pv: 22
   shield: 0
   pvMax: 30
+  ennemiName: 
   sprite: {fileID: 0}
   ennemiAttacks:
   - zone: {fileID: 595633910440424199, guid: 79561309a9862e54aa446cdd0b126024, type: 3}
@@ -23,3 +24,4 @@ MonoBehaviour:
     damage: 3
   ennemyEvent: {fileID: 11400000, guid: c26ad741f286d8a46b923e14d9828be4, type: 2}
   AverageValue: 30
+  transform: {fileID: 0}
