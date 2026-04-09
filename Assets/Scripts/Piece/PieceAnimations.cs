@@ -62,7 +62,7 @@ public class PieceAnimations : MonoBehaviour
         }
         else
         {
-            Color repeatColor = glowColor = glowColors[1] * Mathf.Pow(2f, glowIntensity);
+            Color repeatColor = glowColors[1] * Mathf.Pow(2f, glowIntensity);
 
             if (declencheur != null && typeAnim == TypeAnim.atk)
             {
