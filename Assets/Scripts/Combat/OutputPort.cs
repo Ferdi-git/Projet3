@@ -47,7 +47,7 @@ public class OutputPort
         }
         else
         {
-            statsEnnemi.EnnemiTakeDamager(amount);
+            statsEnnemi.EnnemiTakeDamage(amount);
         }
     }
     public void EnnemiHeal (int amount)
@@ -60,7 +60,7 @@ public class OutputPort
     }
     public void EnnemiLooseShield(int amount)
     {
-        statsEnnemi.EnnemiTakeDamager(amount);
+        statsEnnemi.EnnemiTakeDamage(amount);
     }
 
 
