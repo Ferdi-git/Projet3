@@ -506,6 +506,7 @@ MonoBehaviour:
   - {r: 0.0009765625, g: 0.00025292826, b: 0, a: 1}
   trailPiece: {fileID: 5473338186029908670}
   textHealth: {fileID: 5610723301339487969}
+  statEnnemy: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
 --- !u!82 &7688367237008495115
 AudioSource:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UIElements;
 
 public class PieceAnimations : MonoBehaviour
 {
@@ -48,11 +49,18 @@ public class PieceAnimations : MonoBehaviour
         if (typeAnim == TypeAnim.takeDamage)
         {
             trailPiece.gameObject.SetActive(true);
-            yield return StartCoroutine(trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.15f - 0.005f * number, glowColor)); ;
+            yield return StartCoroutine(trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.3f - 0.005f * number, glowColor)); ;
         }
         else
-        {   
-            if (declencheur != null)
+        {
+            Color repeatColor = glowColor = glowColors[1] * Mathf.Pow(2f, glowIntensity);
+
+            if (declencheur != null && typeAnim == TypeAnim.atk)
+            {
+                trailPiece.gameObject.SetActive(true);
+                yield return StartCoroutine(trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, repeatColor));
+            }
+            else if (declencheur != null)
             {
                 trailPiece.gameObject.SetActive(true);
                 yield return StartCoroutine(trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, glowColor));
