@@ -42,7 +42,6 @@ public class PieceAnimations : MonoBehaviour
 
     public IEnumerator PlayAnimations(int number, TypeAnim typeAnim, BoardPiece declencheur)//c'est la combientieme a etre activé (pour son de + en + aigu )
     {
-        RefreshHealth();
         Color glowColor = GetGlowColor(typeAnim);
 
 
@@ -50,6 +49,7 @@ public class PieceAnimations : MonoBehaviour
         {
             trailPiece.gameObject.SetActive(true);
             yield return StartCoroutine(trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.3f - 0.005f * number, glowColor)); ;
+            RefreshHealth();
         }
         else
         {
@@ -65,6 +65,7 @@ public class PieceAnimations : MonoBehaviour
                 trailPiece.gameObject.SetActive(true);
                 yield return StartCoroutine(trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, glowColor));
             }
+
 
             if (typeAnim == TypeAnim.atk)
             {
