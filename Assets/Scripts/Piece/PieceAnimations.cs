@@ -54,7 +54,7 @@ public class PieceAnimations : MonoBehaviour
     {
         Color glowColor = GetGlowColor(typeAnim);
 
-
+        print(typeAnim.ToString());
         if (typeAnim == TypeAnim.takeDamage)
         {
             trailPiece.gameObject.SetActive(true);
@@ -62,10 +62,11 @@ public class PieceAnimations : MonoBehaviour
         }
         else
         {
-            Color repeatColor = glowColor = glowColors[1] * Mathf.Pow(2f, glowIntensity);
+            Color repeatColor = glowColors[1] * Mathf.Pow(2f, glowIntensity);
 
             if (declencheur != null && typeAnim == TypeAnim.atk)
             {
+                print("REEEEEEEEEEEEEEAAAAAAAAAAAAAAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPEEEEEEEEEEEEEEEEEEEEEEEEEETTTTTTTTTTTTTTTTTT");
                 trailPiece.gameObject.SetActive(true);
                 yield return StartCoroutine(trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, repeatColor));
             }
