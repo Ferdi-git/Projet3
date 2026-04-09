@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: EnnemiList
   m_EditorClassIdentifier: Assembly-CSharp::KeepEnnemiSo
   ennemiList:
-  - {fileID: 11400000, guid: 631f45fe1d132a54894e2517bc7edf5b, type: 2}
   - {fileID: 11400000, guid: 1631f1eb21a2037419378eaf0288c7d0, type: 2}
+  - {fileID: 11400000, guid: e64fc8fa54450c34e8355173b9d2375b, type: 2}
+  - {fileID: 11400000, guid: 631f45fe1d132a54894e2517bc7edf5b, type: 2}
   bossList: []
