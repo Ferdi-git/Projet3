@@ -71,6 +71,7 @@ public class Combat : MonoBehaviour
     
     IEnumerator EnnemiTurn ()
     {
+        int indexPieceDamaged = 0;
         yield return null;
         int zoneCount = ennemiManager.GetAtkZoneNbr();
         //print ("Nombre de case que prend l'attque : "+zoneCount);
@@ -78,21 +79,11 @@ public class Combat : MonoBehaviour
         {
             if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
             {
+                yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(indexPieceDamaged, PieceAnimations.TypeAnim.takeDamage, null);
                 zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
-                //Why not just give BoardPiece ?
-                print(soBoard.boardPieces[i].shield);
                 pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield , soBoard.boardPieces[i]);
                 pieceHealthManager.TakeDamage(ennemiManager.GetDamageValue() * soBoard.boardPieces[i].context.NbrCaseAtk);
-
-
-
-                //PROBLEME TU PEUX PAS CHECK LA BOARDPIECE SI ELLE EST MORTE CAR JE LA DETRUIT
-                //soBoard.boardPieces[i].healthPoint = pieceHealthManager.hp;
-                //soBoard.boardPieces[i].shield = pieceHealthManager.shield;
-
-
-
-                
+                indexPieceDamaged++;
             }
         }
         
