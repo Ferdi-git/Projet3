@@ -79,10 +79,11 @@ public class Combat : MonoBehaviour
         {
             if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
             {
-                yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(indexPieceDamaged, PieceAnimations.TypeAnim.takeDamage, null);
+                
                 zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
                 pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield , soBoard.boardPieces[i]);
                 pieceHealthManager.TakeDamage(ennemiManager.GetDamageValue() * soBoard.boardPieces[i].context.NbrCaseAtk);
+                yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(indexPieceDamaged, PieceAnimations.TypeAnim.takeDamage, null);
                 indexPieceDamaged++;
             }
         }
