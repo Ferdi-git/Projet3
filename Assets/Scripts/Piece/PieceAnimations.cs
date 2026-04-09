@@ -124,7 +124,6 @@ public class PieceAnimations : MonoBehaviour
         float glowIn = Mathf.Max(0.07f, glowDuration * 0.3f - 0.01f * numberSpeed);
         float glowOut = Mathf.Max(0.13f, glowDuration - 0.01f * numberSpeed);
 
-        print(spriteRenderers.Count);
 
         for (int i = 0; i < spriteRenderers.Count; i++)
         {
