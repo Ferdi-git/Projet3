@@ -213,13 +213,15 @@ public class GridManager : MonoBehaviour
     {
         BoardPiece newBoardPiece = new();
         PieceInfo pieceInfo = go.GetComponent<PieceInfo>();
-        pieceInfo.currentBoardPiece = newBoardPiece;
-        newBoardPiece.maxHealthPoint  = pieceInfo.soPiece.healthPoint;
-        newBoardPiece.healthPoint  = pieceInfo.soPiece.healthPoint;
-        
-        newBoardPiece.pieceInfo = pieceInfo;
         newBoardPiece.pieceAnimation = go.GetComponent<PieceAnimations>();
+
+        pieceInfo.currentBoardPiece = newBoardPiece;
+        newBoardPiece.pieceInfo = pieceInfo;
         newBoardPiece.soPieces = pieceInfo.soPiece;
+
+        newBoardPiece.maxHealthPoint = pieceInfo.soPiece.healthPoint;
+        newBoardPiece.healthPoint = pieceInfo.soPiece.healthPoint;
+
         soSaveInventory.listBoardPiecesExist.Add(newBoardPiece);
     }
     

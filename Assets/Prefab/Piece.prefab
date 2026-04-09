@@ -507,6 +507,7 @@ MonoBehaviour:
   trailPiece: {fileID: 5473338186029908670}
   textHealth: {fileID: 5610723301339487969}
   statEnnemy: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
+  eventPieceHealth: {fileID: 11400000, guid: 6f12cea053413f84cb2c3d414fe38247, type: 2}
 --- !u!114 &6445726352670952644
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,7 +25,17 @@ public class PieceAnimations : MonoBehaviour
     [SerializeField] TextMeshPro textHealth;
     private BoardPiece boardPiece;
     [SerializeField] StatsEnnemi statEnnemy;
+    [SerializeField] SOEventPieceHealth eventPieceHealth;
 
+
+    private void OnEnable()
+    {
+        eventPieceHealth.PieceTakeDamage += RefreshHealth;
+    }
+    private void OnDisable()
+    {
+        eventPieceHealth.PieceTakeDamage -= RefreshHealth;
+    }
 
     private void Start()
     {
@@ -36,6 +46,7 @@ public class PieceAnimations : MonoBehaviour
             spriteRenderers.Add(gameObject.GetComponent<PieceInfo>().GetSelfPoints()[i].spriteRenderer);
         }
         audioSource = GetComponent<AudioSource>();
+        RefreshHealth(null);
     }
 
 
@@ -202,7 +213,7 @@ public class PieceAnimations : MonoBehaviour
 
     }
 
-    public void RefreshHealth()
+    public void RefreshHealth(BoardPiece piece)
     {
         textHealth.text  = boardPiece.healthPoint.ToString();
     }
