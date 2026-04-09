@@ -10,14 +10,14 @@ public class SoEffetSimpleDoDamage : SoEffet
     {
         port.piecePlayed.PiecePlayedUp();
         Debug.Log("effet simple attack");
-        port.DoDamage(amount[0]);
+        port.DoDamageToEnnemi(amount[0]);
         yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
     }
     public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour, BoardPiece declencheur)
     {
         port.piecePlayed.RepeatedPieceUp();
         Debug.Log("effet répété simple attack");
-        port.DoDamage(amount[0]);
+        port.DoDamageToEnnemi(amount[0]);
         yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat, declencheur);
     }
 }

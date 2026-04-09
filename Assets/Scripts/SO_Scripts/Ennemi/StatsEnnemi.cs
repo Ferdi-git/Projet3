@@ -17,7 +17,9 @@ public class StatsEnnemi : ScriptableObject
     [Header("Average hp an ennemy has for the first ennemi ")]
     public int AverageValue;
 
-    
+    [Header("Transform Of ennemi")]
+    public Transform transform;
+
 
     public void EnnemiGainPV(int amount)
     {

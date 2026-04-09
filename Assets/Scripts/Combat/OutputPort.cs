@@ -7,7 +7,7 @@ public class OutputPort
     public SoNbrOfPiecePlayed piecePlayed;
 
     //player
-    public void TakeDamage (int amount)
+    public void PlayerTakeDamage (int amount)
     {
         if (statsPlayer.GetShield() <= 0 )
         {
@@ -20,26 +20,26 @@ public class OutputPort
 
         
     }
-    public void LoosePV (int amount)
+    public void PlayerLoosePV (int amount)
     {
         statsPlayer.InvokeLoosePV(amount);
     }
-    public void Heal (int amount)
+    public void PlayerHeal (int amount)
     {
         statsPlayer.InvokeGainPV(amount);
     }
-    public void GainShield (int amount)
+    public void PlayerGainShield (int amount)
     {
         statsPlayer.InvokeGainShield (amount);
     }
-    public void LooseShield (int amount)
+    public void PlayerLooseShield (int amount)
     {
         statsPlayer.InvokeTakeDamage (amount);
     }
 
     //ennemi 
 
-    public void DoDamage (int amount )
+    public void DoDamageToEnnemi (int amount )
     {
         if (statsEnnemi.GetShield() <= 0)
         {
