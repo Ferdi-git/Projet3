@@ -16,6 +16,6 @@ public class SoEffetTestDoDamage : SoEffet
     {
         port.piecePlayed.RepeatedPieceUp();
         port.DoDamageToEnnemi(amount[0]);
-        yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat, declencheur);
+        yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.atk, declencheur);
     }
 }

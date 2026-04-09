@@ -81,6 +81,8 @@ public class PieceAnimations : MonoBehaviour
                 trailPiece.gameObject.SetActive(true);
                 yield return StartCoroutine(trailPiece.CreateParaBole(transform, statEnnemy.transform, 1, 0.15f - 0.005f * number, glowColor)); ;
             }
+
+            if (typeAnim == TypeAnim.heal) RefreshHealth(null);
         }
 
 
