@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UIElements;
+using static PieceAnimations;
 
 public class PieceAnimations : MonoBehaviour
 {
@@ -55,37 +56,9 @@ public class PieceAnimations : MonoBehaviour
     {
         Color glowColor = GetGlowColor(typeAnim);
 
-        print(typeAnim.ToString());
-        if (typeAnim == TypeAnim.takeDamage)
-        {
-            trailPiece.gameObject.SetActive(true);
-            yield return trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.3f - 0.005f * number, glowColor); ;
-        }
-        else
-        {
-            Color repeatColor = glowColors[1] * Mathf.Pow(2f, glowIntensity);
+        yield return Parabole(typeAnim, glowColor, number, declencheur);
 
-            if (declencheur != null && typeAnim == TypeAnim.atk)
-            {
-                trailPiece.gameObject.SetActive(true);
-                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, repeatColor);
-            }
-            else if (declencheur != null)
-            {
-                trailPiece.gameObject.SetActive(true);
-                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, glowColor);
-            }
-
-
-            if (typeAnim == TypeAnim.atk)
-            {
-                trailPiece.gameObject.SetActive(true);
-                yield return trailPiece.CreateParaBole(transform, statEnnemy.transform, 1, 0.15f - 0.005f * number, glowColor); 
-            }
-
-            if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield) RefreshHealth(null);
-        }
-
+        EffetPiece(typeAnim);
 
         transform.DOKill();
 
@@ -112,10 +85,6 @@ public class PieceAnimations : MonoBehaviour
 
 
     }
-
-
-
-
 
     private IEnumerator Glow(Color glowColor , int numberSpeed)
     {
@@ -164,12 +133,10 @@ public class PieceAnimations : MonoBehaviour
                 break;
 
             case TypeAnim.shield:
-                foreach (SinglePieceSquare s in squares) s.shieldParticule.Play() ;
                 glowColor = glowColors[3] * intensityMultiplier;
                 break;
 
             case TypeAnim.heal:
-                foreach (SinglePieceSquare s in squares) s.healParticule.Play();
                 glowColor = glowColors[4] * intensityMultiplier;
                 break;
             case TypeAnim.takeDamage:
@@ -177,6 +144,69 @@ public class PieceAnimations : MonoBehaviour
                 break;
         }
         return glowColor;
+    }
+
+    private IEnumerator Parabole(TypeAnim typeAnim, Color glowColor,int number, BoardPiece declencheur)
+    {
+        if (typeAnim == TypeAnim.takeDamage)
+        {
+            trailPiece.gameObject.SetActive(true);
+            yield return trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.3f - 0.005f * number, glowColor); ;
+        }
+        else
+        {
+            Color repeatColor = glowColors[1] * Mathf.Pow(2f, glowIntensity);
+
+            if (declencheur != null && typeAnim == TypeAnim.atk)
+            {
+                trailPiece.gameObject.SetActive(true);
+                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, repeatColor);
+            }
+            else if (declencheur != null)
+            {
+                trailPiece.gameObject.SetActive(true);
+                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, glowColor);
+            }
+
+
+            if (typeAnim == TypeAnim.atk)
+            {
+                trailPiece.gameObject.SetActive(true);
+                yield return trailPiece.CreateParaBole(transform, statEnnemy.transform, 1, 0.15f - 0.005f * number, glowColor);
+            }
+
+            if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield || typeAnim == TypeAnim.loseShield) RefreshHealth(null);
+        }
+    }
+
+    private void EffetPiece(TypeAnim typeAnim)
+    {
+        switch (typeAnim)
+        {
+            case TypeAnim.classic:
+
+                break;
+
+            case TypeAnim.repeat:
+
+                break;
+
+            case TypeAnim.atk:
+
+                break;
+
+            case TypeAnim.shield:
+                foreach (SinglePieceSquare s in squares) s.shieldParticule.Play();
+                break;
+
+            case TypeAnim.heal:
+                foreach (SinglePieceSquare s in squares) s.healParticule.Play();
+                break;
+            case TypeAnim.takeDamage:
+                break;
+            case TypeAnim.loseShield:
+                break;
+        }
     }
 
     public void DestroyPieceAnim()
@@ -194,6 +224,7 @@ public class PieceAnimations : MonoBehaviour
         heal,
         failed,
         takeDamage,
+        loseShield,
     }
 
 
