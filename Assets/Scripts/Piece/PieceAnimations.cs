@@ -59,7 +59,7 @@ public class PieceAnimations : MonoBehaviour
         if (typeAnim == TypeAnim.takeDamage)
         {
             trailPiece.gameObject.SetActive(true);
-            yield return StartCoroutine(trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.3f - 0.005f * number, glowColor)); ;
+            yield return trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.3f - 0.005f * number, glowColor); ;
         }
         else
         {
@@ -68,19 +68,19 @@ public class PieceAnimations : MonoBehaviour
             if (declencheur != null && typeAnim == TypeAnim.atk)
             {
                 trailPiece.gameObject.SetActive(true);
-                yield return StartCoroutine(trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, repeatColor));
+                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, repeatColor);
             }
             else if (declencheur != null)
             {
                 trailPiece.gameObject.SetActive(true);
-                yield return StartCoroutine(trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, glowColor));
+                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, glowColor);
             }
 
 
             if (typeAnim == TypeAnim.atk)
             {
                 trailPiece.gameObject.SetActive(true);
-                yield return StartCoroutine(trailPiece.CreateParaBole(transform, statEnnemy.transform, 1, 0.15f - 0.005f * number, glowColor)); ;
+                yield return trailPiece.CreateParaBole(transform, statEnnemy.transform, 1, 0.15f - 0.005f * number, glowColor); 
             }
 
             if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield) RefreshHealth(null);
@@ -108,7 +108,7 @@ public class PieceAnimations : MonoBehaviour
 
         });
 
-        yield return StartCoroutine(Glow(glowColor, number));
+        yield return Glow(glowColor, number);
 
 
     }

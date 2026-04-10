@@ -136,6 +136,8 @@ public class InventoryGrid : MonoBehaviour
                     }
                 });
 
+            soSaveInventory.pieces[savedIndex].GetComponent<PieceMouvement>().ResetChild();
+
             delay += delayInBetweenBackToInventory;
         }
 

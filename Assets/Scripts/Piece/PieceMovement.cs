@@ -60,6 +60,8 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
                 pieceInfo.Refill();
             });
             transform.DORotateQuaternion(pieceInfo.originalRota, 0.2f).SetEase(Ease.OutBack);
+            ResetChild();
+
         }
     }
 
@@ -101,7 +103,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         float currentZ = transform.eulerAngles.z;
         float targetZ = currentZ - 90f;
 
-        childThatDontTurn.transform.DORotate(new Vector3(0, 0, 0), 0.2f, RotateMode.Fast);
+        ResetChild();
         transform.DORotate(new Vector3(0, 0, targetZ), 0.2f, RotateMode.FastBeyond360).OnComplete(() =>
         {
 
@@ -114,5 +116,9 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         });
     }
 
+    public void ResetChild()
+    {
+        childThatDontTurn.transform.DORotate(new Vector3(0, 0, 0), 0.2f, RotateMode.Fast);
 
+    }
 }
