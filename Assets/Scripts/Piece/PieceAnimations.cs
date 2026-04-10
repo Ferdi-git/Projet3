@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UIElements;
+using static PieceAnimations;
 
 public class PieceAnimations : MonoBehaviour
 {
@@ -56,35 +57,8 @@ public class PieceAnimations : MonoBehaviour
         Color glowColor = GetGlowColor(typeAnim);
 
         print(typeAnim.ToString());
-        if (typeAnim == TypeAnim.takeDamage)
-        {
-            trailPiece.gameObject.SetActive(true);
-            yield return trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.3f - 0.005f * number, glowColor); ;
-        }
-        else
-        {
-            Color repeatColor = glowColors[1] * Mathf.Pow(2f, glowIntensity);
 
-            if (declencheur != null && typeAnim == TypeAnim.atk)
-            {
-                trailPiece.gameObject.SetActive(true);
-                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, repeatColor);
-            }
-            else if (declencheur != null)
-            {
-                trailPiece.gameObject.SetActive(true);
-                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, glowColor);
-            }
-
-
-            if (typeAnim == TypeAnim.atk)
-            {
-                trailPiece.gameObject.SetActive(true);
-                yield return trailPiece.CreateParaBole(transform, statEnnemy.transform, 1, 0.15f - 0.005f * number, glowColor); 
-            }
-
-            if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield) RefreshHealth(null);
-        }
+        yield return Parabole(typeAnim, glowColor, number, declencheur);
 
 
         transform.DOKill();
@@ -112,10 +86,6 @@ public class PieceAnimations : MonoBehaviour
 
 
     }
-
-
-
-
 
     private IEnumerator Glow(Color glowColor , int numberSpeed)
     {
@@ -179,6 +149,44 @@ public class PieceAnimations : MonoBehaviour
         return glowColor;
     }
 
+    private IEnumerator Parabole(TypeAnim typeAnim, Color glowColor,int number, BoardPiece declencheur)
+    {
+        if (typeAnim == TypeAnim.takeDamage)
+        {
+            trailPiece.gameObject.SetActive(true);
+            yield return trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.3f - 0.005f * number, glowColor); ;
+        }
+        else
+        {
+            Color repeatColor = glowColors[1] * Mathf.Pow(2f, glowIntensity);
+
+            if (declencheur != null && typeAnim == TypeAnim.atk)
+            {
+                trailPiece.gameObject.SetActive(true);
+                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, repeatColor);
+            }
+            else if (declencheur != null)
+            {
+                trailPiece.gameObject.SetActive(true);
+                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, glowColor);
+            }
+
+
+            if (typeAnim == TypeAnim.atk)
+            {
+                trailPiece.gameObject.SetActive(true);
+                yield return trailPiece.CreateParaBole(transform, statEnnemy.transform, 1, 0.15f - 0.005f * number, glowColor);
+            }
+
+            if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield) RefreshHealth(null);
+        }
+    }
+
+    private IEnumerator EffetPiece()
+    {
+        yield return null;
+    }
+
     public void DestroyPieceAnim()
     {
         gameObject.GetComponent<PieceInfo>().Unfill();
@@ -194,6 +202,7 @@ public class PieceAnimations : MonoBehaviour
         heal,
         failed,
         takeDamage,
+        loseShield,
     }
 
 
