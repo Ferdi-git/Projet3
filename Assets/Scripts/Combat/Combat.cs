@@ -125,7 +125,9 @@ public class Combat : MonoBehaviour
 
     IEnumerator ResoudreTurn ()
     {
-        yield return null;
+
+
+        yield return StartCoroutine(RemoveAllShields());
         //check si des pieces sont mortes 
         //enlever bouclier aux pieces (mettre bouclier dans boardpiece)
         //print("test");
@@ -147,8 +149,19 @@ public class Combat : MonoBehaviour
         eventGridManager.InvokeSetAllPieceCanMove(true);
     }
 
-
-
-    
+    IEnumerator RemoveAllShields ()
+    {
+        int indexRemoveShield = 0;
+        for (int i = 0; i < soBoard.boardPieces.Count; i++)
+        {
+            if (soBoard.boardPieces[i].shield != 0)
+            {
+                soBoard.boardPieces[i].shield = 0;
+                yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(indexRemoveShield, PieceAnimations.TypeAnim.loseShield, null);
+                indexRemoveShield += 1;
+            }
+        }
+    }
+        
 }
 
