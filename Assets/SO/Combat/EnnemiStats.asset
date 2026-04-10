@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e4d3bfdd24f12449e13bc7bca23caf, type: 3}
   m_Name: EnnemiStats
   m_EditorClassIdentifier: Assembly-CSharp::StatsEnnemi
-  pv: 30
+  pv: 15
   shield: 0
-  pvMax: 40
+  pvMax: 20
   ennemiName: First
   sprite: {fileID: 21300000, guid: 478c3e38bbd2cc44db862795eb158a18, type: 3}
   ennemiAttacks:
