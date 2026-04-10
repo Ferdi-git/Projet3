@@ -56,10 +56,9 @@ public class PieceAnimations : MonoBehaviour
     {
         Color glowColor = GetGlowColor(typeAnim);
 
-        print(typeAnim.ToString());
-
         yield return Parabole(typeAnim, glowColor, number, declencheur);
 
+        EffetPiece(typeAnim);
 
         transform.DOKill();
 
@@ -134,12 +133,10 @@ public class PieceAnimations : MonoBehaviour
                 break;
 
             case TypeAnim.shield:
-                foreach (SinglePieceSquare s in squares) s.shieldParticule.Play() ;
                 glowColor = glowColors[3] * intensityMultiplier;
                 break;
 
             case TypeAnim.heal:
-                foreach (SinglePieceSquare s in squares) s.healParticule.Play();
                 glowColor = glowColors[4] * intensityMultiplier;
                 break;
             case TypeAnim.takeDamage:
@@ -178,13 +175,38 @@ public class PieceAnimations : MonoBehaviour
                 yield return trailPiece.CreateParaBole(transform, statEnnemy.transform, 1, 0.15f - 0.005f * number, glowColor);
             }
 
-            if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield) RefreshHealth(null);
+            if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield || typeAnim == TypeAnim.loseShield) RefreshHealth(null);
         }
     }
 
-    private IEnumerator EffetPiece()
+    private void EffetPiece(TypeAnim typeAnim)
     {
-        yield return null;
+        switch (typeAnim)
+        {
+            case TypeAnim.classic:
+
+                break;
+
+            case TypeAnim.repeat:
+
+                break;
+
+            case TypeAnim.atk:
+
+                break;
+
+            case TypeAnim.shield:
+                foreach (SinglePieceSquare s in squares) s.shieldParticule.Play();
+                break;
+
+            case TypeAnim.heal:
+                foreach (SinglePieceSquare s in squares) s.healParticule.Play();
+                break;
+            case TypeAnim.takeDamage:
+                break;
+            case TypeAnim.loseShield:
+                break;
+        }
     }
 
     public void DestroyPieceAnim()
