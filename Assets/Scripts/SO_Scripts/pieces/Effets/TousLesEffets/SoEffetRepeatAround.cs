@@ -16,7 +16,10 @@ public class SoEffetRepeatAround : SoEffet
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
             yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic,null);
+
+
             yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EfectValues, tour, piece);
+
         }
         port.thisBoardPiece = piece;
 

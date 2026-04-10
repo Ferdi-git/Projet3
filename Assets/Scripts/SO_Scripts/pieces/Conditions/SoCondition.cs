@@ -9,6 +9,7 @@ public class  SoCondition : ScriptableObject
     {
         return false; 
     }
+
 }
 
 
