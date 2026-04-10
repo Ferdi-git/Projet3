@@ -21,5 +21,5 @@ MonoBehaviour:
   ConditionValues: 
   EfectValues: 05000000
   colors: 00000000
-  description: 8 DMG
+  description: 5 DMG to ennemy
   isRepetition: 0

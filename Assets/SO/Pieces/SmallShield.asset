@@ -19,7 +19,7 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: cfdb9c2105cef074592fef965f29225c, type: 2}
   ConditionValues: 
-  EfectValues: 02000000
+  EfectValues: 03000000
   colors: 00000000
-  description: 2 Shield
+  description: 3 Shield
   isRepetition: 0

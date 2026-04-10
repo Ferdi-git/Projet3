@@ -69,32 +69,7 @@ public class Combat : MonoBehaviour
         StartCoroutine(PlayerTurn(index));
     }
     
-    IEnumerator EnnemiTurn ()
-    {
-        int indexPieceDamaged = 0;
-        yield return null;
-        int zoneCount = ennemiManager.GetAtkZoneNbr();
-        print ("Nombre de case que prend l'attque : "+zoneCount);
-        for (int i = 0; i < soBoard.boardPieces.Count; i++)
-        {
-            if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
-            {
-                print("Nombre de case d'attaque sur la piece : " + soBoard.boardPieces[i].context.NbrCaseAtk);
-                yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(indexPieceDamaged, PieceAnimations.TypeAnim.takeDamage, null);
-
-                zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
-                pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield , soBoard.boardPieces[i]);
-                pieceHealthManager.TakeDamage(ennemiManager.GetDamageValue() * soBoard.boardPieces[i].context.NbrCaseAtk);
-                indexPieceDamaged++;
-            }
-        }
-        
-        statsPlayer.InvokeTakeDamage(ennemiManager.GetDamageValue() * zoneCount); // degats que recoit le joueur 
-        //print ("Nombre de case qui vont touché le joueur : "+zoneCount);
-        //print("le joeur se prend " + ennemiManager.GetDamageValue() * zoneCount + " degats");
-        
-        StartCoroutine(ResoudreTurn());
-    }
+    
 
     IEnumerator PlayerTurn (int i)
     {
@@ -105,13 +80,19 @@ public class Combat : MonoBehaviour
 
     private IEnumerator ResoudreEffet ( SoPieces piece , int i)
     {
-        if (piece.pieceEffet.condition.Condition(soBoard.boardPieces[i].context, piece.ConditionValues))
+        ConditionOutput conditionOutput = new ConditionOutput();
+        OutputPort port = new OutputPort();
+        port.statsPlayer = statsPlayer;
+        port.statsEnnemi = statsEnnemi;
+        port.thisBoardPiece = soBoard.boardPieces[i];
+        port.piecePlayed = piecePlayed;
+        conditionOutput.port = port;
+        conditionOutput.context = soBoard.boardPieces[i].context;
+        conditionOutput.variableList = piece.ConditionValues;
+
+        if (piece.pieceEffet.condition.Condition(conditionOutput))
         {
-            OutputPort port = new OutputPort();
-            port.statsPlayer = statsPlayer;
-            port.statsEnnemi = statsEnnemi;
-            port.thisBoardPiece = soBoard.boardPieces[i];
-            port.piecePlayed = piecePlayed;
+            
             yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValues , i);
             
         }
@@ -121,7 +102,32 @@ public class Combat : MonoBehaviour
         }
         
     }
+    IEnumerator EnnemiTurn()
+    {
+        int indexPieceDamaged = 0;
+        yield return null;
+        int zoneCount = ennemiManager.GetAtkZoneNbr();
+        print("Nombre de case que prend l'attque : " + zoneCount);
+        for (int i = 0; i < soBoard.boardPieces.Count; i++)
+        {
+            if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
+            {
+                print("Nombre de case d'attaque sur la piece : " + soBoard.boardPieces[i].context.NbrCaseAtk);
+                yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(indexPieceDamaged, PieceAnimations.TypeAnim.takeDamage, null);
 
+                zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
+                pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield, soBoard.boardPieces[i]);
+                pieceHealthManager.TakeDamage(ennemiManager.GetDamageValue() * soBoard.boardPieces[i].context.NbrCaseAtk);
+                indexPieceDamaged++;
+            }
+        }
+
+        statsPlayer.InvokeTakeDamage(ennemiManager.GetDamageValue() * zoneCount); // degats que recoit le joueur 
+                                                                                  //print ("Nombre de case qui vont touché le joueur : "+zoneCount);
+                                                                                  //print("le joeur se prend " + ennemiManager.GetDamageValue() * zoneCount + " degats");
+
+        StartCoroutine(ResoudreTurn());
+    }
 
     IEnumerator ResoudreTurn ()
     {

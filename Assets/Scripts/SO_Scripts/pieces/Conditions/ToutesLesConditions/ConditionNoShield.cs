@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewConditionTest", menuName = "Conditions/Test")]
-public class SoConditionPieceAutour : SoCondition
+[CreateAssetMenu(fileName = "NoShieldCondition", menuName = "Conditions/NoShield")]
+public class ConditionNoSHield : SoCondition
 {
     public override bool Condition(ConditionOutput conditionOutput) //  ajouter context 
     {
-        if (conditionOutput.context.voisins.Count > 0)
+        if(conditionOutput.port.thisBoardPiece.shield == 0)
         {
             return true;
         }

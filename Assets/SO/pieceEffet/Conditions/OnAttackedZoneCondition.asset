@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ea9d59d72fa4db4ba5c7df20580605e, type: 3}
-  m_Name: NewConditionTest
-  m_EditorClassIdentifier: Assembly-CSharp::SoConditionTest
+  m_Script: {fileID: 11500000, guid: 5723e92706fe82a4688f75aa25986f84, type: 3}
+  m_Name: OnAttackedZoneCondition
+  m_EditorClassIdentifier: Assembly-CSharp::ConditionOnAttackedZone
