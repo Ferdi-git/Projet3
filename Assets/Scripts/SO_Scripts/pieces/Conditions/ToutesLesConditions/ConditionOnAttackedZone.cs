@@ -1,12 +1,11 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NoShieldCondition", menuName = "Conditions/NoShield")]
-public class ConditionNoSHield : SoCondition
+[CreateAssetMenu(fileName = "OnAttackedZoneCondition", menuName = "Conditions/OnAttackedZone")]
+public class ConditionOnAttackedZone : SoCondition
 {
     public override bool Condition(ConditionOutput conditionOutput) //  ajouter context 
     {
-        if(conditionOutput.port.thisBoardPiece.shield == 0)
+        if(conditionOutput.port.thisBoardPiece.context.NbrCaseAtk > 0)
         {
             return true;
         }
