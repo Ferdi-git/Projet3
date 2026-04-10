@@ -1,12 +1,15 @@
 
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.VFX;
 using static PieceAnimations;
 
 public class PieceAnimations : MonoBehaviour
@@ -21,13 +24,14 @@ public class PieceAnimations : MonoBehaviour
     [Tooltip("Normal,Repeat,Atk,Defend,Heal")] 
     [SerializeField, ColorUsage(true, true)] private Color[] glowColors;
 
-    [SerializeField] TrailPiece trailPiece;
     private SinglePieceSquare[] squares;
     [SerializeField] TextMeshPro textHealth;
     [SerializeField] TextMeshPro textShield;
     private BoardPiece boardPiece;
     [SerializeField] StatsEnnemi statEnnemy;
     [SerializeField] SOEventPieceHealth eventPieceHealth;
+    [SerializeField] SOEventTrail eventTrail;
+    [SerializeField] SOEventVisuelEffect visualEffect;
 
 
     private void OnEnable()
@@ -150,8 +154,18 @@ public class PieceAnimations : MonoBehaviour
     {
         if (typeAnim == TypeAnim.takeDamage)
         {
-            trailPiece.gameObject.SetActive(true);
-            yield return trailPiece.CreateParaBole(statEnnemy.transform, transform, 1, 0.3f - 0.005f * number, glowColor); ;
+            bool ended = false;
+            Action trailEvent = () => ended = true;
+            eventTrail.InvokeCreateTrail(new EventTrailData()
+            {
+                pos1 = statEnnemy.transform.position,
+                pos2 = transform.position,
+                height = 1,
+                trailTime = 0.3f - 0.005f * number,
+                glowColor = glowColor,
+                eventEndTrail = trailEvent,
+            });
+            yield return new WaitUntil(() => ended);
         }
         else
         {
@@ -159,20 +173,47 @@ public class PieceAnimations : MonoBehaviour
 
             if (declencheur != null && typeAnim == TypeAnim.atk)
             {
-                trailPiece.gameObject.SetActive(true);
-                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, repeatColor);
+                bool ended = false;
+                Action trailEvent = () => ended = true;
+                eventTrail.InvokeCreateTrail(new EventTrailData()
+                {
+                    pos1 = declencheur.pieceInfo.transform.position,
+                    pos2 = transform.position,
+                    height = 1,
+                    trailTime = 0.15f - 0.005f * number,
+                    glowColor = repeatColor,
+                    eventEndTrail = trailEvent,
+                });
+                yield return new WaitUntil(() => ended);
             }
             else if (declencheur != null)
             {
-                trailPiece.gameObject.SetActive(true);
-                yield return trailPiece.CreateParaBole(declencheur.pieceInfo.transform, transform, 1, 0.15f - 0.005f * number, glowColor);
+                bool ended = false;
+                Action trailEvent = () => ended = true;
+                eventTrail.InvokeCreateTrail(new EventTrailData()
+                {
+                    pos1 = declencheur.pieceInfo.transform.position,
+                    pos2 = transform.position,
+                    height = 1,
+                    trailTime = 0.15f - 0.005f * number,
+                    glowColor = glowColor,
+                    eventEndTrail = trailEvent,
+                });
+                yield return new WaitUntil(() => ended);
             }
 
 
             if (typeAnim == TypeAnim.atk)
             {
-                trailPiece.gameObject.SetActive(true);
-                yield return trailPiece.CreateParaBole(transform, statEnnemy.transform, 1, 0.15f - 0.005f * number, glowColor);
+                bool ended = false;
+                Action trailEvent = () => ended = true;
+                visualEffect.InvokeEffectAtkEnemy(new VisuelAttakData()
+                {
+                    posAttacker = transform.position,
+                    eventEndVisuel = trailEvent,
+                });
+                yield return new WaitUntil(() => ended);
+
             }
 
             if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield || typeAnim == TypeAnim.loseShield) RefreshHealth(null);
