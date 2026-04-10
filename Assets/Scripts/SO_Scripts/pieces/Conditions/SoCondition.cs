@@ -1,32 +1,21 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 
 public class  SoCondition : ScriptableObject
 {
-    public virtual bool Condition (Context context, List<int> exemple)
+    public virtual bool Condition (ConditionOutput conditionOutput)
     {
         return false; 
     }
 }
 
 
-
-
-[CreateAssetMenu(fileName = "NewConditionRepetition", menuName = "Conditions/Repetition")]
-public class SoConditionRepetition : SoCondition
+[Serializable]
+public class ConditionOutput
 {
-    public override bool Condition (Context context, List<int> CombienDeRepetition)
-    {
-        if (context.NbrDeRepetition >= CombienDeRepetition[0])
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-
+    public Context context;
+    public OutputPort port;
+    public List<int> variableList;
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewConditionTest", menuName = "Conditions/Test")]
 public class SoConditionPieceAutour : SoCondition
 {
-    public override bool Condition(Context context, List<int> CombienDeTour) //  ajouter context 
+    public override bool Condition(ConditionOutput conditionOutput) //  ajouter context 
     {
-        if (context.voisins.Count > 0)
+        if (conditionOutput.context.voisins.Count > 0)
         {
             return true;
         }

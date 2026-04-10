@@ -105,13 +105,19 @@ public class Combat : MonoBehaviour
 
     private IEnumerator ResoudreEffet ( SoPieces piece , int i)
     {
-        if (piece.pieceEffet.condition.Condition(soBoard.boardPieces[i].context, piece.ConditionValues))
+        ConditionOutput conditionOutput = new ConditionOutput();
+        OutputPort port = new OutputPort();
+        port.statsPlayer = statsPlayer;
+        port.statsEnnemi = statsEnnemi;
+        port.thisBoardPiece = soBoard.boardPieces[i];
+        port.piecePlayed = piecePlayed;
+        conditionOutput.port = port;
+        conditionOutput.context = soBoard.boardPieces[i].context;
+        conditionOutput.variableList = piece.ConditionValues;
+
+        if (piece.pieceEffet.condition.Condition(conditionOutput))
         {
-            OutputPort port = new OutputPort();
-            port.statsPlayer = statsPlayer;
-            port.statsEnnemi = statsEnnemi;
-            port.thisBoardPiece = soBoard.boardPieces[i];
-            port.piecePlayed = piecePlayed;
+            
             yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValues , i);
             
         }

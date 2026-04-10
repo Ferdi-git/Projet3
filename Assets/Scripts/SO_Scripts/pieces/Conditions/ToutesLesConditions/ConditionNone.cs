@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NoneCondition", menuName = "Conditions/None")]
 public class ConditionNone : SoCondition
 {
-    public override bool Condition(Context context, List<int> CombienDeTour) //  ajouter context 
+    public override bool Condition(ConditionOutput conditionOutput) //  ajouter context 
     {
         return true;
     }
