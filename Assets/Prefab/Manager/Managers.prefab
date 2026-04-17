@@ -299,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7528467241296827855, guid: 97ab2f9f73bc657429f534d6caaa8dac, type: 3}
       propertyPath: glowAtkColor.r
-      value: 64
+      value: 47.93726
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
