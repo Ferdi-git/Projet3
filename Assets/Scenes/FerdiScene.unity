@@ -15592,11 +15592,11 @@ PrefabInstance:
     - target: {fileID: 5306536446755859586, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
       propertyPath: posEnemy
       value: 
-      objectReference: {fileID: 1114373236}
+      objectReference: {fileID: 1869217451}
     - target: {fileID: 7133017032517973888, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
       propertyPath: ennemiUI
       value: 
-      objectReference: {fileID: 1114373235}
+      objectReference: {fileID: 1869217450}
     - target: {fileID: 8774138003516605575, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
       propertyPath: ennemiName
       value: 
@@ -15622,8 +15622,7 @@ PrefabInstance:
       value: Managers
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 141825582901135153, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}

@@ -156,14 +156,11 @@ public class PieceAnimations : MonoBehaviour
         {
             bool ended = false;
             Action trailEvent = () => ended = true;
-            eventTrail.InvokeCreateTrail(new EventTrailData()
+
+            visualEffect.InvokeEffectEnemyDealAtk(new VisuelAttakData()
             {
-                pos1 = statEnnemy.transform.position,
-                pos2 = transform.position,
-                height = 1,
-                trailTime = 0.3f - 0.005f * number,
-                glowColor = glowColor,
-                eventEndTrail = trailEvent,
+                posAttacker = transform.position,
+                eventEndVisuel = trailEvent,
             });
             yield return new WaitUntil(() => ended);
         }
