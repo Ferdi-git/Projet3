@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SimpleDamage", menuName = "Effet/SimpleDamage")]
-public class SoEffetSimpleDoDamage : SoEffet
+public class SoEffetSimpleDamage : SoEffet
 {
     public override IEnumerator Effet(Context context,OutputPort port, List<int> amount, int tour)
     {

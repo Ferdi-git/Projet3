@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: MediumDamage
+  m_Name: DamageIfNoShieldPiece
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
   healthPoint: 12
-  prefab: {fileID: 6891005454971826096, guid: e7c2efe06bb45ef4c8972e5ec0070276, type: 3}
-  image: {fileID: 21300000, guid: e305d4ff6fcb66148a89b78f93cc03fa, type: 3}
+  prefab: {fileID: 6891005454971826096, guid: 901f6225d4481b7488314c367bdfdc70, type: 3}
+  image: {fileID: 0}
   pieceEffet:
-    condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
+    condition: {fileID: 11400000, guid: 194304bd63c75b74cae513881df8b2d8, type: 2}
     effet: {fileID: 11400000, guid: e004bb3741ec5874b8e2de6c2a6f968d, type: 2}
-  ConditionValues: 
-  EfectValues: 05000000
+  ConditionValues: 00000000
+  EfectValues: 0a000000
   colors: 00000000
-  description: 5 DMG to ennemy
+  description: 10 DMG if no shield on this piece
   isRepetition: 0

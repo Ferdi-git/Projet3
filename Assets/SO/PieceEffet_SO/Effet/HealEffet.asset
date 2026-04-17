@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f35f2ae578f4362448949b08974f120e, type: 3}
-  m_Name: HealAround
-  m_EditorClassIdentifier: Assembly-CSharp::SoEffetHealAround
+  m_Script: {fileID: 11500000, guid: dc628aba5d077954cb9cc7ef9678e32c, type: 3}
+  m_Name: HealEffet
+  m_EditorClassIdentifier: Assembly-CSharp::SoEffetHeal

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: RepeatAround
+  m_Name: SmallHealAroundPiece
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 6
-  prefab: {fileID: 6891005454971826096, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
-  image: {fileID: 21300000, guid: e305d4ff6fcb66148a89b78f93cc03fa, type: 3}
+  healthPoint: 10
+  prefab: {fileID: 9169137471980413390, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
+  image: {fileID: -630607183058940282, guid: e5493a205d5a1764ab602194d4acf601, type: 3}
   pieceEffet:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
-    effet: {fileID: 11400000, guid: 1cc1c1bb7f4c9004eb54c5bc1ed9bdd5, type: 2}
+    effet: {fileID: 11400000, guid: d06846e772b1242489f9e611f0956768, type: 2}
   ConditionValues: 
-  EfectValues: 
-  colors: 0000000002000000
-  description: Retrigger neighbouring pieces
-  isRepetition: 1
+  EfectValues: 02000000
+  colors: 00000000
+  description: 'Heal neighbouring pieces by 2HP '
+  isRepetition: 0

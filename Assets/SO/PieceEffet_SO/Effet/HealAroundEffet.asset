@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2e515914921315489437ca9027c3be2, type: 3}
-  m_Name: EffetRepeatAround
-  m_EditorClassIdentifier: Assembly-CSharp::SoEffetRepeatAround
+  m_Script: {fileID: 11500000, guid: f35f2ae578f4362448949b08974f120e, type: 3}
+  m_Name: HealAroundEffet
+  m_EditorClassIdentifier: Assembly-CSharp::SoEffetHealAround
