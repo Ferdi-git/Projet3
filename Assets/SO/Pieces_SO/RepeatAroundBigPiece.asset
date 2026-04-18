@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: RepeatAroundPiece
+  m_Name: RepeatAroundBigPiece
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
   healthPoint: 6
-  prefab: {fileID: 6891005454971826096, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
+  prefab: {fileID: 6891005454971826096, guid: 9f10e0d52234fb24f899b0a770aa85e5, type: 3}
   image: {fileID: 21300000, guid: e305d4ff6fcb66148a89b78f93cc03fa, type: 3}
   pieceEffet:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
