@@ -54,15 +54,18 @@ public class GridManager : MonoBehaviour
     private void Awake()
     {
         SortBoard(baseSortMode);
+
+    }
+
+    private void Start()
+    {
         soSaveInventory.listBoardPiecesExist.Clear();
         for (int i = 0; i < piecesExist.Length; i++)
         {
             AddBoardPiece(piecesExist[i].gameObject);
         }
         ActualiseBoard();
-
     }
-
 
     [Button]
     private void ActualiseBoard()
@@ -211,18 +214,7 @@ public class GridManager : MonoBehaviour
 
     public void AddBoardPiece(GameObject go)
     {
-        BoardPiece newBoardPiece = new();
-        PieceInfo pieceInfo = go.GetComponent<PieceInfo>();
-        newBoardPiece.pieceAnimation = go.GetComponent<PieceAnimations>();
-
-        pieceInfo.currentBoardPiece = newBoardPiece;
-        newBoardPiece.pieceInfo = pieceInfo;
-        newBoardPiece.soPieces = pieceInfo.soPiece;
-
-        newBoardPiece.maxHealthPoint = pieceInfo.soPiece.healthPoint;
-        newBoardPiece.healthPoint = pieceInfo.soPiece.healthPoint;
-
-        soSaveInventory.listBoardPiecesExist.Add(newBoardPiece);
+        soSaveInventory.listBoardPiecesExist.Add(go.GetComponent<PieceInfo>().currentBoardPiece);
     }
     
     public void RemoveBoardPiece(BoardPiece bp)

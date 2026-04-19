@@ -15,7 +15,14 @@ using static PieceAnimations;
 public class PieceAnimations : MonoBehaviour
 {
     AudioSource audioSource;
+    private BoardPiece boardPiece;
+
+    private SinglePieceSquare[] squares;
+
     [SerializeField] AudioClip[] audioClips;
+
+
+    [Header("---Glow")]
 
     [SerializeField] private float glowIntensity = 2f;   // above 1 = triggers bloom
     [SerializeField] private float glowDuration = 0.25f;
@@ -24,11 +31,14 @@ public class PieceAnimations : MonoBehaviour
     [Tooltip("Normal,Repeat,Atk,Defend,Heal")] 
     [SerializeField, ColorUsage(true, true)] private Color[] glowColors;
 
-    private SinglePieceSquare[] squares;
+
+    [Header("---Health Display")]
+
     [SerializeField] TextMeshPro textHealth;
     [SerializeField] TextMeshPro textShield;
-    private BoardPiece boardPiece;
-    [SerializeField] StatsEnnemi statEnnemy;
+
+
+    [Header("---Events")]
     [SerializeField] SOEventPieceHealth eventPieceHealth;
     [SerializeField] SOEventTrail eventTrail;
     [SerializeField] SOEventVisuelEffect visualEffect;
@@ -52,7 +62,7 @@ public class PieceAnimations : MonoBehaviour
             spriteRenderers.Add(gameObject.GetComponent<PieceInfo>().GetSelfPoints()[i].spriteRenderer);
         }
         audioSource = GetComponent<AudioSource>();
-        RefreshHealth(null);
+        RefreshHealth(boardPiece);
     }
 
 
@@ -286,6 +296,7 @@ public class PieceAnimations : MonoBehaviour
 
     public void RefreshHealth(BoardPiece piece)
     {
+        
         textHealth.text  = boardPiece.healthPoint.ToString();
         textShield.gameObject.SetActive(boardPiece.shield > 0);
         textShield.text = boardPiece.shield.ToString();
