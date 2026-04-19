@@ -59,8 +59,16 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
             {
                 pieceInfo.Refill();
             });
-            transform.DORotateQuaternion(pieceInfo.originalRota, 0.2f).SetEase(Ease.OutBack);
-            ResetChild();
+
+            transform.DORotateQuaternion(pieceInfo.originalRota, 0.2f).SetEase(Ease.OutBack)
+                        .OnComplete(() =>
+                        {
+                            childThatDontTurn.transform.DOKill();
+                            childThatDontTurn.transform.localRotation = Quaternion.identity;
+                            ResetChild();
+
+                        });
+            //ResetChild();
 
         }
     }
@@ -121,4 +129,6 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         childThatDontTurn.transform.DORotate(new Vector3(0, 0, 0), 0.2f, RotateMode.Fast);
 
     }
+
+
 }

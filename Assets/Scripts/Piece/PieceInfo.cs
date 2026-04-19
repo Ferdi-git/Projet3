@@ -24,6 +24,20 @@ public class PieceInfo : MonoBehaviour
     [HideInInspector] public Vector3 originalPos;
     [HideInInspector] public Quaternion originalRota;
 
+    private void Awake()
+    {
+        BoardPiece newBoardPiece = new();
+        newBoardPiece.pieceAnimation = gameObject.GetComponent<PieceAnimations>();
+
+        currentBoardPiece = newBoardPiece;
+        newBoardPiece.pieceInfo = this;
+        newBoardPiece.soPieces = soPiece;
+
+        newBoardPiece.maxHealthPoint = soPiece.healthPoint;
+        newBoardPiece.healthPoint = soPiece.healthPoint;
+
+    }
+
     private void Start()
     {
         SnapToGrid();

@@ -980,11 +980,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1290109272774424516, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.7582903
+      value: -2.74
       objectReference: {fileID: 0}
     - target: {fileID: 1290109272774424516, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.1248503
+      value: -6.15
       objectReference: {fileID: 0}
     - target: {fileID: 1290109272774424516, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2055,11 +2055,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1290109272774424516, guid: e7c2efe06bb45ef4c8972e5ec0070276, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.7200003
+      value: -3.73
       objectReference: {fileID: 0}
     - target: {fileID: 1290109272774424516, guid: e7c2efe06bb45ef4c8972e5ec0070276, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1100001
+      value: -4.13
       objectReference: {fileID: 0}
     - target: {fileID: 1290109272774424516, guid: e7c2efe06bb45ef4c8972e5ec0070276, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15597,6 +15597,14 @@ PrefabInstance:
       propertyPath: ennemiUI
       value: 
       objectReference: {fileID: 1869217450}
+    - target: {fileID: 8478098204598217299, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8478098204598217299, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8774138003516605575, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
       propertyPath: ennemiName
       value: 
@@ -15622,7 +15630,8 @@ PrefabInstance:
       value: Managers
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 141825582901135153, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
