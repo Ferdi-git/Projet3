@@ -29,10 +29,12 @@ public class TrailManager : MonoBehaviour
         GameObject newTrail = Instantiate(SingleTrailPrefab);
         TrailRenderer trailRenderer = newTrail.GetComponent<TrailRenderer>();
 
-        Material mat = trailRenderer.material;
+        Material mat = new Material(trailRenderer.material);
+        trailRenderer.material = mat;
+
 
         mat.SetColor("_GlowColor", trailData.glowColor);
-        transform.position = trailData.pos1;
+        newTrail.transform.position = trailData.pos1;
         trailRenderer.Clear();
 
         float T = 0;
@@ -42,10 +44,10 @@ public class TrailManager : MonoBehaviour
             timeSinceStart += Time.deltaTime;
             T = timeSinceStart / trailData.trailTime;
 
-            transform.position = SampleParabola(trailData.pos1, trailData.pos2, trailData.height, T, Vector3.up);
+            newTrail.transform.position = SampleParabola(trailData.pos1, trailData.pos2, trailData.height, T, Vector3.up);
             yield return new WaitForEndOfFrame();
         }
-        Destroy(trailRenderer);
+        Destroy(newTrail);
         trailData.eventEndTrail.Invoke();
     }
 
