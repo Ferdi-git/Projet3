@@ -438,7 +438,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 6
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &252836312447747086
@@ -687,7 +687,6 @@ MonoBehaviour:
   - {r: 0.0009765625, g: 0.00025292826, b: 0, a: 1}
   textHealth: {fileID: 5610723301339487969}
   textShield: {fileID: 252836312447747086}
-  statEnnemy: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
   eventPieceHealth: {fileID: 11400000, guid: 6f12cea053413f84cb2c3d414fe38247, type: 2}
   eventTrail: {fileID: 11400000, guid: 1cf1097e7861b8045a90f19b5e70d8fc, type: 2}
   visualEffect: {fileID: 11400000, guid: 5325d155160c43247a477c2e1cb72e16, type: 2}
@@ -1114,7 +1113,7 @@ MeshRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &5610723301339487969

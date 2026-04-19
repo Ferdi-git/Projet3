@@ -244,11 +244,11 @@ public class PieceAnimations : MonoBehaviour
                 break;
 
             case TypeAnim.shield:
-                foreach (SinglePieceSquare s in squares) s.shieldParticule.Play();
+                PlayShieldAnim();
                 break;
 
             case TypeAnim.heal:
-                foreach (SinglePieceSquare s in squares) s.healParticule.Play();
+                PlayHealAnim();
                 break;
             case TypeAnim.takeDamage:
                 break;
@@ -278,10 +278,19 @@ public class PieceAnimations : MonoBehaviour
 
     public void PlayHealAnim()
     {
+        foreach (SinglePieceSquare s in squares) s.healParticule.Play();
 
     }
     public void PlayShieldAnim()
     {
+
+        foreach (SinglePieceSquare s in squares)
+        {
+            s.shieldGO.transform.localScale = Vector3.zero;
+            s.shieldGO.transform.DOScale(Vector3.one,0.2f).SetEase(Ease.InOutSine);
+
+            //s.shieldParticule.Play();
+        }
 
     }
 
@@ -289,16 +298,19 @@ public class PieceAnimations : MonoBehaviour
     {
 
     }
-    public void PlayLoseShielddAnim()
+    public void PlayLoseShieldAnim()
     {
 
     }
 
     public void RefreshHealth(BoardPiece piece)
-    {
-        
+    {   
         textHealth.text  = boardPiece.healthPoint.ToString();
         textShield.gameObject.SetActive(boardPiece.shield > 0);
+        if (boardPiece.shield <= 0 && int.Parse(textShield.text) > 0) foreach (SinglePieceSquare s in squares) s.shieldGO.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InOutSine);
+
+
         textShield.text = boardPiece.shield.ToString();
+
     }
 }
