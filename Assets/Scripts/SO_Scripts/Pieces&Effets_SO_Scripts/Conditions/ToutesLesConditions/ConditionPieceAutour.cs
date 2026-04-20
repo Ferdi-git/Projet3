@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewConditionTest", menuName = "Conditions/Test")]
-public class SoConditionPieceAutour : SoCondition
+public class ConditionPieceAutour : SoCondition
 {
     public override bool Condition(ConditionOutput conditionOutput) //  ajouter context 
     {
