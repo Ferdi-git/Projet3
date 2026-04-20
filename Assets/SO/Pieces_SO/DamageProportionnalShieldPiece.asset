@@ -19,7 +19,7 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: 4030b6fb17ef4ce42bf634cf5d117e45, type: 2}
   ConditionValues: 
-  EfectValues: 
+  EfectValues: 02000000
   colors: 00000000
   description: Deals 2 DMG by Shield on this piece
   isRepetition: 0
