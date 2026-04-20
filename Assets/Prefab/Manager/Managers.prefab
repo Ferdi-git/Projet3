@@ -114,6 +114,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4133092285236153453, guid: 7b3d517fbc570fa40a9703dc6132dde4, type: 3}
+      propertyPath: floorEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 58ca2e5d10e44ce449e6ef14e2bc138e, type: 2}
     - target: {fileID: 9144337965620658401, guid: 7b3d517fbc570fa40a9703dc6132dde4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -236,7 +240,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3945213592789784040, guid: b6c4075debb7424448deb95addc5a200, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1497431564287022506, guid: 6f6baa2cec9f40b42935605b9927a95d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f6baa2cec9f40b42935605b9927a95d, type: 3}
@@ -576,6 +581,10 @@ PrefabInstance:
       value: CombatManager
       objectReference: {fileID: 0}
     - target: {fileID: 5964070754701549770, guid: aec35c3ac3e4af1438857a89ff01adc1, type: 3}
+      propertyPath: turnEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 90b8cc6ddf833ea47891a408cd75ca13, type: 2}
+    - target: {fileID: 5964070754701549770, guid: aec35c3ac3e4af1438857a89ff01adc1, type: 3}
       propertyPath: ennemiManager
       value: 
       objectReference: {fileID: 7133017032517973888}
@@ -612,6 +621,14 @@ PrefabInstance:
       propertyPath: combat
       value: 
       objectReference: {fileID: 3505429126036682444}
+    - target: {fileID: 1825866853302728116, guid: c2b9b5bbef33d3c469788501eaec68eb, type: 3}
+      propertyPath: turnEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 90b8cc6ddf833ea47891a408cd75ca13, type: 2}
+    - target: {fileID: 1825866853302728116, guid: c2b9b5bbef33d3c469788501eaec68eb, type: 3}
+      propertyPath: floorEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 58ca2e5d10e44ce449e6ef14e2bc138e, type: 2}
     - target: {fileID: 1825866853302728116, guid: c2b9b5bbef33d3c469788501eaec68eb, type: 3}
       propertyPath: floorManager
       value: 
