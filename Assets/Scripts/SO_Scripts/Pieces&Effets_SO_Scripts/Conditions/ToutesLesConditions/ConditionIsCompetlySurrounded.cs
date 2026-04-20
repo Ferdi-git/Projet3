@@ -1,13 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "IsSurroundedCondition", menuName = "Conditions/IsSurrounded")]
+[CreateAssetMenu(fileName = "IsCompletlySurroundedCondition", menuName = "Conditions/IsCompletlySurrounded")]
 
 public class ConditionIsCompetlySurrounded : SoCondition
 {
     public override bool Condition(ConditionOutput conditionOutput)
     {
-        if(conditionOutput.context.NbrCaseOccupé == conditionOutput.variableList[0])
+        if(conditionOutput.context.NbrCaseLibre == 0)
         {
             return true;
         }

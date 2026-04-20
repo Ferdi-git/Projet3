@@ -6,11 +6,11 @@ public class Context
 {
     public int Tour;
 
-    public int NbrCaseDeLaPiece;
+    //public int NbrCaseDeLaPiece;
 
     public int NbrPiecesAutour;
     public int NbrCaseLibre;
-    public int NbrCaseOccupé;
+    public int NbrCaseOccupe;
 
     public int NbrDeRepetition;
 
@@ -19,8 +19,4 @@ public class Context
 
     public List<BoardPiece> voisins;
     public int NbrCaseAtk;
-
-
-
-
 }
