@@ -68,7 +68,10 @@ public class StatsPlayer : ScriptableObject
 
     }
 
-
+    public int GetMana()
+    {
+        return mana;
+    }
 
     public int GetPV ()
     {
