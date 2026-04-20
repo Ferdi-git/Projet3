@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
+    [SerializeField] private SOEventStartTurn turnEvent;
+
+
     [SerializeField] private SoBoard soBoard;
     [SerializeField] private bool skipFight;
     [SerializeField] private StatsPlayer statsPlayer;
@@ -23,10 +26,12 @@ public class Combat : MonoBehaviour
     private void OnEnable()
     {
         eventState.StartCombat += StartCombat;
+        turnEvent.NextTurn += StartTurn;
     }
     private void OnDisable()
     {
         eventState.StartCombat -= StartCombat;
+        turnEvent.NextTurn -= StartTurn;
     }
 
     private void Start()

@@ -28,6 +28,16 @@ public class OutputPort
     {
         statsPlayer.InvokeGainPV(amount);
     }
+
+    public void PlayerLooseMana(int amount)
+    {
+        statsPlayer.InvokeLooseMana(amount);
+    }
+    public void PlayerGainMana(int amount)
+    {
+        statsPlayer.InvokeGainMana(amount);
+    }
+
     public void PlayerGainShield (int amount)
     {
         statsPlayer.InvokeGainShield (amount);
@@ -36,6 +46,8 @@ public class OutputPort
     {
         statsPlayer.InvokeTakeDamage (amount);
     }
+
+
 
     //ennemi 
 
