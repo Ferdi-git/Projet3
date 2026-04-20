@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AdaptivePerformance;
 
 public class InventoryGrid : MonoBehaviour
 {
@@ -117,6 +118,7 @@ public class InventoryGrid : MonoBehaviour
         {
             int savedIndex = listPieceMoved[i];
 
+
             soSaveInventory.pieces[savedIndex].GetComponent<PieceInfo>().Unfill();
 
             soSaveInventory.pieces[savedIndex].transform
@@ -129,6 +131,8 @@ public class InventoryGrid : MonoBehaviour
                 .OnComplete(() =>
                 {
                     soSaveInventory.pieces[savedIndex].GetComponent<PieceInfo>().SnapToGrid();
+                    soSaveInventory.pieces[savedIndex].GetComponent<PieceMouvement>().ResetChild();
+
                     remaining--;
                     if (remaining == 0)
                     {
@@ -136,7 +140,7 @@ public class InventoryGrid : MonoBehaviour
                     }
                 });
 
-            soSaveInventory.pieces[savedIndex].GetComponent<PieceMouvement>().ResetChild();
+            //soSaveInventory.pieces[savedIndex].GetComponent<PieceMouvement>().ResetChild();
 
             delay += delayInBetweenBackToInventory;
         }
@@ -170,4 +174,5 @@ public class InventoryGrid : MonoBehaviour
             gridSlots[nbr].ClearSlot();
         }
     }
+
 }
