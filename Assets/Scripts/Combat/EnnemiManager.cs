@@ -1,9 +1,9 @@
 
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnnemiManager : MonoBehaviour
 {
+    [SerializeField] private SOEventEnnemy ennemiEvent;
     [SerializeField] private StatsEnnemi stats;
     [SerializeField] private GameObject ennemiUI;
     [SerializeField] private KeepEnnemiSo ennemiList;
@@ -11,6 +11,20 @@ public class EnnemiManager : MonoBehaviour
     [SerializeField] private UIManager uiManager;
     private int index;
     private int atkIndex;
+
+    private void OnEnable()
+    {
+        ennemiEvent.GenerateEnnemi += GenerateEnnemi;
+        ennemiEvent.EnnemiShowAttack += ShowAtk;
+        ennemiEvent.EnnemiRemoveAttack += RemoveAtk;
+    }
+    private void OnDisable()
+    {
+        ennemiEvent.GenerateEnnemi -= GenerateEnnemi;
+        ennemiEvent.EnnemiShowAttack -= ShowAtk;
+        ennemiEvent.EnnemiRemoveAttack -= RemoveAtk;
+    }
+
 
     private void Start()
     {
@@ -29,25 +43,28 @@ public class EnnemiManager : MonoBehaviour
         stats.ennemiAttacks = ennemiList.ennemiList[index].attacks;
         uiManager.GiveEnnemiCurrentAtkIndex(0);
         uiManager.UpdateUI();
+        
     }
 
-    public void ShowAtk ()
+    private void ShowAtk ()
     {
         atkIndex = Random.Range (0, stats.ennemiAttacks.Count);
         uiManager.GiveEnnemiCurrentAtkIndex(atkIndex);
         soEventGridManager.InvokeSelectRandomSlot(stats.ennemiAttacks[atkIndex].zone);
+        stats.actualAtkDamage = GetDamageValue();
+        stats.actualAtkZoneNbr = GetAtkZoneNbr();
     }
-    public void RemoveAtk ()
+    private void RemoveAtk ()
     {
         soEventGridManager.InvokeRemoveAtk();
     }
     
-    public int GetDamageValue ()
+    private int GetDamageValue ()
     {
         return stats.ennemiAttacks[atkIndex].damage;
     }
 
-    public int GetAtkZoneNbr ()
+    private int GetAtkZoneNbr ()
     {
         return stats.ennemiAttacks[atkIndex].zone.gameObject.GetComponent<EnemyZoneAtk>().listPoints.Count;
     }

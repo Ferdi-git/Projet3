@@ -372,6 +372,10 @@ PrefabInstance:
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 8774138003516605575}
+    - target: {fileID: 5379195559371634949, guid: 2f2ec5cf76d83264b91727ea4bcc9336, type: 3}
+      propertyPath: ennemiEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: c26ad741f286d8a46b923e14d9828be4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
