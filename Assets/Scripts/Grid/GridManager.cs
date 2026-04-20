@@ -89,7 +89,7 @@ public class GridManager : MonoBehaviour
             ContextAutour newContext = GetContextAutour(pieceOnSlot);
             currentBoardPiece.context.voisins = newContext.voisins;
             currentBoardPiece.context.NbrCaseLibre = newContext.nbrCaseLibre;
-            currentBoardPiece.context.NbrCaseOccupé = newContext.nbrCaseOccupe;
+            currentBoardPiece.context.NbrCaseOccupe = newContext.nbrCaseOccupe;
 
             theBoard.boardPieces.Add(currentBoardPiece);
         }
@@ -259,7 +259,7 @@ public class GridManager : MonoBehaviour
 }
 public class ContextAutour
 {
-    public List<BoardPiece> voisins;
+    public List<BoardPiece> voisins = new List<BoardPiece>();
     public int nbrCaseOccupe = 0;
     public int nbrCaseLibre = 0;
 }

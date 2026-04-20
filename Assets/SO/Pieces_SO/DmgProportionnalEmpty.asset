@@ -16,7 +16,7 @@ MonoBehaviour:
   prefab: {fileID: 9169137471980413390, guid: 1864ae9f9e4c42344aac5a5820081914, type: 3}
   image: {fileID: 0}
   pieceEffet:
-    condition: {fileID: 0}
+    condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: 11492ada19470cb47b7210feec2fb539, type: 2}
   ConditionValues: 
   EfectValues: 03000000
