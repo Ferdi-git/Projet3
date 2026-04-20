@@ -1328,7 +1328,7 @@ Transform:
   m_GameObject: {fileID: 124327759}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6332002, y: -0.41479993, z: 0}
+  m_LocalPosition: {x: 2.6332002, y: -0.46, z: 0}
   m_LocalScale: {x: 11, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1798,7 +1798,7 @@ Transform:
   m_GameObject: {fileID: 189858853}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1332002, y: -0.9148, z: 0}
+  m_LocalPosition: {x: 2.04, y: -0.91, z: 0}
   m_LocalScale: {x: 10.0001, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7807,7 +7807,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -13591,7 +13591,7 @@ SpriteRenderer:
   m_SortingOrder: -6
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.24528301, g: 0.23718405, b: 0.23718405, a: 1}
+  m_Color: {r: 0.1006141, g: 0.16207057, b: 0.1792453, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15965,6 +15965,10 @@ PrefabInstance:
       propertyPath: ennemiUI
       value: 
       objectReference: {fileID: 1869217450}
+    - target: {fileID: 8774138003516605575, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
+      propertyPath: ManaSlider
+      value: 
+      objectReference: {fileID: 1153699450}
     - target: {fileID: 8774138003516605575, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
       propertyPath: ennemiName
       value: 

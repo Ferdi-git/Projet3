@@ -22,7 +22,6 @@ public class InventoryGrid : MonoBehaviour
     private void OnEnable()
     {
         //eventState.EndOfCombat += ResetInventory;
-        eventState.StartShoping += ResetInventory;
         gridManager.TrySaveInventory += TryToSave;
         gridManager.ResetInventory += ResetInventory;
         //gridManager.OnePieceIsPlaced += TryToSave;
@@ -31,7 +30,6 @@ public class InventoryGrid : MonoBehaviour
     private void OnDisable()
     {
         //eventState.EndOfCombat -= ResetInventory;
-        eventState.StartShoping -= ResetInventory;
         gridManager.TrySaveInventory -= TryToSave;
         gridManager.ResetInventory -= ResetInventory;
         //gridManager.OnePieceIsPlaced -= TryToSave;

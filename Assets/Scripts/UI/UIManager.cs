@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private SOEventEnnemy EventEnnemy;
 
     [SerializeField] private Slider PlayerSlider;
+    [SerializeField] private Slider ManaSlider;
     [SerializeField] private Slider EnnemiSlider;
 
     [SerializeField] private SpriteRenderer ennemiSprite;
@@ -22,6 +23,9 @@ public class UIManager : MonoBehaviour
     {
         eventPlayer.GainPV += GainPV;
         eventPlayer.LoosePV += LoosePV;
+
+        eventPlayer.GainMana += GainMana;
+        eventPlayer.LooseMana += LooseMana;
 
         eventPlayer.GainShield += GainShield;
         eventPlayer.LooseShield += LooseShield;
@@ -39,6 +43,9 @@ public class UIManager : MonoBehaviour
     {
         eventPlayer.GainPV -= GainPV;
         eventPlayer.LoosePV -= LoosePV;
+
+        eventPlayer.GainMana -= GainMana;
+        eventPlayer.LooseMana -= LooseMana;
 
         eventPlayer.GainShield -= GainShield;
         eventPlayer.LooseShield -= LooseShield;
@@ -58,6 +65,11 @@ public class UIManager : MonoBehaviour
     {
         int pvPlayer = statsPlayer.GetPV();
         int pvMaxPlayer = statsPlayer.pvMax;
+
+        int manaPlayer = statsPlayer.GetMana();
+        int manaMaxPlayer = statsPlayer.manaMax;
+
+
         int shieldPlayer = statsPlayer.GetShield();
 
         int pvEnnemi = statsEnnemi.GetPV();
@@ -66,18 +78,30 @@ public class UIManager : MonoBehaviour
 
         PlayerSlider.maxValue = pvMaxPlayer;
         EnnemiSlider.maxValue =  pvMaxEnnemi;
+        ManaSlider.maxValue =  manaMaxPlayer;
         PlayerSlider.value = pvPlayer;
         EnnemiSlider.value = pvEnnemi;
+        ManaSlider.value = manaPlayer;
 
         ennemiName.text  = statsEnnemi.ennemiName;
         ennemiSprite.sprite = statsEnnemi.sprite;
         
     }
+
     private void GainPV (int amount)
     {
         UpdateUI();
     }
     private void LoosePV (int amount)
+    {
+        UpdateUI();
+    }
+
+    private void GainMana(int amount)
+    {
+        UpdateUI();
+    }
+    private void LooseMana(int amount)
     {
         UpdateUI();
     }
