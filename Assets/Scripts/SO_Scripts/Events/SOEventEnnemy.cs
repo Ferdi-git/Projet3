@@ -21,4 +21,26 @@ public class SOEventEnnemy : ScriptableObject
 
     public void InvokeNewEnnemi () { NewEnnemi?.Invoke(); }
 
+
+
+
+    // appel de fonction de l'ennemi Manager
+
+    public event Action GenerateEnnemi;
+
+    public event Action EnnemiShowAttack;
+
+    //public event Action<int> EnnemiGetAttackZoneNbr;
+
+
+    public void InvokeGenerateEnnemi ()
+    {
+        GenerateEnnemi?.Invoke();
+    }
+    public void InvokeEnnemiShowAttack()
+    {
+        EnnemiShowAttack?.Invoke();
+    }
+    
+
 }
