@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Combat combat;
+    [SerializeField] private SOEventStartTurn turnEvent;
     [SerializeField] private SOEventGridManager gridManager;
     [SerializeField] private SOEventState gameState;
     [SerializeField] private FloorManager floorManager;
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     {
         if (ActualEvent == FloorEvent.NormalFight || ActualEvent == FloorEvent.BossFight)
         {
-            combat.StartTurn();
+            turnEvent.InvokeNextTurn();
         }
     }
 
