@@ -42,7 +42,7 @@ PrefabInstance:
     - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: soPiece
       value: 
-      objectReference: {fileID: 11400000, guid: 16aec410ef0d80742bdf5cec8712e830, type: 2}
+      objectReference: {fileID: 11400000, guid: 381c9b692b9631c4291d9348615745d1, type: 2}
     - target: {fileID: 745610759110452861, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
       propertyPath: posCases.Array.size
       value: 1

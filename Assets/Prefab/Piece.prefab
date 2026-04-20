@@ -470,7 +470,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294964736
+    rgba: 4294963712
   m_fontColor: {r: 0, g: 0.9500494, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -702,7 +702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838dc514ee7d1c7479df10d770917be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  soPiece: {fileID: 11400000, guid: 16aec410ef0d80742bdf5cec8712e830, type: 2}
+  soPiece: {fileID: 11400000, guid: 381c9b692b9631c4291d9348615745d1, type: 2}
   singleSquares:
   - {fileID: 5524082140140119877}
   - {fileID: 3048599720475576187}
@@ -730,10 +730,9 @@ MonoBehaviour:
     pieceAnimation: {fileID: 0}
     context:
       Tour: 0
-      NbrCaseDeLaPiece: 0
       NbrPiecesAutour: 0
       NbrCaseLibre: 0
-      "NbrCaseOccup\xE9": 0
+      NbrCaseOccupe: 0
       NbrDeRepetition: 0
       voisins: []
       NbrCaseAtk: 0

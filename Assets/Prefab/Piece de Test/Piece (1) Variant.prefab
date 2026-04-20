@@ -229,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 6445726352670952644, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: soPiece
       value: 
-      objectReference: {fileID: 11400000, guid: 16aec410ef0d80742bdf5cec8712e830, type: 2}
+      objectReference: {fileID: 11400000, guid: 381c9b692b9631c4291d9348615745d1, type: 2}
     - target: {fileID: 6445726352670952644, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: surroundingPoints.Array.size
       value: 8
