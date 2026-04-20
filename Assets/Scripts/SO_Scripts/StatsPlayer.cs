@@ -43,7 +43,8 @@ public class StatsPlayer : ScriptableObject
     }
     public void InvokeLooseMana(int amount)
     {
-        mana -= amount;
+        if (mana - amount < 0) mana = 0;
+        else mana -= amount;
         player.InvokePlayerLooseMana(amount);
     }
 
