@@ -19,7 +19,7 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: 11492ada19470cb47b7210feec2fb539, type: 2}
   ConditionValues: 
-  EfectValues: 03000000
+  EfectValues: 05000000
   colors: 00000000
-  description: Deals 3 Damage for each empty Neighbouring Tile
+  description: Deals 5 Damage for each empty neighbouring tile
   isRepetition: 0

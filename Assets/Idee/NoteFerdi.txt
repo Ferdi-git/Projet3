@@ -56,13 +56,8 @@ AtkManager :
 	RemoveAtk
 
 
+
 A faire : 
-	- Bug piece qui meurt 
-	- bug shop 
-	- Ranger scripts 
-
-Bouton skip shop
-
-
-
-PROBLEME ROTA + HP REFRESH
+	- Death Anim
+	- Visuel roadmap
+	- 
