@@ -26,8 +26,9 @@ public class StatsPlayer : ScriptableObject
         player.InvokePlayerGainPV(amount);
     }
     public void InvokeLoosePV(int amount) 
-    { 
-        pv -= amount;
+    {
+        if (pv - amount < 0) pv = 0;
+        else mana -= amount;
         player.InvokePlayerLoosePV( amount );
     }
 
