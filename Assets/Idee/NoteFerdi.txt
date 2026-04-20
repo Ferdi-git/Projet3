@@ -58,8 +58,6 @@ AtkManager :
 
 
 A faire : 
-	- Skip shop
 	- Death Anim
 	- Visuel roadmap
-	- Reroll PV
 	- 
