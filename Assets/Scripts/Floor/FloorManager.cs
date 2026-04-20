@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class FloorManager : MonoBehaviour
 {
+    public SOEventFloor floorEvent;
     [SerializeField] private FloorListSo floorList;
     public int BossToutLescombienDeTour = 10;
 
     public List<FloorStep> CustomFloors = new List<FloorStep>();
 
-
+    private void OnEnable()
+    {
+        floorEvent.FirstFloorGeneration += GenerateFirstFloorList;
+    }
+    private void OnDisable()
+    {
+        floorEvent.FirstFloorGeneration -= GenerateFirstFloorList;
+    }
 
 
 
