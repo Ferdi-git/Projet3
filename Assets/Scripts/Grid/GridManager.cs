@@ -86,35 +86,44 @@ public class GridManager : MonoBehaviour
             pieceOnSlot.wasGridChecked = true;
 
             BoardPiece currentBoardPiece = GetBoardPiece(pieceOnSlot);
-            currentBoardPiece.context.voisins = GetVoisins(pieceOnSlot);
+            ContextAutour newContext = GetContextAutour(pieceOnSlot);
+            currentBoardPiece.context.voisins = newContext.voisins;
+            currentBoardPiece.context.NbrCaseLibre = newContext.nbrCaseLibre;
+            currentBoardPiece.context.NbrCaseOccupe = newContext.nbrCaseOccupe;
 
             theBoard.boardPieces.Add(currentBoardPiece);
         }
         gridManager.InvokeTrySaveInventory();
     }
     
-    private List<BoardPiece> GetVoisins(PieceInfo piecePerso)
+    private ContextAutour GetContextAutour(PieceInfo piecePerso)
     {
-        var listToReturn = new List<BoardPiece>();
+        ContextAutour contextAutour =  new ContextAutour();
         for (int i = 0; i < piecePerso.GetSurroundingPoints().Length; i++)
         {
             foreach (var hit in Physics2D.OverlapPointAll(piecePerso.GetSurroundingPoints()[i].transform.position))
             {
                 var voisinPiecePerso = hit.gameObject.GetComponent<PieceInfo>();
+                if (voisinPiecePerso != null)
+                {
+                    contextAutour.nbrCaseOccupe += 1;
 
-                if (voisinPiecePerso != null && !listToReturn.Contains(GetBoardPiece(voisinPiecePerso)))
-                    listToReturn.Add(GetBoardPiece(voisinPiecePerso));
-
+                    if (!contextAutour.voisins.Contains(GetBoardPiece(voisinPiecePerso)))
+                        contextAutour.voisins.Add(GetBoardPiece(voisinPiecePerso));
+                }
+                else contextAutour.nbrCaseLibre += 1;
 
             }
         }
 
-        listToReturn = baseSortMode == SortMode.ByRow
-      ? listToReturn.OrderBy(p => -p.pieceInfo.transform.position.y).ThenBy(p => p.pieceInfo.transform.position.x).ToList()
-      : listToReturn.OrderBy(p => p.pieceInfo.transform.position.x).ThenBy(p => -p.pieceInfo.transform.position.y).ToList();
+        contextAutour.voisins = baseSortMode == SortMode.ByRow
+      ? contextAutour.voisins.OrderBy(p => -p.pieceInfo.transform.position.y).ThenBy(p => p.pieceInfo.transform.position.x).ToList()
+      : contextAutour.voisins.OrderBy(p => p.pieceInfo.transform.position.x).ThenBy(p => -p.pieceInfo.transform.position.y).ToList();
 
-        return listToReturn;
+        return contextAutour;
     }
+
+
 
 
     private BoardPiece GetBoardPiece(PieceInfo pieceInfo)
@@ -247,6 +256,12 @@ public class GridManager : MonoBehaviour
         ActualiseBoard();
     }
 
+}
+public class ContextAutour
+{
+    public List<BoardPiece> voisins = new List<BoardPiece>();
+    public int nbrCaseOccupe = 0;
+    public int nbrCaseLibre = 0;
 }
 
 

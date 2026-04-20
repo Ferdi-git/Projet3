@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: DamageNbrOfNeighbours
+  m_Name: DmgProportionnalEmpty
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 10
-  prefab: {fileID: 6891005454971826096, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+  healthPoint: 8
+  prefab: {fileID: 9169137471980413390, guid: 1864ae9f9e4c42344aac5a5820081914, type: 3}
   image: {fileID: 0}
   pieceEffet:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
-    effet: {fileID: 11400000, guid: 4b40ab1253079854abfa8eff83ce1bdc, type: 2}
+    effet: {fileID: 11400000, guid: 11492ada19470cb47b7210feec2fb539, type: 2}
   ConditionValues: 
-  EfectValues: 04000000
+  EfectValues: 03000000
   colors: 00000000
-  description: Deals 4 DMG for each neighbouring piece
+  description: Deals 3 Damage for each empty Neighbouring Tile
   isRepetition: 0

@@ -18,7 +18,7 @@ MonoBehaviour:
   pieceEffet:
     condition: {fileID: 11400000, guid: 50dbfb7eb57b828429ee60580d687f24, type: 2}
     effet: {fileID: 11400000, guid: 102512ac023e7d143b6f9fca2e6ad6f6, type: 2}
-  ConditionValues: 08000000
+  ConditionValues: 
   EfectValues: 0a000000
   colors: 00000000
   description: Give 10 Shield to neighbouring pieces if is completly surrounded
