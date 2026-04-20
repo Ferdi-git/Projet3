@@ -98,8 +98,9 @@ public class ChoiceManager : MonoBehaviour
         }
     }
 
-    private void EndChoice()
+    public void EndChoice()
     {
+        DestroyOnePieceChildren();
         onePieceScreen.SetActive(false);
         ClearChoice();
         shopManager.CloseShop();
