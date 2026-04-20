@@ -19,7 +19,7 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: 1cc1c1bb7f4c9004eb54c5bc1ed9bdd5, type: 2}
   ConditionValues: 
-  EfectValues: 00000000
+  EfectValues: 01000000
   colors: 0000000002000000
   description: Retrigger neighbouring pieces
   isRepetition: 1
