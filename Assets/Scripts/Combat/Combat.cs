@@ -43,9 +43,8 @@ public class Combat : MonoBehaviour
     {
         
         bouton.SetActive(true);
-        eventEnnemi.InvokeGenerateEnnemi();
-        ennemiManager.GenerateEnnemi(NbrOfCombat);
-        ennemiManager.ShowAtk();
+        eventEnnemi.InvokeGenerateEnnemi(NbrOfCombat);
+        eventEnnemi.InvokeEnnemiShowAttack();
         eventEnnemi.InvokeNewEnnemi();
     }
 
@@ -143,8 +142,8 @@ public class Combat : MonoBehaviour
         //check si des pieces sont mortes 
         //enlever bouclier aux pieces (mettre bouclier dans boardpiece)
         //print("test");
-        ennemiManager.RemoveAtk();
-        ennemiManager.ShowAtk();
+        eventEnnemi.InvokeEnnemiRemoveAttack();
+        eventEnnemi.InvokeEnnemiShowAttack();
 
         if (statsPlayer.GetPV() <= 0 )
         {
