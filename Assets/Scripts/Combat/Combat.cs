@@ -13,7 +13,7 @@ public class Combat : MonoBehaviour
 
     [SerializeField] private int index;
     [SerializeField] private GameObject bouton;
-    [SerializeField] private EnnemiManager ennemiManager;
+
     [SerializeField] private SoNbrOfPiecePlayed piecePlayed;
     [SerializeField] private SOEventGridManager eventGridManager;
     [SerializeField] private PieceHealthManager pieceHealthManager;
@@ -43,6 +43,7 @@ public class Combat : MonoBehaviour
     {
         
         bouton.SetActive(true);
+        eventEnnemi.InvokeGenerateEnnemi();
         ennemiManager.GenerateEnnemi(NbrOfCombat);
         ennemiManager.ShowAtk();
         eventEnnemi.InvokeNewEnnemi();

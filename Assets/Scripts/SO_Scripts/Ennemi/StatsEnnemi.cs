@@ -12,6 +12,7 @@ public class StatsEnnemi : ScriptableObject
     public Sprite sprite;
     public List<EnnemiAttack> ennemiAttacks;
     public SOEventEnnemy ennemyEvent;
+    private int actualAtkDamage;
 
 
     [Header("Average hp an ennemy has for the first ennemi ")]
