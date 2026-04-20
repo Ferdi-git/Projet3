@@ -111,7 +111,7 @@ public class Combat : MonoBehaviour
     {
         int indexPieceDamaged = 0;
         yield return null;
-        int zoneCount = ennemiManager.GetAtkZoneNbr();
+        int zoneCount = statsEnnemi.actualAtkZoneNbr;
         print("Nombre de case que prend l'attque : " + zoneCount);
         for (int i = 0; i < soBoard.boardPieces.Count; i++)
         {
@@ -122,12 +122,12 @@ public class Combat : MonoBehaviour
 
                 zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
                 pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield, soBoard.boardPieces[i]);
-                pieceHealthManager.TakeDamage(ennemiManager.GetDamageValue() * soBoard.boardPieces[i].context.NbrCaseAtk);
+                pieceHealthManager.TakeDamage(statsEnnemi.actualAtkDamage * soBoard.boardPieces[i].context.NbrCaseAtk);
                 indexPieceDamaged++;
             }
         }
 
-        statsPlayer.InvokeTakeDamage(ennemiManager.GetDamageValue() * zoneCount); // degats que recoit le joueur 
+        statsPlayer.InvokeTakeDamage(statsEnnemi.actualAtkDamage * zoneCount); // degats que recoit le joueur 
                                                                                   //print ("Nombre de case qui vont touché le joueur : "+zoneCount);
                                                                                   //print("le joeur se prend " + ennemiManager.GetDamageValue() * zoneCount + " degats");
 
