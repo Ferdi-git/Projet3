@@ -148,6 +148,7 @@ public class GridManager : MonoBehaviour
             {
                 BoardPiece bp = GetBoardPiece(piece);
                 bp.context.NbrCaseAtk = 0;
+                bp.context.NbrCaseGenerateMana = 0;
             }
         }
     }
@@ -161,7 +162,7 @@ public class GridManager : MonoBehaviour
             {
                 BoardPiece bp = GetBoardPiece(piece);
                 SinglePieceSquare singlePieceSquare = gridSlots[i].GetSinglePieceOnIt();
-                if(singlePieceSquare.generateMana) bp.context.NbrCaseGenerateMana += 1;
+                if(singlePieceSquare != null && singlePieceSquare.generateMana) bp.context.NbrCaseGenerateMana += 1;
 
                 bp.context.NbrCaseAtk +=1;
             }
