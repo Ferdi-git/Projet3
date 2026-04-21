@@ -18877,6 +18877,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1869217450}
     - target: {fileID: 7559925344997589960, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
+      propertyPath: posMana
+      value: 
+      objectReference: {fileID: 2035586026}
+    - target: {fileID: 7559925344997589960, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
       propertyPath: glowAtkColor.a
       value: 1
       objectReference: {fileID: 0}

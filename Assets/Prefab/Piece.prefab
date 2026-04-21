@@ -685,6 +685,7 @@ MonoBehaviour:
   - {r: 0, g: 0.0001347491, b: 0.0009765625, a: 1}
   - {r: 0.00015327266, g: 0.00080151827, b: 0, a: 1}
   - {r: 0.0009765625, g: 0.00025292826, b: 0, a: 1}
+  - {r: 0.00064394495, g: 0, b: 0.000731465, a: 1}
   textHealth: {fileID: 5610723301339487969}
   textShield: {fileID: 252836312447747086}
   eventPieceHealth: {fileID: 11400000, guid: 6f12cea053413f84cb2c3d414fe38247, type: 2}
@@ -736,6 +737,7 @@ MonoBehaviour:
       NbrDeRepetition: 0
       voisins: []
       NbrCaseAtk: 0
+      NbrCaseGenerateMana: 0
   originalPos: {x: 0, y: 0, z: 0}
   originalRota: {x: 0, y: 0, z: 0, w: 0}
 --- !u!82 &7688367237008495115

@@ -156,6 +156,12 @@ public class PieceAnimations : MonoBehaviour
             case TypeAnim.takeDamage:
                 glowColor = glowColors[2] * intensityMultiplier;
                 break;
+            case TypeAnim.loseShield:
+                glowColor = glowColors[2] * intensityMultiplier;
+                break;
+            case TypeAnim.generateMana:
+                glowColor = glowColors[6] * intensityMultiplier;
+                break;
         }
         return glowColor;
     }
