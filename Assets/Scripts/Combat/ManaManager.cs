@@ -30,9 +30,6 @@ public class ManaManager : MonoBehaviour
     }
     private IEnumerator GetMana(VisuelAttakData data)
     {
-
-
-
         bool ended = false;
         Action trailEvent = () => ended = true;
 

@@ -6,10 +6,12 @@ public class GridSlot : MonoBehaviour
     public bool isAttacked;
 
     private GameObject pieceOnIt = null;
+    private SinglePieceSquare squareOnIt = null;
 
-    public void SetPiece(GameObject piece)
+    public void SetPiece(GameObject piece, SinglePieceSquare square)
     {
         pieceOnIt = piece;
+        squareOnIt = square;
         isFilled = piece != null;
     }
 
@@ -20,8 +22,8 @@ public class GridSlot : MonoBehaviour
     }
     public SinglePieceSquare GetSinglePieceOnIt()
     {
-        if (pieceOnIt == null) return null;
-        return pieceOnIt.GetComponent<SinglePieceSquare>();
+        if (squareOnIt == null) return null;
+        return squareOnIt;
     }
 
     public void ClearSlot()

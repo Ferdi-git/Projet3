@@ -692,6 +692,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 90b8cc6ddf833ea47891a408cd75ca13, type: 2}
     - target: {fileID: 5964070754701549770, guid: aec35c3ac3e4af1438857a89ff01adc1, type: 3}
+      propertyPath: eventVisuel
+      value: 
+      objectReference: {fileID: 11400000, guid: 5325d155160c43247a477c2e1cb72e16, type: 2}
+    - target: {fileID: 5964070754701549770, guid: aec35c3ac3e4af1438857a89ff01adc1, type: 3}
       propertyPath: ennemiManager
       value: 
       objectReference: {fileID: 7133017032517973888}

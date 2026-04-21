@@ -229,20 +229,6 @@ public class PieceAnimations : MonoBehaviour
 
             }
 
-
-            if (typeAnim == TypeAnim.generateMana)
-            {
-                bool ended = false;
-                Action trailEvent = () => ended = true;
-                visualEffect.InvokeEffectGainMana(new VisuelAttakData()
-                {
-                    posAttacker = transform.position,
-                    eventEndVisuel = trailEvent,
-                });
-                yield return new WaitUntil(() => ended);
-
-            }
-
             if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield || typeAnim == TypeAnim.loseShield) RefreshHealth(null);
         }
     }

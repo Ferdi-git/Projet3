@@ -76,7 +76,7 @@ public class PieceInfo : MonoBehaviour
             foreach (var hit in Physics2D.OverlapPointAll(c.transform.position, gridLayer))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
-                if (slot != null) { slot.SetPiece(gameObject); break; }
+                if (slot != null) { slot.SetPiece(gameObject,c); break; }
             }
         }
     }
@@ -108,7 +108,7 @@ public class PieceInfo : MonoBehaviour
             foreach (var hit in Physics2D.OverlapPointAll(c.transform.position, gridLayer))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
-                if (slot != null && !slot.isFilled) { slot.SetPiece(gameObject); break; }
+                if (slot != null && !slot.isFilled) { slot.SetPiece(gameObject, c); break; }
             }
         }
         float randStartPitch = Random.Range(1.0f, 1.2f);
