@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: DamageToEnemyAndItselfPiece
+  m_Name: DmgIfNoShieldPiece
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 10
-  prefab: {fileID: 6891005454971826096, guid: 8ccc6e448a89a3d48948dbc5cb0f94b6, type: 3}
+  healthPoint: 12
+  prefab: {fileID: 6891005454971826096, guid: 901f6225d4481b7488314c367bdfdc70, type: 3}
   image: {fileID: 0}
   pieceEffet:
-    condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
-    effet: {fileID: 11400000, guid: 876059b14fcfa52478625bd12672fef1, type: 2}
-  ConditionValues: 
-  EfectValues: 0c00000003000000
+    condition: {fileID: 11400000, guid: 194304bd63c75b74cae513881df8b2d8, type: 2}
+    effet: {fileID: 11400000, guid: e004bb3741ec5874b8e2de6c2a6f968d, type: 2}
+  ConditionValues: 00000000
+  EfectValues: 0a000000
   colors: 00000000
-  description: Deals 12 DMG to enemy + 3 to itself
+  description: 10 DMG if no shield on this piece
   isRepetition: 0
   numberManaGeneratingPerSquare: 5
