@@ -2263,9 +2263,17 @@ MonoBehaviour:
   prefabPieceChoice: {fileID: 6678205868758961975, guid: ceafefff25e44384eb0904b2acdacf08, type: 3}
   eventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   difPieces:
+  - {fileID: 11400000, guid: b46b92ac86623c54cb96c27b8ef4e45e, type: 2}
+  - {fileID: 11400000, guid: 522d010f1bd54684796b8fa7431e901c, type: 2}
+  - {fileID: 11400000, guid: 54d09e08201ba554a86e903852491b9f, type: 2}
   - {fileID: 11400000, guid: 24c2cd378a7b7dc489f9e61b3469da98, type: 2}
-  - {fileID: 11400000, guid: 381c9b692b9631c4291d9348615745d1, type: 2}
-  - {fileID: 11400000, guid: 49dff495c5f257a43814fb73e5f4e874, type: 2}
+  - {fileID: 11400000, guid: d2e4586d726f3144d988a55e50f38487, type: 2}
+  - {fileID: 11400000, guid: 9646679a75615d1418dd43c784f04a61, type: 2}
+  - {fileID: 11400000, guid: 7a88a5bd8dccdaf48ab6ed5ad709b67d, type: 2}
+  - {fileID: 11400000, guid: 05948a97e6d532847aedda4142754644, type: 2}
+  - {fileID: 11400000, guid: a0b4b01ba95543842bd735be75d069c7, type: 2}
+  - {fileID: 11400000, guid: 5c549e0563848cf44807d11f488c4631, type: 2}
+  - {fileID: 11400000, guid: 34b5a81c1de55714e949e2c55bcfb5f5, type: 2}
   lastGeneratedPiece: {fileID: 0}
   shopManager: {fileID: 915716990}
 --- !u!114 &393186206
