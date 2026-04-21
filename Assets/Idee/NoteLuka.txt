@@ -1,12 +1,5 @@
 
-Inventaire
-
-
-
 sound pick up piece
-
-- a faire fix les hp 
-- bug deuxieme ouverture du shop 
 
 
 si une ligne compléter avec la meme couleur : BONUS 
@@ -22,9 +15,7 @@ list truc à faire long terme :
 - musique (par thomas ) 
 - effet diff d'ennemi sur la grille 
 - autre evenement de shop 
-- reroll system
 - pouvoir perdre/gagner
-- pouvoir reset une partie 
 - road map 
 - pouvoir augmenter la grille
 
