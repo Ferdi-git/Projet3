@@ -15,6 +15,12 @@ public class StatsPlayer : ScriptableObject
 
     public SOEventPlayer player;
 
+    public void InvokeStartPVSet()
+    {
+        pv = pvMax;
+        mana = 0;
+        shield = 0;
+    }
     
     public void InvokeGainPV(int amount ) 
     {

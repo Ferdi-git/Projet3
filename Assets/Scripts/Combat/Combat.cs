@@ -40,6 +40,7 @@ public class Combat : MonoBehaviour
     private void Start()
     {
         NbrOfCombat = 0;
+        statsPlayer.InvokeStartPVSet();
     }
 
     public void StartCombat ()
