@@ -54,10 +54,19 @@ public class Combat : MonoBehaviour
         eventGridManager.InvokeActualiseBoard();
         piecePlayed.ResetInt();
         index = 0;
-        if (index >= soBoard.boardPieces.Count)
+        if (index >= soBoard.boardPieces.Count )
         {
-            StartCoroutine(EnnemiTurn());
-            return;
+            if (statsEnnemi.GetPV() > 0)
+            {
+                StartCoroutine(EnnemiTurn());
+                return;
+            }
+            else
+            {
+                StartCoroutine(ResoudreTurn());
+                return;
+            }
+            
         }
         StartCoroutine(PlayerTurn(0));
     }
@@ -65,11 +74,20 @@ public class Combat : MonoBehaviour
     public void NextPiece ()
     {
         index++;
-        if (index >= soBoard.boardPieces.Count)
+        if (index >= soBoard.boardPieces.Count  )
         {
-            StartCoroutine(EnnemiTurn());
+            if (statsEnnemi.GetPV() > 0)
+            {
+                StartCoroutine(EnnemiTurn());
+                return;
+            }
+            else
+            {
+                StartCoroutine(ResoudreTurn());
+                return;
+            }
 
-            return;
+            
         }
         StartCoroutine(PlayerTurn(index));
     }

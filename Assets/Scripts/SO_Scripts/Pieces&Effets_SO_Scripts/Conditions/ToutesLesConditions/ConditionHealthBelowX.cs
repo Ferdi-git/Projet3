@@ -7,7 +7,7 @@ public class ConditionHealthBelowX : SoCondition
 {
     public override bool Condition(ConditionOutput conditionOutput)
     {
-        if(conditionOutput.port.thisBoardPiece.healthPoint < conditionOutput.variableList[0])
+        if(conditionOutput.port.thisBoardPiece.healthPoint <= conditionOutput.variableList[0])
         {
             return true;
         }
