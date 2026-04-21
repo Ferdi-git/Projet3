@@ -23,3 +23,4 @@ MonoBehaviour:
   colors: 0000000002000000
   description: Retrigger neighbouring pieces
   isRepetition: 1
+  numberManaGeneratingPerSquare: 5

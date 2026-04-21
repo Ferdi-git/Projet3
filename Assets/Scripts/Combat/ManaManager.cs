@@ -30,17 +30,34 @@ public class ManaManager : MonoBehaviour
     }
     private IEnumerator GetMana(VisuelAttakData data)
     {
+
+
+
         bool ended = false;
         Action trailEvent = () => ended = true;
+
         eventTrail.InvokeCreateTrail(new EventTrailData()
         {
             pos1 = data.posAttacker,
             pos2 = posMana.position,
             height = 1,
-            trailTime = 0.15f - 0.005f ,
+            trailTime = 0.15f,
             glowColor = glowManaColor,
             eventEndTrail = trailEvent,
         });
+
+        for (int i = 0;  i < Mathf.Round(data.nbrDMG/5) ; i++)
+        {
+            eventTrail.InvokeCreateTrail(new EventTrailData()
+            {
+                pos1 = data.posAttacker,
+                pos2 = posMana.position,
+                height = UnityEngine.Random.Range(0.1f,1f) ,
+                trailTime = UnityEngine.Random.Range(0.7f, 0.14f),
+                glowColor = glowManaColor,
+            });
+        }
+
         yield return new WaitUntil(() => ended);
 
         data.eventEndVisuel.Invoke();
