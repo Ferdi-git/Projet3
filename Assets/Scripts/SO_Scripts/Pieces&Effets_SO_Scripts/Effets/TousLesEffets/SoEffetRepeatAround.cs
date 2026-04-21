@@ -12,8 +12,6 @@ public class SoEffetRepeatAround : SoEffet
         //yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic);
         BoardPiece piece = port.thisBoardPiece;
 
-        for(int n = 0; n < amount[0]; n++)
-        {
             for (int i = 0; i < context.voisins.Count; i++)
             {
                 BoardPiece voisin = context.voisins[i];
@@ -25,8 +23,6 @@ public class SoEffetRepeatAround : SoEffet
 
             }
             port.thisBoardPiece = piece;
-        }
-
     }
 
     public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour, BoardPiece declencheur)
@@ -35,8 +31,6 @@ public class SoEffetRepeatAround : SoEffet
 
         BoardPiece piece = port.thisBoardPiece;
 
-        for (int n = 0; n < amount[0]; n++)
-        {
             for (int i = 0; i < context.voisins.Count; i++)
             {
                 BoardPiece voisin = context.voisins[i];
@@ -49,7 +43,5 @@ public class SoEffetRepeatAround : SoEffet
 
             }
             port.thisBoardPiece = piece;
-        }
     }
-
 }
