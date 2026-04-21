@@ -75,7 +75,12 @@ public class OutputPort
         statsEnnemi.EnnemiTakeDamage(amount);
     }
 
+    //to this piece 
 
+    public void ThisPieceTakeDamage (int value)
+    {
+        thisBoardPiece.healthPoint -= value;
+    }
 
     
 }
