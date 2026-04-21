@@ -50,7 +50,7 @@ public class EnnemiManager : MonoBehaviour
     private void ShowAtk ()
     {
         atkIndex = Random.Range (0, stats.ennemiAttacks.Count);
-        uiManager.GiveEnnemiCurrentAtkIndex(atkIndex);
+        UIeventGiveAtk.InvokeGiveUICurrentAtk(atkIndex);
         soEventGridManager.InvokeSelectRandomSlot(stats.ennemiAttacks[atkIndex].zone);
         stats.actualAtkDamage = GetDamageValue();
         stats.actualAtkZoneNbr = GetAtkZoneNbr();
