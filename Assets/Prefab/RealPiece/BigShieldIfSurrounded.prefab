@@ -167,10 +167,6 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4797873549879812826, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
-      propertyPath: 'surroundingPoints.Array.data[4]'
-      value: 
-      objectReference: {fileID: 5489739630678654003}
-    - target: {fileID: 4797873549879812826, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: 'surroundingPoints.Array.data[5]'
       value: 
       objectReference: {fileID: 8395951619830243467}
@@ -203,10 +199,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8979906478314209522}
     - target: {fileID: 4797873549879812826, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
-      propertyPath: 'surroundingPoints.Array.data[13]'
-      value: 
-      objectReference: {fileID: 5489739630678654003}
-    - target: {fileID: 4797873549879812826, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: 'surroundingPoints.Array.data[14]'
       value: 
       objectReference: {fileID: 8395951619830243467}
@@ -236,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b46b92ac86623c54cb96c27b8ef4e45e, type: 2}
     - target: {fileID: 6445726352670952644, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: surroundingPoints.Array.size
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6445726352670952644, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: 'surroundingPoints.Array.data[0]'
@@ -265,11 +257,11 @@ PrefabInstance:
     - target: {fileID: 6445726352670952644, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: 'surroundingPoints.Array.data[6]'
       value: 
-      objectReference: {fileID: 5489739630678654003}
+      objectReference: {fileID: 8395951619830243467}
     - target: {fileID: 6445726352670952644, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: 'surroundingPoints.Array.data[7]'
       value: 
-      objectReference: {fileID: 8395951619830243467}
+      objectReference: {fileID: 3891200716214345363}
     - target: {fileID: 6445726352670952644, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: 'surroundingPoints.Array.data[8]'
       value: 
@@ -327,13 +319,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7947245838001193707, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5158268045553575306, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       insertIndex: 4
       addedObject: {fileID: 1036726349519935602}
     - targetCorrespondingSourceObject: {fileID: 5158268045553575306, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
-      insertIndex: 7
+      insertIndex: 6
       addedObject: {fileID: 8195379243570886217}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
@@ -360,11 +353,6 @@ Transform:
 --- !u!4 &5229300848173565087 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2840823185506993328, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
-  m_PrefabInstance: {fileID: 8070051171674243119}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5489739630678654003 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2581105552711121948, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
   m_PrefabInstance: {fileID: 8070051171674243119}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8395951619830243467 stripped

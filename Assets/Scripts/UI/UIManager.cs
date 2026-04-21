@@ -1,5 +1,7 @@
 using TMPro;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -19,6 +21,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ennemiAtktext;
     [SerializeField] private SOEventUpdateUI updateEvent;
     [SerializeField] private SOEventGiveUICurrentAtk GiveUICurrentAtk;
+    [SerializeField] private SOEventGridManager gridManager;
 
     
     private void OnEnable()
@@ -145,5 +148,62 @@ public class UIManager : MonoBehaviour
     public void GiveEnnemiCurrentAtkIndex (int index)
     {
         ennemiAtktext.text = statsEnnemi.ennemiAttacks[index].damage.ToString();
+    }
+
+
+    // fonction du menu 
+
+    [SerializeField] private GameObject EchapMenu;
+    private bool isOpen;
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            OpenEchapMenu();
+        }
+    }
+    private void Start()
+    {
+        isOpen = false;
+        Time.timeScale = 1.0f;
+        EchapMenu.SetActive(false);
+    }
+    public void OpenEchapMenu ()
+    {
+        if (!isOpen)
+        {
+            gridManager.InvokeSetAllPieceCanMove(false);
+            EchapMenu.SetActive(true);
+            Time.timeScale = 0f;
+            isOpen = true;
+        }
+        else
+        {
+            gridManager.InvokeSetAllPieceCanMove(true);
+            EchapMenu.SetActive(false);
+            Time.timeScale = 1f;
+            isOpen = false;
+        }
+        
+    }
+    public void ResumeButton()
+    {
+        gridManager.InvokeSetAllPieceCanMove(true);
+        Time.timeScale = 1.0f;
+        EchapMenu.SetActive(false);
+    }
+    public void ResetButton()
+    {
+        gridManager.InvokeSetAllPieceCanMove(true);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(1);
+    }
+    public void QuitButton ()
+    {
+        gridManager.InvokeSetAllPieceCanMove(true);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 }
