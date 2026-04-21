@@ -2503,6 +2503,10 @@ PrefabInstance:
       propertyPath: GenerateMana
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9021910398024685937, guid: e7c2efe06bb45ef4c8972e5ec0070276, type: 3}
+      propertyPath: generateMana
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
