@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Combat : MonoBehaviour
 {
@@ -18,6 +20,7 @@ public class Combat : MonoBehaviour
     [SerializeField] private SOEventGridManager eventGridManager;
     [SerializeField] private PieceHealthManager pieceHealthManager;
     [SerializeField] private SOEventEnnemy eventEnnemi;
+    [SerializeField] private SOEventVisuelEffect eventVisuel;
 
     [SerializeField] private SOEventState eventState;
 
@@ -54,10 +57,19 @@ public class Combat : MonoBehaviour
         eventGridManager.InvokeActualiseBoard();
         piecePlayed.ResetInt();
         index = 0;
-        if (index >= soBoard.boardPieces.Count)
+        if (index >= soBoard.boardPieces.Count )
         {
-            StartCoroutine(EnnemiTurn());
-            return;
+            if (statsEnnemi.GetPV() > 0)
+            {
+                StartCoroutine(EnnemiTurn());
+                return;
+            }
+            else
+            {
+                StartCoroutine(ResoudreTurn());
+                return;
+            }
+            
         }
         StartCoroutine(PlayerTurn(0));
     }
@@ -65,11 +77,20 @@ public class Combat : MonoBehaviour
     public void NextPiece ()
     {
         index++;
-        if (index >= soBoard.boardPieces.Count)
+        if (index >= soBoard.boardPieces.Count  )
         {
-            StartCoroutine(EnnemiTurn());
+            if (statsEnnemi.GetPV() > 0)
+            {
+                StartCoroutine(EnnemiTurn());
+                return;
+            }
+            else
+            {
+                StartCoroutine(ResoudreTurn());
+                return;
+            }
 
-            return;
+            
         }
         StartCoroutine(PlayerTurn(index));
     }
@@ -110,6 +131,7 @@ public class Combat : MonoBehaviour
     IEnumerator EnnemiTurn()
     {
         int indexPieceDamaged = 0;
+        int indexPieceMana = 0;
         yield return null;
         int zoneCount = statsEnnemi.actualAtkZoneNbr;
         print("Nombre de case que prend l'attque : " + zoneCount);
@@ -125,6 +147,26 @@ public class Combat : MonoBehaviour
                 pieceHealthManager.TakeDamage(statsEnnemi.actualAtkDamage * soBoard.boardPieces[i].context.NbrCaseAtk);
                 indexPieceDamaged++;
             }
+
+
+            if (soBoard.boardPieces[i].context.NbrCaseGenerateMana != 0)
+            {
+                bool ended = false;
+                Action trailEvent = () => ended = true;
+                eventVisuel.InvokeEffectGainMana(new VisuelAttakData
+                {
+                    nbrDMG = soBoard.boardPieces[i].context.NbrCaseGenerateMana,
+                    posAttacker = soBoard.boardPieces[i].pieceInfo.transform.position,
+                    eventEndVisuel = trailEvent
+                });
+
+                yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(indexPieceMana, PieceAnimations.TypeAnim.generateMana, null);
+                yield return new WaitUntil(() => ended);
+
+                indexPieceMana++;
+            }
+
+
         }
 
         statsPlayer.InvokeTakeDamage(statsEnnemi.actualAtkDamage * zoneCount); // degats que recoit le joueur 

@@ -8,7 +8,8 @@ public class EnnemiManager : MonoBehaviour
     [SerializeField] private GameObject ennemiUI;
     [SerializeField] private KeepEnnemiSo ennemiList;
     [SerializeField] private SOEventGridManager soEventGridManager;
-    [SerializeField] private UIManager uiManager;
+    [SerializeField] private SOEventGiveUICurrentAtk UIeventGiveAtk;
+    [SerializeField] private SOEventUpdateUI UIeventUpdateUI;
     private int index;
     private int atkIndex;
 
@@ -41,15 +42,15 @@ public class EnnemiManager : MonoBehaviour
         stats.ennemiName = ennemiList.ennemiList [index].Name;
         stats.sprite = ennemiList.ennemiList[index].sprite;
         stats.ennemiAttacks = ennemiList.ennemiList[index].attacks;
-        uiManager.GiveEnnemiCurrentAtkIndex(0);
-        uiManager.UpdateUI();
+        UIeventGiveAtk.InvokeGiveUICurrentAtk(0);
+        UIeventUpdateUI.InvokeUpdateUI();
         
     }
 
     private void ShowAtk ()
     {
         atkIndex = Random.Range (0, stats.ennemiAttacks.Count);
-        uiManager.GiveEnnemiCurrentAtkIndex(atkIndex);
+        UIeventGiveAtk.InvokeGiveUICurrentAtk(atkIndex);
         soEventGridManager.InvokeSelectRandomSlot(stats.ennemiAttacks[atkIndex].zone);
         stats.actualAtkDamage = GetDamageValue();
         stats.actualAtkZoneNbr = GetAtkZoneNbr();

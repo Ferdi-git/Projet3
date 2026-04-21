@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.Profiling.RawFrameDataView;
 
 public class GameManager : MonoBehaviour
 {
