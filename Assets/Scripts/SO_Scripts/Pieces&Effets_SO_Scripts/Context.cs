@@ -19,6 +19,6 @@ public class Context
     // script de stats ennemi 
 
     public List<BoardPiece> voisins;
-    public int NbrCaseAtk;
-    public int NbrCaseGenerateMana;
+    public int NbrCaseAtk =0 ;
+    public int NbrCaseGenerateMana =0;
 }
