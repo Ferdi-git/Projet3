@@ -2157,7 +2157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   GOOptionsMenu: {fileID: 646508945}
-  GOMainMenu: {fileID: 0}
+  GOMainMenu: {fileID: 704616050}
 --- !u!1 &2121618228
 GameObject:
   m_ObjectHideFlags: 0
