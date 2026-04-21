@@ -13,6 +13,8 @@ public class SoPieces : ScriptableObject
     public List<PieceColor> colors = new List<PieceColor> { PieceColor.Neutral};
     public string description;
     public bool isRepetition = false;
+    public int numberManaGeneratingPerSquare;
+
     public enum PieceColor
     {
         Neutral,
