@@ -20,4 +20,5 @@ public class Context
 
     public List<BoardPiece> voisins;
     public int NbrCaseAtk;
+    public int NbrCaseGenerateMana;
 }
