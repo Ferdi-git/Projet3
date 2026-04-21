@@ -1668,7 +1668,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6795669327933503709}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3656215804549012860}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: QuitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4036278663723922086
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,7 +2680,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 470272021321608548}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3656215804549012860}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ResetButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5373238741772158011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,7 +2813,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6157998445924928613}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3656215804549012860}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: ResumeButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5432700462104688560
 GameObject:
   m_ObjectHideFlags: 0
@@ -4593,6 +4629,8 @@ MonoBehaviour:
   ennemiAtktext: {fileID: 1572419561031799710}
   updateEvent: {fileID: 11400000, guid: 7334fa8df3aee1040b211d2589d35538, type: 2}
   GiveUICurrentAtk: {fileID: 11400000, guid: 079354ba08f53fe44a99a0e83a7d2f4a, type: 2}
+  gridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
+  EchapMenu: {fileID: 4383387437303404132}
 --- !u!1 &8578937169156560006
 GameObject:
   m_ObjectHideFlags: 0
