@@ -482,6 +482,7 @@ MonoBehaviour:
   eventTrail: {fileID: 11400000, guid: 1cf1097e7861b8045a90f19b5e70d8fc, type: 2}
   posMana: {fileID: 0}
   glowManaColor: {r: 47.9769, g: 0, b: 64, a: 1}
+  statsPlayer: {fileID: 11400000, guid: c3c8f1e3ded73a44496a15c33dcabb2f, type: 2}
 --- !u!4 &6477800204992030562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7282244886859130069, guid: 531c3b6c2c5fafd4eb09e2776c8b5a36, type: 3}

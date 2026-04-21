@@ -10,7 +10,7 @@ public class ManaManager : MonoBehaviour
     [SerializeField] SOEventTrail eventTrail;
     [SerializeField] Transform posMana;
     [SerializeField, ColorUsage(true, true)] Color glowManaColor;
-
+    [SerializeField] StatsPlayer statsPlayer;
 
     private void OnEnable()
     {
@@ -43,17 +43,26 @@ public class ManaManager : MonoBehaviour
             eventEndTrail = trailEvent,
         });
 
+        statsPlayer.InvokeGainMana(data.nbrDMG%5);
+
         for (int i = 0;  i < Mathf.Round(data.nbrDMG/5) ; i++)
         {
+            Action nulltrailEvent = () => ended = true;
+
+            yield return new WaitForSeconds(0.05f);
+            statsPlayer.InvokeGainMana(5);
             eventTrail.InvokeCreateTrail(new EventTrailData()
             {
                 pos1 = data.posAttacker,
                 pos2 = posMana.position,
                 height = UnityEngine.Random.Range(0.1f,1f) ,
-                trailTime = UnityEngine.Random.Range(0.7f, 0.14f),
+                trailTime = UnityEngine.Random.Range(0.07f, 0.14f),
                 glowColor = glowManaColor,
+                eventEndTrail=nulltrailEvent,
             });
+            
         }
+        yield return new WaitForSeconds(1f);
 
         yield return new WaitUntil(() => ended);
 

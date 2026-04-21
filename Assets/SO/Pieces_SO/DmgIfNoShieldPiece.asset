@@ -23,4 +23,4 @@ MonoBehaviour:
   colors: 00000000
   description: 10 DMG if no shield on this piece
   isRepetition: 0
-  numberManaGeneratingPerSquare: 5
+  numberManaGeneratingPerSquare: 50

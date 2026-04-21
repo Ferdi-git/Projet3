@@ -151,13 +151,13 @@ public class Combat : MonoBehaviour
 
             if (soBoard.boardPieces[i].context.NbrCaseGenerateMana != 0)
             {
-                statsPlayer.InvokeGainMana(soBoard.boardPieces[i].context.NbrCaseGenerateMana * soBoard.boardPieces[i].soPieces.numberManaGeneratingPerSquare);
-         
+                int nbrMana = soBoard.boardPieces[i].context.NbrCaseGenerateMana * soBoard.boardPieces[i].soPieces.numberManaGeneratingPerSquare;
+
                 bool ended = false;
                 Action trailEvent = () => ended = true;
                 eventVisuel.InvokeEffectGainMana(new VisuelAttakData
                 {
-                    nbrDMG = soBoard.boardPieces[i].context.NbrCaseGenerateMana,
+                    nbrDMG = nbrMana,
                     posAttacker = soBoard.boardPieces[i].pieceInfo.transform.position,
                     eventEndVisuel = trailEvent
                 });
