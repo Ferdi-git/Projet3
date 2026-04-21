@@ -110,6 +110,7 @@ public class Combat : MonoBehaviour
     IEnumerator EnnemiTurn()
     {
         int indexPieceDamaged = 0;
+        int indexPieceMana = 0;
         yield return null;
         int zoneCount = statsEnnemi.actualAtkZoneNbr;
         print("Nombre de case que prend l'attque : " + zoneCount);
@@ -125,6 +126,15 @@ public class Combat : MonoBehaviour
                 pieceHealthManager.TakeDamage(statsEnnemi.actualAtkDamage * soBoard.boardPieces[i].context.NbrCaseAtk);
                 indexPieceDamaged++;
             }
+
+
+            if (soBoard.boardPieces[i].context.NbrCaseGenerateMana != 0)
+            {
+                yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(indexPieceMana, PieceAnimations.TypeAnim.generateMana, null);
+                indexPieceMana++;
+            }
+
+
         }
 
         statsPlayer.InvokeTakeDamage(statsEnnemi.actualAtkDamage * zoneCount); // degats que recoit le joueur 

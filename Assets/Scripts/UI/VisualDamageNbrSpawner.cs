@@ -22,7 +22,6 @@ public class VisualDamageNbrSpawner : MonoBehaviour
     }
 
 
-    [Button]
     public void CreateVisual(int dmg)
     {
         float randFloat = Random.Range(0,4.5f) ;
