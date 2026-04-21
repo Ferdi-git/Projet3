@@ -18,6 +18,11 @@ public class GridSlot : MonoBehaviour
         if (pieceOnIt == null) return null;
         return pieceOnIt.GetComponent<PieceInfo>();
     }
+    public SinglePieceSquare GetSinglePieceOnIt()
+    {
+        if (pieceOnIt == null) return null;
+        return pieceOnIt.GetComponent<SinglePieceSquare>();
+    }
 
     public void ClearSlot()
     {

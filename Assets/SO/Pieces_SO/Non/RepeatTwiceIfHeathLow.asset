@@ -18,8 +18,8 @@ MonoBehaviour:
   pieceEffet:
     condition: {fileID: 11400000, guid: e0b5614fa8e494e428d469e61f759ec2, type: 2}
     effet: {fileID: 11400000, guid: 1cc1c1bb7f4c9004eb54c5bc1ed9bdd5, type: 2}
-  ConditionValues: 05000000
+  ConditionValues: 03000000
   EfectValues: 02000000
   colors: 00000000
-  description: Retrigger neighbouring pieces twice if health is below 5
-  isRepetition: 0
+  description: Retrigger neighbouring pieces twice if health is 3 or below
+  isRepetition: 1

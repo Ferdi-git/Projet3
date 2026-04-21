@@ -58,6 +58,9 @@ AtkManager :
 
 
 A faire : 
-	- Death Anim
+	- Case Mana 
+	- Info piece
+	- Visuel Piece overlap bug
 	- Visuel roadmap
-	- 
+	- Death Anim
+

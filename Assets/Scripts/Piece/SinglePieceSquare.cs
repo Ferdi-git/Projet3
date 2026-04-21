@@ -6,6 +6,8 @@ public class SinglePieceSquare : MonoBehaviour
     public ParticleSystem shieldParticule;
     public SpriteRenderer spriteRenderer;
     public GameObject shieldGO;
+    public bool generateMana = false;
+
     void Start()
     {
        spriteRenderer = GetComponent<SpriteRenderer>();

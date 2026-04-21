@@ -160,6 +160,9 @@ public class GridManager : MonoBehaviour
             if (piece != null && gridSlots[i].isAttacked)
             {
                 BoardPiece bp = GetBoardPiece(piece);
+                SinglePieceSquare singlePieceSquare = gridSlots[i].GetSinglePieceOnIt();
+                if(singlePieceSquare.generateMana) bp.context.NbrCaseGenerateMana += 1;
+
                 bp.context.NbrCaseAtk +=1;
             }
         }
