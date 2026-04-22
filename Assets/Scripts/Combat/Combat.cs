@@ -138,17 +138,6 @@ public class Combat : MonoBehaviour
         print("Nombre de case que prend l'attque : " + zoneCount);
         for (int i = 0; i < soBoard.boardPieces.Count; i++)
         {
-            if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
-            {
-                print("Nombre de case d'attaque sur la piece : " + soBoard.boardPieces[i].context.NbrCaseAtk);
-                yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(indexPieceDamaged, PieceAnimations.TypeAnim.takeDamage, null);
-
-                zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
-                pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield, soBoard.boardPieces[i]);
-                pieceHealthManager.TakeDamage(statsEnnemi.actualAtkDamage * soBoard.boardPieces[i].context.NbrCaseAtk);
-                indexPieceDamaged++;
-            }
-
 
             if (soBoard.boardPieces[i].context.NbrCaseGenerateMana != 0)
             {
@@ -169,6 +158,16 @@ public class Combat : MonoBehaviour
                 indexPieceMana++;
             }
 
+            if (soBoard.boardPieces[i].context.NbrCaseAtk != 0)
+            {
+                print("Nombre de case d'attaque sur la piece : " + soBoard.boardPieces[i].context.NbrCaseAtk);
+                yield return soBoard.boardPieces[i].pieceAnimation.PlayAnimations(indexPieceDamaged, PieceAnimations.TypeAnim.takeDamage, null);
+
+                zoneCount -= soBoard.boardPieces[i].context.NbrCaseAtk;
+                pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield, soBoard.boardPieces[i]);
+                pieceHealthManager.TakeDamage(statsEnnemi.actualAtkDamage * soBoard.boardPieces[i].context.NbrCaseAtk);
+                indexPieceDamaged++;
+            }
 
         }
 

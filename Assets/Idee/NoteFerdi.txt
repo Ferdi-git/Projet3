@@ -58,6 +58,9 @@ AtkManager :
 
 
 A faire : 
+	- Shop
+	- Feedback nbr
+	- FeedBack Repetition sactive en meme temps
 	- Case Mana 
 	- Info piece
 	- Visuel Piece overlap bug
