@@ -74,9 +74,14 @@ public class PieceInfoPanel : MonoBehaviour
 
     private void RefreshPanel()
     {
-        text.text = $"HP : {pieceInfo.currentBoardPiece.healthPoint}\n " +
-            $"Shield : {pieceInfo.currentBoardPiece.shield}\n" +
-            $"{pieceInfo.soPiece.description}";
+        string stringToShow = "";
+        stringToShow += $"HP : <color=green>{pieceInfo.currentBoardPiece.healthPoint}\n </color>";
+        if (pieceInfo.currentBoardPiece.shield !=0) 
+            stringToShow += $"Shield : <color=cyan>{pieceInfo.currentBoardPiece.shield}\n </color>";
+        stringToShow += $"\n<color=white>{pieceInfo.soPiece.description} </color>";
+
+
+        text.text = stringToShow;
     }
 
 }

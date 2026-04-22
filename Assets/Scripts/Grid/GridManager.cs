@@ -126,7 +126,7 @@ public class GridManager : MonoBehaviour
             }
         }
 
-        print(contextAutour.nbrCaseOccupe + contextAutour.nbrCaseLibre.ToString());
+        //print(contextAutour.nbrCaseOccupe + contextAutour.nbrCaseLibre.ToString());
 
 
         contextAutour.voisins = baseSortMode == SortMode.ByRow
