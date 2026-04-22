@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 2541746741467265722}
   - component: {fileID: 8838883886984605705}
   m_Layer: 0
-  m_Name: Atk 3
+  m_Name: Atk2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
