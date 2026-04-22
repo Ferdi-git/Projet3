@@ -11,7 +11,7 @@ public class SoEffetShieldAround : SoEffet
     {
         port.piecePlayed.PiecePlayedUp();
         BoardPiece piece = port.thisBoardPiece;
-        //yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic);
+        //yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic,null);
 
         for (int i = 0; i < context.voisins.Count; i++)
         {

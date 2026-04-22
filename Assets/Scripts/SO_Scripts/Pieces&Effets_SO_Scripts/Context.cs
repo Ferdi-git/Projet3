@@ -21,4 +21,6 @@ public class Context
     public List<BoardPiece> voisins;
     public int NbrCaseAtk =0 ;
     public int NbrCaseGenerateMana =0;
+
+    public ConditionOutput conditionOutput;
 }
