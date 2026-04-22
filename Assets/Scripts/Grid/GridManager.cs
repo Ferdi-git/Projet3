@@ -117,7 +117,7 @@ public class GridManager : MonoBehaviour
                     contextAutour.nbrCaseOccupe += 1;
 
                 }
-                else if(gridSlotVoisin != null || !gridSlotVoisin.GetPieceOnIt())
+                else if(gridSlotVoisin != null && !gridSlotVoisin.GetPieceOnIt())
                 {
                     contextAutour.nbrCaseLibre += 1;
 
