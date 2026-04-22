@@ -103,15 +103,15 @@ public class GridManager : MonoBehaviour
         {
             foreach (var hit in Physics2D.OverlapPointAll(piecePerso.GetSurroundingPoints()[i].transform.position))
             {
-                var voisinPiecePerso = hit.gameObject.GetComponent<PieceInfo>();
-                if (voisinPiecePerso != null)
+                var gridSlotVoisin = hit.gameObject.GetComponent<GridSlot>();
+                if (gridSlotVoisin != null && gridSlotVoisin.GetPieceOnIt())
                 {
                     contextAutour.nbrCaseOccupe += 1;
 
-                    if (!contextAutour.voisins.Contains(GetBoardPiece(voisinPiecePerso)))
-                        contextAutour.voisins.Add(GetBoardPiece(voisinPiecePerso));
+                    if (!contextAutour.voisins.Contains(GetBoardPiece(gridSlotVoisin.GetPieceOnIt())))
+                        contextAutour.voisins.Add(GetBoardPiece(gridSlotVoisin.GetPieceOnIt()));
                 }
-                else
+                else if (gridSlotVoisin != null && !gridSlotVoisin.GetPieceOnIt() )
                 {
                     contextAutour.nbrCaseLibre += 1;
                 }
