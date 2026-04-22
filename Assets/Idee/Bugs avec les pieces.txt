@@ -1,6 +1,6 @@
 Bugs avec les pieces :
 
-context.NbreDeRepetition, NbrPiecesAutour, NbrCaseLibre et NbreDeCasesLibres ne s'updatent pas
+context.NbreDeRepetition, NbrPiecesAutour et NbreDeCasesLibres ne s'updatent pas
 
 La piece damage if no shield effectue des dégâts lorsque qu'elle est répétée malgré qu'elle ai gagné des shield entre les deux activation 
 (activation 1 : 0 shield --> fait son attaque, 
