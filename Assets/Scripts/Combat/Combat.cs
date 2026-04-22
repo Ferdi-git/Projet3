@@ -116,10 +116,10 @@ public class Combat : MonoBehaviour
         conditionOutput.port = port;
         conditionOutput.context = soBoard.boardPieces[i].context;
         conditionOutput.variableList = piece.ConditionValues;
-
+        
         if (piece.pieceEffet.condition.Condition(conditionOutput))
         {
-            
+            soBoard.boardPieces[i].context.conditionOutput = conditionOutput;
             yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValues , i);
             
         }
