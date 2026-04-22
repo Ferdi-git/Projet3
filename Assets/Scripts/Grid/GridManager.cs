@@ -111,7 +111,10 @@ public class GridManager : MonoBehaviour
                     if (!contextAutour.voisins.Contains(GetBoardPiece(voisinPiecePerso)))
                         contextAutour.voisins.Add(GetBoardPiece(voisinPiecePerso));
                 }
-                else contextAutour.nbrCaseLibre += 1;
+                else
+                {
+                    contextAutour.nbrCaseLibre += 1;
+                }
 
             }
         }
