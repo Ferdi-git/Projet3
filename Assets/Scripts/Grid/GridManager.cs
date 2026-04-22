@@ -106,15 +106,23 @@ public class GridManager : MonoBehaviour
                 var gridSlotVoisin = hit.gameObject.GetComponent<GridSlot>();
                 if (gridSlotVoisin != null && gridSlotVoisin.GetPieceOnIt())
                 {
-                    contextAutour.nbrCaseOccupe += 1;
 
                     if (!contextAutour.voisins.Contains(GetBoardPiece(gridSlotVoisin.GetPieceOnIt())))
                         contextAutour.voisins.Add(GetBoardPiece(gridSlotVoisin.GetPieceOnIt()));
                 }
-                else if (gridSlotVoisin != null && !gridSlotVoisin.GetPieceOnIt() )
+
+
+                if ((gridSlotVoisin != null && gridSlotVoisin.GetPieceOnIt()) || gridSlotVoisin == null)
+                {
+                    contextAutour.nbrCaseOccupe += 1;
+
+                }
+                else if(gridSlotVoisin != null || !gridSlotVoisin.GetPieceOnIt())
                 {
                     contextAutour.nbrCaseLibre += 1;
+
                 }
+
 
             }
         }
