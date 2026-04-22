@@ -101,31 +101,33 @@ public class GridManager : MonoBehaviour
         ContextAutour contextAutour =  new ContextAutour();
         for (int i = 0; i < piecePerso.GetSurroundingPoints().Length; i++)
         {
-            foreach (var hit in Physics2D.OverlapPointAll(piecePerso.GetSurroundingPoints()[i].transform.position))
+            var hits = Physics2D.OverlapPointAll(piecePerso.GetSurroundingPoints()[i].transform.position);
+
+            if (hits.Length == 0)
+            {
+                contextAutour.nbrCaseOccupe += 1;
+                continue;
+            }
+
+            foreach (var hit in hits)
             {
                 var gridSlotVoisin = hit.gameObject.GetComponent<GridSlot>();
                 if (gridSlotVoisin != null && gridSlotVoisin.GetPieceOnIt())
                 {
-
                     if (!contextAutour.voisins.Contains(GetBoardPiece(gridSlotVoisin.GetPieceOnIt())))
                         contextAutour.voisins.Add(GetBoardPiece(gridSlotVoisin.GetPieceOnIt()));
-                }
 
-
-                if ((gridSlotVoisin != null && gridSlotVoisin.GetPieceOnIt()) || gridSlotVoisin == null)
-                {
                     contextAutour.nbrCaseOccupe += 1;
-
                 }
-                else if(gridSlotVoisin != null && !gridSlotVoisin.GetPieceOnIt())
+                else if (gridSlotVoisin != null && !gridSlotVoisin.GetPieceOnIt())
                 {
                     contextAutour.nbrCaseLibre += 1;
-
                 }
-
-
             }
         }
+
+        print(contextAutour.nbrCaseOccupe + contextAutour.nbrCaseLibre.ToString());
+
 
         contextAutour.voisins = baseSortMode == SortMode.ByRow
       ? contextAutour.voisins.OrderBy(p => -p.pieceInfo.transform.position.y).ThenBy(p => p.pieceInfo.transform.position.x).ToList()
