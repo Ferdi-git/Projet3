@@ -738,6 +738,50 @@ MonoBehaviour:
       voisins: []
       NbrCaseAtk: 0
       NbrCaseGenerateMana: 0
+      conditionOutput:
+        context:
+          Tour: 0
+          NbrPiecesAutour: 0
+          NbrCaseLibre: 0
+          NbrCaseOccupe: 0
+          NbrDeRepetition: 0
+          voisins: []
+          NbrCaseAtk: 0
+          NbrCaseGenerateMana: 0
+          conditionOutput:
+            context:
+              Tour: 0
+              NbrPiecesAutour: 0
+              NbrCaseLibre: 0
+              NbrCaseOccupe: 0
+              NbrDeRepetition: 0
+              voisins: []
+              NbrCaseAtk: 0
+              NbrCaseGenerateMana: 0
+              conditionOutput:
+                context:
+                  Tour: 0
+                  NbrPiecesAutour: 0
+                  NbrCaseLibre: 0
+                  NbrCaseOccupe: 0
+                  NbrDeRepetition: 0
+                  voisins: []
+                  NbrCaseAtk: 0
+                  NbrCaseGenerateMana: 0
+                  conditionOutput:
+                    context:
+                      Tour: 0
+                      NbrPiecesAutour: 0
+                      NbrCaseLibre: 0
+                      NbrCaseOccupe: 0
+                      NbrDeRepetition: 0
+                      voisins: []
+                      NbrCaseAtk: 0
+                      NbrCaseGenerateMana: 0
+                    variableList: 
+                variableList: 
+            variableList: 
+        variableList: 
   originalPos: {x: 0, y: 0, z: 0}
   originalRota: {x: 0, y: 0, z: 0, w: 0}
 --- !u!82 &7688367237008495115
@@ -1239,7 +1283,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 0.82, y: 0.82, z: 0.82}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7084960957256241923}

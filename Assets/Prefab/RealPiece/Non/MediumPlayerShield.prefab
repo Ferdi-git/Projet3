@@ -158,7 +158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3176287934314892151, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: m_Name
-      value: MediumShield
+      value: MediumPlayerShield
       objectReference: {fileID: 0}
     - target: {fileID: 3463587272074752591, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x

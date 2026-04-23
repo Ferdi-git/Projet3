@@ -13120,9 +13120,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2609627099035167010, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7075472
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609627099035167010, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.15686187
+      objectReference: {fileID: 0}
+    - target: {fileID: 2609627099035167010, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.19089817
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814616550031329564, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7075472
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814616550031329564, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.15686187
+      objectReference: {fileID: 0}
+    - target: {fileID: 4814616550031329564, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.19089817
+      objectReference: {fileID: 0}
     - target: {fileID: 6250929826989661692, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
       propertyPath: m_Name
       value: ShieldAround
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720629021559136664, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7075472
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720629021559136664, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.15686187
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720629021559136664, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
+      propertyPath: m_Color.r
+      value: 0.19089817
       objectReference: {fileID: 0}
     - target: {fileID: 8730777403647496837, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
       propertyPath: m_fontColor32.rgba
