@@ -39,6 +39,7 @@ public class Combat : MonoBehaviour
 
     private void Start()
     {
+        piecePlayed.ResetInt();
         NbrOfCombat = 0;
         statsPlayer.InvokeStartPVSet();
     }
@@ -57,6 +58,13 @@ public class Combat : MonoBehaviour
         eventGridManager.InvokeSetAllPieceCanMove(false);
         eventGridManager.InvokeActualiseBoard();
         piecePlayed.ResetInt();
+
+        for ( int i = 0;i < soBoard.boardPieces.Count; i++)
+        {
+            soBoard.boardPieces[i].context.NbrDeRepetition = 0;
+        }
+
+
         index = 0;
         if (index >= soBoard.boardPieces.Count )
         {
@@ -183,6 +191,11 @@ public class Combat : MonoBehaviour
 
 
         yield return StartCoroutine(RemoveAllShields());
+        piecePlayed.ResetInt();
+        for (int i = 0; i < soBoard.boardPieces.Count; i++)
+        {
+            soBoard.boardPieces[i].context.NbrDeRepetition = 0;
+        }
         //check si des pieces sont mortes 
         //enlever bouclier aux pieces (mettre bouclier dans boardpiece)
         //print("test");

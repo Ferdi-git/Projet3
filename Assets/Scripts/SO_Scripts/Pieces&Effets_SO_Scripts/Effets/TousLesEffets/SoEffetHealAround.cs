@@ -21,7 +21,7 @@ public class SoEffetHealAround : SoEffet
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.heal, piece);
         }
         port.thisBoardPiece = piece;
-
+        context.NbrDeRepetition += 1;
     }
     public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour, BoardPiece declencheur)
     {
@@ -37,7 +37,7 @@ public class SoEffetHealAround : SoEffet
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.heal, piece);
         }
         port.thisBoardPiece = piece;
-
+        context.NbrDeRepetition += 1;
     }
 
 }

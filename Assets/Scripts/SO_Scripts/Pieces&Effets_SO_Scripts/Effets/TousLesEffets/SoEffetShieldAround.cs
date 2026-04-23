@@ -22,7 +22,7 @@ public class SoEffetShieldAround : SoEffet
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
         }
         port.thisBoardPiece = piece;
-
+        context.NbrDeRepetition += 1;
     }
     public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour, BoardPiece declencheur)
     {
@@ -40,6 +40,7 @@ public class SoEffetShieldAround : SoEffet
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield , piece);
         }
         port.thisBoardPiece = piece;
+        context.NbrDeRepetition += 1;
 
     }
 
