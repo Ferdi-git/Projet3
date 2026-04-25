@@ -14,5 +14,7 @@ public class EventVisualNbrData
     public Vector3 spawnPoint;
     public int nbr;
     public Color color;
+    public bool isPositive = true;
+
 
 }

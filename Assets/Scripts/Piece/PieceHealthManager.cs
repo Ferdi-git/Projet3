@@ -34,9 +34,9 @@ public class PieceHealthManager : ScriptableObject
         {
             if (shield < damage)
             {
+                ShieldBreak(shield);
                 hp -= damage - shield;
                 shield = 0;
-                ShieldBreak(damage);
                 if (hp <= 0)
                 {
                     hp = 0;
@@ -51,7 +51,7 @@ public class PieceHealthManager : ScriptableObject
             else
             {
                 shield -= damage;
-                LooseHp(damage);
+                ShieldBreak(damage);
             }
            
         }

@@ -28,8 +28,9 @@ public class VisualDamageNbrSpawner : MonoBehaviour
 
 
         DataUIVisuel dataUIVisuel = new DataUIVisuel();
-        dataUIVisuel.textColor = Color.red;
-        dataUIVisuel.nbr = data.nbr;
+        dataUIVisuel.textColor = data.color;
+        dataUIVisuel.text = data.isPositive ? data.nbr.ToString() : "-" + data.nbr.ToString();
+
 
 
         newSingle.GetComponent<SingleNbrDamageVisuel>().Initialise(dataUIVisuel);    

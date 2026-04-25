@@ -13,8 +13,8 @@ public class SingleNbrDamageVisuel : MonoBehaviour
     public void Initialise(DataUIVisuel data)
     {
         mainText.color = data.textColor;
-        mainText.text = data.nbr.ToString();
-        outlineText.text = data.nbr.ToString();
+        mainText.text = data.text;
+        outlineText.text = data.text;
         StartAnim();
     }
 
@@ -39,6 +39,6 @@ public class SingleNbrDamageVisuel : MonoBehaviour
 
 public class DataUIVisuel
 {
-    public int nbr;
+    public string text;
     public Color textColor;
 }

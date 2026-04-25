@@ -11,6 +11,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using UnityEngine.VFX;
 using static PieceAnimations;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PieceAnimations : MonoBehaviour
 {
@@ -315,7 +316,10 @@ public class PieceAnimations : MonoBehaviour
         EventVisualNbrData visualNbrData = new EventVisualNbrData();
         visualNbrData.nbr = nbr;
         visualNbrData.color = Color.red;
-        visualNbrData.spawnPoint = transform.position;
+        visualNbrData.isPositive = false;
+
+        float randX = UnityEngine.Random.Range(0f, 1f);
+        visualNbrData.spawnPoint = new Vector2(transform.position.x + randX, transform.position.y + randX);
 
         eventVisualNumber.InvokeCreateVisualNumber(visualNbrData);
         RefreshHealth(piece);
@@ -327,8 +331,10 @@ public class PieceAnimations : MonoBehaviour
 
         EventVisualNbrData visualNbrData = new EventVisualNbrData();
         visualNbrData.nbr = nbr;
-        visualNbrData.color = Color.blue;
-        visualNbrData.spawnPoint = transform.position;
+        visualNbrData.color = Color.cyan;
+        visualNbrData.isPositive = false;
+        float randX = UnityEngine.Random.Range(0f, 1f);
+        visualNbrData.spawnPoint = new Vector2(transform.position.x + randX, transform.position.y+ randX+0.75f);
 
         eventVisualNumber.InvokeCreateVisualNumber(visualNbrData);
         RefreshHealth(piece);
