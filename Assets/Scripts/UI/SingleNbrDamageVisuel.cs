@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class SingleNbrDamageVisuel : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI mainText;
-    [SerializeField] TextMeshProUGUI outlineText;
+    [SerializeField] TextMeshPro mainText;
+    [SerializeField] TextMeshPro outlineText;
     Vector3 baseScale;
 
 

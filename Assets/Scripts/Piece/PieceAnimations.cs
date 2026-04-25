@@ -41,16 +41,21 @@ public class PieceAnimations : MonoBehaviour
     [Header("---Events")]
     [SerializeField] SOEventPieceHealth eventPieceHealth;
     [SerializeField] SOEventTrail eventTrail;
+    [SerializeField] SOEventVisualNumber eventVisualNumber;
     [SerializeField] SOEventVisuelEffect visualEffect;
 
 
     private void OnEnable()
-    {
-        eventPieceHealth.PieceTakeDamage += RefreshHealth;
+    { 
+        eventPieceHealth.PieceTakeDamage += PieceTakeDamage;
+        eventPieceHealth.PieceShieldBreak += PieceLooseShield;
+        //eventPieceHealth.PieceDie += PieceTakeDamage;
     }
     private void OnDisable()
     {
-        eventPieceHealth.PieceTakeDamage -= RefreshHealth;
+        eventPieceHealth.PieceTakeDamage -= PieceTakeDamage;
+        eventPieceHealth.PieceShieldBreak -= PieceLooseShield;
+        //eventPieceHealth.PieceDie -= PieceTakeDamage;
     }
 
     private void Start()
@@ -303,13 +308,30 @@ public class PieceAnimations : MonoBehaviour
 
     }
 
-    public void PlayTakeDamageAnim()
+    public void PieceTakeDamage(BoardPiece piece, int nbr)
     {
+        if (piece != boardPiece) return;
 
+        EventVisualNbrData visualNbrData = new EventVisualNbrData();
+        visualNbrData.nbr = nbr;
+        visualNbrData.color = Color.red;
+        visualNbrData.spawnPoint = transform.position;
+
+        eventVisualNumber.InvokeCreateVisualNumber(visualNbrData);
+        RefreshHealth(piece);
     }
-    public void PlayLoseShieldAnim()
-    {
 
+    public void PieceLooseShield(BoardPiece piece, int nbr)
+    {
+        if (piece != boardPiece) return;
+
+        EventVisualNbrData visualNbrData = new EventVisualNbrData();
+        visualNbrData.nbr = nbr;
+        visualNbrData.color = Color.blue;
+        visualNbrData.spawnPoint = transform.position;
+
+        eventVisualNumber.InvokeCreateVisualNumber(visualNbrData);
+        RefreshHealth(piece);
     }
 
     public void RefreshHealth(BoardPiece piece)

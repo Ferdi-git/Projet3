@@ -3,11 +3,13 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class AttackManager : MonoBehaviour
+public class EnemyVisuelManager : MonoBehaviour
 {
 
     [SerializeField] SOEventVisuelEffect visuelEffect;
     [SerializeField] SOEventTrail eventTrail;
+    [SerializeField] SOEventVisualNumber eventNumbers;
+    [SerializeField] SOEventEnnemy statsEnnemi;
     [SerializeField] Transform posEnemy;
     [SerializeField, ColorUsage(true, true)] Color glowAtkColor;
 
@@ -16,12 +18,19 @@ public class AttackManager : MonoBehaviour
     {
         visuelEffect.EffectAtkEnemy += EnemyGetAttacked;
         visuelEffect.EffectEnemyDealAtk += EnemyAttack;
+
+        statsEnnemi.EnnemiLoosePV += EnnemiLoosePV;
+        statsEnnemi.EnnemiGainPV += EnnemiGainPV;
     }
 
     private void OnDisable()
     {
         visuelEffect.EffectAtkEnemy -= EnemyGetAttacked;
         visuelEffect.EffectEnemyDealAtk -= EnemyAttack;
+
+        statsEnnemi.EnnemiLoosePV -= EnnemiLoosePV;
+        statsEnnemi.EnnemiGainPV -= EnnemiGainPV;
+
 
     }
 
@@ -69,6 +78,26 @@ public class AttackManager : MonoBehaviour
         yield return new WaitUntil(() => ended);
 
         data.eventEndVisuel.Invoke();
+    }
+
+    private void EnnemiLoosePV(int nbr)
+    {
+        EventVisualNbrData newData = new EventVisualNbrData(); 
+        newData.nbr = nbr;
+        newData.spawnPoint = posEnemy.position;
+        newData.color = Color.red;
+        eventNumbers.InvokeCreateVisualNumber(newData);
+    }
+
+
+    private void EnnemiGainPV(int nbr)
+    {
+        EventVisualNbrData newData = new EventVisualNbrData();
+        newData.nbr = nbr;
+        newData.spawnPoint = posEnemy.position;
+        newData.color = Color.green;
+        eventNumbers.InvokeCreateVisualNumber(newData);
+
     }
 
 

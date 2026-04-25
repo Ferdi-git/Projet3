@@ -23,11 +23,11 @@ public class PieceHealthManager : ScriptableObject
             if (hp <= 0)
             {
                 hp = 0;
-                Dead();
+                Dead(damage);
             }
             else
             {
-                LooseHp();
+                LooseHp(damage);
             }
         }
         else
@@ -36,40 +36,40 @@ public class PieceHealthManager : ScriptableObject
             {
                 hp -= damage - shield;
                 shield = 0;
-                ShieldBreak();
+                ShieldBreak(damage);
                 if (hp <= 0)
                 {
                     hp = 0;
-                    Dead();
+                    Dead(damage);
                 }
                 else
                 {
-                    LooseHp();
+                    LooseHp(damage);
                 }
 
             }
             else
             {
                 shield -= damage;
-                LooseHp();
+                LooseHp(damage);
             }
            
         }
     }
 
-    public void LooseHp ()
+    public void LooseHp (int nbr)
     {
         ResetStatsPiece();
-        pieceHealthEvent.InvokeDamage(piece);
+        pieceHealthEvent.InvokeDamage(piece,nbr);
     }
 
-    public void ShieldBreak ()
+    public void ShieldBreak (int nbr)
     {
         ResetStatsPiece();
-        pieceHealthEvent.InvokeShieldBreak(piece);
+        pieceHealthEvent.InvokeShieldBreak(piece, nbr);
     }
 
-    public void Dead ()
+    public void Dead (int nbr)
     {
         ResetStatsPiece();
         pieceHealthEvent.InvokeDead(piece);
