@@ -4530,7 +4530,6 @@ MonoBehaviour:
   EnnemiSlider: {fileID: 8077106042500044576}
   ennemiSprite: {fileID: 2132746628681323921}
   ennemiName: {fileID: 3060703549758669363}
-  ennemiAtktext: {fileID: 0}
   updateEvent: {fileID: 11400000, guid: 7334fa8df3aee1040b211d2589d35538, type: 2}
   gridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   EchapMenu: {fileID: 4383387437303404132}
@@ -4620,7 +4619,7 @@ GameObject:
   - component: {fileID: 6136351389086692267}
   - component: {fileID: 7259102016508871636}
   m_Layer: 0
-  m_Name: Arrow
+  m_Name: Roadmap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -48,7 +48,7 @@ public class RoadMapVisualizer : MonoBehaviour
                 Vector3 oldPos = spriteRenderers[index].transform.position;
 
                 spriteRenderers[index].transform
-                    .DOMoveY(spriteRenderers[i].transform.position.y -0.5f, 0.7f)
+                    .DOMoveY(spriteRenderers[i].transform.position.y -1f, 0.7f)
                     .OnComplete(() =>
                     {
                         spriteRenderers[index].transform.position = oldPos;
