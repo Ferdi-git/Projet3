@@ -67,7 +67,7 @@ public class EnnemiManager : MonoBehaviour
 
     private int GetAtkZoneNbr ()
     {
-        return stats.ennemiAttacks[atkIndex].zone.gameObject.GetComponent<EnemyZoneAtk>().listPoints.Count;
+        return stats.ennemiAttacks[atkIndex].zone.gameObject.GetComponent<EnemyZoneAtk>().listSquareAtk.Count;
     }
 
 }

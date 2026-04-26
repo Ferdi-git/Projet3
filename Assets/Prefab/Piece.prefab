@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   pieceInfo: {fileID: 6445726352670952644}
+  statsEnnemi: {fileID: 11400000, guid: 3278c0303fee126459328af404e8c8dc, type: 2}
   text: {fileID: 5003386829041829931}
   panelInfo: {fileID: 915532565427914888}
   timeBeforeApearing: 0.3

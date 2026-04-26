@@ -7,6 +7,7 @@ public class PieceInfoPanel : MonoBehaviour
 {
 
     [SerializeField] PieceInfo pieceInfo;
+    [SerializeField] StatsEnnemi statsEnnemi;
     Canvas canvas;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] GameObject panelInfo;
@@ -74,8 +75,10 @@ public class PieceInfoPanel : MonoBehaviour
 
     private void RefreshPanel()
     {
+        int nbrAttacked = pieceInfo.currentBoardPiece.context.NbrCaseAtk * statsEnnemi.actualAtkDamage;
         string stringToShow = "";
-        stringToShow += $"HP : <color=green>{pieceInfo.currentBoardPiece.healthPoint}\n </color>";
+        stringToShow += $"HP : <color=green>{pieceInfo.currentBoardPiece.healthPoint}</color>";
+        stringToShow += nbrAttacked == 0 ? "\n" : $" -<color=red>{nbrAttacked}\n </color>";
         if (pieceInfo.currentBoardPiece.shield !=0) 
             stringToShow += $"Shield : <color=cyan>{pieceInfo.currentBoardPiece.shield}\n </color>";
         stringToShow += $"\n<color=white>{pieceInfo.soPiece.description} </color>";

@@ -1,30 +1,26 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemyZoneAtk : MonoBehaviour
 {
-    public List<Transform> listPoints;
+    public List<SingleSquareAtk> listSquareAtk;
+    [SerializeField] StatsEnnemi statsEnnemi;
     private List<GridSlot> listSlots;
 
+    private void Start()
+    {
+        for (int i = 0; i < listSquareAtk.Count; i++) { listSquareAtk[i].SetText(statsEnnemi.actualAtkDamage.ToString());}
+    }
 
-    //private void Start()
-    //{
-    //    for (int i = 0; i < transform.childCount; i++)
-    //    {
-
-    //        listPoints.Add(transform.GetChild(i));
-
-    //    }
-    //}
-  
     public bool CheckIfCanBePlaced()
     {
         listSlots = new List<GridSlot>();
-        for (int i = 0; i < listPoints.Count; i++)
+        for (int i = 0; i < listSquareAtk.Count; i++)
         {
             bool foundSlot = false;
 
-            foreach (var hit in Physics2D.OverlapPointAll(listPoints[i].transform.position))
+            foreach (var hit in Physics2D.OverlapPointAll(listSquareAtk[i].GetTransform().position))
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
 

@@ -49,6 +49,7 @@ public class SoEffetRepeatAround : SoEffet
                 if (!voisin.soPieces.isRepetition)
                 {
                     yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPieceRepeated(), PieceAnimations.TypeAnim.repeat, declencheur);
+
                     if (voisin.soPieces.pieceEffet.condition.Condition(conditionOutput))
                     {
                         yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EfectValues, tour, piece);
