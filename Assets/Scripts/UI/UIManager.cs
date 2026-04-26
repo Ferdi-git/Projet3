@@ -18,9 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private SpriteRenderer ennemiSprite;
     [SerializeField] private TextMeshProUGUI ennemiName;
 
-    [SerializeField] private TextMeshProUGUI ennemiAtktext;
     [SerializeField] private SOEventUpdateUI updateEvent;
-    [SerializeField] private SOEventGiveUICurrentAtk GiveUICurrentAtk;
     [SerializeField] private SOEventGridManager gridManager;
 
     
@@ -45,7 +43,6 @@ public class UIManager : MonoBehaviour
         EventEnnemy.NewEnnemi += UpdateUI;
 
         updateEvent.UpdateUI += UpdateUI;
-        GiveUICurrentAtk.GiveUICurrentAtk += GiveEnnemiCurrentAtkIndex;
     }
     private void OnDisable()
     {
@@ -67,7 +64,6 @@ public class UIManager : MonoBehaviour
         EventEnnemy.NewEnnemi -= UpdateUI;
 
         updateEvent.UpdateUI -= UpdateUI;
-        GiveUICurrentAtk.GiveUICurrentAtk -= GiveEnnemiCurrentAtkIndex;
     }
 
 
@@ -142,12 +138,6 @@ public class UIManager : MonoBehaviour
     private void EnnemiLostShield (int amount )
     {
         UpdateUI();
-    }
-
-
-    public void GiveEnnemiCurrentAtkIndex (int index)
-    {
-        ennemiAtktext.text = statsEnnemi.ennemiAttacks[index].damage.ToString();
     }
 
 

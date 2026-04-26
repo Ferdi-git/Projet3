@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     {
         ActualFloorCount++;
         ActualEvent = floorListSo.list[ActualFloorCount];
+        floorEvent.InvokeNextFloor();
         StartEvent(ActualEvent);
     }
 
