@@ -3135,7 +3135,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 8f014b74bb1509b4087f1a0311e9f9ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e055e269028866d4398ff8d0e30ce04b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4680,7 +4680,7 @@ MonoBehaviour:
   - {fileID: 2122747073743131379}
   EnemySprite: {fileID: 21300000, guid: 8048b5bd847ab0b4ea0d81ddda8fd860, type: 3}
   BossSprite: {fileID: 21300000, guid: 25d14edb3f9a6ec45943f884f83f3750, type: 3}
-  ShopSprite: {fileID: 21300000, guid: 8f014b74bb1509b4087f1a0311e9f9ac, type: 3}
+  ShopSprite: {fileID: 21300000, guid: e055e269028866d4398ff8d0e30ce04b, type: 3}
   HealSprite: {fileID: 3224731229993127889, guid: b4e97d42c03fd4f4583de4a51220f297, type: 3}
 --- !u!1 &8817289350232506813
 GameObject:

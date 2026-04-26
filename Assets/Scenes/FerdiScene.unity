@@ -2928,6 +2928,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 91736560756849133, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1572419561031799710, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190335
