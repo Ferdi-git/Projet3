@@ -8,6 +8,8 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
     [SerializeField] PieceInfoPanel pieceInfoPanel;
     [SerializeField] GameObject anchorPanel;
 
+    private PieceAnimations pieceAnimations;
+
     public bool isDraging = false;
     public bool isRotating = false;
     public bool isRotatingInputBuffer = false;
@@ -17,6 +19,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
     private void Awake()
     {
         pieceInfo = GetComponent<PieceInfo>();
+        pieceAnimations = GetComponent<PieceAnimations>();
     }
 
 
@@ -25,6 +28,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         isDraging = true;
         transform.DOScale(1.1f, 0.1f);
         pieceInfo.Unfill();
+        pieceAnimations.ShowOnTop();
     }
 
     public void OnDragMove(Vector2 worldPos)
@@ -40,6 +44,7 @@ public class PieceMouvement : MonoBehaviour, IMouseDraggable, IMouseHoverable, I
         isDraging = false;
         isRotatingInputBuffer = false;
         isRotating = false;
+        pieceAnimations.ShowNormal();
 
         transform.DOKill();
 

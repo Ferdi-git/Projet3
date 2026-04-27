@@ -692,6 +692,7 @@ MonoBehaviour:
   - {r: 0.00064394495, g: 0, b: 0.000731465, a: 1}
   textHealth: {fileID: 5610723301339487969}
   textShield: {fileID: 252836312447747086}
+  spriteBackground: {fileID: 2523816720005904196}
   eventPieceHealth: {fileID: 11400000, guid: 6f12cea053413f84cb2c3d414fe38247, type: 2}
   eventTrail: {fileID: 11400000, guid: 1cf1097e7861b8045a90f19b5e70d8fc, type: 2}
   eventVisualNumber: {fileID: 11400000, guid: 067f5ccf63590ca489e385091525a005, type: 2}

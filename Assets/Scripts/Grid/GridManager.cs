@@ -299,7 +299,6 @@ public class GridManager : MonoBehaviour
             }
 
         }
-
         ActualiseBoard();
     }
 

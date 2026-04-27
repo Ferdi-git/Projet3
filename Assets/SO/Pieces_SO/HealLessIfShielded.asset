@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: DmgIfNoShieldPiece
+  m_Name: HealLessIfShielded
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 12
-  prefab: {fileID: 6891005454971826096, guid: 901f6225d4481b7488314c367bdfdc70, type: 3}
+  healthPoint: 5
+  prefab: {fileID: 6891005454971826096, guid: 82058a65b43eff040a23f35f95eb5cf8, type: 3}
   image: {fileID: 0}
   pieceEffet:
-    condition: {fileID: 11400000, guid: 194304bd63c75b74cae513881df8b2d8, type: 2}
-    effet: {fileID: 11400000, guid: e004bb3741ec5874b8e2de6c2a6f968d, type: 2}
-  ConditionValues: 00000000
-  EfectValues: 0a000000
+    condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
+    effet: {fileID: 11400000, guid: f2d6ae9e6719e624aae973cd9bea0a05, type: 2}
+  ConditionValues: 
+  EffectValues: 0a000000
   colors: 00000000
-  description: 10   <sprite name=Attack>if no shield on this piece
+  description: Heal 10    <sprite name=Heal 1>- 1 per <sprite name=Shield> on this
+    piece
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
