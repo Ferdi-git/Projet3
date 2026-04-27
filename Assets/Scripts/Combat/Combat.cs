@@ -204,7 +204,7 @@ public class Combat : MonoBehaviour
 
         if (statsPlayer.GetPV() <= 0 )
         {
-            //print("perdu");
+            eventState.InvokeLooseEvent();
         }
         else
         {

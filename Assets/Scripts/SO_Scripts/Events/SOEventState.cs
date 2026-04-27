@@ -23,5 +23,11 @@ public class SOEventState : ScriptableObject
     //meurt 
 
     //Victoire
-  
+
+    public event Action WinEvent;
+    public event Action LooseEvent;
+
+    public void InvokeWinEvent() { WinEvent?.Invoke(); }
+    public void InvokeLooseEvent() { LooseEvent?.Invoke(); }
+
 }
