@@ -128,7 +128,7 @@ public class Combat : MonoBehaviour
         if (piece.pieceEffet.condition.Condition(conditionOutput))
         {
             soBoard.boardPieces[i].context.conditionOutput = conditionOutput;
-            yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EfectValues , i);
+            yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EffectValues , i);
             
         }
         else

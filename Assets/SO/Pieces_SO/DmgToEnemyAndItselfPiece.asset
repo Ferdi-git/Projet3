@@ -21,6 +21,6 @@ MonoBehaviour:
   ConditionValues: 
   EfectValues: 0c00000003000000
   colors: 00000000
-  description: Deals 12 DMG to enemy + 3 to itself
+  description: Deals 12   <sprite name=Attack>to enemy + 3 to itself
   isRepetition: 0
   numberManaGeneratingPerSquare: 5

@@ -9,7 +9,7 @@ public class SoPieces : ScriptableObject
     public Sprite image;
     public PieceEffect pieceEffet;
     public List<int> ConditionValues;
-    public List<int> EfectValues;
+    public List<int> EffectValues;
     public List<PieceColor> colors = new List<PieceColor> { PieceColor.Neutral};
     public string description;
     public bool isRepetition = false;

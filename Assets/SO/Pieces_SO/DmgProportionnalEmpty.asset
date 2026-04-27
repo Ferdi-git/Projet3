@@ -21,6 +21,6 @@ MonoBehaviour:
   ConditionValues: 
   EfectValues: 05000000
   colors: 00000000
-  description: Deals 5 Damage for each empty neighbouring tile
+  description: Deals 5   <sprite name=Attack>for each empty neighbouring tile
   isRepetition: 0
   numberManaGeneratingPerSquare: 5
