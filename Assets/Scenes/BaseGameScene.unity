@@ -3317,17 +3317,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6af910bd501043a44ab2d50b872bb3c8, type: 3}
---- !u!114 &847917969 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1572419561031799710, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
-  m_PrefabInstance: {fileID: 8391643271578003110}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &864323861 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8047913450760407133, guid: 6af910bd501043a44ab2d50b872bb3c8, type: 3}
@@ -10805,7 +10794,7 @@ PrefabInstance:
     - target: {fileID: 8774138003516605575, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
       propertyPath: ennemiAtktext
       value: 
-      objectReference: {fileID: 847917969}
+      objectReference: {fileID: 0}
     - target: {fileID: 8964785272469041329, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
       propertyPath: m_Name
       value: Managers
