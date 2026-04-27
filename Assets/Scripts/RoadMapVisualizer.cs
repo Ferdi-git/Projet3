@@ -16,14 +16,16 @@ public class RoadMapVisualizer : MonoBehaviour
     private void OnEnable()
     {
         eventFloor.NextFloor += NextFloor;
-        eventFloor.FirstFloorGeneration += Initialized;
     }
 
     private void OnDisable()
     {
         eventFloor.NextFloor -= NextFloor;
-        eventFloor.FirstFloorGeneration -= Initialized;
+    }
 
+    private void Start()
+    {
+        Initialized();
     }
 
     private void Initialized()

@@ -27,13 +27,13 @@ public class EnnemiManager : MonoBehaviour
     }
 
 
-    private void Start()
+    private void Awake()
     {
         ennemiUI.SetActive(false);
     }
     public void GenerateEnnemi (int NbrOfCombat)
     {
-        ennemiUI.SetActive (true);
+        ennemiUI.SetActive(true);
         atkIndex = 0;
         index = Random.Range(0,ennemiList.ennemiList.Count);
         stats.pvMax = ((ennemiList.ennemiList[index].resistance/100) * stats.AverageValue) * (NbrOfCombat+1) ;
