@@ -17,7 +17,9 @@ public class SoEffetHealLessWhenShielded : SoEffet
         {
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
-            voisin.healthPoint += (amount[0] - port.thisBoardPiece.shield);
+            int value = amount[0] - port.thisBoardPiece.shield;
+            if(value < 0) { value = 0; }
+            voisin.healthPoint += value;
             yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.heal, piece);
         }
@@ -33,7 +35,9 @@ public class SoEffetHealLessWhenShielded : SoEffet
         {
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
-            voisin.healthPoint += (amount[0] - port.thisBoardPiece.shield);
+            int value = amount[0] - port.thisBoardPiece.shield;
+            if (value < 0) { value = 0; }
+            voisin.healthPoint += value;
             if (i != 0) yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.heal, piece);
         }
