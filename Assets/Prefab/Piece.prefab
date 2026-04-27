@@ -677,6 +677,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5bdb99555ff018a45919cf2ce193959e, type: 3}
   - {fileID: 8300000, guid: 60c53d3a41db9614eae66bd901c914e2, type: 3}
   - {fileID: 8300000, guid: 889567639aa176c46a9d3f7b3329f91b, type: 3}
+  FullHealthColor: {r: 0.05098039, g: 1, b: 0.15215972, a: 1}
+  HealthColor: {r: 0.75964093, g: 0.99607843, b: 0, a: 1}
+  LowHealthColor: {r: 1, g: 0.08099004, b: 0.043137252, a: 1}
   glowIntensity: 14
   glowDuration: 0.3
   glowColors:

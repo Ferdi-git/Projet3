@@ -4,14 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Audio;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using UnityEngine.VFX;
-using static PieceAnimations;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class PieceAnimations : MonoBehaviour
 {
@@ -21,7 +14,9 @@ public class PieceAnimations : MonoBehaviour
     private SinglePieceSquare[] squares;
 
     [SerializeField] AudioClip[] audioClips;
-
+    [SerializeField] Color FullHealthColor;
+    [SerializeField] Color HealthColor;
+    [SerializeField] Color LowHealthColor;
 
     [Header("---Glow")]
 
@@ -342,7 +337,21 @@ public class PieceAnimations : MonoBehaviour
 
     public void RefreshHealth(BoardPiece piece)
     {   
-        textHealth.text  = boardPiece.healthPoint.ToString();
+        if (boardPiece.healthPoint == boardPiece.maxHealthPoint)
+        {
+            textHealth.text = boardPiece.healthPoint.ToString();
+            textHealth.color = FullHealthColor;
+        }
+        else if (boardPiece.healthPoint < 6 )
+        {
+            textHealth.text = boardPiece.healthPoint.ToString();
+            textHealth.color = LowHealthColor;
+        }
+        else
+        {
+            textHealth.text = boardPiece.healthPoint.ToString();
+            textHealth.color = HealthColor;
+        }
         textShield.gameObject.SetActive(boardPiece.shield > 0);
         if (boardPiece.shield <= 0 && int.Parse(textShield.text) > 0) foreach (SinglePieceSquare s in squares) s.shieldGO.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InOutSine);
 
