@@ -21,6 +21,6 @@ MonoBehaviour:
   ConditionValues: 
   EfectValues: 04000000
   colors: 00000000
-  description: Deals 4 DMG for each neighbouring piece
+  description: Deals 4   <sprite name=Attack>for each neighbouring piece
   isRepetition: 0
   numberManaGeneratingPerSquare: 5

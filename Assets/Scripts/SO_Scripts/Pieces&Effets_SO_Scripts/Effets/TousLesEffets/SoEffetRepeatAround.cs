@@ -22,7 +22,7 @@ public class SoEffetRepeatAround : SoEffet
 
                 if (voisin.soPieces.pieceEffet.condition.Condition(conditionOutput))
                 {
-                    yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EfectValues, tour, piece);
+                    yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EffectValues, tour, piece);
                 }
                 
 
@@ -49,7 +49,7 @@ public class SoEffetRepeatAround : SoEffet
 
                     if (voisin.soPieces.pieceEffet.condition.Condition(conditionOutput))
                     {
-                        yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EfectValues, tour, piece);
+                        yield return voisin.soPieces.pieceEffet.effet.RepeatEffet(voisin.context, port, voisin.soPieces.EffectValues, tour, piece);
                     }
                     
                 }
