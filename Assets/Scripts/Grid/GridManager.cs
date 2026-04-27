@@ -1,5 +1,6 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField] private GridSlot[] gridSlots;
+    [SerializeField] private List<GridSlot> gridSlots;
     [SerializeField] private SOEventGridManager gridManager;
     [SerializeField] private SOEventPieceHealth healthManager;
     [SerializeField] private SOEventState soEventState;
@@ -18,6 +19,10 @@ public class GridManager : MonoBehaviour
     [SerializeField] private PieceInfo[] piecesExist;
 
     public List<GameObject> listBoardPrefabAtk ;
+
+    [SerializeField] TierUnlockGrid[] TiersUnlockGrid;
+
+    private int currentGridUnlock = -1;
 
     public SortMode baseSortMode;
 
@@ -32,6 +37,7 @@ public class GridManager : MonoBehaviour
         gridManager.AddBoardPiece += AddBoardPiece;
         gridManager.SelectRandomSlot += SelectRandomSlot;
         gridManager.RemoveAtk += RemoveAtk;
+        gridManager.UnlockNextGridTier += UnlockNextGridTier;
         healthManager.PieceDie += DestroyPiece;
         soEventState.StartShoping += RemoveAtk;
     }
@@ -44,6 +50,7 @@ public class GridManager : MonoBehaviour
         gridManager.AddBoardPiece -= AddBoardPiece;
         gridManager.SelectRandomSlot -= SelectRandomSlot;
         gridManager.RemoveAtk -= RemoveAtk;
+        gridManager.UnlockNextGridTier -= UnlockNextGridTier;
         healthManager.PieceDie -= DestroyPiece;
         soEventState.StartShoping -= RemoveAtk;
 
@@ -75,7 +82,7 @@ public class GridManager : MonoBehaviour
         theBoard.boardPieces.Clear();
         ResetNbrAtckCase();
         SetNbrAtckCase();
-        for (int i = 0; i < gridSlots.Length; i++)
+        for (int i = 0; i < gridSlots.Count; i++)
         {
             PieceInfo pieceOnSlot = gridSlots[i].GetPieceOnIt();
 
@@ -154,7 +161,7 @@ public class GridManager : MonoBehaviour
 
     private void ResetNbrAtckCase()
     {
-        for(int i = 0; i < gridSlots.Length; i++)
+        for(int i = 0; i < gridSlots.Count; i++)
         {
             PieceInfo piece = gridSlots[i].GetPieceOnIt();
             if(piece != null)
@@ -168,7 +175,7 @@ public class GridManager : MonoBehaviour
 
     private void SetNbrAtckCase()
     {
-        for (int i = 0; i < gridSlots.Length; i++)
+        for (int i = 0; i < gridSlots.Count; i++)
         {
             PieceInfo piece = gridSlots[i].GetPieceOnIt();
             if (piece != null && gridSlots[i].isAttacked)
@@ -189,14 +196,14 @@ public class GridManager : MonoBehaviour
     private void SortBoard(SortMode sortMode)
     {
         gridSlots = sortMode == SortMode.ByRow
-            ? gridSlots.OrderBy(p => -p.transform.position.y).ThenBy(p => p.transform.position.x).ToArray()
-            : gridSlots.OrderBy(p => p.transform.position.x).ThenBy(p => -p.transform.position.y).ToArray();
+            ? gridSlots.OrderBy(p => -p.transform.position.y).ThenBy(p => p.transform.position.x).ToList()
+            : gridSlots.OrderBy(p => p.transform.position.x).ThenBy(p => -p.transform.position.y).ToList();
     }
 
 
     public void ResetGridSlots()
     {
-        for(int nbr = 0; nbr < gridSlots.Length ; nbr++)
+        for(int nbr = 0; nbr < gridSlots.Count; nbr++)
         {
             gridSlots[nbr].ClearSlot();
         }
@@ -211,8 +218,8 @@ public class GridManager : MonoBehaviour
         EnemyZoneAtk enemyAtk = prefabAtk.GetComponent<EnemyZoneAtk>();
 
 
-        int randInt = Random.Range(0, gridSlots.Length);
-        int randIntRota = Random.Range(0, 4);
+        int randInt = UnityEngine.Random.Range(0, gridSlots.Count);
+        int randIntRota = UnityEngine.Random.Range(0, 4);
 
         prefabAtk.transform.position = gridSlots[randInt].transform.position;
         prefabAtk.transform.position = gridSlots[randInt].transform.position;
@@ -220,8 +227,8 @@ public class GridManager : MonoBehaviour
 
         while (!enemyAtk.CheckIfCanBePlaced())
         {
-            randInt = Random.Range(0, gridSlots.Length);
-            randIntRota = Random.Range(0, 4);
+            randInt = UnityEngine.Random.Range(0, gridSlots.Count);
+            randIntRota = UnityEngine.Random.Range(0, 4);
             prefabAtk.transform.rotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0, 0, 90f * randIntRota));
             prefabAtk.transform.position = gridSlots[randInt].transform.position;
         }
@@ -277,12 +284,35 @@ public class GridManager : MonoBehaviour
         ActualiseBoard();
     }
 
+    [Button]
+    private void UnlockNextGridTier()
+    {
+        currentGridUnlock++; 
+        if(currentGridUnlock < TiersUnlockGrid.Length)
+        {
+            for(int i = 0;i < TiersUnlockGrid[currentGridUnlock].Slots.Count;i++)
+            {
+                TiersUnlockGrid[currentGridUnlock].Slots[i].gameObject.SetActive(true);
+                gridSlots.Append(TiersUnlockGrid[currentGridUnlock].Slots[i]);
+            }
+
+        }
+
+        ActualiseBoard();
+    }
+
 }
 public class ContextAutour
 {
     public List<BoardPiece> voisins = new List<BoardPiece>();
     public int nbrCaseOccupe = 0;
     public int nbrCaseLibre = 0;
+}
+
+[Serializable]
+public class TierUnlockGrid
+{
+    public List<GridSlot> Slots;
 }
 
 
