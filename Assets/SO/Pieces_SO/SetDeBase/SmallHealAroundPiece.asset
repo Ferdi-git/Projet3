@@ -21,6 +21,6 @@ MonoBehaviour:
   ConditionValues: 
   EfectValues: 02000000
   colors: 00000000
-  description: 'Heal neighbouring pieces by 2HP '
+  description: Heal neighbouring pieces by 2   <sprite name=Heal 1>
   isRepetition: 0
   numberManaGeneratingPerSquare: 5

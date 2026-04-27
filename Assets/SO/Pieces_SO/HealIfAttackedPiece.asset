@@ -21,6 +21,7 @@ MonoBehaviour:
   ConditionValues: 
   EfectValues: 05000000
   colors: 00000000
-  description: +5 Health to neighbouring pieces if is on an attacked zone
+  description: 5   <sprite name=Heal 1>to neighbouring pieces if is on an attacked
+    zone
   isRepetition: 0
   numberManaGeneratingPerSquare: 5
