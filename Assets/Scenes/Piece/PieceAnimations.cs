@@ -32,6 +32,7 @@ public class PieceAnimations : MonoBehaviour
 
     [SerializeField] TextMeshPro textHealth;
     [SerializeField] TextMeshPro textShield;
+    [SerializeField] SpriteRenderer spriteBackground;
 
 
     [Header("---Events")]
@@ -358,5 +359,21 @@ public class PieceAnimations : MonoBehaviour
 
         textShield.text = boardPiece.shield.ToString();
 
+    }
+
+    public void ShowOnTop()
+    {
+        for (int i = 0; i < spriteRenderers.Count; i++) spriteRenderers[i].sortingOrder = 7;
+        spriteBackground.sortingOrder = 8;
+        textHealth.sortingOrder = 9;
+        textHealth.sortingOrder = 10;
+    }
+
+    public void ShowNormal()
+    {
+        for (int i = 0; i < spriteRenderers.Count; i++) spriteRenderers[i].sortingOrder = 3;
+        spriteBackground.sortingOrder = 5;
+        textHealth.sortingOrder = 5;
+        textHealth.sortingOrder = 6;
     }
 }

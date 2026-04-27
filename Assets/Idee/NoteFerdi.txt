@@ -62,7 +62,7 @@ A faire :
 	- Improve trail
 	- Grid
 	- Info piece
-	- Visuel Piece overlap bug
 	- Visuel roadmap
 	- Death Anim
+
 
