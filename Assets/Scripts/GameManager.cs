@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
     private void ShopingEnded ()
     {
         print("shop ended");
+        gridManager.InvokeUnlockNextGridTier();
         NextFloor();
     }
 
