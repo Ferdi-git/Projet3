@@ -58,11 +58,11 @@ AtkManager :
 
 
 A faire : 
+	- bug nbr degat que se prend la piece pas actualisé info panel
 	- FeedBack Repetition sactive en permance
 	- Improve trail
 	- Grid
 	- Info piece
-	- Visuel roadmap
 	- Death Anim
 
 
