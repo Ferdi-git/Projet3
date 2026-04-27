@@ -58,8 +58,9 @@ AtkManager :
 
 
 A faire : 
-	- Feedback nbr
-	- FeedBack Repetition sactive en meme temps
+	- FeedBack Repetition sactive en permance
+	- Improve trail
+	- Grid
 	- Info piece
 	- Visuel Piece overlap bug
 	- Visuel roadmap

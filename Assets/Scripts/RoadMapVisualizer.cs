@@ -6,6 +6,7 @@ public class RoadMapVisualizer : MonoBehaviour
     [SerializeField] FloorListSo listFloor;
     [SerializeField] SOEventFloor eventFloor;
     [SerializeField] SpriteRenderer[] spriteRenderers;
+    [SerializeField] SpriteRenderer[] spriteWhiteBar;
     [SerializeField] Sprite EnemySprite;
     [SerializeField] Sprite BossSprite;
     [SerializeField] Sprite ShopSprite;
@@ -70,6 +71,37 @@ public class RoadMapVisualizer : MonoBehaviour
                     });
             }
         }
+
+        for (int i = 0; i < spriteWhiteBar.Length; i++)
+        {
+            int index = i;
+
+            if (index == 0)
+            {
+                Vector3 oldPos = spriteWhiteBar[index].transform.position;
+
+                spriteWhiteBar[index].transform
+                    .DOMoveY(spriteWhiteBar[i].transform.position.y - 1f, 0.7f)
+                    .OnComplete(() =>
+                    {
+                        spriteWhiteBar[index].transform.position = oldPos;
+                        
+                    });
+            }
+            else
+            {
+                Vector3 oldPos = spriteWhiteBar[index].transform.position;
+
+                spriteWhiteBar[index].transform
+                    .DOMoveY(spriteWhiteBar[index - 1].transform.position.y, 0.7f)
+                    .OnComplete(() =>
+                    {
+                        spriteWhiteBar[index].transform.position = oldPos;
+                        
+                    });
+            }
+        }
+
     }
 
 
