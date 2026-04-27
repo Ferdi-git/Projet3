@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "NewPiece", menuName = "Pieces/Piece")]
 public class SoPieces : ScriptableObject
@@ -9,7 +10,8 @@ public class SoPieces : ScriptableObject
     public Sprite image;
     public PieceEffect pieceEffet;
     public List<int> ConditionValues;
-    public List<int> EfectValues;
+    [FormerlySerializedAs("EfectValues")]
+    public List<int> EffectValues;
     public List<PieceColor> colors = new List<PieceColor> { PieceColor.Neutral};
     public string description;
     public bool isRepetition = false;

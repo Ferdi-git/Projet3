@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private SOEventUpdateUI updateEvent;
     [SerializeField] private SOEventGridManager gridManager;
 
+    [SerializeField] private SOEventPlayerLostMessage lostMessage;
+
     
     private void OnEnable()
     {
@@ -43,6 +45,8 @@ public class UIManager : MonoBehaviour
         EventEnnemy.NewEnnemi += UpdateUI;
 
         updateEvent.UpdateUI += UpdateUI;
+
+        lostMessage.ActiveLostMessage += OpenLostMessage;
     }
     private void OnDisable()
     {
@@ -64,6 +68,8 @@ public class UIManager : MonoBehaviour
         EventEnnemy.NewEnnemi -= UpdateUI;
 
         updateEvent.UpdateUI -= UpdateUI;
+
+        lostMessage.ActiveLostMessage -= OpenLostMessage;
     }
 
 
@@ -145,20 +151,27 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject EchapMenu;
     private bool isOpen;
+    private bool canOpenEchapMenu;
 
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            OpenEchapMenu();
+            if (canOpenEchapMenu)
+            {
+                OpenEchapMenu();
+            }
+            
         }
     }
     private void Start()
     {
         isOpen = false;
+        canOpenEchapMenu = true;
         Time.timeScale = 1.0f;
         EchapMenu.SetActive(false);
+        lostMessageGO.SetActive(false);
     }
     public void OpenEchapMenu ()
     {
@@ -195,5 +208,14 @@ public class UIManager : MonoBehaviour
         gridManager.InvokeSetAllPieceCanMove(true);
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    [SerializeField] private GameObject lostMessageGO;
+    private void OpenLostMessage()
+    {
+        lostMessageGO.SetActive (true);
+        canOpenEchapMenu = false;
+        Time.timeScale = 0f;
+
     }
 }

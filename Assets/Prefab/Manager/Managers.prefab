@@ -504,6 +504,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 58ca2e5d10e44ce449e6ef14e2bc138e, type: 2}
     - target: {fileID: 1825866853302728116, guid: c2b9b5bbef33d3c469788501eaec68eb, type: 3}
+      propertyPath: lostMessage
+      value: 
+      objectReference: {fileID: 11400000, guid: f8927921ea0ba2347af1cf4fb1925d9b, type: 2}
+    - target: {fileID: 1825866853302728116, guid: c2b9b5bbef33d3c469788501eaec68eb, type: 3}
       propertyPath: floorManager
       value: 
       objectReference: {fileID: 3817438601313860228}

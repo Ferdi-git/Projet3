@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SOEventState gameState;
     [SerializeField] private SOEventFloor floorEvent;
     [SerializeField] private FloorListSo floorListSo;
+    [SerializeField] private SOEventPlayerLostMessage lostMessage;
 
 
     public int ActualFloorCount;
@@ -15,11 +16,13 @@ public class GameManager : MonoBehaviour
     {
         gameState.EndOfCombat += CombateEnded;
         gameState.EndOfShoping += ShopingEnded;
+        gameState.LooseEvent += PlayerLost;
     }
     private void OnDisable()
     {
         gameState.EndOfCombat -= CombateEnded;
         gameState.EndOfShoping -= ShopingEnded;
+        gameState.LooseEvent -= PlayerLost;
     }
     public void ButtonPressed ()
     {
@@ -61,7 +64,11 @@ public class GameManager : MonoBehaviour
         gridManager.InvokeUnlockNextGridTier();
         NextFloor();
     }
-
+    private void PlayerLost ()
+    {
+        gridManager.InvokeSetAllPieceCanMove(false);
+        lostMessage.InvokeActiveLostMessage();
+    }
 
 
     private void StartEvent (FloorEvent floorEvent)
