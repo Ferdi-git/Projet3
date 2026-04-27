@@ -1,10 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Properties;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using static UnityEngine.Audio.ProcessorInstance;
 
 [CreateAssetMenu(fileName = "NewEffetTest", menuName = "Effet/effetRepeatAround")]
 public class SoEffetRepeatAround : SoEffet

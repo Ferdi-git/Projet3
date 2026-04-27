@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GridManager : MonoBehaviour
 {
@@ -94,6 +95,7 @@ public class GridManager : MonoBehaviour
             theBoard.boardPieces.Add(currentBoardPiece);
         }
         gridManager.InvokeTrySaveInventory();
+
     }
     
     private ContextAutour GetContextAutour(PieceInfo piecePerso)

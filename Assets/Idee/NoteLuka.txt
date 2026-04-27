@@ -19,8 +19,7 @@ list truc à faire long terme :
 - road map 
 - pouvoir augmenter la grille
 
-
-
+-boucle qui reste active 
 
 - en bonus : 
 
