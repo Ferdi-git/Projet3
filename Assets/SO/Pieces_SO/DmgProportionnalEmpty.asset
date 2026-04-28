@@ -19,7 +19,8 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: 11492ada19470cb47b7210feec2fb539, type: 2}
   ConditionValues: 
-  EfectValues: 05000000
+  BaseEffectValues: 05000000
+  TempEffectValues: 
   colors: 00000000
   description: Deals 5   <sprite name=Attack>for each empty neighbouring tile
   isRepetition: 0

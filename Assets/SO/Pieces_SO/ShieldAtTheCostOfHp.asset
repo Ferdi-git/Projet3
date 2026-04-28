@@ -19,9 +19,10 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: 1573c6a45953f034bb80b32f2f1cd80b, type: 2}
   ConditionValues: 
-  EffectValues: 06000000
+  BaseEffectValues: 06000000
+  TempEffectValues: 
   colors: 00000000
-  description: Convert 6 of its HP into th double of   <sprite name=Shield>on its
+  description: Convert 6 of its HP into the double of   <sprite name=Shield>on its
     neighbours
   isRepetition: 0
   numberManaGeneratingPerSquare: 0

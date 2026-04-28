@@ -19,8 +19,10 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: 8dfffba433e5a4947a188bd2ce6265bf, type: 2}
   ConditionValues: 
-  EfectValues: 0200000003000000
+  BaseEffectValues: 0200000003000000
+  TempEffectValues: 0200000003000000
   colors: 00000000
-  description: Heal neighbouring pieces 2   <sprite name=Heal 1>+ 3 per repetition
+  description: Heal neighbouring pieces 2   <sprite name=Heal 1>\n+ 3   <sprite name=Heal
+    1>per repetition
   isRepetition: 0
   numberManaGeneratingPerSquare: 5

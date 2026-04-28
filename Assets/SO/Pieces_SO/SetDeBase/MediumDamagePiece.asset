@@ -20,8 +20,8 @@ MonoBehaviour:
     effet: {fileID: 11400000, guid: e004bb3741ec5874b8e2de6c2a6f968d, type: 2}
   ConditionValues: 
   BaseEffectValues: 05000000
-  TempEffectValues: 
+  TempEffectValues: 05000000
   colors: 00000000
-  description: 5   <sprite name=Attack>to ennemy
+  description: 5   <sprite name=Attack>to enemy
   isRepetition: 0
   numberManaGeneratingPerSquare: 5
