@@ -13,6 +13,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private SOEventGridManager gridManager;
     [SerializeField] private SOEventPieceHealth healthManager;
     [SerializeField] private SOEventState soEventState;
+    [SerializeField] private SOEventEndPlayerTurn sOEventEndPlayer;
 
     [SerializeField] private SoBoard theBoard;
 
@@ -41,6 +42,7 @@ public class GridManager : MonoBehaviour
         gridManager.UnlockNextGridTier += UnlockNextGridTier;
         healthManager.PieceDie += DestroyPiece;
         soEventState.StartShoping += RemoveAtk;
+        sOEventEndPlayer.EndTurn += ActualiseBoard;
     }
 
     private void OnDisable()
@@ -53,7 +55,9 @@ public class GridManager : MonoBehaviour
         gridManager.RemoveAtk -= RemoveAtk;
         gridManager.UnlockNextGridTier -= UnlockNextGridTier;
         healthManager.PieceDie -= DestroyPiece;
+        soEventState.StartShoping -= ActualiseBoard;
         soEventState.StartShoping -= RemoveAtk;
+        sOEventEndPlayer.EndTurn -= ActualiseBoard;
 
     }
 
