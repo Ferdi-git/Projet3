@@ -1921,7 +1921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8341136911915819728
 Transform:
   m_ObjectHideFlags: 0
@@ -6504,10 +6504,15 @@ MonoBehaviour:
   - {fileID: 8645959750669669282}
   - {fileID: 6343759229626035826}
   - {fileID: 332617201466129620}
-  EnemySprite: {fileID: 21300000, guid: 8048b5bd847ab0b4ea0d81ddda8fd860, type: 3}
-  BossSprite: {fileID: 21300000, guid: 25d14edb3f9a6ec45943f884f83f3750, type: 3}
-  ShopSprite: {fileID: 21300000, guid: e055e269028866d4398ff8d0e30ce04b, type: 3}
-  HealSprite: {fileID: 3224731229993127889, guid: b4e97d42c03fd4f4583de4a51220f297, type: 3}
+  FloorSprites:
+  - sprite: {fileID: 21300000, guid: 8048b5bd847ab0b4ea0d81ddda8fd860, type: 3}
+    floorEvent: 0
+  - sprite: {fileID: 21300000, guid: 25d14edb3f9a6ec45943f884f83f3750, type: 3}
+    floorEvent: 1
+  - sprite: {fileID: 21300000, guid: e055e269028866d4398ff8d0e30ce04b, type: 3}
+    floorEvent: 2
+  - sprite: {fileID: 21300000, guid: 13cb0511e19f2714dbe15fa6fc06c55e, type: 3}
+    floorEvent: 3
 --- !u!1 &8817289350232506813
 GameObject:
   m_ObjectHideFlags: 0

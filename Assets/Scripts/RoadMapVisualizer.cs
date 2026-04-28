@@ -1,4 +1,6 @@
 using DG.Tweening;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RoadMapVisualizer : MonoBehaviour
@@ -7,10 +9,7 @@ public class RoadMapVisualizer : MonoBehaviour
     [SerializeField] SOEventFloor eventFloor;
     [SerializeField] SpriteRenderer[] spriteRenderers;
     [SerializeField] SpriteRenderer[] spriteWhiteBar;
-    [SerializeField] Sprite EnemySprite;
-    [SerializeField] Sprite BossSprite;
-    [SerializeField] Sprite ShopSprite;
-    [SerializeField] Sprite HealSprite;
+    [SerializeField] List<SpriteWithFloor> FloorSprites;
 
     private int currentFloor = 0;
 
@@ -108,19 +107,22 @@ public class RoadMapVisualizer : MonoBehaviour
 
     private Sprite GetCorrespondingSprite(FloorEvent floorEvent)
     {
-        switch (floorEvent)
+        for (int i = 0; i < FloorSprites.Count; i++)
         {
-            case FloorEvent.Heal:
-                return HealSprite;
-            case FloorEvent.NormalFight:
-                return EnemySprite;
-            case FloorEvent.BossFight:
-                return BossSprite;
-            case FloorEvent.Shop:
-                return ShopSprite;
-            
+            if (floorEvent == FloorSprites[i].floorEvent)
+            {
+                return FloorSprites[i].sprite;
+            }
         }
+
         return null;
 
     }
+}
+
+[Serializable]
+public class SpriteWithFloor
+{
+    public Sprite sprite;
+    public FloorEvent floorEvent;
 }

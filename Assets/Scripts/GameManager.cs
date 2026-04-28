@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
         floorEvent.InvokeFirstFloor();
         ActualFloorCount = 0;

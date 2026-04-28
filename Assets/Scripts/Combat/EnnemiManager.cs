@@ -27,10 +27,6 @@ public class EnnemiManager : MonoBehaviour
     }
 
 
-    private void Awake()
-    {
-        ennemiUI.SetActive(false);
-    }
     public void GenerateEnnemi (int NbrOfCombat)
     {
         ennemiUI.SetActive(true);
