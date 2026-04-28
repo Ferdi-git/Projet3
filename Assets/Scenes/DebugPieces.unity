@@ -871,6 +871,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838dc514ee7d1c7479df10d770917be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!1001 &500023815
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1290109272774424516, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.018428
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290109272774424516, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.9812481
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290109272774424516, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290109272774424516, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290109272774424516, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290109272774424516, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290109272774424516, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290109272774424516, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290109272774424516, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1290109272774424516, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891005454971826096, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      propertyPath: m_Name
+      value: DmgNbrOfNeighbours
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 243596295438498383, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 6153986167159572254, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+--- !u!114 &500023816 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3082260981305223171, guid: d0d884083bc458341b519e153b306ad3, type: 3}
+  m_PrefabInstance: {fileID: 500023815}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 838dc514ee7d1c7479df10d770917be5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!4 &513582203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1799580511562827144, guid: 47f3f5021cfb51b4984ac478d7da041a, type: 3}
@@ -2604,7 +2678,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3219361071741642409, guid: 993a48640ecdea442b5584df0aa98033, type: 3}
       propertyPath: piecesExist.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3219361071741642409, guid: 993a48640ecdea442b5584df0aa98033, type: 3}
       propertyPath: 'piecesExist.Array.data[0]'
@@ -2646,6 +2720,10 @@ PrefabInstance:
       propertyPath: 'piecesExist.Array.data[9]'
       value: 
       objectReference: {fileID: 1542632270}
+    - target: {fileID: 3219361071741642409, guid: 993a48640ecdea442b5584df0aa98033, type: 3}
+      propertyPath: 'piecesExist.Array.data[10]'
+      value: 
+      objectReference: {fileID: 500023816}
     - target: {fileID: 3331321520111605794, guid: 993a48640ecdea442b5584df0aa98033, type: 3}
       propertyPath: m_Name
       value: GridManager
@@ -2869,3 +2947,4 @@ SceneRoots:
   - {fileID: 3085963366041795589}
   - {fileID: 650631234}
   - {fileID: 63203074}
+  - {fileID: 500023815}

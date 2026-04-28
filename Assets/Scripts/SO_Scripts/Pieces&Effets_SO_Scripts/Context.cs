@@ -9,7 +9,6 @@ public class Context
 
     //public int NbrCaseDeLaPiece;
 
-    public int NbrPiecesAutour;
     public int NbrCaseLibre;
     public int NbrCaseOccupe;
 
