@@ -58,8 +58,7 @@ AtkManager :
 
 
 A faire : 
-	- bug nbr degat que se prend la piece pas actualisé info panel
-	- FeedBack Repetition sactive en permance
+	- FeedBack Repetition sactive en permanence
 	- Improve trail
 	- Grid
 	- Info piece
