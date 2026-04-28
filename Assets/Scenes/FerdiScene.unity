@@ -190,17 +190,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: caf1d9cbd0adf1642ae706fb148a42af, type: 3}
---- !u!114 &42564616 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8077106042500044576, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
-  m_PrefabInstance: {fileID: 8391643271578003110}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &52350391
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,17 +443,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
---- !u!114 &118407232 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 380916948535488919, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
-  m_PrefabInstance: {fileID: 8391643271578003110}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &148324029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,22 +1375,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: d3e8b810496688f46b3ddf621c7c1df1, type: 3}
---- !u!212 &1114373237 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2132746628681323921, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
-  m_PrefabInstance: {fileID: 8391643271578003110}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1153699450 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8256741281143570788, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
-  m_PrefabInstance: {fileID: 8391643271578003110}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!114 &1172022777 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3082260981305223171, guid: e7c2efe06bb45ef4c8972e5ec0070276, type: 3}
@@ -1733,11 +1695,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 985235791260898092, guid: eb45c4e37626b0345a7ae794b0ba3e36, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.67
+      value: -2.75
       objectReference: {fileID: 0}
     - target: {fileID: 985235791260898092, guid: eb45c4e37626b0345a7ae794b0ba3e36, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.06
+      value: -2.21
       objectReference: {fileID: 0}
     - target: {fileID: 985235791260898092, guid: eb45c4e37626b0345a7ae794b0ba3e36, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1972,17 +1934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838dc514ee7d1c7479df10d770917be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!114 &1772973582 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3060703549758669363, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
-  m_PrefabInstance: {fileID: 8391643271578003110}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1785087601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2089,16 +2040,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838dc514ee7d1c7479df10d770917be5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!1 &1869217450 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3059059386603709514, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
-  m_PrefabInstance: {fileID: 8391643271578003110}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1869217451 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8341136911915819728, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
-  m_PrefabInstance: {fileID: 8391643271578003110}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1874648040 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3565151663476603322, guid: 9ae0bec9ad9733c408837d73c3f76eab, type: 3}
@@ -2601,62 +2542,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2168311855844771622, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.471
-      objectReference: {fileID: 0}
-    - target: {fileID: 5306536446755859586, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: posEnemy
-      value: 
-      objectReference: {fileID: 1869217451}
-    - target: {fileID: 7133017032517973888, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: ennemiUI
-      value: 
-      objectReference: {fileID: 1869217450}
-    - target: {fileID: 7559925344997589960, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: posMana
-      value: 
-      objectReference: {fileID: 8391643271578003111}
-    - target: {fileID: 7559925344997589960, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: glowAtkColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7559925344997589960, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: glowAtkColor.b
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7559925344997589960, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: glowAtkColor.g
-      value: 2.8453598
-      objectReference: {fileID: 0}
-    - target: {fileID: 7559925344997589960, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: glowAtkColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774138003516605575, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: ManaSlider
-      value: 
-      objectReference: {fileID: 1153699450}
-    - target: {fileID: 8774138003516605575, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: ennemiName
-      value: 
-      objectReference: {fileID: 1772973582}
-    - target: {fileID: 8774138003516605575, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: EnnemiSlider
-      value: 
-      objectReference: {fileID: 42564616}
-    - target: {fileID: 8774138003516605575, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: PlayerSlider
-      value: 
-      objectReference: {fileID: 118407232}
-    - target: {fileID: 8774138003516605575, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: ennemiSprite
-      value: 
-      objectReference: {fileID: 1114373237}
-    - target: {fileID: 8774138003516605575, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
-      propertyPath: ennemiAtktext
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8964785272469041329, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -2905,11 +2790,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
---- !u!224 &8391643271578003111 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 634852999163798050, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
-  m_PrefabInstance: {fileID: 8391643271578003110}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

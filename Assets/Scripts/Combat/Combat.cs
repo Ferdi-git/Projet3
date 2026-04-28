@@ -24,6 +24,8 @@ public class Combat : MonoBehaviour
 
     [SerializeField] private SOEventState eventState;
 
+    [SerializeField] private SOEventEndPlayerTurn endTurn;
+
 
     public int NbrOfCombat;
     private void OnEnable()
@@ -128,7 +130,7 @@ public class Combat : MonoBehaviour
         if (piece.pieceEffet.condition.Condition(conditionOutput))
         {
             soBoard.boardPieces[i].context.conditionOutput = conditionOutput;
-            yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.EffectValues , i);
+            yield return piece.pieceEffet.effet.Effet(soBoard.boardPieces[i].context,port, piece.TempEffectValues , i);
             
         }
         else
@@ -214,6 +216,7 @@ public class Combat : MonoBehaviour
                 eventState.InvokeEndOfCombat();
             }
         }
+        endTurn.InvokeEndTurn();
         eventGridManager.InvokeSetAllPieceCanMove(true);
     }
 

@@ -136,6 +136,7 @@ MonoBehaviour:
   gridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   healthManager: {fileID: 11400000, guid: 6f12cea053413f84cb2c3d414fe38247, type: 2}
   soEventState: {fileID: 11400000, guid: 5240bdb7ce1e7614088effd95523d55f, type: 2}
+  sOEventEndPlayer: {fileID: 11400000, guid: d884a1770fce32149ae18ee8c46b2873, type: 2}
   theBoard: {fileID: 11400000, guid: ef4a20505366c5e48ac6e60e3a1740e0, type: 2}
   soSaveInventory: {fileID: 11400000, guid: 767dd48b98fbd4f42942f9e086303307, type: 2}
   piecesExist:
