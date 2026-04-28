@@ -30,4 +30,9 @@ public class MainMenuManager : MonoBehaviour
         GOOptionsMenu.SetActive(false);
     }
 
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
