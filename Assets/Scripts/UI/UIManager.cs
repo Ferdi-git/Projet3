@@ -22,8 +22,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private SOEventGridManager gridManager;
 
     [SerializeField] private SOEventPlayerLostMessage lostMessage;
+    [SerializeField] private SOEventPLayerWinMessage winMessage;
 
-    
+
     private void OnEnable()
     {
         eventPlayer.GainPV += GainPV;
@@ -41,12 +42,12 @@ public class UIManager : MonoBehaviour
 
         EventEnnemy.EnnemiGainShield += EnnemiGainShield;
         EventEnnemy.EnnemiLooseShield += EnnemiLostShield;
-
         EventEnnemy.NewEnnemi += UpdateUI;
 
         updateEvent.UpdateUI += UpdateUI;
 
         lostMessage.ActiveLostMessage += OpenLostMessage;
+        winMessage.WinMessageEvent += OpenWinMessage;
     }
     private void OnDisable()
     {
@@ -70,6 +71,7 @@ public class UIManager : MonoBehaviour
         updateEvent.UpdateUI -= UpdateUI;
 
         lostMessage.ActiveLostMessage -= OpenLostMessage;
+        winMessage.WinMessageEvent -= OpenWinMessage;
     }
 
 
@@ -217,5 +219,13 @@ public class UIManager : MonoBehaviour
         canOpenEchapMenu = false;
         Time.timeScale = 0f;
 
+    }
+
+    [SerializeField] private GameObject WinMessage;
+    private void OpenWinMessage()
+    {
+        WinMessage.SetActive(true);
+        canOpenEchapMenu = false;
+        Time.timeScale = 0f;
     }
 }
