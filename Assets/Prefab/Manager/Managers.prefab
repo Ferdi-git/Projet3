@@ -442,6 +442,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8832025109569735167}
     - target: {fileID: 5964070754701549770, guid: aec35c3ac3e4af1438857a89ff01adc1, type: 3}
+      propertyPath: endTurn
+      value: 
+      objectReference: {fileID: 11400000, guid: d884a1770fce32149ae18ee8c46b2873, type: 2}
+    - target: {fileID: 5964070754701549770, guid: aec35c3ac3e4af1438857a89ff01adc1, type: 3}
       propertyPath: turnEvent
       value: 
       objectReference: {fileID: 11400000, guid: 90b8cc6ddf833ea47891a408cd75ca13, type: 2}
@@ -455,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8968373103211319584, guid: aec35c3ac3e4af1438857a89ff01adc1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.405
+      value: -0.471
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

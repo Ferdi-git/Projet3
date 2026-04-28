@@ -24,6 +24,8 @@ public class Combat : MonoBehaviour
 
     [SerializeField] private SOEventState eventState;
 
+    [SerializeField] private SOEventEndPlayerTurn endTurn;
+
 
     public int NbrOfCombat;
     private void OnEnable()
@@ -214,6 +216,7 @@ public class Combat : MonoBehaviour
                 eventState.InvokeEndOfCombat();
             }
         }
+        endTurn.InvokeEndTurn();
         eventGridManager.InvokeSetAllPieceCanMove(true);
     }
 
