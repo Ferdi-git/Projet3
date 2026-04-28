@@ -301,7 +301,7 @@ public class GridManager : MonoBehaviour
             for(int i = 0;i < TiersUnlockGrid[currentGridUnlock].Slots.Count;i++)
             {
                 TiersUnlockGrid[currentGridUnlock].Slots[i].gameObject.SetActive(true);
-                gridSlots.Append(TiersUnlockGrid[currentGridUnlock].Slots[i]);
+                gridSlots.Add(TiersUnlockGrid[currentGridUnlock].Slots[i]);
             }
 
         }

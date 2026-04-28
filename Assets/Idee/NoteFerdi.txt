@@ -58,6 +58,7 @@ AtkManager :
 
 
 A faire : 
+	- Find only one time piece
 	- FeedBack Repetition sactive en permanence
 	- Improve trail
 	- Grid
