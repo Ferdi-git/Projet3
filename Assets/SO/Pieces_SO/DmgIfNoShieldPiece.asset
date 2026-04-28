@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: DmgIfNoShieldPiece
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
   healthPoint: 12
-  prefab: {fileID: 6891005454971826096, guid: 901f6225d4481b7488314c367bdfdc70, type: 3}
+  prefab: {fileID: 6891005454971826096, guid: e7c2efe06bb45ef4c8972e5ec0070276, type: 3}
   image: {fileID: 0}
   pieceEffet:
     condition: {fileID: 11400000, guid: 194304bd63c75b74cae513881df8b2d8, type: 2}
     effet: {fileID: 11400000, guid: e004bb3741ec5874b8e2de6c2a6f968d, type: 2}
   ConditionValues: 00000000
-  EfectValues: 0a000000
+  BaseEffectValues: 0a000000
+  TempEffectValues: 
   colors: 00000000
   description: 10   <sprite name=Attack>if no shield on this piece
   isRepetition: 0

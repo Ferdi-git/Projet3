@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: MediumDamagePiece
+  m_Name: ShieldAroundPieceBoost
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 12
-  prefab: {fileID: 6891005454971826096, guid: 901f6225d4481b7488314c367bdfdc70, type: 3}
-  image: {fileID: 21300000, guid: e305d4ff6fcb66148a89b78f93cc03fa, type: 3}
+  healthPoint: 10
+  prefab: {fileID: 6250929826989661692, guid: b7b680bcb8597484eae63eabc15e10c4, type: 3}
+  image: {fileID: 885199028692730458, guid: e5493a205d5a1764ab602194d4acf601, type: 3}
   pieceEffet:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
-    effet: {fileID: 11400000, guid: e004bb3741ec5874b8e2de6c2a6f968d, type: 2}
+    effet: {fileID: 11400000, guid: 102512ac023e7d143b6f9fca2e6ad6f6, type: 2}
   ConditionValues: 
-  BaseEffectValues: 05000000
+  BaseEffectValues: 06000000
   TempEffectValues: 
   colors: 00000000
-  description: 5   <sprite name=Attack>to ennemy
+  description: Give 6   <sprite name=Shield>to neighbouring pieces
   isRepetition: 0
   numberManaGeneratingPerSquare: 5
