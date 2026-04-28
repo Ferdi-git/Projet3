@@ -35,7 +35,9 @@ public class ChoiceManager : MonoBehaviour
             int randInt = Random.Range(0, difPieces.Length);
 
             GameObject newPiece = Instantiate(difPieces[randInt].prefab, spotChoice[i].transform.position, spotChoice[i].transform.rotation, transform);
-            
+
+            PieceInfo pieceInfo = newPiece.GetComponent<PieceInfo>();
+            pieceInfo.soPiece.TempEffectValues = pieceInfo.soPiece.BaseEffectValues;
             lastGeneratedPiece.Add(newPiece);
         }
     }

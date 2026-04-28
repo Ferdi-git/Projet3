@@ -48,6 +48,12 @@ public class EnemyZoneAtk : MonoBehaviour
         {
             listSlots[i].GetSelected();
         }
+
+        for (int i = 0; i < listSquareAtk.Count; i++)
+        {
+            listSquareAtk[i].TurnTextRightSide();
+        }
+
     }
 
     public void RemoveAtk()

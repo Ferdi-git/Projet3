@@ -11,7 +11,9 @@ public class SoPieces : ScriptableObject
     public PieceEffect pieceEffet;
     public List<int> ConditionValues;
     [FormerlySerializedAs("EfectValues")]
-    public List<int> EffectValues;
+    [FormerlySerializedAs("EffectValues")]
+    public List<int> BaseEffectValues;
+    [HideInInspector]public List<int> TempEffectValues;
     public List<PieceColor> colors = new List<PieceColor> { PieceColor.Neutral};
     public string description;
     public bool isRepetition = false;
