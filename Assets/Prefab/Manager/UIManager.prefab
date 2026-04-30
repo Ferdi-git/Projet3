@@ -6572,7 +6572,7 @@ MonoBehaviour:
   ManaSlider: {fileID: 8256741281143570788}
   EnnemiSlider: {fileID: 8077106042500044576}
   ennemiSprite: {fileID: 2132746628681323921}
-  ennemiName: {fileID: 3060703549758669363}
+  PVPlayerText: {fileID: 3060703549758669363}
   updateEvent: {fileID: 11400000, guid: 7334fa8df3aee1040b211d2589d35538, type: 2}
   gridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   lostMessage: {fileID: 11400000, guid: f8927921ea0ba2347af1cf4fb1925d9b, type: 2}

@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider EnnemiSlider;
 
     [SerializeField] private SpriteRenderer ennemiSprite;
-    [SerializeField] private TextMeshProUGUI ennemiName;
+    [SerializeField] private TextMeshProUGUI PVPlayerText;
 
     [SerializeField] private SOEventUpdateUI updateEvent;
     [SerializeField] private SOEventGridManager gridManager;
@@ -98,7 +98,7 @@ public class UIManager : MonoBehaviour
         EnnemiSlider.value = pvEnnemi;
         ManaSlider.value = manaPlayer;
 
-        ennemiName.text  = statsEnnemi.ennemiName;
+        PVPlayerText.text  = pvPlayer.ToString() + "/" + statsPlayer.pvMax.ToString();
         ennemiSprite.sprite = statsEnnemi.sprite;
         
     }
