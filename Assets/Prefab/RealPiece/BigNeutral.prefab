@@ -1253,7 +1253,7 @@ PrefabInstance:
     - target: {fileID: 6445726352670952644, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: soPiece
       value: 
-      objectReference: {fileID: 11400000, guid: a0b4b01ba95543842bd735be75d069c7, type: 2}
+      objectReference: {fileID: 11400000, guid: 83b8a6ce1d28f59488721e9418e3343b, type: 2}
     - target: {fileID: 6445726352670952644, guid: 79a5b5461ea7bc746960fb5e40a31e5a, type: 3}
       propertyPath: originalRota.w
       value: 0.70710677
