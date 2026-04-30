@@ -420,7 +420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7990670026921474651
 Transform:
   m_ObjectHideFlags: 0
@@ -471,13 +471,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a0b4b01ba95543842bd735be75d069c7, type: 2}
   - {fileID: 11400000, guid: 5c549e0563848cf44807d11f488c4631, type: 2}
   - {fileID: 11400000, guid: 1b25dc1e76f6712429511e837f1be8d4, type: 2}
-  - {fileID: 11400000, guid: 34b5a81c1de55714e949e2c55bcfb5f5, type: 2}
-  - {fileID: 11400000, guid: 381c9b692b9631c4291d9348615745d1, type: 2}
-  - {fileID: 11400000, guid: 49dff495c5f257a43814fb73e5f4e874, type: 2}
-  - {fileID: 11400000, guid: c883cf25e4b187e4e99244efba1020bb, type: 2}
   - {fileID: 11400000, guid: fcf4baab08234e74aac22b8a54183d16, type: 2}
-  lastGeneratedPiece:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: fcf4baab08234e74aac22b8a54183d16, type: 2}
+  - {fileID: 11400000, guid: fcf4baab08234e74aac22b8a54183d16, type: 2}
+  - {fileID: 11400000, guid: fcf4baab08234e74aac22b8a54183d16, type: 2}
+  - {fileID: 11400000, guid: fcf4baab08234e74aac22b8a54183d16, type: 2}
+  lastGeneratedPiece: []
   shopManager: {fileID: 7917422600699015629}
 --- !u!1 &4796684021063922405
 GameObject:
