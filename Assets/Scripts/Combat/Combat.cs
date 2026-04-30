@@ -41,6 +41,7 @@ public class Combat : MonoBehaviour
 
     private void Start()
     {
+        bouton.SetActive(true);
         piecePlayed.ResetInt();
         NbrOfCombat = 0;
         statsPlayer.InvokeStartPVSet();
@@ -57,6 +58,7 @@ public class Combat : MonoBehaviour
 
     public void StartTurn ( )
     {
+        bouton.SetActive(true);
         eventGridManager.InvokeSetAllPieceCanMove(false);
         eventGridManager.InvokeActualiseBoard();
         piecePlayed.ResetInt();
@@ -213,9 +215,11 @@ public class Combat : MonoBehaviour
             if (statsEnnemi.GetPV() <= 0 )
             {
                 NbrOfCombat += 1;
+                bouton.SetActive(false);
                 eventState.InvokeEndOfCombat();
             }
         }
+        
         endTurn.InvokeEndTurn();
         eventGridManager.InvokeSetAllPieceCanMove(true);
     }

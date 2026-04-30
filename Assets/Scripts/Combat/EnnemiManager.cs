@@ -33,16 +33,42 @@ public class EnnemiManager : MonoBehaviour
         CombatCount = NbrOfCombat;
         ennemiUI.SetActive(true);
         atkIndex = 0;
-        index = Random.Range(0,ennemiList.ennemiList.Count);
-        stats.pvMax = ((ennemiList.ennemiList[index].resistance/100) * stats.AverageValue) * (int)(1.4 * (NbrOfCombat+1)) ;
+        index = Random.Range(0, ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList.Count);
+        stats.pvMax = ((ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList[index].resistance/100) * stats.AverageValue) * (int)(1.4 * (NbrOfCombat+1)) ;
         stats.pv = stats.pvMax;
         stats.shield = 0;
-        stats.ennemiName = ennemiList.ennemiList [index].Name;
-        stats.sprite = ennemiList.ennemiList[index].sprite;
-        stats.ennemiAttacks = ennemiList.ennemiList[index].attacks ;
+        stats.ennemiName = ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList [index].Name;
+        stats.sprite = ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList[index].sprite;
+        stats.ennemiAttacks = ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList[index].attacks ;
         UIeventGiveAtk.InvokeGiveUICurrentAtk(0);
         UIeventUpdateUI.InvokeUpdateUI();
         
+        
+    }
+    private int GiveCurrentPalier (int NbrOfCombat)
+    {
+        if (CombatCount == 0)
+        {
+            return 0 ;
+        }
+        else if (CombatCount <= 4 )
+        {
+            return 1; 
+        }
+        else if (CombatCount <= 9 )
+        {
+            return 2;
+        }
+        else if (CombatCount <= 14)
+        {
+            return 3;
+        }
+        else
+        {
+            return 3;
+        }
+
+
     }
 
     private void ShowAtk ()
