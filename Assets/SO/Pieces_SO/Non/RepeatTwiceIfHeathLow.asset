@@ -17,9 +17,12 @@ MonoBehaviour:
   image: {fileID: 0}
   pieceEffet:
     condition: {fileID: 11400000, guid: e0b5614fa8e494e428d469e61f759ec2, type: 2}
-    effet: {fileID: 11400000, guid: 1cc1c1bb7f4c9004eb54c5bc1ed9bdd5, type: 2}
+    effet: {fileID: 11400000, guid: 2e50b09e9951e974fad89fa2ce82a2b8, type: 2}
   ConditionValues: 03000000
-  EfectValues: 02000000
+  BaseEffectValues: 02000000
+  TempEffectValues: 
   colors: 00000000
-  description: Retrigger neighbouring pieces twice if health is 3 or below
+  description: Retrigger neighbouring pieces twice if health is 3 or below but doesn't
+    interact with other retrigger effect
   isRepetition: 1
+  numberManaGeneratingPerSquare: 0
