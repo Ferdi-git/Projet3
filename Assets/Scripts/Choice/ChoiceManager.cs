@@ -34,12 +34,41 @@ public class ChoiceManager : MonoBehaviour
 
             int randInt = Random.Range(0, difPieces.Length);
 
+            if(lastGeneratedPiece.Count !=0)
+            {
+                bool foundNonRepeatPiece = false;
+                while (!foundNonRepeatPiece)
+                {
+                    randInt = Random.Range(0, difPieces.Length);
+                    foundNonRepeatPiece = CheckIfPieceAlreadyChecked(difPieces[randInt]);
+                }
+            }
+            else
+            {
+                randInt = Random.Range(0, difPieces.Length);
+            }
+
             GameObject newPiece = Instantiate(difPieces[randInt].prefab, spotChoice[i].transform.position, spotChoice[i].transform.rotation, transform);
 
             PieceInfo pieceInfo = newPiece.GetComponent<PieceInfo>();
             pieceInfo.soPiece.TempEffectValues = pieceInfo.soPiece.BaseEffectValues;
             lastGeneratedPiece.Add(newPiece);
         }
+    }
+
+
+
+    private bool CheckIfPieceAlreadyChecked(SoPieces piece)
+    {
+        for (int i = 0; i < lastGeneratedPiece.Count; i++)
+        {
+            if (lastGeneratedPiece[i].GetComponent<PieceInfo>().soPiece == piece)
+            {
+                lastGeneratedPiece.RemoveAt(i);
+                return false;
+            }
+        }
+        return true;
     }
 
     private void ClearChoice()
