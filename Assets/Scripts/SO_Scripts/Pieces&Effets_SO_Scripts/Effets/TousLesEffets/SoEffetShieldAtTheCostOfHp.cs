@@ -20,7 +20,8 @@ public class SoEffetShieldAtTheCostOfHp : SoEffet
                 BoardPiece voisin = context.voisins[i];
                 port.thisBoardPiece = voisin;
                 voisin.shield += amount[0] * 2;
-                port.ThisPieceTakeDamage(amount[0]);
+                piece.healthPoint -= amount[0];
+                piece.pieceAnimation.RefreshHealth(piece);
                 port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
                 yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
                 yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
@@ -30,7 +31,8 @@ public class SoEffetShieldAtTheCostOfHp : SoEffet
                 BoardPiece voisin = context.voisins[i];
                 port.thisBoardPiece = voisin;
                 voisin.shield += (piece.healthPoint - 1) * 2;
-                port.ThisPieceTakeDamage(amount[0]);
+                piece.healthPoint = 1;
+                piece.pieceAnimation.RefreshHealth(piece);
                 port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
                 yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
                 yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
@@ -53,7 +55,8 @@ public class SoEffetShieldAtTheCostOfHp : SoEffet
                 BoardPiece voisin = context.voisins[i];
                 port.thisBoardPiece = voisin;
                 voisin.shield += amount[0] * 2;
-                port.ThisPieceTakeDamage(amount[0]);
+                piece.healthPoint -= amount[0];
+                piece.pieceAnimation.RefreshHealth(piece);
                 port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
                 if (i != 0) yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
                 yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
@@ -64,7 +67,8 @@ public class SoEffetShieldAtTheCostOfHp : SoEffet
                 port.thisBoardPiece = voisin;
                 voisin.shield += amount[0] * 2;
                 voisin.shield += (piece.healthPoint - 1) * 2;
-                port.ThisPieceTakeDamage(amount[0]);
+                piece.healthPoint = 1;
+                piece.pieceAnimation.RefreshHealth(piece);
                 port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
                 port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
                 if (i != 0) yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
