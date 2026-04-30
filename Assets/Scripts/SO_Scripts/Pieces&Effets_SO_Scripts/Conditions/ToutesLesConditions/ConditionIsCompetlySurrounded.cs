@@ -7,7 +7,7 @@ public class ConditionIsCompetlySurrounded : SoCondition
 {
     public override bool Condition(ConditionOutput conditionOutput)
     {
-        if(conditionOutput.context.NbrCaseLibre == 0)
+        if(conditionOutput.context.NbrCaseLibre <= conditionOutput.variableList[0])
         {
             return true;
         }

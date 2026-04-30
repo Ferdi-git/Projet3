@@ -16,11 +16,12 @@ MonoBehaviour:
   prefab: {fileID: 6891005454971826096, guid: 3bf031bf56c7efe44ab483517776ca7a, type: 3}
   image: {fileID: 21300000, guid: e305d4ff6fcb66148a89b78f93cc03fa, type: 3}
   pieceEffet:
-    condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
+    condition: {fileID: 11400000, guid: 277f082ee65f9bf46a9c99c564941278, type: 2}
     effet: {fileID: 11400000, guid: 1cc1c1bb7f4c9004eb54c5bc1ed9bdd5, type: 2}
-  ConditionValues: 
-  EfectValues: 
+  ConditionValues: 03000000
+  BaseEffectValues: 
+  TempEffectValues: 
   colors: 0000000002000000
-  description: Retrigger neighbouring pieces
+  description: Retrigger neighbouring pieces if has at least 3 of them
   isRepetition: 1
   numberManaGeneratingPerSquare: 5
