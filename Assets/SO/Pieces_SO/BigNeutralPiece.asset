@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BigNeutralPiece
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
   healthPoint: 30
-  prefab: {fileID: 0}
+  prefab: {fileID: 6891005454971826096, guid: b7ca87872ff48a14e9f26b2d78026cab, type: 3}
   image: {fileID: 0}
   pieceEffet:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
