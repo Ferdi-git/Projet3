@@ -12,6 +12,7 @@ public class EnnemiManager : MonoBehaviour
     [SerializeField] private SOEventUpdateUI UIeventUpdateUI;
     private int index;
     private int atkIndex;
+    private int CombatCount;
 
     private void OnEnable()
     {
@@ -29,15 +30,16 @@ public class EnnemiManager : MonoBehaviour
 
     public void GenerateEnnemi (int NbrOfCombat)
     {
+        CombatCount = NbrOfCombat;
         ennemiUI.SetActive(true);
         atkIndex = 0;
         index = Random.Range(0,ennemiList.ennemiList.Count);
-        stats.pvMax = ((ennemiList.ennemiList[index].resistance/100) * stats.AverageValue) * (NbrOfCombat+1) ;
+        stats.pvMax = ((ennemiList.ennemiList[index].resistance/100) * stats.AverageValue) * (int)(1.4 * (NbrOfCombat+1)) ;
         stats.pv = stats.pvMax;
         stats.shield = 0;
         stats.ennemiName = ennemiList.ennemiList [index].Name;
         stats.sprite = ennemiList.ennemiList[index].sprite;
-        stats.ennemiAttacks = ennemiList.ennemiList[index].attacks;
+        stats.ennemiAttacks = ennemiList.ennemiList[index].attacks ;
         UIeventGiveAtk.InvokeGiveUICurrentAtk(0);
         UIeventUpdateUI.InvokeUpdateUI();
         
@@ -58,7 +60,8 @@ public class EnnemiManager : MonoBehaviour
     
     private int GetDamageValue ()
     {
-        return stats.ennemiAttacks[atkIndex].damage;
+        float damage = stats.ennemiAttacks[atkIndex].damage + CombatCount ;
+        return (int) damage;
     }
 
     private int GetAtkZoneNbr ()

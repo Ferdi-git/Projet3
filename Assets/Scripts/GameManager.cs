@@ -61,7 +61,31 @@ public class GameManager : MonoBehaviour
     private void ShopingEnded ()
     {
         print("shop ended");
-        gridManager.InvokeUnlockNextGridTier();
+        if (ActualFloorCount == 1)
+        {
+            gridManager.InvokeUnlockNextGridTier();
+        }
+        else if (ActualFloorCount == 5)
+        {
+            gridManager.InvokeUnlockNextGridTier();
+        }
+        else if (ActualFloorCount == 9)
+        {
+            gridManager.InvokeUnlockNextGridTier();
+        }
+        else if (ActualFloorCount == 13)
+        {
+            gridManager.InvokeUnlockNextGridTier();
+        }
+        else if (ActualFloorCount == 17)
+        {
+            gridManager.InvokeUnlockNextGridTier();
+        }
+        else if (ActualFloorCount == 21)
+        {
+            gridManager.InvokeUnlockNextGridTier();
+        }
+
         NextFloor();
     }
     private void PlayerLost ()
