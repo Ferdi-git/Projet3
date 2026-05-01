@@ -109,10 +109,10 @@ TextureImporter:
       name: Smile_0
       rect:
         serializedVersion: 2
-        x: 7226
-        y: 20971
-        width: 2964
-        height: 2769
+        x: 80
+        y: 331
+        width: 64
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: Smile_1
       rect:
         serializedVersion: 2
-        x: 20170
-        y: 20760
-        width: 3220
-        height: 2969
+        x: 356
+        y: 336
+        width: 64
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Smile_2
       rect:
         serializedVersion: 2
-        x: 1798
-        y: 4872
-        width: 28413
-        height: 14311
+        x: 19
+        y: 66
+        width: 459
+        height: 218
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

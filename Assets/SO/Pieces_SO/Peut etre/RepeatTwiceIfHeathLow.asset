@@ -22,7 +22,7 @@ MonoBehaviour:
   BaseEffectValues: 02000000
   TempEffectValues: 
   colors: 00000000
-  description: Retrigger neighbouring pieces twice if health is 3 or below but doesn't
-    interact with other retrigger effect
+  description: Retrigger neighbouring pieces twice if   <sprite name = Health 1>is
+    at most 3 but doesn't interact with other retrigger effect
   isRepetition: 1
   numberManaGeneratingPerSquare: 0

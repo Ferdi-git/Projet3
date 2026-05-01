@@ -28,4 +28,5 @@ MonoBehaviour:
     ennemiList: []
   - Backgrounds: []
     ennemiList: []
-  bossList: []
+  bossList:
+  - {fileID: 11400000, guid: 465a9002f2add9c40983c10a46c2d2fb, type: 2}
