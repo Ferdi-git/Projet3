@@ -1783,12 +1783,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7805941970267779862, guid: 359458fcc4602e9419cd17c6fd1aad25, type: 3}
       propertyPath: difPieces.Array.size
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7805941970267779862, guid: 359458fcc4602e9419cd17c6fd1aad25, type: 3}
       propertyPath: 'difPieces.Array.data[17]'
       value: 
       objectReference: {fileID: 11400000, guid: 1b25dc1e76f6712429511e837f1be8d4, type: 2}
+    - target: {fileID: 7805941970267779862, guid: 359458fcc4602e9419cd17c6fd1aad25, type: 3}
+      propertyPath: 'difPieces.Array.data[18]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 265926ade2108b947985bbe46a6b8a64, type: 2}
     - target: {fileID: 7917422600699015629, guid: 359458fcc4602e9419cd17c6fd1aad25, type: 3}
       propertyPath: grid
       value: 
