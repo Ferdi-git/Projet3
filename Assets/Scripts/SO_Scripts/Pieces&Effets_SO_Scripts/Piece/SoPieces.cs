@@ -13,7 +13,7 @@ public class SoPieces : ScriptableObject
     [FormerlySerializedAs("EfectValues")]
     [FormerlySerializedAs("EffectValues")]
     public List<int> BaseEffectValues;
-    [HideInInspector]public List<int> TempEffectValues;
+    public List<int> TempEffectValues;
     public List<PieceColor> colors = new List<PieceColor> { PieceColor.Neutral};
     public string description;
     public bool isRepetition = false;
