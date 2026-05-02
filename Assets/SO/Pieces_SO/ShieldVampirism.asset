@@ -22,7 +22,7 @@ MonoBehaviour:
   BaseEffectValues: 0200000001000000
   TempEffectValues: 00000000
   colors: 03000000
-  description: 'Takes 2   <sprite name=Health 1>from it''s neighbours and converts
-    them into 1 <sprite name=Shield> (currently 0) '
+  description: Takes 2   <sprite name=Health 1>from it's neighbours and converts
+    them into 1 <sprite name=Shield>for the rest of the game
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
