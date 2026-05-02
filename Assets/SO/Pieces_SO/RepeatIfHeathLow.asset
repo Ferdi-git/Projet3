@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: RepeatTwiceIfHeathLow
+  m_Name: RepeatIfHeathLow
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 20
+  healthPoint: 16
   prefab: {fileID: 9169137471980413390, guid: 85654630ef9b7d34ab80c063dac479fb, type: 3}
   image: {fileID: 0}
   pieceEffet:
     condition: {fileID: 11400000, guid: e0b5614fa8e494e428d469e61f759ec2, type: 2}
-    effet: {fileID: 11400000, guid: 2e50b09e9951e974fad89fa2ce82a2b8, type: 2}
+    effet: {fileID: 11400000, guid: 1cc1c1bb7f4c9004eb54c5bc1ed9bdd5, type: 2}
   ConditionValues: 03000000
-  BaseEffectValues: 02000000
+  BaseEffectValues: 
   TempEffectValues: 
   colors: 00000000
-  description: Retrigger neighbouring pieces twice if   <sprite name = Health 1>is
-    at most 3 but doesn't interact with other retrigger effect
+  description: Retrigger neighbouring pieces if   <sprite name = Health 1>is at most
+    3
   isRepetition: 1
   numberManaGeneratingPerSquare: 0
