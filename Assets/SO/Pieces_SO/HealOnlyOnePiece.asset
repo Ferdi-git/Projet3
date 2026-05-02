@@ -22,6 +22,6 @@ MonoBehaviour:
   BaseEffectValues: 0a000000
   TempEffectValues: 
   colors: 00000000
-  description: If only has 1 neighbour, heal 10   <sprite name=Health 1>to it
+  description: If only has 1 neighbour, heal 10   <sprite name=Heal 1>to it
   isRepetition: 0
   numberManaGeneratingPerSquare: 0

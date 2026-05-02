@@ -20,9 +20,9 @@ MonoBehaviour:
     effet: {fileID: 11400000, guid: 05762203ec9b5aa488db2732b682ceab, type: 2}
   ConditionValues: 04000000
   BaseEffectValues: 05000000
-  TempEffectValues: 
+  TempEffectValues: 05000000
   colors: 00000000
-  description: If combat lasted at least 4 turns, give 5   <sprite name=Health1>to
+  description: If combat lasted at least 4 turns, give 5   <sprite name=Heal 1>to
     the player
   isRepetition: 0
   numberManaGeneratingPerSquare: 0

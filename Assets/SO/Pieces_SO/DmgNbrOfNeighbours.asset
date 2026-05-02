@@ -20,7 +20,7 @@ MonoBehaviour:
     effet: {fileID: 11400000, guid: 4b40ab1253079854abfa8eff83ce1bdc, type: 2}
   ConditionValues: 
   BaseEffectValues: 05000000
-  TempEffectValues: 
+  TempEffectValues: 05000000
   colors: 01000000
   description: Deals 5   <sprite name=Attack>for each neighbouring piece
   isRepetition: 0
