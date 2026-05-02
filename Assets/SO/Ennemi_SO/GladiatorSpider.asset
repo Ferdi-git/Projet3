@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: GladiatorSpider
   attacks:
   - zone: {fileID: 596622388243198518, guid: d001d1220d1ecf94da39b26ae2f80c54, type: 3}
-    damage: 4
+    damage: 5
   - zone: {fileID: 596622388243198518, guid: 4cb78f88fc4a5bc4fae852deefa53ad0, type: 3}
-    damage: 4
+    damage: 5
   sprite: {fileID: 21300000, guid: 8048b5bd847ab0b4ea0d81ddda8fd860, type: 3}
   resistance: 110

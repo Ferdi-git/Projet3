@@ -30,3 +30,5 @@ MonoBehaviour:
     ennemiList: []
   bossList:
   - {fileID: 11400000, guid: 465a9002f2add9c40983c10a46c2d2fb, type: 2}
+  - {fileID: 11400000, guid: 8ca29e20fb9e622448821c25490d8027, type: 2}
+  - {fileID: 11400000, guid: bf17af46e178c1a46bc1b30033609ca6, type: 2}
