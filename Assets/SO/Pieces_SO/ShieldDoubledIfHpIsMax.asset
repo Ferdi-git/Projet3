@@ -21,7 +21,7 @@ MonoBehaviour:
   ConditionValues: 
   BaseEffectValues: 0a000000
   TempEffectValues: 
-  colors: 00000000
+  colors: 03000000
   description: Give twice the amount of   <sprite name=Shield>on this piece to neighbours
     if it's   <sprite name=Health 1> is at it's maximum
   isRepetition: 0

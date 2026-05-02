@@ -21,7 +21,7 @@ MonoBehaviour:
   ConditionValues: 03000000
   BaseEffectValues: 
   TempEffectValues: 
-  colors: 0000000002000000
+  colors: 0200000002000000
   description: Retrigger neighbouring pieces if has at most 3 of them
   isRepetition: 1
   numberManaGeneratingPerSquare: 5

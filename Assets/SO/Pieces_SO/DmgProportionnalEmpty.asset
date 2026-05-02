@@ -20,8 +20,8 @@ MonoBehaviour:
     effet: {fileID: 11400000, guid: 11492ada19470cb47b7210feec2fb539, type: 2}
   ConditionValues: 
   BaseEffectValues: 05000000
-  TempEffectValues: 05000000
-  colors: 00000000
+  TempEffectValues: 00000000
+  colors: 01000000
   description: Deals 5   <sprite name=Attack>and gain +1   <sprite name=Attack> for
     every empty neighbouring tile
   isRepetition: 0

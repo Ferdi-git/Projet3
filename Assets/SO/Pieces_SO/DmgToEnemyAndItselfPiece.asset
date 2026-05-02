@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
   m_Name: DmgToEnemyAndItselfPiece
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 10
+  healthPoint: 11
   prefab: {fileID: 6891005454971826096, guid: 8ccc6e448a89a3d48948dbc5cb0f94b6, type: 3}
   image: {fileID: 0}
   pieceEffet:
@@ -21,7 +21,7 @@ MonoBehaviour:
   ConditionValues: 
   BaseEffectValues: 0e00000003000000
   TempEffectValues: 
-  colors: 00000000
+  colors: 01000000
   description: Deals 14   <sprite name=Attack>to enemy  \n- 3   <sprite name=Heal
     1>to itself
   isRepetition: 0

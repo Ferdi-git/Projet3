@@ -21,7 +21,7 @@ MonoBehaviour:
   ConditionValues: 
   BaseEffectValues: 0a000000
   TempEffectValues: 
-  colors: 00000000
+  colors: 01000000
   description: 10   <sprite name=Attack>to ennemy
   isRepetition: 0
   numberManaGeneratingPerSquare: 0

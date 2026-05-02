@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: SmallDamagePiece
+  m_Name: ShieldVampirism
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 8
-  prefab: {fileID: 6891005454971826096, guid: d3e8b810496688f46b3ddf621c7c1df1, type: 3}
-  image: {fileID: 21300000, guid: e305d4ff6fcb66148a89b78f93cc03fa, type: 3}
+  healthPoint: 15
+  prefab: {fileID: 6891005454971826096, guid: 83fbd20d888526240835754ad26ea6f0, type: 3}
+  image: {fileID: 0}
   pieceEffet:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
-    effet: {fileID: 11400000, guid: e004bb3741ec5874b8e2de6c2a6f968d, type: 2}
+    effet: {fileID: 11400000, guid: 0b2243d28d149214d8016addb22079cc, type: 2}
   ConditionValues: 
-  BaseEffectValues: 03000000
-  TempEffectValues: 03000000
-  colors: 01000000
-  description: 3   <sprite name=Attack>to enemy
+  BaseEffectValues: 0200000001000000
+  TempEffectValues: 00000000
+  colors: 03000000
+  description: 'Takes 2   <sprite name=Health 1>from it''s neighbours and converts
+    them into 1 <sprite name=Shield> (currently 0) '
   isRepetition: 0
-  numberManaGeneratingPerSquare: 5
+  numberManaGeneratingPerSquare: 0
