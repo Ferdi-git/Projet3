@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
-  m_Name: ShieldDoubled
+  m_Name: ShieldDoubledIfHpIsMax
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 5
+  healthPoint: 10
   prefab: {fileID: 6891005454971826096, guid: 73984fda458db8146bd7354a89e04aee, type: 3}
   image: {fileID: 0}
   pieceEffet:
-    condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
+    condition: {fileID: 11400000, guid: 6d214f19f96ec634cbde0b480f90f23f, type: 2}
     effet: {fileID: 11400000, guid: 7032353fad46d9049a1b9b3bff6fb191, type: 2}
   ConditionValues: 
-  BaseEffectValues: 
+  BaseEffectValues: 0a000000
   TempEffectValues: 
   colors: 00000000
   description: Give twice the amount of   <sprite name=Shield>on this piece to neighbours
+    if it's   <sprite name=Health 1> is at it's maximum
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
