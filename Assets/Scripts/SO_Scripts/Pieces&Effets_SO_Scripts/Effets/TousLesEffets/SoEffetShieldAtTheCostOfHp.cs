@@ -9,9 +9,25 @@ public class SoEffetShieldAtTheCostOfHp : SoEffet
 {
     public override IEnumerator Effet(Context context, OutputPort port, List<int> amount, int tour)
     {
+        int remainingHealth = 0;
+
         port.piecePlayed.PiecePlayedUp();
         BoardPiece piece = port.thisBoardPiece;
         //yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic,null);
+
+        if (context.voisins.Count > 0)
+        {
+            if(piece.healthPoint > amount[0])
+            {
+                piece.healthPoint -= amount[0];
+            }
+            else
+            {
+                remainingHealth = piece.healthPoint - 1;
+                piece.healthPoint = 1;
+            }
+            piece.pieceAnimation.RefreshHealth(piece);
+        }
 
         for (int i = 0; i < context.voisins.Count; i++)
         {
@@ -20,8 +36,6 @@ public class SoEffetShieldAtTheCostOfHp : SoEffet
                 BoardPiece voisin = context.voisins[i];
                 port.thisBoardPiece = voisin;
                 voisin.shield += amount[0] * 2;
-                piece.healthPoint -= amount[0];
-                piece.pieceAnimation.RefreshHealth(piece);
                 port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
                 yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
                 yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
@@ -30,8 +44,7 @@ public class SoEffetShieldAtTheCostOfHp : SoEffet
             {
                 BoardPiece voisin = context.voisins[i];
                 port.thisBoardPiece = voisin;
-                voisin.shield += (piece.healthPoint - 1) * 2;
-                piece.healthPoint = 1;
+                voisin.shield += remainingHealth * 2;
                 piece.pieceAnimation.RefreshHealth(piece);
                 port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
                 yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
@@ -43,10 +56,26 @@ public class SoEffetShieldAtTheCostOfHp : SoEffet
     }
     public override IEnumerator RepeatEffet(Context context, OutputPort port, List<int> amount, int tour, BoardPiece declencheur)
     {
+        int remainingHealth = 0;
+
         port.piecePlayed.RepeatedPieceUp();
         BoardPiece piece = port.thisBoardPiece;
 
         yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, declencheur);
+
+        if (context.voisins.Count > 0)
+        {
+            if (piece.healthPoint > amount[0])
+            {
+                piece.healthPoint -= amount[0];
+            }
+            else
+            {
+                remainingHealth = piece.healthPoint - 1;
+                piece.healthPoint = 1;
+            }
+            piece.pieceAnimation.RefreshHealth(piece);
+        }
 
         for (int i = 0; i < context.voisins.Count; i++)
         {
@@ -55,8 +84,6 @@ public class SoEffetShieldAtTheCostOfHp : SoEffet
                 BoardPiece voisin = context.voisins[i];
                 port.thisBoardPiece = voisin;
                 voisin.shield += amount[0] * 2;
-                piece.healthPoint -= amount[0];
-                piece.pieceAnimation.RefreshHealth(piece);
                 port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
                 if (i != 0) yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
                 yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
@@ -66,9 +93,7 @@ public class SoEffetShieldAtTheCostOfHp : SoEffet
                 BoardPiece voisin = context.voisins[i];
                 port.thisBoardPiece = voisin;
                 voisin.shield += amount[0] * 2;
-                voisin.shield += (piece.healthPoint - 1) * 2;
-                piece.healthPoint = 1;
-                piece.pieceAnimation.RefreshHealth(piece);
+                voisin.shield += remainingHealth * 2;
                 port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
                 port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
                 if (i != 0) yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);

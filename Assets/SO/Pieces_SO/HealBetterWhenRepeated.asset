@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
   m_Name: HealBetterWhenRepeated
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 8
+  healthPoint: 10
   prefab: {fileID: 6891005454971826096, guid: 2fbff2fcf15d90045aaf73ea7a425962, type: 3}
   image: {fileID: 0}
   pieceEffet:

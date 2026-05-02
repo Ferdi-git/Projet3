@@ -24,4 +24,4 @@ MonoBehaviour:
   colors: 01000000
   description: Deals 2   <sprite name=Attack>by   <sprite name=Shield>on this piece
   isRepetition: 0
-  numberManaGeneratingPerSquare: 5
+  numberManaGeneratingPerSquare: 0

@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dce66a0c3ead98489558770a86fac6a, type: 3}
   m_Name: HealIfAttackedPiece
   m_EditorClassIdentifier: Assembly-CSharp::SoPieces
-  healthPoint: 8
+  healthPoint: 9
   prefab: {fileID: 6891005454971826096, guid: 5f11ad59563c66149901af4cef09f28b, type: 3}
   image: {fileID: 0}
   pieceEffet:
     condition: {fileID: 11400000, guid: e2d125a74e9ab4b43ad44168553f8f9c, type: 2}
     effet: {fileID: 11400000, guid: d06846e772b1242489f9e611f0956768, type: 2}
   ConditionValues: 
-  EfectValues: 05000000
+  BaseEffectValues: 06000000
+  TempEffectValues: 
   colors: 00000000
-  description: 5   <sprite name=Heal 1>to neighbouring pieces if is on an attacked
+  description: 6   <sprite name=Heal 1>to neighbouring pieces if is on an attacked
     zone
   isRepetition: 0
   numberManaGeneratingPerSquare: 5
