@@ -278,7 +278,7 @@ public class PieceAnimations : MonoBehaviour
         deathParticle.Play();
         //for (int i = 0; i < spriteRenderers.Count; i++) spriteRenderers[i].gameObject.SetActive(false);
         
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
 
     }
