@@ -2200,6 +2200,10 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3060703549758669363, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4290772929
+      objectReference: {fileID: 0}
     - target: {fileID: 3125386093608409136, guid: b4345b6df785a9a45866b528bfa94b15, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.9499999

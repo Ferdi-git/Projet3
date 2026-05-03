@@ -4,14 +4,14 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SOEventPlayer : ScriptableObject
 {
-    public Action<int> GainPV;
-    public Action<int> LoosePV;
+    public event Action<int> GainPV;
+    public event Action<int> LoosePV;
 
-    public Action<int> GainMana;
-    public Action<int> LooseMana;
+    public event Action<int> GainMana;
+    public event Action<int> LooseMana;
 
-    public Action<int> GainShield;
-    public Action<int> LooseShield;
+    public event Action<int> GainShield;
+    public event Action<int> LooseShield;
 
     public void InvokePlayerGainPV(int amount) { GainPV?.Invoke(amount); }
     public void InvokePlayerLoosePV(int amount) { LoosePV?.Invoke(amount); }
