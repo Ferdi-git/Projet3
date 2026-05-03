@@ -17,7 +17,7 @@ public class PieceAnimations : MonoBehaviour
     [SerializeField] Color FullHealthColor;
     [SerializeField] Color HealthColor;
     [SerializeField] Color LowHealthColor;
-
+    [SerializeField] ParticleSystem deathParticle;
     [Header("---Glow")]
 
     [SerializeField] private float glowIntensity = 2f;   // above 1 = triggers bloom
@@ -270,8 +270,19 @@ public class PieceAnimations : MonoBehaviour
     public void DestroyPieceAnim()
     {
         gameObject.GetComponent<PieceInfo>().Unfill();
-        Destroy(gameObject);
+        StartCoroutine(DieAnim());
     }
+
+    private IEnumerator DieAnim()
+    {
+        deathParticle.Play();
+        //for (int i = 0; i < spriteRenderers.Count; i++) spriteRenderers[i].gameObject.SetActive(false);
+        
+        yield return new WaitForSeconds(0.7f);
+        Destroy(gameObject);
+
+    }
+
 
     public enum TypeAnim
     {

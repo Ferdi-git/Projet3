@@ -59,10 +59,8 @@ AtkManager :
 
 A faire : 
 	- Make Faster
-	- Find only one time piece
 	- FeedBack Repetition sactive en permanence
 	- Improve trail
-	- Grid
 	- Info piece
 	- Death Anim
 
