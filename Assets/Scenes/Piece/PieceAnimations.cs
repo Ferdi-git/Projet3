@@ -1,4 +1,3 @@
-
 using DG.Tweening;
 using System;
 using System.Collections;
@@ -18,18 +17,20 @@ public class PieceAnimations : MonoBehaviour
     [SerializeField] Color HealthColor;
     [SerializeField] Color LowHealthColor;
     [SerializeField] ParticleSystem deathParticle;
-    [Header("---Glow")]
 
-    [SerializeField] private float glowIntensity = 2f;   // above 1 = triggers bloom
+    [Header("---Speed")]
+    [SerializeField, Range(0.1f, 3f)] private float animSpeed = 1f;
+
+    [Header("---Glow")]
+    [SerializeField] private float glowIntensity = 2f;
     [SerializeField] private float glowDuration = 0.25f;
     private List<SpriteRenderer> spriteRenderers = new List<SpriteRenderer>();
 
-    [Tooltip("Normal,Repeat,Atk,Defend,Heal")] 
+    [Tooltip("Normal,Repeat,Atk,Defend,Heal")]
     [SerializeField, ColorUsage(true, true)] private Color[] glowColors;
 
 
     [Header("---Health Display")]
-
     [SerializeField] TextMeshPro textHealth;
     [SerializeField] TextMeshPro textShield;
     [SerializeField] SpriteRenderer spriteBackground;
@@ -42,22 +43,24 @@ public class PieceAnimations : MonoBehaviour
     [SerializeField] SOEventVisuelEffect visualEffect;
 
 
+    // Scales a duration by animSpeed (higher = faster)
+    private float S(float duration) => duration / animSpeed;
+
+
     private void OnEnable()
-    { 
+    {
         eventPieceHealth.PieceTakeDamage += PieceTakeDamage;
         eventPieceHealth.PieceShieldBreak += PieceLooseShield;
-        //eventPieceHealth.PieceDie += PieceTakeDamage;
     }
     private void OnDisable()
     {
         eventPieceHealth.PieceTakeDamage -= PieceTakeDamage;
         eventPieceHealth.PieceShieldBreak -= PieceLooseShield;
-        //eventPieceHealth.PieceDie -= PieceTakeDamage;
     }
 
     private void Start()
     {
-        boardPiece =  gameObject.GetComponent<PieceInfo>().currentBoardPiece;
+        boardPiece = gameObject.GetComponent<PieceInfo>().currentBoardPiece;
         squares = gameObject.GetComponent<PieceInfo>().GetSelfPoints();
         for (int i = 0; i < squares.Length; i++)
         {
@@ -68,7 +71,7 @@ public class PieceAnimations : MonoBehaviour
     }
 
 
-    public IEnumerator PlayAnimations(int number, TypeAnim typeAnim, BoardPiece declencheur)//c'est la combientieme a etre activé (pour son de + en + aigu )
+    public IEnumerator PlayAnimations(int number, TypeAnim typeAnim, BoardPiece declencheur)
     {
         Color glowColor = GetGlowColor(typeAnim);
 
@@ -80,35 +83,27 @@ public class PieceAnimations : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, transform.position.y, -0.1f);
 
-        transform.DOScale(1.05f + 0.005f * number, 0.1f).OnComplete(() =>
+        transform.DOScale(1.05f + 0.005f * number, S(0.1f)).OnComplete(() =>
         {
-            int intClip = Mathf.Clamp(number, 0, audioClips.Length-1);
+            int intClip = Mathf.Clamp(number, 0, audioClips.Length - 1);
             audioSource.pitch = 1f;
 
             audioSource.clip = audioClips[intClip];
             audioSource.Play();
 
-            /*float randStartPitch = Random.Range(0.18f, 0.22f);
-            //float randStartPitch = 0.2f;
-            //audioSource.pitch = randStartPitch + 0.05f * number;*/
-
-            transform.DOScale(1f, 0.1f);
+            transform.DOScale(1f, S(0.1f));
             transform.position = new Vector3(transform.position.x, transform.position.y, 0);
-
         });
 
         yield return Glow(glowColor, number);
-
-
     }
 
-    private IEnumerator Glow(Color glowColor , int numberSpeed)
+    private IEnumerator Glow(Color glowColor, int numberSpeed)
     {
         Color baseColor = glowColors[0];
 
-        float glowIn = Mathf.Max(0.07f, glowDuration * 0.3f - 0.01f * numberSpeed);
-        float glowOut = Mathf.Max(0.13f, glowDuration - 0.01f * numberSpeed);
-
+        float glowIn = Mathf.Max(S(0.07f), S(glowDuration * 0.3f - 0.01f * numberSpeed));
+        float glowOut = Mathf.Max(S(0.13f), S(glowDuration - 0.01f * numberSpeed));
 
         for (int i = 0; i < spriteRenderers.Count; i++)
         {
@@ -118,7 +113,6 @@ public class PieceAnimations : MonoBehaviour
             float capturedIn = glowIn;
             float capturedOut = glowOut;
 
-
             mat.DOColor(glowColor, "_GlowColor", capturedIn)
                .OnComplete(() =>
                {
@@ -126,7 +120,6 @@ public class PieceAnimations : MonoBehaviour
                });
         }
         yield return new WaitForSeconds(glowIn + glowOut);
-
     }
 
     private Color GetGlowColor(TypeAnim typeAnim)
@@ -139,19 +132,15 @@ public class PieceAnimations : MonoBehaviour
             case TypeAnim.classic:
                 glowColor = glowColors[0] * intensityMultiplier;
                 break;
-
             case TypeAnim.repeat:
                 glowColor = glowColors[1] * intensityMultiplier;
                 break;
-
             case TypeAnim.atk:
                 glowColor = glowColors[2] * intensityMultiplier;
                 break;
-
             case TypeAnim.shield:
                 glowColor = glowColors[3] * intensityMultiplier;
                 break;
-
             case TypeAnim.heal:
                 glowColor = glowColors[4] * intensityMultiplier;
                 break;
@@ -168,7 +157,7 @@ public class PieceAnimations : MonoBehaviour
         return glowColor;
     }
 
-    private IEnumerator Parabole(TypeAnim typeAnim, Color glowColor,int number, BoardPiece declencheur)
+    private IEnumerator Parabole(TypeAnim typeAnim, Color glowColor, int number, BoardPiece declencheur)
     {
         if (typeAnim == TypeAnim.takeDamage)
         {
@@ -195,7 +184,7 @@ public class PieceAnimations : MonoBehaviour
                     pos1 = declencheur.pieceInfo.transform.position,
                     pos2 = transform.position,
                     height = 1,
-                    trailTime = 0.15f - 0.005f * number,
+                    trailTime = S(0.15f - 0.005f * number),
                     glowColor = repeatColor,
                     eventEndTrail = trailEvent,
                 });
@@ -210,13 +199,12 @@ public class PieceAnimations : MonoBehaviour
                     pos1 = declencheur.pieceInfo.transform.position,
                     pos2 = transform.position,
                     height = 1,
-                    trailTime = 0.15f - 0.005f * number,
+                    trailTime = S(0.15f - 0.005f * number),
                     glowColor = glowColor,
                     eventEndTrail = trailEvent,
                 });
                 yield return new WaitUntil(() => ended);
             }
-
 
             if (typeAnim == TypeAnim.atk)
             {
@@ -228,10 +216,10 @@ public class PieceAnimations : MonoBehaviour
                     eventEndVisuel = trailEvent,
                 });
                 yield return new WaitUntil(() => ended);
-
             }
 
-            if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield || typeAnim == TypeAnim.loseShield) RefreshHealth(null);
+            if (typeAnim == TypeAnim.heal || typeAnim == TypeAnim.shield || typeAnim == TypeAnim.loseShield)
+                RefreshHealth(null);
         }
     }
 
@@ -239,31 +227,14 @@ public class PieceAnimations : MonoBehaviour
     {
         switch (typeAnim)
         {
-            case TypeAnim.classic:
-
-                break;
-
-            case TypeAnim.repeat:
-
-                break;
-
-            case TypeAnim.atk:
-
-                break;
-
-            case TypeAnim.shield:
-                PlayShieldAnim();
-                break;
-
-            case TypeAnim.heal:
-                PlayHealAnim();
-                break;
-            case TypeAnim.takeDamage:
-                break;
-            case TypeAnim.loseShield:
-                break;
-            case TypeAnim.generateMana: 
-                break;
+            case TypeAnim.classic: break;
+            case TypeAnim.repeat: break;
+            case TypeAnim.atk: break;
+            case TypeAnim.shield: PlayShieldAnim(); break;
+            case TypeAnim.heal: PlayHealAnim(); break;
+            case TypeAnim.takeDamage: break;
+            case TypeAnim.loseShield: break;
+            case TypeAnim.generateMana: break;
         }
     }
 
@@ -276,11 +247,8 @@ public class PieceAnimations : MonoBehaviour
     private IEnumerator DieAnim()
     {
         deathParticle.Play();
-        //for (int i = 0; i < spriteRenderers.Count; i++) spriteRenderers[i].gameObject.SetActive(false);
-        
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(S(0.3f));
         Destroy(gameObject);
-
     }
 
 
@@ -301,19 +269,15 @@ public class PieceAnimations : MonoBehaviour
     public void PlayHealAnim()
     {
         foreach (SinglePieceSquare s in squares) s.healParticule.Play();
-
     }
+
     public void PlayShieldAnim()
     {
-
         foreach (SinglePieceSquare s in squares)
         {
             s.shieldGO.transform.localScale = Vector3.zero;
-            s.shieldGO.transform.DOScale(Vector3.one,0.2f).SetEase(Ease.InOutSine);
-
-            //s.shieldParticule.Play();
+            s.shieldGO.transform.DOScale(Vector3.one, S(0.2f)).SetEase(Ease.InOutSine);
         }
-
     }
 
     public void PieceTakeDamage(BoardPiece piece, int nbr)
@@ -340,21 +304,22 @@ public class PieceAnimations : MonoBehaviour
         visualNbrData.nbr = nbr;
         visualNbrData.color = Color.cyan;
         visualNbrData.isPositive = false;
+
         float randX = UnityEngine.Random.Range(0f, 1f);
-        visualNbrData.spawnPoint = new Vector2(transform.position.x + randX, transform.position.y+ randX+0.75f);
+        visualNbrData.spawnPoint = new Vector2(transform.position.x + randX, transform.position.y + randX + 0.75f);
 
         eventVisualNumber.InvokeCreateVisualNumber(visualNbrData);
         RefreshHealth(piece);
     }
 
     public void RefreshHealth(BoardPiece piece)
-    {   
+    {
         if (boardPiece.healthPoint == boardPiece.maxHealthPoint)
         {
             textHealth.text = boardPiece.healthPoint.ToString();
             textHealth.color = FullHealthColor;
         }
-        else if (boardPiece.healthPoint < 6 )
+        else if (boardPiece.healthPoint < 6)
         {
             textHealth.text = boardPiece.healthPoint.ToString();
             textHealth.color = LowHealthColor;
@@ -364,12 +329,13 @@ public class PieceAnimations : MonoBehaviour
             textHealth.text = boardPiece.healthPoint.ToString();
             textHealth.color = HealthColor;
         }
-        textShield.gameObject.SetActive(boardPiece.shield > 0);
-        if (boardPiece.shield <= 0 && int.Parse(textShield.text) > 0) foreach (SinglePieceSquare s in squares) s.shieldGO.transform.DOScale(Vector3.zero, 0.2f).SetEase(Ease.InOutSine);
 
+        textShield.gameObject.SetActive(boardPiece.shield > 0);
+        if (boardPiece.shield <= 0 && int.Parse(textShield.text) > 0)
+            foreach (SinglePieceSquare s in squares)
+                s.shieldGO.transform.DOScale(Vector3.zero, S(0.2f)).SetEase(Ease.InOutSine);
 
         textShield.text = boardPiece.shield.ToString();
-
     }
 
     public void ShowOnTop()
@@ -377,7 +343,7 @@ public class PieceAnimations : MonoBehaviour
         for (int i = 0; i < spriteRenderers.Count; i++) spriteRenderers[i].sortingOrder = 7;
         spriteBackground.sortingOrder = 8;
         textHealth.sortingOrder = 9;
-        textHealth.sortingOrder = 10;
+        textShield.sortingOrder = 10;
     }
 
     public void ShowNormal()
@@ -385,6 +351,6 @@ public class PieceAnimations : MonoBehaviour
         for (int i = 0; i < spriteRenderers.Count; i++) spriteRenderers[i].sortingOrder = 3;
         spriteBackground.sortingOrder = 5;
         textHealth.sortingOrder = 5;
-        textHealth.sortingOrder = 6;
+        textShield.sortingOrder = 6;
     }
 }
