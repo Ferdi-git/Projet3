@@ -6,8 +6,19 @@ public class SimpleButton : MonoBehaviour, IMouseClickable, IMouseHoverable
     [SerializeField] private UnityEvent onClick;
     public SOEventGridManager eventGrid;
 
-    public bool canBeClicked = true;
-
+    private bool CanBeClicked = true;
+    public bool canBeClicked
+    {
+        get
+        {
+            return CanBeClicked;
+        }
+        set
+        {
+        canBeClicked = value;
+            print(value);
+        }
+    }
 
     private void OnEnable()
     {

@@ -82,11 +82,15 @@ public class PieceInfoPanel : MonoBehaviour
         if (pieceInfo.currentBoardPiece.shield !=0) 
             stringToShow += $"Shield : <color=cyan>{pieceInfo.currentBoardPiece.shield}\n </color>";
         stringToShow += $"\n<color=white>{pieceInfo.soPiece.description} </color>";
-        stringToShow += "\n"+pieceInfo.soPiece.description
-    .Replace("{p0}", pieceInfo.soPiece.TempEffectValues[0].ToString())
-    .Replace("{p1}", pieceInfo.soPiece.TempEffectValues[1].ToString())
-    .Replace("{p2}", pieceInfo.soPiece.TempEffectValues[2].ToString());
 
+        string description = pieceInfo.soPiece.description;
+
+        for (int i = 0; i < pieceInfo.soPiece.TempEffectValues.Count; i++)
+        {
+            description = description.Replace($"{{p{i}}}", pieceInfo.soPiece.TempEffectValues[i].ToString());
+        }
+
+        stringToShow += "\n" + description;
         text.text = stringToShow;
     }
 
