@@ -76,7 +76,8 @@ public class GridManager : MonoBehaviour
         {
             AddBoardPiece(piecesExist[i].gameObject);
             PieceInfo pieceInfo = piecesExist[i].GetComponent<PieceInfo>();
-            pieceInfo.soPiece.TempEffectValues = pieceInfo.soPiece.BaseEffectValues;
+            
+            pieceInfo.soPiece.TempEffectValues = new List<int>(pieceInfo.soPiece.BaseEffectValues);
         }
         ActualiseBoard();
     }
