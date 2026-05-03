@@ -1,25 +1,22 @@
 using Sirenix.OdinInspector;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ChoiceManager : MonoBehaviour
 {
     [SerializeField] Transform[] spotChoice;
-
     [SerializeField] SOEventGridManager eventGridManager;
     [SerializeField] SoPieces[] difPieces;
 
-    public List<GameObject> lastGeneratedPiece = new List<GameObject>(); 
-
+    public List<GameObject> lastGeneratedPiece = new List<GameObject>();
     public ShopManager shopManager;
+
+    private bool _isGenerating = false; 
 
     private void OnEnable()
     {
         eventGridManager.PiecePlaced += CheckIfPiecePlaced;
     }
-
     private void OnDisable()
     {
         eventGridManager.PiecePlaced -= CheckIfPiecePlaced;
@@ -28,60 +25,49 @@ public class ChoiceManager : MonoBehaviour
     [Button]
     public void GeneratePiece()
     {
+        if (_isGenerating) return;
+        _isGenerating = true;
+
         ClearChoice();
-        for (int i = 0; i < spotChoice.Length ; i++)
+
+        List<SoPieces> pool = new List<SoPieces>(difPieces);
+
+        for (int i = 0; i < spotChoice.Length; i++)
         {
+            if (pool.Count == 0) break;
 
-            int randInt = Random.Range(0, difPieces.Length);
+            int randInt = Random.Range(0, pool.Count);
+            SoPieces chosen = pool[randInt];
+            pool.RemoveAt(randInt);
 
-            if(lastGeneratedPiece.Count !=0)
-            {
-                bool foundNonRepeatPiece = false;
-                while (!foundNonRepeatPiece)
-                {
-                    randInt = Random.Range(0, difPieces.Length);
-                    foundNonRepeatPiece = CheckIfPieceAlreadyChecked(difPieces[randInt]);
-                }
-            }
-            else
-            {
-                randInt = Random.Range(0, difPieces.Length);
-            }
-
-            GameObject newPiece = Instantiate(difPieces[randInt].prefab, spotChoice[i].transform.position, spotChoice[i].transform.rotation, transform);
+            GameObject newPiece = Instantiate(
+                chosen.prefab,
+                spotChoice[i].transform.position,
+                spotChoice[i].transform.rotation,
+                transform
+            );
 
             PieceInfo pieceInfo = newPiece.GetComponent<PieceInfo>();
             pieceInfo.soPiece.TempEffectValues = new List<int>(pieceInfo.soPiece.BaseEffectValues);
-
             lastGeneratedPiece.Add(newPiece);
         }
-    }
 
-
-
-    private bool CheckIfPieceAlreadyChecked(SoPieces piece)
-    {
-        for (int i = 0; i < lastGeneratedPiece.Count; i++)
-        {
-            if (lastGeneratedPiece[i].GetComponent<PieceInfo>().soPiece == piece)
-            {
-                lastGeneratedPiece.RemoveAt(i);
-                return false;
-            }
-        }
-        return true;
+        _isGenerating = false;
     }
 
     private void ClearChoice()
     {
-        for (int i = 0; i < lastGeneratedPiece.Count; i++) { Destroy(lastGeneratedPiece[i]); }
+        for (int i = 0; i < lastGeneratedPiece.Count; i++)
+        {
+            if (lastGeneratedPiece[i] != null)
+                Destroy(lastGeneratedPiece[i]);
+        }
         lastGeneratedPiece.Clear();
     }
 
-
     private void CheckIfPiecePlaced(GameObject go)
     {
-        if(lastGeneratedPiece == null) return;
+        if (lastGeneratedPiece == null || lastGeneratedPiece.Count == 0) return;
 
         for (int i = 0; i < lastGeneratedPiece.Count; i++)
         {
@@ -92,9 +78,9 @@ public class ChoiceManager : MonoBehaviour
                 eventGridManager.InvokeAddBoardPiece(go);
                 eventGridManager.InvokeTrySaveInventory();
                 EndChoice();
+                return; 
             }
         }
-
     }
 
     public void EndChoice()
@@ -102,5 +88,4 @@ public class ChoiceManager : MonoBehaviour
         ClearChoice();
         shopManager.CloseShop();
     }
-
 }

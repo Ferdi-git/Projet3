@@ -20,9 +20,9 @@ MonoBehaviour:
     effet: {fileID: 11400000, guid: 93013c9ce8720aa4ab3bcaf40af1035c, type: 2}
   ConditionValues: 00000000
   BaseEffectValues: 04000000
-  TempEffectValues: 00000000
+  TempEffectValues: 08000000
   colors: 01000000
-  description: If there's no <sprite name=Shield> on this piece, gain 4   <sprite
-    name = Attack> (currently {p0})
+  description: Deal {p0}   <sprite name=Attack>\n If there's no   <sprite name=Shield>on
+    this piece + 4   <sprite name=Attack>
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
