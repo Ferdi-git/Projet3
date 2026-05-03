@@ -22,7 +22,7 @@ MonoBehaviour:
   BaseEffectValues: 0500000001000000
   TempEffectValues: 00000000
   colors: 01000000
-  description: Deals {p1}   <sprite name=Attack>\pGain +1   <sprite name=Attack>
-    for every empty neighbouring tile
+  description: Deals 5   <sprite name=Attack>\pGain +1   <sprite name=Attack> for
+    every empty neighbouring tile
   isRepetition: 0
   numberManaGeneratingPerSquare: 0

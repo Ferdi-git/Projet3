@@ -22,7 +22,7 @@ MonoBehaviour:
   BaseEffectValues: 02000000
   TempEffectValues: 
   colors: 01000000
-  description: Deals {p1}   <sprite name=Attack>\p 2   <sprite name=Attack>by   <sprite
+  description: Deals 2   <sprite name=Attack>\p 2   <sprite name=Attack>by   <sprite
     name=Shield>on this piece
   isRepetition: 0
   numberManaGeneratingPerSquare: 0

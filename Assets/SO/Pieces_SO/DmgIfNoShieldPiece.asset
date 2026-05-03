@@ -22,7 +22,6 @@ MonoBehaviour:
   BaseEffectValues: 
   TempEffectValues: 
   colors: 01000000
-  description: Deals {p1}  <sprite name = Attack>\pIf there's no shield on this piece,
-    gain 4   <sprite name = Attack>
+  description: If there's no shield on this piece, deal 4   <sprite name = Attack>
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
