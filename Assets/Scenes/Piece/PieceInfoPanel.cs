@@ -81,7 +81,6 @@ public class PieceInfoPanel : MonoBehaviour
         stringToShow += nbrAttacked == 0 ? "\n" : $" -<color=red>{nbrAttacked}\n </color>";
         if (pieceInfo.currentBoardPiece.shield !=0) 
             stringToShow += $"Shield : <color=cyan>{pieceInfo.currentBoardPiece.shield}\n </color>";
-        stringToShow += $"\n<color=white>{pieceInfo.soPiece.description} </color>";
 
         string description = pieceInfo.soPiece.description;
 
