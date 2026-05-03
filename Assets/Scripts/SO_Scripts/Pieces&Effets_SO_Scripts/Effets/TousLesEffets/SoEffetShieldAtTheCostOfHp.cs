@@ -29,27 +29,33 @@ public class SoEffetShieldAtTheCostOfHp : SoEffet
             piece.pieceAnimation.RefreshHealth(piece);
         }
 
-        for (int i = 0; i < context.voisins.Count; i++)
+        if (remainingHealth > 1)
         {
-            if (piece.healthPoint > amount[0])
+
+
+            for (int i = 0; i < context.voisins.Count; i++)
             {
-                BoardPiece voisin = context.voisins[i];
-                port.thisBoardPiece = voisin;
-                voisin.shield += amount[0] * 2;
-                port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
-                yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
-                yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
+                if (piece.healthPoint > amount[0])
+                {
+                    BoardPiece voisin = context.voisins[i];
+                    port.thisBoardPiece = voisin;
+                    voisin.shield += amount[0] * 2;
+                    port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
+                    yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
+                    yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
+                }
+                else
+                {
+                    BoardPiece voisin = context.voisins[i];
+                    port.thisBoardPiece = voisin;
+                    voisin.shield += remainingHealth * 2;
+                    piece.pieceAnimation.RefreshHealth(piece);
+                    port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
+                    yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
+                    yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
+                }
             }
-            else
-            {
-                BoardPiece voisin = context.voisins[i];
-                port.thisBoardPiece = voisin;
-                voisin.shield += remainingHealth * 2;
-                piece.pieceAnimation.RefreshHealth(piece);
-                port.thisBoardPiece.pieceAnimation.RefreshHealth(port.thisBoardPiece);
-                yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
-                yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
-            }
+
         }
         port.thisBoardPiece = piece;
         context.NbrDeRepetition += 1;
