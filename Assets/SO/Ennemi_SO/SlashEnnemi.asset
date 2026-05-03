@@ -15,14 +15,14 @@ MonoBehaviour:
   Name: First
   attacks:
   - zone: {fileID: 1887452037923152021, guid: cedb30f255046924dbdafd6b0b94bba7, type: 3}
-    damage: 5
+    damage: 3
   - zone: {fileID: 596622388243198518, guid: ec5b246a800f1ef4092105e5158e919c, type: 3}
-    damage: 5
+    damage: 3
   - zone: {fileID: 596622388243198518, guid: 98170466a8b2be0459c37ef9abfe4b84, type: 3}
-    damage: 5
+    damage: 3
   - zone: {fileID: 596622388243198518, guid: 75e5c1ef493fc254394099abaa5b5a1c, type: 3}
-    damage: 5
+    damage: 3
   - zone: {fileID: 596622388243198518, guid: 7c23d3257c55d684fb00dcc3c9f7fa7e, type: 3}
-    damage: 5
+    damage: 3
   sprite: {fileID: 21300000, guid: c955491a89905ea42bfe6cce4cba1912, type: 3}
   resistance: 100

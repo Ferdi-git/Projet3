@@ -18,8 +18,8 @@ public class SoEffetShieldVampirism : SoEffet
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
             voisin.healthPoint -= piece.pieceInfo.soPiece.BaseEffectValues[0];
-            piece.pieceInfo.soPiece.TempEffectValues[0] += piece.pieceInfo.soPiece.BaseEffectValues[1];
-            voisin.shield += piece.pieceInfo.soPiece.TempEffectValues[0];
+            piece.pieceInfo.soPiece.TempEffectValues[2] += piece.pieceInfo.soPiece.BaseEffectValues[1];
+            voisin.shield += piece.pieceInfo.soPiece.TempEffectValues[2];
             voisin.pieceAnimation.RefreshHealth(voisin);
             yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
@@ -39,8 +39,8 @@ public class SoEffetShieldVampirism : SoEffet
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
             voisin.healthPoint -= piece.pieceInfo.soPiece.BaseEffectValues[0];
-            piece.pieceInfo.soPiece.TempEffectValues[0] += piece.pieceInfo.soPiece.BaseEffectValues[1];
-            voisin.shield += piece.pieceInfo.soPiece.TempEffectValues[0];
+            piece.pieceInfo.soPiece.TempEffectValues[2] += piece.pieceInfo.soPiece.BaseEffectValues[1];
+            voisin.shield += piece.pieceInfo.soPiece.TempEffectValues[2];
             voisin.pieceAnimation.RefreshHealth(voisin);
             if (i != 0) yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);

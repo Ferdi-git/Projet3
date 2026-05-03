@@ -20,9 +20,9 @@ MonoBehaviour:
     effet: {fileID: 11400000, guid: f2d6ae9e6719e624aae973cd9bea0a05, type: 2}
   ConditionValues: 
   BaseEffectValues: 08000000
-  TempEffectValues: 
+  TempEffectValues: 08000000
   colors: 00000000
-  description: Heal 8    <sprite name=Heal 1>- 1 per <sprite name=Shield> on this
+  description: Heal 8    <sprite name=Heal 1>- 1 per   <sprite name=Shield>on this
     piece
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
