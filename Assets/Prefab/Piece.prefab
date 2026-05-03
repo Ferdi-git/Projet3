@@ -682,7 +682,7 @@ MonoBehaviour:
   HealthColor: {r: 0.75964093, g: 0.99607843, b: 0, a: 1}
   LowHealthColor: {r: 1, g: 0.08099004, b: 0.043137252, a: 1}
   deathParticle: {fileID: 4131871711286175440}
-  animSpeed: 2
+  animSpeed: 1.7
   glowIntensity: 14
   glowDuration: 0.3
   glowColors:
