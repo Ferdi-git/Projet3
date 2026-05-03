@@ -23,6 +23,6 @@ MonoBehaviour:
   TempEffectValues: 
   colors: 03000000
   description: Give twice the amount of   <sprite name=Shield>on this piece to neighbours
-    if it's   <sprite name=Health 1> is at it's maximum
+    if it's   <sprite name=Heal 1> is at it's maximum
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
