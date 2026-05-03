@@ -54,6 +54,8 @@ public class Combat : MonoBehaviour
         eventEnnemi.InvokeGenerateEnnemi(NbrOfCombat);
         eventEnnemi.InvokeEnnemiShowAttack();
         eventEnnemi.InvokeNewEnnemi();
+        eventGridManager.InvokeSetAllPieceCanMove(true);
+
     }
 
     public void StartTurn ( )

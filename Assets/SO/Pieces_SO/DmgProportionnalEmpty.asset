@@ -19,10 +19,10 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: 11492ada19470cb47b7210feec2fb539, type: 2}
   ConditionValues: 
-  BaseEffectValues: 0500000001000000
+  BaseEffectValues: 01000000
   TempEffectValues: 00000000
   colors: 01000000
-  description: Deals 5   <sprite name=Attack>\pGain +1   <sprite name=Attack> for
-    every empty neighbouring tile
+  description: Gain 1   <sprite name=Attack> for every empty neighbouring tile (currently
+    {p0})
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
