@@ -22,7 +22,7 @@ MonoBehaviour:
   BaseEffectValues: 
   TempEffectValues: 
   colors: 02000000
-  description: Retrigger neighbouring pieces if   <sprite name = Health 1>is at most
+  description: Retrigger neighbouring pieces if   <sprite name = Heal 1>is at most
     3
   isRepetition: 1
   numberManaGeneratingPerSquare: 0

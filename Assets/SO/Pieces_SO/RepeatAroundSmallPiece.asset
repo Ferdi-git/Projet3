@@ -22,6 +22,6 @@ MonoBehaviour:
   BaseEffectValues: 
   TempEffectValues: 
   colors: 0200000002000000
-  description: Retrigger neighbouring pieces if has at least 3 of them
+  description: Retrigger neighbouring pieces if there's at least 3 of them
   isRepetition: 1
   numberManaGeneratingPerSquare: 5
