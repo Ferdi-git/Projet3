@@ -18,8 +18,8 @@ MonoBehaviour:
   pieceEffet:
     condition: {fileID: 11400000, guid: 6d214f19f96ec634cbde0b480f90f23f, type: 2}
     effet: {fileID: 11400000, guid: 7032353fad46d9049a1b9b3bff6fb191, type: 2}
-  ConditionValues: 
-  BaseEffectValues: 0a000000
+  ConditionValues: 0a000000
+  BaseEffectValues: 
   TempEffectValues: 
   colors: 03000000
   description: Give twice the amount of   <sprite name=Shield>on this piece to neighbours

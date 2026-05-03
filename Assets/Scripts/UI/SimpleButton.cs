@@ -15,7 +15,7 @@ public class SimpleButton : MonoBehaviour, IMouseClickable, IMouseHoverable
         }
         set
         {
-        canBeClicked = value;
+            canBeClicked = value;
             print(value);
         }
     }
