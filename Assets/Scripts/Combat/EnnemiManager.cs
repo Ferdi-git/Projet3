@@ -86,7 +86,8 @@ public class EnnemiManager : MonoBehaviour
     
     private int GetDamageValue ()
     {
-        float damage = stats.ennemiAttacks[atkIndex].damage + CombatCount ;
+        float damage = stats.ennemiAttacks[atkIndex].damage ;
+        //+CombatCount
         return (int) damage;
     }
 
