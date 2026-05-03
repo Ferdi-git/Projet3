@@ -13,6 +13,7 @@ public class PieceAnimations : MonoBehaviour
     private SinglePieceSquare[] squares;
 
     [SerializeField] AudioClip[] audioClips;
+    [SerializeField] AudioClip shieldBreak;
     [SerializeField] Color FullHealthColor;
     [SerializeField] Color HealthColor;
     [SerializeField] Color LowHealthColor;
@@ -304,6 +305,10 @@ public class PieceAnimations : MonoBehaviour
         visualNbrData.nbr = nbr;
         visualNbrData.color = Color.cyan;
         visualNbrData.isPositive = false;
+
+        audioSource.clip = shieldBreak;
+        audioSource.pitch = 1;
+        audioSource.Play();
 
         float randX = UnityEngine.Random.Range(0f, 1f);
         visualNbrData.spawnPoint = new Vector2(transform.position.x + randX, transform.position.y + randX + 0.75f);
