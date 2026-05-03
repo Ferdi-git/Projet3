@@ -22,6 +22,6 @@ MonoBehaviour:
   BaseEffectValues: 
   TempEffectValues: 
   colors: 00000000
-  description: Do nothing, but is really nice and would like some company
+  description: Does nothing, but is really friendly and would like some company
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
