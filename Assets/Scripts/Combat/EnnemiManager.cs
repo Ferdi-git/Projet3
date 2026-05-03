@@ -17,12 +17,14 @@ public class EnnemiManager : MonoBehaviour
     private void OnEnable()
     {
         ennemiEvent.GenerateEnnemi += GenerateEnnemi;
+        ennemiEvent.GenerateBoss += GenerateBoss;
         ennemiEvent.EnnemiShowAttack += ShowAtk;
         ennemiEvent.EnnemiRemoveAttack += RemoveAtk;
     }
     private void OnDisable()
     {
         ennemiEvent.GenerateEnnemi -= GenerateEnnemi;
+        ennemiEvent.GenerateBoss -= GenerateBoss;
         ennemiEvent.EnnemiShowAttack -= ShowAtk;
         ennemiEvent.EnnemiRemoveAttack -= RemoveAtk;
     }
@@ -34,7 +36,7 @@ public class EnnemiManager : MonoBehaviour
         ennemiUI.SetActive(true);
         atkIndex = 0;
         index = Random.Range(0, ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList.Count);
-        stats.pvMax = ((ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList[index].resistance/100) * stats.AverageValue) * (int)(1.4 * (NbrOfCombat+1)) ;
+        stats.pvMax = ((ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList[index].resistance/100) * stats.AverageValue) * (int)(1.2 * (NbrOfCombat+1)) ;
         stats.pv = stats.pvMax;
         stats.shield = 0;
         stats.ennemiName = ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList [index].Name;
@@ -44,6 +46,25 @@ public class EnnemiManager : MonoBehaviour
         UIeventUpdateUI.InvokeUpdateUI();
         
         
+    }
+
+
+    public void GenerateBoss (int BossIndex)
+    {
+        if (BossIndex >= ennemiList.bossList.Count)
+        {
+            BossIndex = ennemiList.bossList.Count - 1;
+        }
+        ennemiUI.SetActive(true);
+        atkIndex = 0;
+        stats.pvMax = ennemiList.bossList[BossIndex].resistance;
+        stats.pv = stats.pvMax;
+        stats.shield = 0;
+        stats.ennemiName = ennemiList.bossList[BossIndex].Name;
+        stats.sprite = ennemiList.bossList[BossIndex].sprite;
+        stats.ennemiAttacks = ennemiList.bossList[BossIndex].attacks;
+        UIeventGiveAtk.InvokeGiveUICurrentAtk(0);
+        UIeventUpdateUI.InvokeUpdateUI();
     }
     private int GiveCurrentPalier (int NbrOfCombat)
     {

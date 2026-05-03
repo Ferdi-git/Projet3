@@ -27,6 +27,7 @@ public class SOEventEnnemy : ScriptableObject
     // appel de fonction de l'ennemi Manager
 
     public event Action<int> GenerateEnnemi;
+    public event Action<int> GenerateBoss;
 
     public event Action EnnemiShowAttack;
     public event Action EnnemiRemoveAttack;
@@ -37,6 +38,10 @@ public class SOEventEnnemy : ScriptableObject
     public void InvokeGenerateEnnemi (int Index)
     {
         GenerateEnnemi?.Invoke(Index);
+    }
+    public void InvokeGenerateBoss(int BossIndex)
+    {
+        GenerateBoss?.Invoke(BossIndex);
     }
     public void InvokeEnnemiShowAttack()
     {

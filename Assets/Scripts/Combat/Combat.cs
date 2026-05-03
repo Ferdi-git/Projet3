@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.VFX;
 
 public class Combat : MonoBehaviour
 {
@@ -28,9 +27,12 @@ public class Combat : MonoBehaviour
 
 
     public int NbrOfCombat;
+    public int NbrOfBoss;
+    private int nbrOfTurn;
     private void OnEnable()
     {
         eventState.StartCombat += StartCombat;
+        eventState.StartBossCombat += StartBossCombat;
         turnEvent.NextTurn += StartTurn;
     }
     private void OnDisable()
@@ -43,13 +45,25 @@ public class Combat : MonoBehaviour
     {
         bouton.SetActive(true);
         piecePlayed.ResetInt();
+        nbrOfTurn = 0;
         NbrOfCombat = 0;
+        NbrOfBoss = 0;
         statsPlayer.InvokeStartPVSet();
     }
 
+    public void StartBossCombat ()
+    {
+        nbrOfTurn = 0;
+        bouton.SetActive(true);
+        eventEnnemi.InvokeGenerateBoss(NbrOfBoss);
+        eventEnnemi.InvokeEnnemiShowAttack();
+        eventEnnemi.InvokeNewEnnemi();
+        eventGridManager.InvokeSetAllPieceCanMove(true);
+        NbrOfBoss++;
+    }
     public void StartCombat ()
     {
-        
+        nbrOfTurn = 0;
         bouton.SetActive(true);
         eventEnnemi.InvokeGenerateEnnemi(NbrOfCombat);
         eventEnnemi.InvokeEnnemiShowAttack();
@@ -61,6 +75,7 @@ public class Combat : MonoBehaviour
     public void StartTurn ( )
     {
         bouton.SetActive(true);
+        nbrOfTurn++;
         eventGridManager.InvokeSetAllPieceCanMove(false);
         eventGridManager.InvokeActualiseBoard();
         piecePlayed.ResetInt();
@@ -127,6 +142,7 @@ public class Combat : MonoBehaviour
         port.statsEnnemi = statsEnnemi;
         port.thisBoardPiece = soBoard.boardPieces[i];
         port.piecePlayed = piecePlayed;
+        soBoard.boardPieces[i].context.Tour  = nbrOfTurn;
         conditionOutput.port = port;
         conditionOutput.context = soBoard.boardPieces[i].context;
         conditionOutput.variableList = piece.ConditionValues;

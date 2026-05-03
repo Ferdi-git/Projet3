@@ -17,12 +17,14 @@ public class GameManager : MonoBehaviour
         gameState.EndOfCombat += CombateEnded;
         gameState.EndOfShoping += ShopingEnded;
         gameState.LooseEvent += PlayerLost;
+        gameState.EndOfBossCombat += BossCombatEnded;
     }
     private void OnDisable()
     {
         gameState.EndOfCombat -= CombateEnded;
         gameState.EndOfShoping -= ShopingEnded;
         gameState.LooseEvent -= PlayerLost;
+        gameState.EndOfBossCombat -= BossCombatEnded;
     }
     public void ButtonPressed ()
     {
@@ -107,8 +109,15 @@ public class GameManager : MonoBehaviour
         }
         else if (floorEvent == FloorEvent.BossFight)
         {
-            //gameState.Invoke boos fight 
-            print("BossFight");
+            gameState.InvokeStartBossCombat();
         }
+    }
+
+
+    private void BossCombatEnded ( )
+    {
+        print("boss combat ended");
+        gridManager.InvokeResetInventory();
+        NextFloor();
     }
 }

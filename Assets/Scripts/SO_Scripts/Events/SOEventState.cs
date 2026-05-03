@@ -18,6 +18,11 @@ public class SOEventState : ScriptableObject
     public void InvokeStartCombat() { StartCombat?.Invoke(); }
     public void InvokeEndOfCombat() { EndOfCombat?.Invoke(); }
 
+    public event Action StartBossCombat;
+    public event Action EndOfBossCombat;
+    public void InvokeStartBossCombat() { StartBossCombat?.Invoke(); }
+    public void InvokeEndOfBossCombat() { EndOfBossCombat?.Invoke(); }
+
 
 
     //meurt 
