@@ -687,6 +687,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 08a130119cbcc16418d6785bb6e3ab52, type: 2}
   - {fileID: 11400000, guid: 821312b19cc6d454281a57c399c97941, type: 2}
   - {fileID: 11400000, guid: 730747efc0aef124b87748f497fa88ae, type: 2}
+  - {fileID: 11400000, guid: 1b25dc1e76f6712429511e837f1be8d4, type: 2}
+  - {fileID: 11400000, guid: 265926ade2108b947985bbe46a6b8a64, type: 2}
+  - {fileID: 11400000, guid: 5d3e7f5ff4489384a8a5a20706f160d7, type: 2}
+  - {fileID: 11400000, guid: b392c7f61a98a8347803e9e993e26fbb, type: 2}
   lastGeneratedPiece: []
   shopManager: {fileID: 7917422600699015629}
 --- !u!1 &4796684021063922405
@@ -808,7 +812,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 2b6f1a3d4992c0c479339c1c7a36c6b0, type: 3}
-  m_Color: {r: 0.43921572, g: 0.3372549, b: 0.21176472, a: 1}
+  m_Color: {r: 0.3207547, g: 0.19720003, b: 0.14373443, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

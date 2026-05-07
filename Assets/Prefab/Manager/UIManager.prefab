@@ -1897,7 +1897,7 @@ SpriteRenderer:
   m_SortingOrder: -6
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.56096476, g: 0.6072223, b: 0.6226415, a: 1}
+  m_Color: {r: 0.3773585, g: 0.33616453, b: 0.29725882, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2541,7 +2541,7 @@ GameObject:
   - component: {fileID: 6490500656120359623}
   - component: {fileID: 3060703549758669363}
   m_Layer: 0
-  m_Name: EnnemiName
+  m_Name: PlayerHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2603,8 +2603,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0.7566667, g: 1, b: 0.75, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2760,7 +2760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4073647737440500859
 Transform:
   m_ObjectHideFlags: 0
@@ -4806,7 +4806,7 @@ Transform:
   m_GameObject: {fileID: 6591211599966417792}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.12, y: 1.4, z: 0}
+  m_LocalPosition: {x: -0.98, y: 1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6140,9 +6140,9 @@ Transform:
   m_GameObject: {fileID: 8059388272718990087}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1068, z: 0}
-  m_LocalScale: {x: 1.5999291, y: 1.561618, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.76, y: 0.68, z: 0}
+  m_LocalScale: {x: 0.9499999, y: 0.9272517, z: 0.5937763}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4073647737440500859}
   m_Father: {fileID: 4274873524515071028}
@@ -6196,12 +6196,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 43aaf7cbd13040746813cac220fb2b70, type: 3}
+  m_Color: {r: 0.6685208, g: 0.7830189, b: 0.68396795, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.5, y: 4.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
