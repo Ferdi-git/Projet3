@@ -46,6 +46,8 @@ public class FloorManager : MonoBehaviour
         {
             floorList.list[CustomFloors[i].NumeroDuPalier] = CustomFloors[i].Evenement;
         }
+
+        // call event 
     }
 
     
