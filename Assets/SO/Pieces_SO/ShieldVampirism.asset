@@ -19,10 +19,10 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: 0b2243d28d149214d8016addb22079cc, type: 2}
   ConditionValues: 
-  BaseEffectValues: 030000000200000000000000
-  TempEffectValues: 030000000200000000000000
+  BaseEffectValues: 030000000100000000000000
+  TempEffectValues: 030000000100000000000000
   colors: 03000000
-  description: Deals 3   <sprite name=Attack>to each neighbour, gain 2   <sprite
+  description: Deals 3   <sprite name=Attack>to each neighbour, gain 1   <sprite
     name=Shield>and applies it (currently {p2})
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
