@@ -1183,6 +1183,18 @@ PrefabInstance:
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Combat, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 3817438601313860228, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
+      propertyPath: CustomFloors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817438601313860228, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
+      propertyPath: CustomFloors.Array.data[0].Evenement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817438601313860228, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
+      propertyPath: CustomFloors.Array.data[0].NumeroDuPalier
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8964785272469041329, guid: 77c63d0c328cde6449c1e7a4163e32b0, type: 3}
       propertyPath: m_Name
       value: Managers
