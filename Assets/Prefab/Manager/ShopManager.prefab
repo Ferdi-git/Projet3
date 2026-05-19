@@ -852,7 +852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7990670026921474651
 Transform:
   m_ObjectHideFlags: 0
@@ -2591,7 +2591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -2600,7 +2600,7 @@ PrefabInstance:
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7805941970267779862}
+      objectReference: {fileID: 3160772139665564240}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2611,7 +2611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GeneratePiece
+      value: ResetShop
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -2619,7 +2619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ChoiceManager, Assembly-CSharp
+      value: ResetButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -2649,13 +2649,37 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1683767882872678241, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7761593739044998007}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8348334340237633976, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3160772139665564240}
   m_SourcePrefab: {fileID: 100100000, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
 --- !u!4 &3473037663526427812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1683767882872678241, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
   m_PrefabInstance: {fileID: 2841565401003719621}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6103636937016529533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8348334340237633976, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
+  m_PrefabInstance: {fileID: 2841565401003719621}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3160772139665564240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6103636937016529533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975b464166eeef34d92949da961c89ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  choiceManager: {fileID: 7805941970267779862}
+  statsPlayer: {fileID: 11400000, guid: c3c8f1e3ded73a44496a15c33dcabb2f, type: 2}
+  state: {fileID: 11400000, guid: 5240bdb7ce1e7614088effd95523d55f, type: 2}
+  SOShop: {fileID: 11400000, guid: ebf15eaace309bb4d8e4eaa32729c743, type: 2}
 --- !u!1001 &4223509381773908200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2710,7 +2734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -2719,7 +2743,7 @@ PrefabInstance:
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7805941970267779862}
+      objectReference: {fileID: 3160772139665564240}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2730,7 +2754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EndChoice
+      value: SkipShop
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -2738,7 +2762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ChoiceManager, Assembly-CSharp
+      value: ShopButton, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2718090890173751290, guid: e204c8fedff562f40b67657ddce05a34, type: 3}
       propertyPath: onClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
