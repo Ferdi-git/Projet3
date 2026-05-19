@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private SOEventEnnemy EventEnnemy;
 
     [SerializeField] private Slider PlayerSlider;
+    [SerializeField] private Slider SecondPlayerSlider;
     [SerializeField] private Slider ManaSlider;
     [SerializeField] private Slider EnnemiSlider;
 
@@ -92,9 +93,11 @@ public class UIManager : MonoBehaviour
         int shieldEnnemi = statsEnnemi.GetShield();
 
         PlayerSlider.maxValue = pvMaxPlayer;
+        SecondPlayerSlider.maxValue = pvMaxPlayer;
         EnnemiSlider.maxValue =  pvMaxEnnemi;
         ManaSlider.maxValue =  manaMaxPlayer;
         PlayerSlider.value = pvPlayer;
+        SecondPlayerSlider.value = pvPlayer;
         EnnemiSlider.value = pvEnnemi;
         ManaSlider.value = manaPlayer;
 

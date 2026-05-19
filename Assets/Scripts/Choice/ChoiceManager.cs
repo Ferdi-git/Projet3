@@ -6,7 +6,7 @@ public class ChoiceManager : MonoBehaviour
 {
     [SerializeField] Transform[] spotChoice;
     [SerializeField] SOEventGridManager eventGridManager;
-    [SerializeField] SoPieces[] difPieces;
+    [SerializeField] List<SoPieces> difPieces;
 
     public List<GameObject> lastGeneratedPiece = new List<GameObject>();
     public ShopManager shopManager;
@@ -74,6 +74,7 @@ public class ChoiceManager : MonoBehaviour
             if (go == lastGeneratedPiece[i])
             {
                 lastGeneratedPiece.RemoveAt(i);
+                difPieces.Remove(go.GetComponent<PieceInfo>().soPiece);
                 go.transform.SetParent(null);
                 eventGridManager.InvokeAddBoardPiece(go);
                 eventGridManager.InvokeTrySaveInventory();
