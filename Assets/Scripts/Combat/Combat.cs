@@ -41,7 +41,7 @@ public class Combat : MonoBehaviour
         turnEvent.NextTurn -= StartTurn;
     }
 
-    private void Start()
+    private void Awake()
     {
         bouton.SetActive(true);
         piecePlayed.ResetInt();
