@@ -117,6 +117,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 58ca2e5d10e44ce449e6ef14e2bc138e, type: 2}
     - target: {fileID: 4133092285236153453, guid: 7b3d517fbc570fa40a9703dc6132dde4, type: 3}
+      propertyPath: floorCreated
+      value: 
+      objectReference: {fileID: 11400000, guid: 35c7275a7d9d8104c961a484381b59c1, type: 2}
+    - target: {fileID: 4133092285236153453, guid: 7b3d517fbc570fa40a9703dc6132dde4, type: 3}
       propertyPath: BossToutLescombienDeTour
       value: 10
       objectReference: {fileID: 0}
