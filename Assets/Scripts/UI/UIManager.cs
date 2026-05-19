@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private SOEventUpdateUI updateEvent;
     [SerializeField] private SOEventGridManager gridManager;
 
+    [SerializeField] private TextMeshProUGUI shopHealthText;
+
     [SerializeField] private SOEventPlayerLostMessage lostMessage;
     [SerializeField] private SOEventPLayerWinMessage winMessage;
 
@@ -105,8 +107,9 @@ public class UIManager : MonoBehaviour
 
         PVPlayerText.text  = pvPlayer.ToString() + "/" + statsPlayer.pvMax.ToString();
         PvEnnemiText.text = pvEnnemi.ToString() + "/" + statsEnnemi.pvMax.ToString();
+        shopHealthText.text = pvPlayer.ToString() + "/" + statsPlayer.pvMax.ToString();
         ennemiSprite.sprite = statsEnnemi.sprite;
-        
+        //Buy KORRIDOR ON STEAM 
     }
 
     private void GainPV (int amount)
