@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,6 +19,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private SpriteRenderer ennemiSprite;
     [SerializeField] private TextMeshProUGUI PVPlayerText;
+    [SerializeField] private TextMeshProUGUI PvEnnemiText;
 
     [SerializeField] private SOEventUpdateUI updateEvent;
     [SerializeField] private SOEventGridManager gridManager;
@@ -75,7 +77,7 @@ public class UIManager : MonoBehaviour
         winMessage.WinMessageEvent -= OpenWinMessage;
     }
 
-
+    
 
     public void UpdateUI ()
     {
@@ -102,6 +104,7 @@ public class UIManager : MonoBehaviour
         ManaSlider.value = manaPlayer;
 
         PVPlayerText.text  = pvPlayer.ToString() + "/" + statsPlayer.pvMax.ToString();
+        PvEnnemiText.text = pvEnnemi.ToString() + "/" + statsEnnemi.pvMax.ToString();
         ennemiSprite.sprite = statsEnnemi.sprite;
         
     }
@@ -177,6 +180,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1.0f;
         EchapMenu.SetActive(false);
         lostMessageGO.SetActive(false);
+        UpdateUI();
     }
     public void OpenEchapMenu ()
     {
