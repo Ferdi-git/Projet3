@@ -7,7 +7,7 @@ public class FloorManager : MonoBehaviour
     public SOEventFloor floorEvent;
     [SerializeField] private FloorListSo floorList;
     public int BossToutLescombienDeTour = 10;
-
+    public SOEventFloorCreated floorCreated;
     public List<FloorStep> CustomFloors = new List<FloorStep>();
 
     private void OnEnable()
@@ -47,7 +47,7 @@ public class FloorManager : MonoBehaviour
             floorList.list[CustomFloors[i].NumeroDuPalier] = CustomFloors[i].Evenement;
         }
 
-        // call event 
+        floorCreated.InvokeFloorCreated();
     }
 
     

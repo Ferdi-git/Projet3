@@ -6835,6 +6835,7 @@ MonoBehaviour:
     floorEvent: 2
   - sprite: {fileID: 21300000, guid: 13cb0511e19f2714dbe15fa6fc06c55e, type: 3}
     floorEvent: 3
+  floorCreated: {fileID: 11400000, guid: 35c7275a7d9d8104c961a484381b59c1, type: 2}
 --- !u!1 &8817289350232506813
 GameObject:
   m_ObjectHideFlags: 0

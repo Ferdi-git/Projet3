@@ -10,22 +10,27 @@ public class RoadMapVisualizer : MonoBehaviour
     [SerializeField] SpriteRenderer[] spriteRenderers;
     [SerializeField] SpriteRenderer[] spriteWhiteBar;
     [SerializeField] List<SpriteWithFloor> FloorSprites;
+    [SerializeField] SOEventFloorCreated floorCreated;
+    private bool Isinitialized;
 
     private int currentFloor = 0;
 
     private void OnEnable()
     {
         eventFloor.NextFloor += NextFloor;
+        floorCreated.FloorCreated += Initialized;
     }
 
     private void OnDisable()
     {
         eventFloor.NextFloor -= NextFloor;
+        floorCreated.FloorCreated -= Initialized;
     }
 
-    private void Start()
+    private void Awake()
     {
-        Initialized();
+        //Initialized();
+        Isinitialized = false;
     }
 
     private void Initialized()
@@ -34,12 +39,23 @@ public class RoadMapVisualizer : MonoBehaviour
         {
             spriteRenderers[i].sprite = GetCorrespondingSprite(listFloor.list[i]) ;
         }
+        Isinitialized = true;
 
     }
-
+    //private void Update()
+    //{
+    //    if(Input.GetKeyDown(KeyCode.F))
+    //    {
+    //        NextFloor();
+    //    }
+    //}
 
     private void NextFloor()
     {
+        if (!Isinitialized)
+        {
+            print("pas cool floor");
+        }
         currentFloor++;
         for (int i = 0; i < spriteRenderers.Length; i++)
         {
