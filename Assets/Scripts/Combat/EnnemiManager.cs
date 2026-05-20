@@ -36,7 +36,8 @@ public class EnnemiManager : MonoBehaviour
         ennemiUI.SetActive(true);
         atkIndex = 0;
         index = Random.Range(0, ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList.Count);
-        stats.pvMax = ((ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList[index].resistance/100) * stats.AverageValue) * (int)(1.2 * (NbrOfCombat+1)) ;
+        //stats.pvMax = ((ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList[index].resistance/100) * stats.AverageValue) * (int)(1.2 * (NbrOfCombat+1)) ;
+        stats.pvMax = ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList[index].resistance;
         stats.pv = stats.pvMax;
         stats.shield = 0;
         stats.ennemiName = ennemiList.paliers[GiveCurrentPalier(NbrOfCombat)].ennemiList [index].Name;
