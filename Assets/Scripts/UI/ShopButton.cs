@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 public class ShopButton : MonoBehaviour
@@ -6,6 +8,9 @@ public class ShopButton : MonoBehaviour
     [SerializeField] StatsPlayer statsPlayer;
     [SerializeField] SOEventState state;
     [SerializeField] SOShop SOShop;
+
+    [SerializeField] private TextMeshPro RerollText;
+    [SerializeField] private TextMeshPro SkipText;
 
     private void Start()
     {
@@ -18,7 +23,8 @@ public class ShopButton : MonoBehaviour
         choiceManager.GeneratePiece();
         statsPlayer.InvokeLoosePV(SOShop.currentLoosePV);
         SOShop.currentLoosePV += 1 ;
-        if(statsPlayer.pv <= 0)state.InvokeLooseEvent();
+        RerollText.text = "-" + SOShop.currentLoosePV + "  <sprite name=heal 1>";
+        if (statsPlayer.pv <= 0)state.InvokeLooseEvent();
     }
 
     public void SkipShop()
@@ -27,6 +33,7 @@ public class ShopButton : MonoBehaviour
         statsPlayer.InvokeGainPV(SOShop.currentGainPV);
         SOShop.currentGainPV -= 1;
         if (SOShop.currentGainPV < 1) SOShop.currentGainPV = 1;
+        SkipText.text = "+" + SOShop.currentGainPV + "  <sprite name=heal 1>";
 
     }
 }

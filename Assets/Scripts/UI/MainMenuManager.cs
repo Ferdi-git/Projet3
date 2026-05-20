@@ -30,6 +30,15 @@ public class MainMenuManager : MonoBehaviour
         GOOptionsMenu.SetActive(false);
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void LoadTuto()
+    {
+        SceneManager.LoadScene(3);
+    }
 
     public void QuitGame()
     {
