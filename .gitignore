@@ -100,3 +100,7 @@ InitTestScene*.unity*
 ProjectSettings/EditorBuildSettings.asset
 ProjectSettings/ProjectSettings.asset
 ProjectSettings/ShaderGraphSettings.asset
+ProjectSettings/GraphicsSettings.asset
+Assets/UniversalRenderPipelineGlobalSettings.asset
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+Assets/Settings/UniversalRP.asset
