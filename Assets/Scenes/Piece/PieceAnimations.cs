@@ -12,11 +12,14 @@ public class PieceAnimations : MonoBehaviour
 
     private SinglePieceSquare[] squares;
 
+    [SerializeField] StatsEnnemi statsEnnemi;
     [SerializeField] AudioClip[] audioClips;
     [SerializeField] AudioClip shieldBreak;
     [SerializeField] Color FullHealthColor;
     [SerializeField] Color HealthColor;
     [SerializeField] Color LowHealthColor;
+    [SerializeField] Color TextShieldShield;
+    [SerializeField] Color TextShieldDamage;
     [SerializeField] ParticleSystem deathParticle;
 
     [Header("---Speed")]
@@ -71,6 +74,10 @@ public class PieceAnimations : MonoBehaviour
         RefreshHealth(boardPiece);
     }
 
+    private void Update()
+    {
+        RefreshHealth(boardPiece);
+    }
 
     public IEnumerator PlayAnimations(int number, TypeAnim typeAnim, BoardPiece declencheur)
     {
@@ -335,12 +342,28 @@ public class PieceAnimations : MonoBehaviour
             textHealth.color = HealthColor;
         }
 
-        textShield.gameObject.SetActive(boardPiece.shield > 0);
+
+        int nbrAttacked = boardPiece.context.NbrCaseAtk * statsEnnemi.actualAtkDamage;
+
+        textShield.gameObject.SetActive(false);
+
         if (boardPiece.shield <= 0 && int.Parse(textShield.text) > 0)
             foreach (SinglePieceSquare s in squares)
                 s.shieldGO.transform.DOScale(Vector3.zero, S(0.2f)).SetEase(Ease.InOutSine);
 
-        textShield.text = boardPiece.shield.ToString();
+        if (boardPiece.shield > 0)
+        {
+            textShield.gameObject.SetActive(true);
+            textShield.color = TextShieldShield;
+            textShield.text = boardPiece.shield.ToString();
+        }
+        else if (nbrAttacked > 0)
+        {
+            textShield.gameObject.SetActive(true);
+            textShield.color = TextShieldDamage;
+
+            textShield.text = "-" + nbrAttacked.ToString();
+        }
     }
 
     public void ShowOnTop()

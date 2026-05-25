@@ -170,18 +170,14 @@ public class GridManager : MonoBehaviour
 
     private void ResetNbrAtckCase()
     {
-        for(int i = 0; i < gridSlots.Count; i++)
+        for (int i = 0; i < piecesExist.Length; i++)
         {
-            PieceInfo piece = gridSlots[i].GetPieceOnIt();
-            if(piece != null)
-            {
-                BoardPiece bp = GetBoardPiece(piece);
-                bp.context.NbrCaseAtk = 0;
-                bp.context.NbrCaseGenerateMana = 0;
-            }
+            BoardPiece bp = piecesExist[i].currentBoardPiece;
+            bp.context.NbrCaseAtk = 0;
+            bp.context.NbrCaseGenerateMana = 0;
+
         }
     }
-
     private void SetNbrAtckCase()
     {
         for (int i = 0; i < gridSlots.Count; i++)
