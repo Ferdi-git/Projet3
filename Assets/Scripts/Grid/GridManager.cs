@@ -92,6 +92,7 @@ public class GridManager : MonoBehaviour
         SetNbrAtckCase();
         for (int i = 0; i < gridSlots.Count; i++)
         {
+            gridSlots[i].SetNumber(i);
             PieceInfo pieceOnSlot = gridSlots[i].GetPieceOnIt();
 
             if (pieceOnSlot == null || pieceOnSlot.wasGridChecked)

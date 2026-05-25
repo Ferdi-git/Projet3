@@ -1,12 +1,19 @@
+using TMPro;
 using UnityEngine;
 
 public class GridSlot : MonoBehaviour
 {
     public bool isFilled = false;
     public bool isAttacked;
+    public TextMeshPro text;
 
     private GameObject pieceOnIt = null;
     private SinglePieceSquare squareOnIt = null;
+
+    public void SetNumber(int i)
+    {
+        text.text = i.ToString();
+    }
 
     public void SetPiece(GameObject piece, SinglePieceSquare square)
     {
