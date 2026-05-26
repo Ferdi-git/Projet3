@@ -198,6 +198,11 @@ public class Combat : MonoBehaviour
                 pieceHealthManager.TakeDamage(statsEnnemi.actualAtkDamage * soBoard.boardPieces[i].context.NbrCaseAtk);
                 indexPieceDamaged++;
             }
+            if (soBoard.boardPieces[i].healthPoint <= 0)
+            {
+                SOEventPieceHealth pHealth = pieceHealthManager.pieceHealthEvent;
+                pHealth.InvokeDead(soBoard.boardPieces[i]);
+            }
 
         }
 
