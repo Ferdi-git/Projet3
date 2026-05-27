@@ -22,4 +22,5 @@ public class Context
     public int NbrCaseGenerateMana =0;
 
     public ConditionOutput conditionOutput;
+    public PieceHealthManager healthManager;
 }

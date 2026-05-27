@@ -146,6 +146,7 @@ public class Combat : MonoBehaviour
         conditionOutput.port = port;
         conditionOutput.context = soBoard.boardPieces[i].context;
         conditionOutput.variableList = piece.ConditionValues;
+        soBoard.boardPieces[i].context.healthManager = pieceHealthManager;
         
         if (piece.pieceEffet.condition.Condition(conditionOutput))
         {
@@ -197,11 +198,6 @@ public class Combat : MonoBehaviour
                 pieceHealthManager.GiveStats(soBoard.boardPieces[i].healthPoint, soBoard.boardPieces[i].shield, soBoard.boardPieces[i]);
                 pieceHealthManager.TakeDamage(statsEnnemi.actualAtkDamage * soBoard.boardPieces[i].context.NbrCaseAtk);
                 indexPieceDamaged++;
-            }
-            if (soBoard.boardPieces[i].healthPoint <= 0)
-            {
-                SOEventPieceHealth pHealth = pieceHealthManager.pieceHealthEvent;
-                pHealth.InvokeDead(soBoard.boardPieces[i]);
             }
 
         }

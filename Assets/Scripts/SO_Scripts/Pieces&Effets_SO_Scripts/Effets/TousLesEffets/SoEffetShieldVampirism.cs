@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Audio.ProcessorInstance;
 
 [CreateAssetMenu(fileName = "ShieldVampirismEffet", menuName = "Effet/ShieldVampirism")]
 public class SoEffetShieldVampirism : SoEffet
@@ -18,11 +17,17 @@ public class SoEffetShieldVampirism : SoEffet
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
             voisin.healthPoint -= piece.pieceInfo.soPiece.BaseEffectValues[0];
+            
             piece.pieceInfo.soPiece.TempEffectValues[2] += piece.pieceInfo.soPiece.BaseEffectValues[1];
             voisin.shield += piece.pieceInfo.soPiece.TempEffectValues[2];
             voisin.pieceAnimation.RefreshHealth(voisin);
             yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
+            if (voisin.healthPoint <= 0)
+            {
+                context.healthManager.GiveStats(voisin.healthPoint, voisin.shield, voisin);
+                context.healthManager.Dead(piece.pieceInfo.soPiece.BaseEffectValues[0]);
+            }
         }
         port.thisBoardPiece = piece;
         context.NbrDeRepetition += 1;
@@ -39,11 +44,17 @@ public class SoEffetShieldVampirism : SoEffet
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
             voisin.healthPoint -= piece.pieceInfo.soPiece.BaseEffectValues[0];
+            
             piece.pieceInfo.soPiece.TempEffectValues[2] += piece.pieceInfo.soPiece.BaseEffectValues[1];
             voisin.shield += piece.pieceInfo.soPiece.TempEffectValues[2];
             voisin.pieceAnimation.RefreshHealth(voisin);
             if (i != 0) yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.shield, piece);
+            if (voisin.healthPoint <= 0)
+            {
+                context.healthManager.GiveStats(voisin.healthPoint, voisin.shield, voisin);
+                context.healthManager.Dead(piece.pieceInfo.soPiece.BaseEffectValues[0]);
+            }
         }
         port.thisBoardPiece = piece;
         context.NbrDeRepetition += 1;
