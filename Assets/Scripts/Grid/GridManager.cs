@@ -171,6 +171,8 @@ public class GridManager : MonoBehaviour
 
     private void ResetNbrAtckCase()
     {
+        print("Reset");
+
         for (int i = 0; i < piecesExist.Length; i++)
         {
             BoardPiece bp = piecesExist[i].currentBoardPiece;
@@ -182,6 +184,7 @@ public class GridManager : MonoBehaviour
 
     private void SetNbrAtckCase()
     {
+        print("Set");
         for (int i = 0; i < gridSlots.Count; i++)
         {
             PieceInfo piece = gridSlots[i].GetPieceOnIt();
