@@ -71,7 +71,6 @@ public class PieceAnimations : MonoBehaviour
             spriteRenderers.Add(gameObject.GetComponent<PieceInfo>().GetSelfPoints()[i].spriteRenderer);
         }
         audioSource = GetComponent<AudioSource>();
-        RefreshHealth(boardPiece);
     }
 
     private void Update()

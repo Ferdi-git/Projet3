@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c955491a89905ea42bfe6cce4cba1912
+guid: fcb00fd3df088c14d88ad974ed06ba4f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7254996190022459071
-    second: monstre_simple_squelette_1_0
+      213: -2853412743877128794
+    second: gladiateur_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monstre_simple_squelette_1_0
+      name: gladiateur_0
       rect:
         serializedVersion: 2
-        x: 116
-        y: 19
-        width: 199
-        height: 336
+        x: 9
+        y: 0
+        width: 377
+        height: 389
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 14126ee5763115b90800000000000000
-      internalID: -7254996190022459071
+      spriteID: 6ad81ab3a34a668d0800000000000000
+      internalID: -2853412743877128794
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      monstre_simple_squelette_1_0: -7254996190022459071
+      gladiateur_0: -2853412743877128794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c955491a89905ea42bfe6cce4cba1912
+guid: 252d36100023c2040b319eef1e9a6e2f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7254996190022459071
-    second: monstre_simple_squelette_1_0
+      213: 2870111817010822123
+    second: Monstre_fishboy_marais_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monstre_simple_squelette_1_0
+      name: Monstre_fishboy_marais_0
       rect:
         serializedVersion: 2
-        x: 116
-        y: 19
-        width: 199
-        height: 336
+        x: 1
+        y: 39
+        width: 395
+        height: 322
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 14126ee5763115b90800000000000000
-      internalID: -7254996190022459071
+      spriteID: bebb496bd7fa4d720800000000000000
+      internalID: 2870111817010822123
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      monstre_simple_squelette_1_0: -7254996190022459071
+      Monstre_fishboy_marais_0: 2870111817010822123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: c955491a89905ea42bfe6cce4cba1912
+guid: 9095505dc589c9d4684192898f0ac0aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7254996190022459071
-    second: monstre_simple_squelette_1_0
+      213: -4772409964173223475
+    second: monstre_gargouille 1_0
+  - first:
+      213: 2728085788464982185
+    second: monstre_gargouille 1_1
+  - first:
+      213: -5762950092479463468
+    second: monstre_gargouille 1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monstre_simple_squelette_1_0
+      name: monstre_gargouille 1_0
       rect:
         serializedVersion: 2
-        x: 116
-        y: 19
-        width: 199
-        height: 336
+        x: 40
+        y: 108
+        width: 320
+        height: 223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 14126ee5763115b90800000000000000
-      internalID: -7254996190022459071
+      spriteID: dc99be24c6ef4cdb0800000000000000
+      internalID: -4772409964173223475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monstre_gargouille 1_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 103
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a82f32129b1cd520800000000000000
+      internalID: 2728085788464982185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monstre_gargouille 1_2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 69
+        width: 224
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dff47f9c63e500b0800000000000000
+      internalID: -5762950092479463468
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      monstre_simple_squelette_1_0: -7254996190022459071
+      monstre_gargouille 1_0: -4772409964173223475
+      monstre_gargouille 1_1: 2728085788464982185
+      monstre_gargouille 1_2: -5762950092479463468
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

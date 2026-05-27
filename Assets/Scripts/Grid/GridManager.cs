@@ -179,6 +179,7 @@ public class GridManager : MonoBehaviour
 
         }
     }
+
     private void SetNbrAtckCase()
     {
         for (int i = 0; i < gridSlots.Count; i++)
@@ -189,9 +190,9 @@ public class GridManager : MonoBehaviour
                 BoardPiece bp = GetBoardPiece(piece);
                 SinglePieceSquare singlePieceSquare = gridSlots[i].GetSinglePieceOnIt();
 
-                if(singlePieceSquare != null && singlePieceSquare.generateMana) bp.context.NbrCaseGenerateMana += 1;
+                if (singlePieceSquare != null && singlePieceSquare.generateMana) bp.context.NbrCaseGenerateMana += 1;
 
-                bp.context.NbrCaseAtk +=1;
+                bp.context.NbrCaseAtk += 1;
             }
         }
 
