@@ -18,5 +18,5 @@ MonoBehaviour:
     damage: 9
   - zone: {fileID: 596622388243198518, guid: 1d6abe88cfdf3b0478fb5a01385fa283, type: 3}
     damage: 2
-  sprite: {fileID: 21300000, guid: 8048b5bd847ab0b4ea0d81ddda8fd860, type: 3}
+  sprite: {fileID: 21300000, guid: 2b6860dcd459fbf4984d26f730875df7, type: 3}
   resistance: 40

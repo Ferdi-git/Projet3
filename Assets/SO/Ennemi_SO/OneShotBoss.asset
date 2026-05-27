@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f7f60e0ed8ad84fb85bba3149217e6, type: 3}
   m_Name: OneShotBoss
   m_EditorClassIdentifier: Assembly-CSharp::GeneratEnnemiSo
-  Name: First
+  Name: LicheBoss
   attacks:
   - zone: {fileID: 595633910440424199, guid: 53b0b1e12626d424fa2511bb28c83ea4, type: 3}
     damage: 99
-  sprite: {fileID: 21300000, guid: 25d14edb3f9a6ec45943f884f83f3750, type: 3}
+  sprite: {fileID: 21300000, guid: 572bda6682a03d54693b0c4045099bbc, type: 3}
   resistance: 30
