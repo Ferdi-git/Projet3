@@ -173,9 +173,9 @@ public class GridManager : MonoBehaviour
     {
         print("Reset");
 
-        for (int i = 0; i < piecesExist.Length; i++)
+        for (int i = 0; i < soSaveInventory.listBoardPiecesExist.Count; i++)
         {
-            BoardPiece bp = piecesExist[i].currentBoardPiece;
+            BoardPiece bp = soSaveInventory.listBoardPiecesExist[i].pieceInfo.currentBoardPiece;
             bp.context.NbrCaseAtk = 0;
             bp.context.NbrCaseGenerateMana = 0;
 

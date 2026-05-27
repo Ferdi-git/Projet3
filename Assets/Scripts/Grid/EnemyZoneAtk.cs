@@ -24,7 +24,7 @@ public class EnemyZoneAtk : MonoBehaviour
             {
                 GridSlot slot = hit.GetComponent<GridSlot>();
 
-                if(slot != null)
+                if(slot != null && slot.text != null )
                 {
                     listSlots.Add(slot);
                     foundSlot = true;
