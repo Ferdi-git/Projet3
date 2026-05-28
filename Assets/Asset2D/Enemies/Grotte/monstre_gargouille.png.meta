@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: ba5b2cb19dc64914e9f2d708fd85c951
+guid: 2b6860dcd459fbf4984d26f730875df7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1613376038308596694
-    second: monstre_fantomedecristal_0
+      213: 6323034351446328160
+    second: monstre_gargouille_0
+  - first:
+      213: -4874060661342567232
+    second: monstre_gargouille_1
+  - first:
+      213: 7663688641759055360
+    second: monstre_gargouille_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 4000
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monstre_fantomedecristal_0
+      name: monstre_gargouille_0
       rect:
         serializedVersion: 2
-        x: 414
-        y: 141
-        width: 2712
-        height: 3213
+        x: 283
+        y: 944
+        width: 2878
+        height: 1999
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a243d7b8a032c99e0800000000000000
-      internalID: -1613376038308596694
+      spriteID: 0630d84ed3eefb750800000000000000
+      internalID: 6323034351446328160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monstre_gargouille_1
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 891
+        width: 43
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c488f207abdb5cb0800000000000000
+      internalID: -4874060661342567232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monstre_gargouille_2
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 487
+        width: 2857
+        height: 449
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00e8e393734ea5a60800000000000000
+      internalID: 7663688641759055360
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      monstre_fantomedecristal_0: -1613376038308596694
+      monstre_gargouille_0: 6323034351446328160
+      monstre_gargouille_1: -4874060661342567232
+      monstre_gargouille_2: 7663688641759055360
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
