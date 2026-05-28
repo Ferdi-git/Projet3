@@ -17,9 +17,10 @@ public class SoEffetHealBetterWhenRetriggered : SoEffet
         {
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
-            voisin.healthPoint += amount[0];
+            
             yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.heal, piece);
+            voisin.healthPoint += amount[0];
         }
         port.thisBoardPiece = piece;
         context.NbrDeRepetition += 1;
@@ -33,9 +34,10 @@ public class SoEffetHealBetterWhenRetriggered : SoEffet
         {
             BoardPiece voisin = context.voisins[i];
             port.thisBoardPiece = voisin;
-            voisin.healthPoint += amount[0] + context.NbrDeRepetition * amount[1];
+            
             if (i != 0) yield return piece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.classic, null);
             yield return port.thisBoardPiece.pieceAnimation.PlayAnimations(port.piecePlayed.GetPiecePlayed(), PieceAnimations.TypeAnim.heal, piece);
+            voisin.healthPoint += amount[0] + context.NbrDeRepetition * amount[1];
         }
         port.thisBoardPiece = piece;
         context.NbrDeRepetition += 1;
