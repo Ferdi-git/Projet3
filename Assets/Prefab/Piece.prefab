@@ -684,7 +684,7 @@ MonoBehaviour:
   HealthColor: {r: 0.75964093, g: 0.99607843, b: 0, a: 1}
   LowHealthColor: {r: 1, g: 0.08099004, b: 0.043137252, a: 1}
   TextShieldShield: {r: 1, g: 1, b: 1, a: 1}
-  TextShieldDamage: {r: 1, g: 0, b: 0, a: 1}
+  TextShieldDamage: {r: 1, g: 0.33490568, b: 0.33490568, a: 1}
   deathParticle: {fileID: 4131871711286175440}
   animSpeed: 1.3
   glowIntensity: 14
