@@ -2315,6 +2315,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.1733
       objectReference: {fileID: 0}
+    - target: {fileID: 7805941970267779862, guid: 359458fcc4602e9419cd17c6fd1aad25, type: 3}
+      propertyPath: difPieces.Array.size
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805941970267779862, guid: 359458fcc4602e9419cd17c6fd1aad25, type: 3}
+      propertyPath: 'difPieces.Array.data[21]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 73a295c4248896d4c866a473a995cd23, type: 2}
     - target: {fileID: 7917422600699015629, guid: 359458fcc4602e9419cd17c6fd1aad25, type: 3}
       propertyPath: grid
       value: 
@@ -2335,13 +2343,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3473037663526427812, guid: 359458fcc4602e9419cd17c6fd1aad25, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2015947962}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5970332625291104110, guid: 359458fcc4602e9419cd17c6fd1aad25, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
-    - targetCorrespondingSourceObject: {fileID: 8323675763505586097, guid: 359458fcc4602e9419cd17c6fd1aad25, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 359458fcc4602e9419cd17c6fd1aad25, type: 3}
 --- !u!1001 &4720267532359561168
 PrefabInstance:

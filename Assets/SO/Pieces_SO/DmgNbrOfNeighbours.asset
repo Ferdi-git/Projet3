@@ -19,9 +19,9 @@ MonoBehaviour:
     condition: {fileID: 11400000, guid: cf6c796d487bcff408e89e7f75d7edfa, type: 2}
     effet: {fileID: 11400000, guid: 4b40ab1253079854abfa8eff83ce1bdc, type: 2}
   ConditionValues: 
-  BaseEffectValues: 05000000
+  BaseEffectValues: 04000000
   TempEffectValues: 
   colors: 01000000
-  description: Deals 5   <sprite name=Attack>for each neighbouring piece
+  description: Deals 4   <sprite name=Attack>for each neighbouring piece
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
