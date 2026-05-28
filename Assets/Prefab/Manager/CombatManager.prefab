@@ -273,7 +273,9 @@ MonoBehaviour:
   eventEnnemi: {fileID: 11400000, guid: c26ad741f286d8a46b923e14d9828be4, type: 2}
   eventVisuel: {fileID: 0}
   eventState: {fileID: 11400000, guid: 5240bdb7ce1e7614088effd95523d55f, type: 2}
+  endTurn: {fileID: 0}
   NbrOfCombat: 0
+  NbrOfBoss: 0
 --- !u!1 &6578289316285157267
 GameObject:
   m_ObjectHideFlags: 0
@@ -356,7 +358,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 2b6f1a3d4992c0c479339c1c7a36c6b0, type: 3}
-  m_Color: {r: 0.7821289, g: 0.829652, b: 0.9811321, a: 1}
+  m_Color: {r: 0.90588236, g: 0.90588236, b: 0.90588236, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
