@@ -786,10 +786,15 @@ MonoBehaviour:
                       voisins: []
                       NbrCaseAtk: 0
                       NbrCaseGenerateMana: 0
+                      healthManager: {fileID: 0}
                     variableList: 
+                  healthManager: {fileID: 0}
                 variableList: 
+              healthManager: {fileID: 0}
             variableList: 
+          healthManager: {fileID: 0}
         variableList: 
+      healthManager: {fileID: 0}
   originalPos: {x: 0, y: 0, z: 0}
   originalRota: {x: 0, y: 0, z: 0, w: 0}
 --- !u!82 &7688367237008495115

@@ -22,7 +22,7 @@ MonoBehaviour:
   BaseEffectValues: 0200000000000000
   TempEffectValues: 0200000000000000
   colors: 01000000
-  description: Deal {p1}   <sprite name=Attack>\n If there's no   <sprite name=Shield>on
-    this piece + 2   <sprite name=Attack>
+  description: Deal currently {p1}   <sprite name=Attack>\n If there's no   <sprite
+    name=Shield>on this piece + 2   <sprite name=Attack>
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
