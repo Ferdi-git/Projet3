@@ -7,6 +7,7 @@ public class TutoManager : MonoBehaviour
     private int currentStep = 0;
     [SerializeField] private SOEventEndPlayerTurn eventEndPlayerTurn ;
     [SerializeField] private SOEventState eventState ;
+    [SerializeField] private GameObject winscreen;
 
     private void OnEnable()
     {
@@ -34,8 +35,8 @@ public class TutoManager : MonoBehaviour
 
     private void EndTuto()
     {
-        SceneManager.LoadScene("MainMenu");
 
+        winscreen.SetActive(true);
     }
 
     private void NextStep()

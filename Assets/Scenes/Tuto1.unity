@@ -3460,9 +3460,9 @@ MonoBehaviour:
   - {fileID: 132485041}
   - {fileID: 2005563862}
   - {fileID: 1132257904}
-  - {fileID: 8653504831483630804}
   eventEndPlayerTurn: {fileID: 11400000, guid: d884a1770fce32149ae18ee8c46b2873, type: 2}
   eventState: {fileID: 11400000, guid: 5240bdb7ce1e7614088effd95523d55f, type: 2}
+  winscreen: {fileID: 8653504831483630804}
 --- !u!4 &1561415441
 Transform:
   m_ObjectHideFlags: 0
