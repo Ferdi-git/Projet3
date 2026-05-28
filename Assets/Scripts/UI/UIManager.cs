@@ -213,7 +213,7 @@ public class UIManager : MonoBehaviour
     {
         gridManager.InvokeSetAllPieceCanMove(true);
         Time.timeScale = 1f;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void QuitButton ()
     {
