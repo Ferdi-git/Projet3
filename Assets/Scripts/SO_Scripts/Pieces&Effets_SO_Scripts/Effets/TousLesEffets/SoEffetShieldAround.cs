@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Audio.ProcessorInstance;
 
 [CreateAssetMenu(fileName = "ShieldAround", menuName = "Effet/ShieldAround")]
 public class SoEffetShieldAround : SoEffet

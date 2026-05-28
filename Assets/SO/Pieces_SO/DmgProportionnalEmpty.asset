@@ -22,7 +22,7 @@ MonoBehaviour:
   BaseEffectValues: 0100000000000000
   TempEffectValues: 0100000000000000
   colors: 01000000
-  description: Gain 1   <sprite name=Attack> for every empty neighbouring tile (currently
-    {p1})
+  description: Lose 3   <sprite name=Attack> and gain 1 for every empty neighbouring
+    tile (currently {p1})
   isRepetition: 0
   numberManaGeneratingPerSquare: 0
