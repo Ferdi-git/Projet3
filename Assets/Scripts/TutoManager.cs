@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TutoManager : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject[] ecransTuto ;
 
     public enum Tutos
     {
