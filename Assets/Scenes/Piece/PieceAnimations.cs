@@ -49,6 +49,7 @@ public class PieceAnimations : MonoBehaviour
 
     // Scales a duration by animSpeed (higher = faster)
     private float S(float duration) => duration / animSpeed;
+    private int lastShield = 0;
 
 
     private void OnEnable()
@@ -346,9 +347,14 @@ public class PieceAnimations : MonoBehaviour
 
         textShield.gameObject.SetActive(false);
 
-        if (boardPiece.shield <= 0 && int.Parse(textShield.text) > 0)
+        if (boardPiece.shield <= 0 && lastShield > 0)
+        {
             foreach (SinglePieceSquare s in squares)
+            {
+                s.shieldGO.transform.DOKill();
                 s.shieldGO.transform.DOScale(Vector3.zero, S(0.2f)).SetEase(Ease.InOutSine);
+            }
+        }
 
         if (boardPiece.shield > 0)
         {
@@ -363,6 +369,9 @@ public class PieceAnimations : MonoBehaviour
 
             textShield.text = "-" + nbrAttacked.ToString();
         }
+
+        lastShield = boardPiece.shield;
+
     }
 
     public void ShowOnTop()
