@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5f7f60e0ed8ad84fb85bba3149217e6, type: 3}
-  m_Name: TestEnnemi2
+  m_Name: Gargoyle
   m_EditorClassIdentifier: Assembly-CSharp::GeneratEnnemiSo
-  Name: Martin
+  Name: Batman
   attacks:
-  - zone: {fileID: 596622388243198518, guid: 2ad7c75ab94b4cc499194341e2b0a99c, type: 3}
+  - zone: {fileID: 596622388243198518, guid: 4cb78f88fc4a5bc4fae852deefa53ad0, type: 3}
     damage: 5
-  sprite: {fileID: 21300000, guid: 83da7f6469c508047b4b8e84ad55b1fb, type: 3}
-  resistance: 100
+  - zone: {fileID: 596622388243198518, guid: 1d6abe88cfdf3b0478fb5a01385fa283, type: 3}
+    damage: 3
+  sprite: {fileID: 21300000, guid: 2b6860dcd459fbf4984d26f730875df7, type: 3}
+  resistance: 40
