@@ -15,6 +15,6 @@ MonoBehaviour:
   Name: Bob
   attacks:
   - zone: {fileID: 595633910440424199, guid: 53b0b1e12626d424fa2511bb28c83ea4, type: 3}
-    damage: 10
+    damage: 2
   sprite: {fileID: 21300000, guid: 9a2b3c62163a6924480633b45ad03c00, type: 3}
   resistance: 10
