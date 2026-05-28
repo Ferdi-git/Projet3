@@ -9277,6 +9277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6857435287997234838}
   - component: {fileID: 678096222023139458}
+  - component: {fileID: 6857435287997234839}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -19296,6 +19297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 555263045326079094}
+  - component: {fileID: 6775363642132169453}
   m_Layer: 0
   m_Name: TestEnnemi
   m_TagString: Untagged
@@ -19303,6 +19305,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!95 &6775363642132169453
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6775363642132169452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e18e38558c78554a9c0e6bd265624cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &6777027598104962197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19531,6 +19555,28 @@ Transform:
   - {fileID: 5547759711748807389}
   m_Father: {fileID: 5703384286733091474}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6857435287997234839
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994437087283735969}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b8248d39b794d5e4f8b42fdb1683eeae, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!222 &6873512136910081251
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22267,6 +22313,9 @@ MonoBehaviour:
   statsEnnemi: {fileID: 11400000, guid: c26ad741f286d8a46b923e14d9828be4, type: 2}
   posEnemy: {fileID: 9110916498354030276}
   glowAtkColor: {r: 1, g: 0, b: 0, a: 1}
+  enemyAnimator: {fileID: 6775363642132169453}
+  playerAnimator: {fileID: 6857435287997234839}
+  eventPlayer: {fileID: 11400000, guid: a7224eda7c7587c4ba95922c9f69c08e, type: 2}
 --- !u!4 &8178747428210337010
 Transform:
   m_ObjectHideFlags: 0

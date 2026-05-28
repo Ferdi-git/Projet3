@@ -12,7 +12,9 @@ public class EnemyVisuelManager : MonoBehaviour
     [SerializeField] SOEventEnnemy statsEnnemi;
     [SerializeField] Transform posEnemy;
     [SerializeField, ColorUsage(true, true)] Color glowAtkColor;
-
+    [SerializeField] Animator enemyAnimator; 
+    [SerializeField] Animator playerAnimator;
+    [SerializeField] SOEventPlayer eventPlayer;
 
     private void OnEnable()
     {
@@ -21,6 +23,7 @@ public class EnemyVisuelManager : MonoBehaviour
 
         statsEnnemi.EnnemiLoosePV += EnnemiLoosePV;
         statsEnnemi.EnnemiGainPV += EnnemiGainPV;
+        eventPlayer.LoosePV += PlayerLoosePV;
     }
 
     private void OnDisable()
@@ -30,6 +33,7 @@ public class EnemyVisuelManager : MonoBehaviour
 
         statsEnnemi.EnnemiLoosePV -= EnnemiLoosePV;
         statsEnnemi.EnnemiGainPV -= EnnemiGainPV;
+        eventPlayer.LoosePV -= PlayerLoosePV;
 
 
     }
@@ -53,6 +57,7 @@ public class EnemyVisuelManager : MonoBehaviour
             eventEndTrail = trailEvent,
         });
         yield return new WaitUntil(() => ended);
+        enemyAnimator.SetTrigger("TakeDMG");
 
         data.eventEndVisuel.Invoke();
     }
@@ -100,5 +105,9 @@ public class EnemyVisuelManager : MonoBehaviour
 
     }
 
+    private void PlayerLoosePV(int pv)
+    {
+        playerAnimator.SetTrigger("TakeDMG");
 
+    }
 }

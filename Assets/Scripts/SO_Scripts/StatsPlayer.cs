@@ -36,6 +36,7 @@ public class StatsPlayer : ScriptableObject
         if (pv - amount < 0) pv = 0;
         else pv -= amount;
         player.InvokePlayerLoosePV( amount );
+
     }
 
 

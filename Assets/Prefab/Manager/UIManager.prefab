@@ -1915,6 +1915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8341136911915819728}
+  - component: {fileID: 3389737422983290544}
   m_Layer: 0
   m_Name: TestEnnemi
   m_TagString: Untagged
@@ -1938,6 +1939,28 @@ Transform:
   - {fileID: 722090314350157922}
   m_Father: {fileID: 2851940422934388860}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3389737422983290544
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3059059386603709514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3e18e38558c78554a9c0e6bd265624cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3255964076004210306
 GameObject:
   m_ObjectHideFlags: 0
@@ -6262,6 +6285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3125386093608409136}
   - component: {fileID: 9015098094350329380}
+  - component: {fileID: 483117399966191824}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -6344,6 +6368,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &483117399966191824
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8059388272718990087}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8094074731395951403
 GameObject:
   m_ObjectHideFlags: 0
@@ -7285,6 +7331,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 722090314350157922}
     - target: {fileID: 7528467241296827855, guid: 97ab2f9f73bc657429f534d6caaa8dac, type: 3}
+      propertyPath: eventPlayer
+      value: 
+      objectReference: {fileID: 11400000, guid: a7224eda7c7587c4ba95922c9f69c08e, type: 2}
+    - target: {fileID: 7528467241296827855, guid: 97ab2f9f73bc657429f534d6caaa8dac, type: 3}
       propertyPath: statsEnnemi
       value: 
       objectReference: {fileID: 11400000, guid: c26ad741f286d8a46b923e14d9828be4, type: 2}
@@ -7292,6 +7342,14 @@ PrefabInstance:
       propertyPath: eventNumbers
       value: 
       objectReference: {fileID: 11400000, guid: 067f5ccf63590ca489e385091525a005, type: 2}
+    - target: {fileID: 7528467241296827855, guid: 97ab2f9f73bc657429f534d6caaa8dac, type: 3}
+      propertyPath: enemyAnimator
+      value: 
+      objectReference: {fileID: 3389737422983290544}
+    - target: {fileID: 7528467241296827855, guid: 97ab2f9f73bc657429f534d6caaa8dac, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 483117399966191824}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
