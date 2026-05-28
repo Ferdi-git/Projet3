@@ -38,6 +38,8 @@ public class Combat : MonoBehaviour
     private void OnDisable()
     {
         eventState.StartCombat -= StartCombat;
+        eventState.StartBossCombat -= StartBossCombat;
+
         turnEvent.NextTurn -= StartTurn;
     }
 
