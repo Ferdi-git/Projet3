@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fbf9124e320e45248a1bb58c9c4ef620
+guid: 667bf68c103c7fe4c8f5aba4e15f6ebf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1261506785350197491
-    second: monstre_chevalierracine_0
+      213: -1378330027582712553
+    second: Squelette copie_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 4000
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monstre_chevalierracine_0
+      name: Squelette copie_0
       rect:
         serializedVersion: 2
-        x: 634
-        y: 191
-        width: 2385
-        height: 2992
+        x: 43
+        y: 0
+        width: 334
+        height: 383
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f02b8eccb5c18110800000000000000
-      internalID: 1261506785350197491
+      spriteID: 7159da284203fdce0800000000000000
+      internalID: -1378330027582712553
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      monstre_chevalierracine_0: 1261506785350197491
+      Squelette copie_0: -1378330027582712553
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

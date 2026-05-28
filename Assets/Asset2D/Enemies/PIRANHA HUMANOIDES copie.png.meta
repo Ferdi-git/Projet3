@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fbf9124e320e45248a1bb58c9c4ef620
+guid: 550e7a3f37af7bc4ba002bd697f89e0d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1261506785350197491
-    second: monstre_chevalierracine_0
+      213: -7985410934347782561
+    second: PIRANHA HUMANOIDES copie_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 4000
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: monstre_chevalierracine_0
+      name: PIRANHA HUMANOIDES copie_0
       rect:
         serializedVersion: 2
-        x: 634
-        y: 191
-        width: 2385
-        height: 2992
+        x: 7
+        y: 1
+        width: 393
+        height: 366
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f02b8eccb5c18110800000000000000
-      internalID: 1261506785350197491
+      spriteID: f562ea0501f1e2190800000000000000
+      internalID: -7985410934347782561
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      monstre_chevalierracine_0: 1261506785350197491
+      PIRANHA HUMANOIDES copie_0: -7985410934347782561
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
