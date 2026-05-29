@@ -729,7 +729,7 @@ MonoBehaviour:
   - {fileID: 2581105552711121948}
   - {fileID: 1980173485376708772}
   - {fileID: 6484838937401351868}
-  snapSound: {fileID: 8300000, guid: a1aebb57a0654364db45ab3a9691a446, type: 3}
+  snapSound: {fileID: 8300000, guid: 69509de43eb01224792f0f6414f810c8, type: 3}
   eventGrid: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   sOEventGridManager: {fileID: 11400000, guid: dcee2fcb35ebe88498790f9f907603b9, type: 2}
   wasGridChecked: 0
