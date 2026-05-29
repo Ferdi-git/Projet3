@@ -19,9 +19,9 @@ public class SOEventState : ScriptableObject
     public void InvokeEndOfCombat() { EndOfCombat?.Invoke(); }
 
     public event Action StartBossCombat;
-    public event Action EndOfBossCombat;
+    public event Action<int> EndOfBossCombat;
     public void InvokeStartBossCombat() { StartBossCombat?.Invoke(); }
-    public void InvokeEndOfBossCombat() { EndOfBossCombat?.Invoke(); }
+    public void InvokeEndOfBossCombat(int bossLevel) { EndOfBossCombat?.Invoke(bossLevel); }
 
 
 

@@ -238,6 +238,10 @@ public class Combat : MonoBehaviour
                 NbrOfCombat += 1;
                 bouton.SetActive(false);
                 eventState.InvokeEndOfCombat();
+                if (NbrOfBoss >= 3)
+                {
+                    eventState.InvokeEndOfBossCombat(3);
+                }
             }
         }
         

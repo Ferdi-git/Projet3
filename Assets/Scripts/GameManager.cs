@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SOEventFloor floorEvent;
     [SerializeField] private FloorListSo floorListSo;
     [SerializeField] private SOEventPlayerLostMessage lostMessage;
+    [SerializeField] private SOEventPLayerWinMessage winMessage;
 
 
     public int ActualFloorCount;
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
         gameState.EndOfShoping -= ShopingEnded;
         gameState.LooseEvent -= PlayerLost;
         gameState.EndOfBossCombat -= BossCombatEnded;
+
     }
     public void ButtonPressed ()
     {
@@ -114,10 +116,11 @@ public class GameManager : MonoBehaviour
     }
 
 
-    private void BossCombatEnded ( )
+    private void BossCombatEnded (int bossLevel)
     {
-        print("boss combat ended");
-        gridManager.InvokeResetInventory();
-        NextFloor();
+        if (bossLevel >= 3)
+        {
+            winMessage.InvokeWinMessageEvent();
+        }
     }
 }
